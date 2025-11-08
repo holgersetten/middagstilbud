@@ -5,7 +5,6 @@ import LoadingSpinner from './components/LoadingSpinner';
 import ErrorMessage from './components/ErrorMessage';
 import { offersApi } from './services/api';
 import type { Offer } from './types/offer';
-import './App.css';
 
 function App() {
   const [offers, setOffers] = useState<Offer[]>([]);
@@ -34,7 +33,7 @@ function App() {
   if (error) return <ErrorMessage message={error} onRetry={fetchOffers} />;
 
   return (
-    <div className="app">
+    <div className="min-h-screen bg-gray-50">
       <Header />
       <OfferList offers={offers} />
     </div>

@@ -1,6 +1,5 @@
 import type { Offer } from '../types/offer';
 import OfferCard from './OfferCard';
-import './OfferList.css';
 
 interface OfferListProps {
   offers: Offer[];
@@ -9,17 +8,19 @@ interface OfferListProps {
 function OfferList({ offers }: OfferListProps) {
   if (offers.length === 0) {
     return (
-      <div className="no-offers">
-        <p>Ingen tilbud funnet 😢</p>
+      <div className="max-w-7xl mx-auto px-4 py-16 text-center">
+        <p className="text-xl text-gray-600">Ingen tilbud funnet 😢</p>
       </div>
     );
   }
 
   return (
-    <div className="offer-list">
-      {offers.map((offer, index) => (
-        <OfferCard key={`${offer.store}-${offer.hotspotId || index}`} offer={offer} />
-      ))}
+    <div className="max-w-7xl mx-auto px-4 py-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        {offers.map((offer, index) => (
+          <OfferCard key={`${offer.store}-${offer.hotspotId || index}`} offer={offer} />
+        ))}
+      </div>
     </div>
   );
 }

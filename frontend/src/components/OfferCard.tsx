@@ -1,5 +1,4 @@
 import type { Offer } from '../types/offer';
-import './OfferCard.css';
 
 interface OfferCardProps {
   offer: Offer;
@@ -7,26 +6,44 @@ interface OfferCardProps {
 
 function OfferCard({ offer }: OfferCardProps) {
   return (
-    <div className="offer-card">
+    <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300 h-full flex flex-col">
       {offer.imageUrl && (
-        <img src={offer.imageUrl} alt={offer.title} className="offer-image" />
+        <div className="h-48 bg-gray-100 overflow-hidden">
+          <img 
+            src={offer.imageUrl} 
+            alt={offer.title} 
+            className="w-full h-full object-cover"
+          />
+        </div>
       )}
-      <div className="offer-content">
-        <h3 className="offer-title">{offer.title}</h3>
+      <div className="p-4 flex-1 flex flex-col">
+        <h3 className="text-lg font-semibold text-gray-800 mb-2 line-clamp-2">
+          {offer.title}
+        </h3>
         {offer.description && (
-          <p className="offer-description">{offer.description}</p>
+          <p className="text-sm text-gray-600 mb-3 line-clamp-2">
+            {offer.description}
+          </p>
         )}
-        <div className="offer-details">
-          <span className="offer-price">{offer.price} {offer.currency}</span>
+        <div className="flex items-baseline gap-2 mb-3">
+          <span className="text-2xl font-bold text-purple-600">
+            {offer.price} {offer.currency}
+          </span>
           {offer.quantity && (
-            <span className="offer-quantity">{offer.quantity}</span>
+            <span className="text-sm text-gray-500">
+              {offer.quantity}
+            </span>
           )}
         </div>
-        <div className="offer-store">
+        <div className="mt-auto pt-3 border-t border-gray-100 flex items-center gap-2">
           {offer.storeLogo && (
-            <img src={offer.storeLogo} alt={offer.store} className="store-logo" />
+            <img 
+              src={offer.storeLogo} 
+              alt={offer.store} 
+              className="h-6 w-6 object-contain"
+            />
           )}
-          <span>{offer.store}</span>
+          <span className="text-sm font-medium text-gray-700">{offer.store}</span>
         </div>
       </div>
     </div>
