@@ -12,8 +12,8 @@
 
 ## Types
 
-- **feat**: A new feature
-- **fix**: A bug fix
+- **feat**: New feature
+- **fix**: Bug fix
 - **refactor**: Refactoring existing code
 - **style**: Formatting, missing semi colons, etc (no code change)
 - **docs**: Changes to documentation
