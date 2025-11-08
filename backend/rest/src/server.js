@@ -74,8 +74,9 @@ const server = app.listen(PORT, () => {
     console.log(`🚀 Port: ${PORT}`);
     console.log(`🚀 Environment: ${config.nodeEnv}`);
     console.log('🚀 =================================');
-
-    offerService.updateAllStoreOffers();
+    
+    // Ikke oppdater automatisk ved oppstart - bruk POST /api/offers/update i stedet
+    // offerService.updateAllStoreOffers();
 });
 
 // Graceful shutdown
