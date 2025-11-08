@@ -15,7 +15,7 @@ app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ extended: true }));
 
 // Serve butikklogoer
-app.use('/images', express.static(path.join(__dirname, 'img')));
+app.use('/store_logos', express.static(path.join(__dirname, 'img')));
 
 // Logging
 app.use((req, res, next) => {
