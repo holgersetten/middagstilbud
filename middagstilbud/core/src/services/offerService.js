@@ -1,7 +1,7 @@
-const tjekApiService = require('../../persistence/src/tjekApiService');
-const fileService = require('../../persistence/src/fileService');
-const { getActiveStores, getStoreLogoUrl } = require('../../rest/src/config/stores');
-const config = require('../../rest/src/config');
+const tjekApiService = require('../../../persistence/src/services/tjekApiService');
+const fileService = require('../../../persistence/src/services/fileService');
+const { getActiveStores, getStoreLogoUrl } = require('../../../rest/src/config/stores');
+const config = require('../../../rest/src/config');
 
 class OfferService {
     constructor() {

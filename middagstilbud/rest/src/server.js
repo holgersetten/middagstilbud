@@ -4,7 +4,7 @@ const path = require('path');
 require('dotenv').config();
 
 const config = require('./config');
-const offerService = require('../../core/src/offerService');
+const offerService = require('../../core/src/services/offerService');
 const offersRouter = require('./routes/offers');
 
 const app = express();

@@ -1,5 +1,5 @@
 const express = require('express');
-const offerService = require('../../../core/src/offerService');
+const offerService = require('../../../core/src/services/offerService');
 
 const router = express.Router();
 

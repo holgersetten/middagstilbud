@@ -1,5 +1,5 @@
 const axios = require('axios');
-const config = require('../../rest/src/config');
+const config = require('../../../rest/src/config');
 
 class TjekApiService {
     constructor() {

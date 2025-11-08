@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const config = require('../../rest/src/config');
+const config = require('../../../rest/src/config');
 
 class FileService {
     constructor() {
