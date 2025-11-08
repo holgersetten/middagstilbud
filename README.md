@@ -25,19 +25,3 @@ Core-lag - Business logic
 Persistence - Datahenting og lagring
 
 ## Prosjektstruktur
-
-middagstilbud/
-├── rest/src/                   # HTTP-server og API-endepunkter
-│   ├── server.js               # Express-app, middleware, oppstart
-│   ├── routes/offers.js        # API-ruter for tilbud
-│   ├── config/                 # Konfigurasjon
-│   │   ├── index.js            # Paths, ports, API URLs
-│   │   └── stores.js           # Butikkliste med dealerId og logoer
-│   └── img/                    # Butikklogoer (statisk innhold)
-├── core/src/
-│   └── offerService.js         # Hovedlogikk: oppdatering, henting
-├── persistence/src/
-│   ├── tjekApiService.js       # Henter tilbud fra Tjek API
-│   ├── fileService.js          # Les/skriv JSON-filer
-│   └── resources/offers/       # Lagrede tilbudsfiler (JSON)
-└── package.json                # Avhengigheter og npm-scripts
