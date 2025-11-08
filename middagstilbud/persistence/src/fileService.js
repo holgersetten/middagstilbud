@@ -41,58 +41,6 @@ class FileService {
             return false;
         }
     }
-
-    saveIfChanged(filename, newData) {
-        const filePath = path.join(this.offersDir, filename);
-        const tempPath = filePath + '.tmp';
-
-        try {
-            // Sjekk om filen eksisterer og har samme innhold
-            if (fs.existsSync(filePath)) {
-                const existingData = this.loadJSON(filePath);
-                if (JSON.stringify(existingData) === JSON.stringify(newData)) {
-                    return false; // Ingen endring
-                }
-            }
-
-            // Skriv til temp-fil først for atomisk operasjon
-            fs.writeFileSync(tempPath, JSON.stringify(newData, null, 2), 'utf8');
-            fs.renameSync(tempPath, filePath);
-            return true; // Endring lagret
-        } catch (error) {
-            console.error(`❌ Feil ved lagring av ${filename}:`, error.message);
-            // Rydd opp temp-fil ved feil
-            if (fs.existsSync(tempPath)) {
-                fs.unlinkSync(tempPath);
-            }
-            return false;
-        }
-    }
-
-    getOfferFiles() {
-        try {
-            return fs.readdirSync(this.offersDir)
-                .filter(file => file.endsWith('.json'))
-                .map(file => path.join(this.offersDir, file));
-        } catch (error) {
-            console.error('❌ Feil ved lesing av tilbudsmapper:', error.message);
-            return [];
-        }
-    }
-
-    loadAllOffers() {
-        const offers = [];
-        const files = this.getOfferFiles();
-
-        for (const file of files) {
-            const data = this.loadJSON(file);
-            if (Array.isArray(data)) {
-                offers.push(...data);
-            }
-        }
-
-        return offers;
-    }
 }
 
 module.exports = new FileService();

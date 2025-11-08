@@ -30,27 +30,6 @@ router.get('/offers', async (req, res) => {
     }
 });
 
-// GET /api/offers/:store - Hent tilbud for spesifikk butikk
-router.get('/offers/:store', async (req, res) => {
-    try {
-        const { store } = req.params;
-        const offers = offerService.getOffersByStore(store);
-        
-        console.log(`📦 Returnerer ${offers.length} tilbud fra ${store}`);
-        res.json({
-            count: offers.length,
-            store: store,
-            offers: offers
-        });
-    } catch (error) {
-        console.error('❌ Feil ved henting av tilbud:', error.message);
-        res.status(500).json({
-            error: 'Kunne ikke hente tilbud',
-            message: error.message
-        });
-    }
-});
-
 // POST /api/offers/update - Manuelt oppdater tilbud
 router.post('/offers/update', async (req, res) => {
     try {
