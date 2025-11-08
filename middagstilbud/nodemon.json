@@ -1,0 +1,13 @@
+{
+  "watch": [
+    "core/src/**/*.js",
+    "persistence/src/**/*.js",
+    "rest/src/**/*.js"
+  ],
+  "ignore": [
+    "node_modules/**",
+    "persistence/src/resources/offers/**/*.json"
+  ],
+  "ext": "js,json",
+  "delay": 2000
+}
