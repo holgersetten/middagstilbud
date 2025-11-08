@@ -29,7 +29,6 @@ class OfferService {
         }
 
         this.updateInProgress = true;
-        console.log('🔄 Starter oppdatering av tilbud fra alle butikker...');
 
         try {
             const stores = getActiveStores();
@@ -53,8 +52,6 @@ class OfferService {
                 return;
             }
             
-            console.log(`🔄 Henter tilbud fra ${store.name}...`);
-            
             const offers = await tjekApiService.getStoreOffers(store.dealerId);
             
             if (!offers || offers.length === 0) {
@@ -72,7 +69,6 @@ class OfferService {
             const filePath = require('path').join(config.offersDir, filename);
             fileService.saveJSON(filePath, enrichedOffers);
 
-            console.log(`✅ Oppdatert ${enrichedOffers.length} tilbud fra ${store.name}`);
             return enrichedOffers;
         } catch (error) {
             const storeName = store?.name || 'ukjent butikk';

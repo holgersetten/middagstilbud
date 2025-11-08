@@ -74,9 +74,7 @@ const server = app.listen(PORT, () => {
     console.log(`🚀 Port: ${PORT}`);
     console.log(`🚀 Environment: ${config.nodeEnv}`);
     console.log('🚀 =================================');
-    
-    // Start initial tilbudsoppdatering
-    console.log('🔄 Starter initial oppdatering av tilbud...');
+
     offerService.updateAllStoreOffers();
 });
 
