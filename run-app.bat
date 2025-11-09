@@ -1,4 +1,5 @@
 @echo off
+chcp 65001
 echo.
 echo ========================================
 echo    Starter Middagstilbud Dev Server
