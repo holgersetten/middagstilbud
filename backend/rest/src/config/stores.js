@@ -30,7 +30,7 @@ const getStoreByDealerId = (dealerId) => STORES.find(store =>
 const getStoreLogoUrl = (storeName) => {
     const store = getStoreByName(storeName);
     if (store && store.logo) {
-        return `http://localhost:5000/images/${store.logo}`;
+        return `http://localhost:5000/store_logos/${store.logo}`;
     }
     return null;
 };
