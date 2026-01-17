@@ -1,0 +1,11 @@
+{
+  "_info": "Manual kategorisering overrides. Bruk cacheKey format: 'normalisert_produktnavn|butikknavn'",
+  "_example": {
+    "tine yoghurt naturell 1 kg|meny": {
+      "mainCategory": "Meieri og egg",
+      "subCategory": "Yoghurt",
+      "ingredientKey": "yoghurt",
+      "reason": "AI kategoriserte feil"
+    }
+  }
+}

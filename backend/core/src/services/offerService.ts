@@ -3,6 +3,8 @@ import tjekApiService from '../../../persistence/src/services/tjekApiService';
 import fileService from '../../../persistence/src/services/fileService';
 import { getActiveStores, getStoreLogoUrl, Store } from '../../../rest/src/config/stores';
 import config from '../../../rest/src/config/index';
+import categoryService from './categoryService';
+import { MainCategory, SubCategory } from '../config/categories';
 
 interface Offer {
     title: string;
@@ -22,6 +24,12 @@ interface Offer {
     hotspotId?: string;
     store?: string;
     storeLogo?: string | null;
+    mainCategory?: MainCategory;
+    subCategory?: SubCategory;
+    ingredientKey?: string;
+    categorySource?: 'manual' | 'rule' | 'ai' | 'unknown';
+    categoryConfidence?: number;
+    productKey?: string;
 }
 
 class OfferService {
@@ -100,7 +108,7 @@ class OfferService {
         }
     }
 
-    getAllOffers(): Offer[] {
+    async getAllOffers() {
         const stores = getActiveStores();
         const allOffers: Offer[] = [];
 
@@ -118,20 +126,45 @@ class OfferService {
             }
         }
 
-        return allOffers;
+        // 🧪 TEST MODE: Begrens til 50 offers for rask testing
+        const testLimit = 50;
+        const offersToProcess = allOffers.slice(0, testLimit);
+        console.log(`🧪 TEST MODE: Returnerer ${offersToProcess.length} av ${allOffers.length} offers (UTEN AI-kategorisering)`);
+
+        // AI-kategorisering er midlertidig deaktivert
+        // return await categoryService.categorizeOffers(offersToProcess);
+        return offersToProcess;
     }
 
-    getOffersByStore(storeName: string): Offer[] {
+    async getOffersByStore(storeName: string) {
         const filename = `${storeName.toLowerCase().replace(/\s+/g, '_')}_offers.json`;
         const filePath = path.join(config.offersDir, filename);
         
         try {
             const offers = fileService.loadJSON<Offer[]>(filePath);
-            return Array.isArray(offers) ? offers : [];
+            return Array.isArray(offers) ? await categoryService.categorizeOffers(offers) : [];
         } catch (error) {
             console.log(`⚠️ Kunne ikke laste tilbud for ${storeName}`);
             return [];
         }
+    }
+
+    async getOffersNeedingReview() {
+        const allOffers = await this.getAllOffers();
+        
+        // Filtrer produkter som:
+        // 1. Har categorySource: 'unknown' eller 'ai'
+        // 2. Har lav confidence (< 0.9)
+        // 3. Har default kategori (Frukt og grønt + Annet + produkt)
+        return allOffers.filter(offer => {
+            const needsReview = 
+                (offer.categorySource === 'unknown' || offer.categorySource === 'ai') &&
+                (offer.mainCategory === 'Frukt og grønt' && 
+                 offer.subCategory === 'Annet' && 
+                 offer.ingredientKey === 'produkt');
+            
+            return needsReview;
+        });
     }
 }
 

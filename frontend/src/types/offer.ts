@@ -16,6 +16,23 @@ export interface Offer {
   hotspotId?: string;
   store: string;
   storeLogo?: string;
+  mainCategory?: string;
+  subCategory?: string;
+  ingredientKey?: string;
+  categorySource?: 'manual' | 'rule' | 'ai' | 'unknown';
+  categoryConfidence?: number;
+  productKey?: string;
+}
+
+export interface CategoryHierarchy {
+  [mainCategory: string]: string[];
+}
+
+export interface CategorizeRequest {
+  productKey: string;
+  mainCategory: string;
+  subCategory: string;
+  ingredientKey: string;
 }
 
 export interface OffersResponse {
