@@ -1,5 +1,13 @@
 // 📂 Butikker med dealer-ID
-const STORES = [
+
+export interface Store {
+    name: string;
+    dealerId: string;
+    active: boolean;
+    logo: string;
+}
+
+export const STORES: Store[] = [
     { name: "Bunnpris", dealerId: "5b11sm", active: true, logo: "bunnpris_logo.png" },
     { name: "Rema 1000", dealerId: "faa0Ym", active: true, logo: "rema_logo.png" },
     { name: "Meny", dealerId: "4333pm", active: true, logo: "meny_logo.png" },
@@ -17,28 +25,18 @@ const STORES = [
     // { name: "Oda", dealerId: "7kuNoZ", active: false }
 ];
 
-const getActiveStores = () => STORES.filter(store => store.active);
+export const getActiveStores = (): Store[] => STORES.filter(store => store.active);
 
-const getStoreByName = (name) => STORES.find(store => 
-    store.name.toLowerCase() === name.toLowerCase()
-);
+export const getStoreByName = (name: string): Store | undefined => 
+    STORES.find(store => store.name.toLowerCase() === name.toLowerCase());
 
-const getStoreByDealerId = (dealerId) => STORES.find(store => 
-    store.dealerId === dealerId
-);
+export const getStoreByDealerId = (dealerId: string): Store | undefined => 
+    STORES.find(store => store.dealerId === dealerId);
 
-const getStoreLogoUrl = (storeName) => {
+export const getStoreLogoUrl = (storeName: string): string | null => {
     const store = getStoreByName(storeName);
     if (store && store.logo) {
         return `http://localhost:5000/store_logos/${store.logo}`;
     }
     return null;
-};
-
-module.exports = {
-    STORES,
-    getActiveStores,
-    getStoreByName,
-    getStoreByDealerId,
-    getStoreLogoUrl
 };

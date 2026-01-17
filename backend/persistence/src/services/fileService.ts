@@ -1,20 +1,22 @@
-const fs = require('fs');
-const path = require('path');
-const config = require('../../../rest/src/config');
+import fs from 'fs';
+import path from 'path';
+import config from '../../../rest/src/config/index';
 
 class FileService {
+    private offersDir: string;
+
     constructor() {
         this.offersDir = config.offersDir;
         this.ensureDirectoryExists(this.offersDir);
     }
 
-    ensureDirectoryExists(dirPath) {
+    ensureDirectoryExists(dirPath: string): void {
         if (!fs.existsSync(dirPath)) {
             fs.mkdirSync(dirPath, { recursive: true });
         }
     }
 
-    loadJSON(filePath) {
+    loadJSON<T = any>(filePath: string): T | Record<string, never> {
         try {
             if (fs.existsSync(filePath)) {
                 const data = fs.readFileSync(filePath, 'utf8');
@@ -22,25 +24,25 @@ class FileService {
                 return parsed;
             }
             console.warn(`⚠️ Fil ikke funnet: ${filePath}`);
-            return {};
+            return {} as Record<string, never>;
         } catch (error) {
-            console.error(`❌ Feil ved lasting av ${filePath}:`, error.message);
+            console.error(`❌ Feil ved lasting av ${filePath}:`, (error as Error).message);
             console.error('❌ Fil innhold kan være korrupt eller ikke gyldig JSON');
-            return {};
+            return {} as Record<string, never>;
         }
     }
 
-    saveJSON(filePath, data) {
+    saveJSON<T = any>(filePath: string, data: T): boolean {
         try {
             const dir = path.dirname(filePath);
             this.ensureDirectoryExists(dir);
             fs.writeFileSync(filePath, JSON.stringify(data, null, 2), 'utf8');
             return true;
         } catch (error) {
-            console.error(`❌ Feil ved lagring av ${filePath}:`, error.message);
+            console.error(`❌ Feil ved lagring av ${filePath}:`, (error as Error).message);
             return false;
         }
     }
 }
 
-module.exports = new FileService();
+export default new FileService();

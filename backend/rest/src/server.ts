@@ -1,11 +1,11 @@
-const express = require('express');
-const cors = require('cors');
-const path = require('path');
-require('dotenv').config();
+import express, { Request, Response, NextFunction } from 'express';
+import cors from 'cors';
+import path from 'path';
+import dotenv from 'dotenv';
+dotenv.config();
 
-const config = require('./config');
-const offerService = require('../../core/src/services/offerService');
-const offersRouter = require('./routes/offers');
+import config from './config';
+import offersRouter from './routes/offers';
 
 const app = express();
 
@@ -18,7 +18,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use('/store_logos', express.static(path.join(__dirname, '../../persistence/src/resources/img/store_logos')));
 
 // Logging
-app.use((req, res, next) => {
+app.use((req: Request, _res: Response, next: NextFunction) => {
     if (!req.path.startsWith('/images') && !req.path.startsWith('/favicon')) {
         console.log(`${new Date().toISOString()} - ${req.method} ${req.path}`);
     }
@@ -26,7 +26,7 @@ app.use((req, res, next) => {
 });
 
 // Root endpoint
-app.get('/', (req, res) => {
+app.get('/', (_req: Request, res: Response) => {
     res.json({
         name: 'Middagstilbud API',
         version: '1.0.0',
@@ -40,7 +40,7 @@ app.get('/', (req, res) => {
 });
 
 // Health check
-app.get('/health', (req, res) => {
+app.get('/health', (_req: Request, res: Response) => {
     res.json({
         status: 'healthy',
         timestamp: new Date().toISOString(),
@@ -52,12 +52,12 @@ app.get('/health', (req, res) => {
 app.use('/api', offersRouter);
 
 // 404 handler
-app.use((req, res) => {
+app.use((_req: Request, res: Response) => {
     res.status(404).json({ error: 'Endpoint ikke funnet' });
 });
 
 // Error handler
-app.use((err, req, res, next) => {
+app.use((err: Error, _req: Request, res: Response, _next: NextFunction) => {
     console.error('❌ Server error:', err);
     res.status(500).json({
         error: 'Intern serverfeil',
@@ -96,4 +96,4 @@ process.on('SIGTERM', () => {
     });
 });
 
-module.exports = app;
+export default app;

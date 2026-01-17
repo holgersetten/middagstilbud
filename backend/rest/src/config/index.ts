@@ -1,9 +1,32 @@
-const path = require('path');
+import path from 'path';
 
-const config = {
-  port: process.env.PORT || 5000,
+interface Config {
+  port: number;
+  nodeEnv: string;
+  apiRateLimit: number;
+  corsOrigin: string;
+  logLevel: string;
+  
+  // Paths
+  backendDir: string;
+  offersDir: string;
+  mealsFile: string;
+  categoriesFile: string;
+  tagsFile: string;
+  synonymsFile: string;
+  
+  // External APIs
+  tjekApiBaseUrl: string;
+  
+  // NLP
+  nlpEnabled: boolean;
+  pythonNlpPort: number;
+}
+
+const config: Config = {
+  port: parseInt(process.env.PORT || '5000', 10),
   nodeEnv: process.env.NODE_ENV || 'development',
-  apiRateLimit: process.env.API_RATE_LIMIT || 100,
+  apiRateLimit: parseInt(process.env.API_RATE_LIMIT || '100', 10),
   corsOrigin: process.env.CORS_ORIGIN || '*',
   logLevel: process.env.LOG_LEVEL || 'info',
   
@@ -20,7 +43,7 @@ const config = {
   
   // NLP
   nlpEnabled: process.env.NLP_ENABLED === 'true',
-  pythonNlpPort: process.env.PYTHON_NLP_PORT || 5001,
+  pythonNlpPort: parseInt(process.env.PYTHON_NLP_PORT || '5001', 10),
 };
 
-module.exports = config;
+export default config;

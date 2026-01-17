@@ -1,7 +1,60 @@
-const axios = require('axios');
-const config = require('../../../rest/src/config');
+import axios from 'axios';
+import config from '../../../rest/src/config/index';
+
+interface Catalog {
+    id: string;
+    [key: string]: any;
+}
+
+interface QuantityData {
+    pieces?: number | { from?: number; to?: number };
+    size?: number | { from?: number; to?: number };
+    unit?: string | { symbol?: string };
+}
+
+interface Offer {
+    heading?: string;
+    description?: string;
+    pricing?: {
+        price?: number;
+        pre_price?: number;
+        discount?: number;
+        currency?: string;
+    };
+    quantity?: QuantityData;
+    run_from?: string;
+    run_till?: string;
+    images?: Array<{ view?: { zoom?: { url?: string } } }>;
+}
+
+interface Hotspot {
+    id: string;
+    catalog_id: string;
+    offer?: Offer;
+}
+
+interface TransformedOffer {
+    title: string;
+    description: string;
+    price: number | null;
+    originalPrice: number | null;
+    discount: number | null;
+    currency: string;
+    quantity: string;
+    unit: string;
+    pieces: number;
+    size: number | null;
+    validFrom: string | null;
+    validTo: string | null;
+    imageUrl: string | null;
+    catalogId: string;
+    hotspotId: string;
+}
 
 class TjekApiService {
+    private baseURL: string;
+    private headers: Record<string, string>;
+
     constructor() {
         this.baseURL = config.tjekApiBaseUrl;
         this.headers = {
@@ -9,29 +62,29 @@ class TjekApiService {
         };
     }
 
-    async getLatestCatalog(dealerId) {
+    async getLatestCatalog(dealerId: string): Promise<Catalog | null> {
         try {
             const url = `${this.baseURL}/catalogs?dealer_id=${dealerId}&order_by=-publication_date&limit=1`;
-            const response = await axios.get(url, { headers: this.headers });
+            const response = await axios.get<Catalog[]>(url, { headers: this.headers });
             return response.data?.[0] || null;
         } catch (error) {
-            console.error(`❌ Feil ved henting av katalog for dealer ${dealerId}:`, error.message);
+            console.error(`❌ Feil ved henting av katalog for dealer ${dealerId}:`, (error as Error).message);
             return null;
         }
     }
 
-    async getCatalogHotspots(catalogId) {
+    async getCatalogHotspots(catalogId: string): Promise<Hotspot[]> {
         try {
             const url = `${this.baseURL}/catalogs/${catalogId}/hotspots`;
-            const response = await axios.get(url, { headers: this.headers });
+            const response = await axios.get<Hotspot[]>(url, { headers: this.headers });
             return response.data || [];
         } catch (error) {
-            console.error(`❌ Feil ved henting av hotspots for katalog ${catalogId}:`, error.message);
+            console.error(`❌ Feil ved henting av hotspots for katalog ${catalogId}:`, (error as Error).message);
             return [];
         }
     }
 
-    async getStoreOffers(dealerId) {
+    async getStoreOffers(dealerId: string): Promise<TransformedOffer[]> {
         try {
             const catalog = await this.getLatestCatalog(dealerId);
             if (!catalog) {
@@ -42,24 +95,22 @@ class TjekApiService {
             const hotspots = await this.getCatalogHotspots(catalog.id);
             return this.transformHotspotsToOffers(hotspots);
         } catch (error) {
-            console.error(`❌ Feil ved henting av tilbud for dealer ${dealerId}:`, error.message);
+            console.error(`❌ Feil ved henting av tilbud for dealer ${dealerId}:`, (error as Error).message);
             return [];
         }
     }
 
-    transformHotspotsToOffers(hotspots) {
+    transformHotspotsToOffers(hotspots: Hotspot[]): TransformedOffer[] {
         return hotspots
-            .filter(hotspot => hotspot && hotspot.offer) // Fjern hotspots uten tilbud
+            .filter(hotspot => hotspot && hotspot.offer)
             .map(hotspot => {
-                const offer = hotspot.offer;
+                const offer = hotspot.offer!;
                 const quantity = offer?.quantity || {};
                 
-                // Parse quantity data - handle both API formats
                 let pieces = 1;
-                let size = null;
+                let size: number | null = null;
                 let unit = '';
                 
-                // Handle different formats of quantity data
                 if (quantity.pieces) {
                     if (typeof quantity.pieces === 'object') {
                         pieces = quantity.pieces.from || quantity.pieces.to || 1;
@@ -70,7 +121,7 @@ class TjekApiService {
                 
                 if (quantity.size) {
                     if (typeof quantity.size === 'object') {
-                        size = quantity.size.from || quantity.size.to;
+                        size = quantity.size.from || quantity.size.to || null;
                     } else {
                         size = quantity.size;
                     }
@@ -84,7 +135,6 @@ class TjekApiService {
                     }
                 }
                 
-                // Bygg mengdetekst
                 let quantityText = '';
                 if (pieces > 1 && size && unit) {
                     quantityText = `${pieces} × ${size}${unit}`;
@@ -115,4 +165,4 @@ class TjekApiService {
     }
 }
 
-module.exports = new TjekApiService();
+export default new TjekApiService();
