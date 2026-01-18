@@ -186,7 +186,7 @@ function App() {
       'Frukt & grønt',
       'Kjøtt',
       'Kylling og fjærkre',
-      'Fisk & skaldyr',
+      'Fisk & skalldyr',
       'Meieri & egg',
       'Brød',
       'Pålegg & frokost',
@@ -418,7 +418,7 @@ function App() {
                 <div>
                   <h3 className="text-sm font-semibold text-foreground mb-3">Kategorier</h3>
                   <div className="space-y-1">
-                    {getCategoriesSorted().slice(0, showAllCategories ? undefined : 6).map(cat => {
+                    {getCategoriesSorted().slice(0, showAllCategories ? undefined : 7).map(cat => {
                       const isMainSelected = selectedMainCategory === cat;
                       const subCats = categories?.[cat] || [];
                       return (
@@ -456,10 +456,10 @@ function App() {
                       );
                     })}
                     
-                    {getCategoriesSorted().length > 6 && (
+                    {getCategoriesSorted().length > 7 && (
                       <button
                         onClick={() => setShowAllCategories(!showAllCategories)}
-                        className="w-full text-left px-3 py-2 text-sm rounded-md text-muted-foreground hover:text-foreground hover:bg-muted transition-all duration-200 cursor-pointer mt-2 border-t border-border pt-3"
+                        className="w-full text-left px-3 py-2 text-sm rounded-md transition-all duration-200 cursor-pointer mt-2 text-foreground hover:bg-muted hover:translate-x-0.5"
                       >
                         {showAllCategories ? '↑ Vis færre' : '↓ Vis flere...'}
                       </button>
