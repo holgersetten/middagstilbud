@@ -28,11 +28,8 @@ function AdminReview() {
       setOffers(reviewData.offers || []);
       setCategories(categoriesData.categories);
 
-      // Fetch images for offers without imageUrl
-      const offersWithoutImages = reviewData.offers?.filter(o => !o.imageUrl && o.hotspotId) || [];
-      if (offersWithoutImages.length > 0) {
-        fetchMissingImages(offersWithoutImages);
-      }
+      // Bildehenting deaktivert - Tjek API krever autentisering
+      // De fleste tilbud har ikke tilgjengelige bilder via public API
     } catch (err) {
       setError('Kunne ikke hente data. Er backend-serveren kjørende?');
       console.error('Error loading admin data:', err);
@@ -171,9 +168,9 @@ function OfferReviewCard({ offer, categories, onCategorize, saving, imageCache }
   return (
     <div className="offer-review-card">
       <div className="offer-info">
-        {(offer.imageUrl || (offer.hotspotId && imageCache.get(offer.hotspotId))) && (
+        {offer.imageUrl && (
           <img 
-            src={offer.imageUrl || imageCache.get(offer.hotspotId!)} 
+            src={offer.imageUrl} 
             alt={offer.title} 
             className="offer-image" 
           />

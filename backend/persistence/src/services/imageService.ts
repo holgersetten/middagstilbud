@@ -58,7 +58,11 @@ class ImageService {
             return images;
 
         } catch (error) {
-            console.error(`❌ Error fetching image for offer ${offerId}:`, (error as Error).message);
+            // Ikke log 404 - mange tilbud har ikke tilgjengelige bilder
+            const axiosError = error as any;
+            if (axiosError.response?.status !== 404) {
+                console.error(`❌ Error fetching image for offer ${offerId}:`, (error as Error).message);
+            }
             
             return {
                 view: null,

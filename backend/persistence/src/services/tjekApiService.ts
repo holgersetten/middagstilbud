@@ -13,6 +13,7 @@ interface QuantityData {
 }
 
 interface Offer {
+    id?: string;
     heading?: string;
     description?: string;
     pricing?: {
@@ -47,6 +48,7 @@ interface TransformedOffer {
     validFrom: string | null;
     validTo: string | null;
     imageUrl: string | null;
+    offerId: string | null;
     catalogId: string;
     hotspotId: string;
 }
@@ -170,6 +172,7 @@ class TjekApiService {
                     validFrom: offer?.run_from || null,
                     validTo: offer?.run_till || null,
                     imageUrl: offer?.images?.[0]?.view?.zoom?.url || null,
+                    offerId: offer?.id || null,
                     catalogId: hotspot.catalog_id,
                     hotspotId: hotspot.id
                 };

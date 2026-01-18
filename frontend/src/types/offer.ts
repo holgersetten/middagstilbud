@@ -12,6 +12,7 @@ export interface Offer {
   validFrom?: string;
   validTo?: string;
   imageUrl?: string;
+  offerId?: string;
   catalogId?: string;
   hotspotId?: string;
   store: string;
