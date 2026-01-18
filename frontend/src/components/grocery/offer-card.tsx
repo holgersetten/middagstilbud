@@ -32,25 +32,24 @@ export function OfferCard({ offer, onClick, className }: OfferCardProps) {
   return (
     <Card
       className={cn(
-        "group cursor-pointer overflow-hidden rounded-xl border border-border bg-card transition-all duration-200 hover:border-foreground/20 hover:shadow-lg py-0 gap-0",
+        "cursor-pointer overflow-hidden rounded-xl border border-zinc-200 bg-white p-0 transition-shadow hover:shadow-md",
         className
       )}
       onClick={() => onClick?.(offer)}
     >
-      <div className="relative aspect-square overflow-hidden bg-muted/50">
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+      <div className="relative aspect-square overflow-hidden bg-zinc-50">
         <img
           src={offer.imageUrl || "/placeholder.svg"}
           alt={offer.title}
-          className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+          className="h-full w-full object-cover"
         />
         {discount && discount > 0 && (
-          <Badge className="absolute left-3 top-3 rounded-md bg-foreground text-background border-0 font-semibold text-xs px-2.5 py-1">
+          <Badge className="absolute left-2 top-2 rounded bg-red-500 text-white border-0 font-semibold text-xs px-2 py-0.5">
             -{discount}%
           </Badge>
         )}
         {offer.storeLogo && (
-          <div className="absolute right-2 top-2 h-8 w-8 overflow-hidden rounded-lg bg-background shadow-sm">
+          <div className="absolute right-2 top-2 h-7 w-7 overflow-hidden rounded-full bg-white shadow-sm">
             <img
               src={offer.storeLogo || "/placeholder.svg"}
               alt={offer.store}
@@ -59,35 +58,20 @@ export function OfferCard({ offer, onClick, className }: OfferCardProps) {
           </div>
         )}
       </div>
-      <CardContent className="p-4 space-y-3">
-        <div className="space-y-1">
-          <h3 className="font-semibold text-foreground line-clamp-2 leading-tight text-sm">
-            {offer.title}
-          </h3>
-          {offer.description && (
-            <p className="text-xs text-muted-foreground line-clamp-1">
-              {offer.description}
-            </p>
-          )}
-        </div>
-        <div className="flex items-baseline gap-2">
-          <span className="text-2xl font-bold text-foreground tracking-tight">
+      
+      <CardContent className="p-3 flex flex-col h-24">
+        <h3 className="font-medium text-zinc-900 line-clamp-2 text-sm leading-tight flex-1 capitalize">
+          {offer.title.toLowerCase()}
+        </h3>
+        
+        <div className="flex items-baseline gap-1.5 mt-auto">
+          <span className="text-lg font-bold text-zinc-900">
             {offer.price}
           </span>
-          <span className="text-sm text-foreground font-medium">{offer.currency}</span>
+          <span className="text-sm text-zinc-500">{offer.currency}</span>
           {offer.originalPrice && (
-            <span className="text-sm text-muted-foreground line-through ml-auto">
+            <span className="text-sm text-zinc-400 line-through ml-auto">
               {offer.originalPrice}
-            </span>
-          )}
-        </div>
-        <div className="flex items-center justify-between pt-1 border-t border-border/50">
-          <span className="text-xs text-muted-foreground font-medium">
-            {offer.store}
-          </span>
-          {offer.validUntil && (
-            <span className="text-xs text-muted-foreground">
-              {offer.validUntil}
             </span>
           )}
         </div>

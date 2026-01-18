@@ -26,11 +26,24 @@ function App() {
   const [isAdminAuthenticated, setIsAdminAuthenticated] = useState(false);
   const [adminPassword, setAdminPassword] = useState('');
   const [showAllCategories, setShowAllCategories] = useState(false);
+  const [showRecommendations, setShowRecommendations] = useState(true);
 
   useEffect(() => {
     fetchOffers();
     fetchCategories();
   }, []);
+
+  // Finn de beste tilbudene basert på rabatt-prosent
+  const getTopOffers = () => {
+    return offers
+      .filter(offer => offer.originalPrice && offer.price)
+      .map(offer => ({
+        ...offer,
+        discountPercent: Math.round(((offer.originalPrice! - offer.price) / offer.originalPrice!) * 100)
+      }))
+      .sort((a, b) => b.discountPercent - a.discountPercent)
+      .slice(0, 10);
+  };
 
   const fetchOffers = async () => {
     try {
@@ -71,6 +84,7 @@ function App() {
   });
 
   const handleMainCategoryChange = (category: string) => {
+    setShowRecommendations(false);
     if (selectedMainCategory === category) {
       // Toggle off hvis samme kategori klikkes
       setSelectedMainCategory('');
@@ -296,6 +310,29 @@ function App() {
           <aside className="w-64 flex-shrink-0">
             <Card className="sticky top-24">
               <CardContent className="p-4 max-h-[calc(100vh-7rem)] overflow-y-auto scrollbar-hide">
+                {/* Anbefalinger */}
+                <div className="mb-4">
+                  <h3 className="text-sm font-semibold text-foreground mb-3">Anbefalinger</h3>
+                  <button
+                    onClick={() => {
+                      setShowRecommendations(true);
+                      setSelectedMainCategory('');
+                      setSelectedSubCategory('all');
+                      setSearchQuery('');
+                    }}
+                    className={`w-full text-left px-3 py-2 text-sm rounded-md transition-all duration-200 cursor-pointer ${
+                      showRecommendations
+                        ? 'bg-foreground text-background font-medium shadow-sm'
+                        : 'text-foreground hover:bg-muted hover:translate-x-0.5'
+                    }`}
+                  >
+                    De beste tilbudene
+                  </button>
+                </div>
+
+                <Separator className="my-4" />
+
+                {/* Kategorier */}
                 <div>
                   <h3 className="text-sm font-semibold text-foreground mb-3">Kategorier</h3>
                   <div className="space-y-1">
@@ -354,16 +391,16 @@ function App() {
           {/* Main Content */}
           <main className="flex-1 min-w-0">
             {/* Breadcrumbs */}
-            {selectedMainCategory && (
+            {(selectedMainCategory || showRecommendations) && (
               <Breadcrumb className="mb-4">
                 <BreadcrumbList>
                   <BreadcrumbItem>
                     <BreadcrumbPage className="flex items-center gap-1">
                       <Home className="h-3.5 w-3.5" />
-                      {selectedMainCategory}
+                      {showRecommendations ? 'Anbefalinger' : selectedMainCategory}
                     </BreadcrumbPage>
                   </BreadcrumbItem>
-                  {selectedSubCategory !== 'all' && (
+                  {selectedSubCategory !== 'all' && !showRecommendations && (
                     <>
                       <BreadcrumbSeparator>
                         <ChevronRight className="h-4 w-4" />
@@ -407,7 +444,22 @@ function App() {
             <Separator className="my-6" />
 
             {/* Tilbudsgrid */}
-            {!selectedMainCategory ? (
+            {showRecommendations ? (
+              <OfferGrid 
+                offers={getTopOffers().map(offer => ({
+                  id: offer.offerId || offer.productKey || '',
+                  title: offer.title,
+                  price: offer.price,
+                  originalPrice: offer.originalPrice,
+                  currency: offer.currency || 'kr',
+                  imageUrl: offer.imageUrl || '/placeholder.svg',
+                  store: offer.store,
+                  storeLogo: offer.storeLogo,
+                  validUntil: offer.validTo,
+                  description: offer.description
+                }))} 
+              />
+            ) : !selectedMainCategory ? (
               <div className="flex flex-col items-center justify-center py-16 text-center">
                 <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-lg bg-muted">
                   <Search className="h-8 w-8 text-muted-foreground" />
