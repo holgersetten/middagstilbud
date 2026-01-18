@@ -16,6 +16,7 @@ export interface Offer {
   storeLogo?: string
   category?: string
   validUntil?: string
+  quantity?: string
 }
 
 interface OfferCardProps {
@@ -37,7 +38,7 @@ export function OfferCard({ offer, onClick, className }: OfferCardProps) {
       )}
       onClick={() => onClick?.(offer)}
     >
-      <div className="relative aspect-square overflow-hidden bg-zinc-50">
+      <div className="relative aspect-[4/3] overflow-hidden bg-zinc-50">
         <img
           src={offer.imageUrl || "/placeholder.svg"}
           alt={offer.title}
@@ -59,19 +60,28 @@ export function OfferCard({ offer, onClick, className }: OfferCardProps) {
         )}
       </div>
       
-      <CardContent className="p-3 flex flex-col h-24">
+      <CardContent className="p-3 flex flex-col h-28">
         <h3 className="font-medium text-zinc-900 line-clamp-2 text-sm leading-tight flex-1 capitalize">
           {offer.title.toLowerCase()}
         </h3>
         
-        <div className="flex items-baseline gap-1.5 mt-auto">
-          <span className="text-lg font-bold text-zinc-900">
-            {offer.price}
-          </span>
-          <span className="text-sm text-zinc-500">{offer.currency}</span>
-          {offer.originalPrice && (
-            <span className="text-sm text-zinc-400 line-through ml-auto">
-              {offer.originalPrice}
+        <div className="flex items-end justify-between mt-auto">
+          <div className="flex flex-col">
+            {offer.originalPrice && (
+              <span className="text-xs text-zinc-400 line-through leading-tight">
+                {offer.originalPrice} {offer.currency === 'NOK' ? 'kr' : offer.currency}
+              </span>
+            )}
+            <div className="flex items-baseline gap-0.5">
+              <span className="text-lg font-bold text-zinc-900">
+                {offer.price}
+              </span>
+              <span className="text-sm text-zinc-500">{offer.currency === 'NOK' ? 'kr' : offer.currency}</span>
+            </div>
+          </div>
+          {offer.quantity && (
+            <span className="text-xs text-zinc-500">
+              {offer.quantity}
             </span>
           )}
         </div>

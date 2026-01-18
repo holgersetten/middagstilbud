@@ -545,7 +545,8 @@ function App() {
                   store: offer.store,
                   storeLogo: offer.storeLogo,
                   validUntil: offer.validTo,
-                  description: offer.description
+                  description: offer.description,
+                  quantity: offer.quantity
                 }))} 
               />
             ) : searchQuery || selectedMainCategory ? (
@@ -560,7 +561,8 @@ function App() {
                   store: offer.store,
                   storeLogo: offer.storeLogo,
                   validUntil: offer.validTo,
-                  description: offer.description
+                  description: offer.description,
+                  quantity: offer.quantity
                 }))} 
               />
             ) : (
