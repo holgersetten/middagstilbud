@@ -17,13 +17,13 @@ app.use(express.urlencoded({ extended: true }));
 // Serve butikklogoer
 app.use('/store_logos', express.static(path.join(__dirname, '../../persistence/src/resources/img/store_logos')));
 
-// Logging
-app.use((req: Request, _res: Response, next: NextFunction) => {
-    if (!req.path.startsWith('/images') && !req.path.startsWith('/favicon')) {
-        console.log(`${new Date().toISOString()} - ${req.method} ${req.path}`);
-    }
-    next();
-});
+// Logging (disabled for cleaner output)
+// app.use((req: Request, _res: Response, next: NextFunction) => {
+//     if (!req.path.startsWith('/images') && !req.path.startsWith('/favicon')) {
+//         console.log(`${new Date().toISOString()} - ${req.method} ${req.path}`);
+//     }
+//     next();
+// });
 
 // Root endpoint
 app.get('/', (_req: Request, res: Response) => {

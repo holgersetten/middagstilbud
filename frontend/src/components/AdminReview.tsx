@@ -8,7 +8,8 @@ function AdminReview() {
   const [categories, setCategories] = useState<CategoryHierarchy>({});
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const [saving, setSaving] = useState<string | null>(null); // productKey being saved
+  const [saving, setSaving] = useState<string | null>(null);
+  const [imageCache, setImageCache] = useState<Map<string, string>>(new Map());
 
   useEffect(() => {
     loadData();
@@ -26,12 +27,37 @@ function AdminReview() {
       
       setOffers(reviewData.offers || []);
       setCategories(categoriesData.categories);
+
+      // Fetch images for offers without imageUrl
+      const offersWithoutImages = reviewData.offers?.filter(o => !o.imageUrl && o.hotspotId) || [];
+      if (offersWithoutImages.length > 0) {
+        fetchMissingImages(offersWithoutImages);
+      }
     } catch (err) {
       setError('Kunne ikke hente data. Er backend-serveren kjørende?');
       console.error('Error loading admin data:', err);
     } finally {
       setLoading(false);
     }
+  };
+
+  const fetchMissingImages = async (offersWithoutImages: Offer[]) => {
+    const newCache = new Map(imageCache);
+    
+    for (const offer of offersWithoutImages) {
+      if (!offer.hotspotId) continue;
+      
+      try {
+        const imageData = await offersApi.getOfferImage(offer.hotspotId);
+        if (imageData.bestImage) {
+          newCache.set(offer.hotspotId, imageData.bestImage);
+        }
+      } catch (err) {
+        console.error(`Failed to fetch image for ${offer.hotspotId}:`, err);
+      }
+    }
+    
+    setImageCache(newCache);
   };
 
   const handleCategorize = async (
@@ -106,6 +132,7 @@ function AdminReview() {
               categories={categories}
               onCategorize={handleCategorize}
               saving={saving === offer.productKey}
+              imageCache={imageCache}
             />
           ))}
         </div>
@@ -119,12 +146,14 @@ interface OfferReviewCardProps {
   categories: CategoryHierarchy;
   onCategorize: (offer: Offer, main: string, sub: string, key: string) => void;
   saving: boolean;
+  imageCache: Map<string, string>;
 }
 
-function OfferReviewCard({ offer, categories, onCategorize, saving }: OfferReviewCardProps) {
-  const [mainCategory, setMainCategory] = useState('');
-  const [subCategory, setSubCategory] = useState('');
-  const [ingredientKey, setIngredientKey] = useState('');
+function OfferReviewCard({ offer, categories, onCategorize, saving, imageCache }: OfferReviewCardProps) {
+  // Pre-fyll med AI-forslag hvis de finnes
+  const [mainCategory, setMainCategory] = useState(offer.mainCategory || '');
+  const [subCategory, setSubCategory] = useState(offer.subCategory || '');
+  const [ingredientKey, setIngredientKey] = useState(offer.ingredientKey || '');
 
   const subCategories = mainCategory ? categories[mainCategory] || [] : [];
 
@@ -142,8 +171,12 @@ function OfferReviewCard({ offer, categories, onCategorize, saving }: OfferRevie
   return (
     <div className="offer-review-card">
       <div className="offer-info">
-        {offer.imageUrl && (
-          <img src={offer.imageUrl} alt={offer.title} className="offer-image" />
+        {(offer.imageUrl || (offer.hotspotId && imageCache.get(offer.hotspotId))) && (
+          <img 
+            src={offer.imageUrl || imageCache.get(offer.hotspotId!)} 
+            alt={offer.title} 
+            className="offer-image" 
+          />
         )}
         <div className="offer-details">
           <h3>{offer.title}</h3>

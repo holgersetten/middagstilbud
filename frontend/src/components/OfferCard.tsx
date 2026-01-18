@@ -2,15 +2,18 @@ import type { Offer } from '../types/offer';
 
 interface OfferCardProps {
   offer: Offer;
+  imageCache: Map<string, string>;
 }
 
-function OfferCard({ offer }: OfferCardProps) {
+function OfferCard({ offer, imageCache }: OfferCardProps) {
+  const imageUrl = offer.imageUrl || (offer.hotspotId ? imageCache.get(offer.hotspotId) : null);
+
   return (
     <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300 h-full flex flex-col">
-      {offer.imageUrl && (
+      {imageUrl && (
         <div className="h-48 bg-gray-100 overflow-hidden">
           <img 
-            src={offer.imageUrl} 
+            src={imageUrl} 
             alt={offer.title} 
             className="w-full h-full object-cover"
           />

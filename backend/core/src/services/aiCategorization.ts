@@ -1,7 +1,8 @@
 import OpenAI from 'openai';
 import { MainCategory, SubCategory, CATEGORY_HIERARCHY, MAIN_CATEGORIES } from '../config/categories';
 
-const openai = process.env.OPENAI_API_KEY 
+// Sjekk både OPENAI_API_KEY og SKIP_AI flag
+const openai = (process.env.OPENAI_API_KEY && process.env.SKIP_AI !== 'true')
     ? new OpenAI({ apiKey: process.env.OPENAI_API_KEY })
     : null;
 
@@ -102,15 +103,45 @@ Returner JSON med format:
 }
 
 REGLER:
-- mainCategory: Velg fra hovedkategoriene (f.eks. "Frukt og grønt")
-- subCategory: Velg fra underkategorier under mainCategory
-- ingredientKey: Normalisert navn på ingrediens (lowercase, generisk, f.eks. "agurk", "tomat", "melk")
-  - Bruk "produkt" hvis det ikke er en ingrediens (f.eks. bleier, rengjøringsmiddel)
-- confidence: 
-  - 1.0: Helt sikker
-  - 0.9: Veldig sikker (minimum for caching)
-  - 0.7: Ganske sikker
-  - 0.5: Usikker
+STEG 1 - Velg mainCategory:
+- Les produkttittel og vurder ALLE hovedkategorier
+- Velg den mest passende hovedkategorien basert på produktets primære formål
+- Eksempel: "Extra tyggegummi" → "Snacks & godteri" (riktig hovedkategori)
+
+STEG 2 - Velg subCategory:
+- Nå som mainCategory er valgt, les gjennom ALLE subkategorier under denne
+- Velg den MEST SPESIFIKKE subkategorien som passer
+- IKKE velg første beste - sjekk om det finnes en mer presis!
+- Viktige eksempler for norsk kontekst:
+  * "Extra tyggegummi" → "Snacks, godteri & sjokolade > Tyggegummi" (IKKE "Godteri")
+  * "Gilde spekeskinke" → "Pålegg & frokost > Kjøttpålegg
+  * "Bacon" → "Pålegg & frokost > Bacon" (egen kategori!)
+  * "Makrell i tomat" → "Pålegg & frokost > Fiskepålegg" (IKKE "Fisk & skalldyr > Fisk" - det spises på brød!)
+  * "Tunfisk i olje/vann" → "Pålegg & frokost > Fiskepålegg" (hermetisk fisk som spises på brød = pålegg)
+  * "Mills majones" → "Tilbehør > Sauser og dressing"
+  * "Tine kremgo" → "Ost > Smøreost"
+  * "Pesto" → "Tilbehør > Sauser og dressing"
+  * "Rislunsj" → "Meieri & egg > Yoghurt" (norsk frokostprodukt med yoghurt)
+  * "Bygglunsj" → "Meieri & egg > Yoghurt" (norsk frokostprodukt med yoghurt)
+  * "Potetmos" → "Tilbehør > Stuinger" (IKKE "Middag > Ferdigretter")
+  * "Brød" → "Brød > Brød" (hovedkategori er nå "Brød", ikke "Bakeri")
+- Bruk "Annet" KUN hvis produktet virkelig ikke passer i noen av de spesifikke subkategoriene
+
+STEG 3 - Velg ingredientKey:
+- 1-2 nært beslektede søkeord som beskriver hovedingrediensen eller produkttypen
+- ALDRI bruk "produkt" - finn alltid et spesifikt navn!
+- Eksempler med ETT ord: "tyggegummi", "tomat", "melk", "leverpostei", "salami", "proteinbar"
+- Eksempler med TO ord når VELDIG nært beslektet: "sjokolademelk", "tunfisk thai", "spekeskinke"
+- For sammensatte: Bruk hovedingrediensen ("torskegryte" → "torsk")
+- For merkevarer: Generaliser ("Nugatti" → "sjokoladepålegg", "Extra" → "tyggegummi")
+- VIKTIG: Maksimalt 1-2 ord, skal reflektere hva tingen er, også tillat med ord som er VELDIG nært beslektet - IKKE liste mange ingredienser med komma!
+
+STEG 4 - Sett confidence:
+- 0.95: Helt sikker (produktet passer perfekt i kategorien)
+- 0.90: Veldig sikker (produktet passer godt)
+- 0.85: Ganske sikker (noe usikkerhet)
+- VIKTIG: Vær generøs med 0.95! Hvis produktet klart tilhører en kategori, bruk 0.95
+- De fleste vanlige matvarer skal ha minst 0.90 confidence
 
 Returner KUN JSON object, ingen annen tekst.`;
 
@@ -125,7 +156,7 @@ Returner KUN JSON object, ingen annen tekst.`;
             messages: [
                 {
                     role: 'system',
-                    content: 'Du er en ekspert på kategorisering av norske matvarer. Returner alltid valid JSON.'
+                    content: 'Du er en ekspert på kategorisering av norske matvarer. Returner alltid valid JSON. KRITISK: subCategory MÅ tilhøre mainCategory i kategoristrukturen! Les ALLE subkategorier nøye før du velger. Vanlige feil å unngå: Tyggegummi er egen kategori (ikke Godteri), Spekemat er under Pålegg & frokost (ikke Kjøtt), Bacon er egen kategori (ikke Kjøttpålegg). Velg alltid den mest spesifikke subkategorien. Vær generøs med høy confidence når kategorien er åpenbar. ALDRI bruk "produkt" som ingredientKey - finn alltid et spesifikt navn!'
                 },
                 {
                     role: 'user',

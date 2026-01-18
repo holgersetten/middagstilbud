@@ -1,17 +1,13 @@
 import path from 'path';
 import fileService from '../../../persistence/src/services/fileService';
 import config from '../../../rest/src/config';
-import { MainCategory, SubCategory, DEFAULT_MAIN_CATEGORY, DEFAULT_SUB_CATEGORY } from '../config/categories';
+import { MainCategory, SubCategory, DEFAULT_MAIN_CATEGORY, DEFAULT_SUB_CATEGORY, CATEGORY_HIERARCHY } from '../config/categories';
 import { buildProductKey, buildCategoryKey } from '../utils/productKey';
 import { matchCategoryByRules } from './categoryRules';
 import { batchCategorizeWithAI } from './aiCategorization';
-import { batchCategorizeWithAIMock } from './aiCategorizationMock';
-
-// Toggle mellom mock og real AI
-const USE_MOCK_AI = process.env.USE_MOCK_AI === 'true';
-const aiCategorize = USE_MOCK_AI ? batchCategorizeWithAIMock : batchCategorizeWithAI;
 
 type CategorySource = 'manual' | 'rule' | 'ai' | 'unknown';
+type CacheStatus = 'trusted' | 'pending';
 
 interface CategoryCacheEntry {
     mainCategory: MainCategory;
@@ -23,6 +19,7 @@ interface CategoryCacheEntry {
         sub: number;
         ingredientKey: number;
     };
+    cacheStatus: CacheStatus;
     timestamp?: string;
 }
 
@@ -47,12 +44,58 @@ class CategoryService {
         reason?: string;
     }> = {};
     private manualOverridesPath: string;
+    private ongoingCategorization: Promise<any> | null = null;
 
     constructor() {
         this.cacheFilePath = path.join(config.offersDir, '../category_cache.json');
         this.manualOverridesPath = path.join(config.offersDir, '../manual_overrides.json');
         this.loadCache();
         this.loadManualOverrides();
+        this.cleanupObsoletePendingEntries();
+    }
+    
+    // Rydder opp i gamle pending categoryKey entries når det finnes nyere trusted productKey entries
+    private cleanupObsoletePendingEntries(): void {
+        let cleanedCount = 0;
+        const keysToDelete: string[] = [];
+        
+        for (const key in this.cache) {
+            const entry = this.cache[key];
+            
+            // Hopp over hvis ikke pending
+            if (entry.cacheStatus !== 'pending') continue;
+            
+            // Sjekk om dette er en categoryKey (format: title|store)
+            const parts = key.split('|');
+            if (parts.length !== 2) continue;
+            
+            // Sjekk om det finnes noen trusted productKey entries som matcher denne categoryKey
+            // productKey format: title|size|pieces|store
+            const matchingTrustedKeys = Object.keys(this.cache).filter(k => {
+                const kParts = k.split('|');
+                if (kParts.length !== 4) return false;
+                
+                const titleMatches = kParts[0] === parts[0];
+                const storeMatches = kParts[3] === parts[1];
+                const isTrusted = this.cache[k].cacheStatus === 'trusted';
+                
+                return titleMatches && storeMatches && isTrusted;
+            });
+            
+            if (matchingTrustedKeys.length > 0) {
+                console.log(`🧹 Sletter obsolete pending entry "${key}" (finnes trusted version: ${matchingTrustedKeys[0]})`);
+                keysToDelete.push(key);
+                cleanedCount++;
+            }
+        }
+        
+        // Slett alle identifiserte keys
+        keysToDelete.forEach(key => delete this.cache[key]);
+        
+        if (cleanedCount > 0) {
+            this.saveCache();
+            console.log(`✅ Cleaned up ${cleanedCount} obsolete pending entries`);
+        }
     }
 
     private loadCache(): void {
@@ -91,7 +134,27 @@ class CategoryService {
     }
 
     getCategoryForProduct(productKey: string): CategoryCacheEntry | null {
-        return this.cache[productKey] || null;
+        const entry = this.cache[productKey];
+        if (!entry) return null;
+        
+        // Rekalkluler cacheStatus basert på gjeldende regler
+        // Dette sikrer at nye regler påvirker eksisterende cache-entries
+        const recalculatedStatus: CacheStatus = 
+            (entry.subCategory === 'Annet')
+                ? 'pending'
+                : (entry.confidence.main >= 0.90 && entry.confidence.sub >= 0.88 && entry.confidence.ingredientKey >= 0.90)
+                    ? 'trusted'
+                    : 'pending';
+        
+        // Debug logging for å se hva som skjer
+        if (recalculatedStatus !== entry.cacheStatus) {
+            console.log(`🔄 Rekalkulerer ${productKey}: ${entry.cacheStatus} → ${recalculatedStatus} (sub: ${entry.subCategory}, conf: ${entry.confidence.main}/${entry.confidence.sub}/${entry.confidence.ingredientKey})`);
+        }
+        
+        return {
+            ...entry,
+            cacheStatus: recalculatedStatus
+        };
     }
 
     setCategoryForProduct(
@@ -102,12 +165,30 @@ class CategoryService {
         source: CategorySource,
         confidence: { main: number; sub: number; ingredientKey: number }
     ): void {
+        // Valider at subCategory tilhører mainCategory
+        const validSubs = CATEGORY_HIERARCHY[mainCategory];
+        if (!validSubs.includes(subCategory as any)) {
+            console.warn(`⚠️ Ugyldig subCategory "${subCategory}" for "${mainCategory}", setter til "Annet"`);
+            subCategory = 'Annet' as SubCategory;
+            confidence.sub = 0.5; // Redusert confidence for reparert kategori
+        }
+
+        // Beregn cacheStatus basert på confidence-terskler
+        // Hvis subCategory er "Annet", sett alltid som pending
+        const cacheStatus: CacheStatus = 
+            (subCategory === 'Annet')
+                ? 'pending'
+                : (confidence.main >= 0.90 && confidence.sub >= 0.92 && confidence.ingredientKey >= 0.90)
+                    ? 'trusted'
+                    : 'pending';
+
         this.cache[productKey] = {
             mainCategory,
             subCategory,
             ingredientKey,
             source,
             confidence,
+            cacheStatus,
             timestamp: new Date().toISOString()
         };
         this.saveCache();
@@ -134,10 +215,10 @@ class CategoryService {
             };
         }
 
-        // 1. Prøv produktnøkkel (eksakt match)
+        // 1. Prøv produktnøkkel (eksakt match) - KUN TRUSTED
         const productKey = buildProductKey(offer);
         const productEntry = this.getCategoryForProduct(productKey);
-        if (productEntry) {
+        if (productEntry && productEntry.cacheStatus === 'trusted') {
             return {
                 mainCategory: productEntry.mainCategory,
                 subCategory: productEntry.subCategory,
@@ -145,9 +226,9 @@ class CategoryService {
             };
         }
 
-        // 2. Prøv kategorinøkkel (uten størrelse)
+        // 2. Prøv kategorinøkkel (uten størrelse) - KUN TRUSTED
         const categoryEntry = this.getCategoryForProduct(categoryKey);
-        if (categoryEntry) {
+        if (categoryEntry && categoryEntry.cacheStatus === 'trusted') {
             return {
                 mainCategory: categoryEntry.mainCategory,
                 subCategory: categoryEntry.subCategory,
@@ -182,7 +263,67 @@ class CategoryService {
         ingredientKey: string;
         categorySource: CategorySource;
         categoryConfidence: number;
+        cacheStatus?: CacheStatus;
     })[]> {
+        const requestId = Math.random().toString(36).substring(7);
+        console.log(`🆔 categorizeOffers kallrequestId=${requestId}, ${offers.length} offers`);
+        
+        // Hvis kategorisering pågår, vent og returner synkron kategorisering
+        if (this.ongoingCategorization) {
+            console.log(`⏸️ [${requestId}] AI-kategorisering pågår allerede, venter på ferdigstillelse...`);
+            await this.ongoingCategorization;
+            console.log(`✅ [${requestId}] Pågående kategorisering ferdig, returnerer cached resultater`);
+            
+            // Returner synkron kategorisering (bruker cache fra den pågående kategoriseringen)
+            return offers.map(offer => {
+                const productKey = buildProductKey(offer);
+                const categorization = this.categorizeOffer(offer);
+                const cacheEntry = this.getCategoryForProduct(productKey) || 
+                                  this.getCategoryForProduct(buildCategoryKey(offer));
+                
+                const avgConfidence = cacheEntry 
+                    ? (cacheEntry.confidence.main + cacheEntry.confidence.sub + cacheEntry.confidence.ingredientKey) / 3
+                    : 0;
+                
+                return {
+                    ...offer,
+                    productKey,
+                    ...categorization,
+                    categorySource: cacheEntry?.source || 'unknown' as CategorySource,
+                    categoryConfidence: avgConfidence,
+                    cacheStatus: cacheEntry?.cacheStatus
+                };
+            });
+        }
+
+        // Start ny kategorisering
+        this.ongoingCategorization = this.doCategorization(offers);
+        
+        try {
+            const result = await this.ongoingCategorization;
+            return result;
+        } finally {
+            this.ongoingCategorization = null;
+        }
+    }
+
+    private async doCategorization<T extends OfferLike>(offers: T[]): Promise<(T & { 
+        productKey: string; 
+        mainCategory: MainCategory; 
+        subCategory: SubCategory; 
+        ingredientKey: string;
+        categorySource: CategorySource;
+        categoryConfidence: number;
+        cacheStatus?: CacheStatus;
+    })[]> {
+        // KRITISK: Sjekk SKIP_AI før noe annet!
+        console.log(`🔍 DEBUG: SKIP_AI = "${process.env.SKIP_AI}"`);
+        console.log(`🔍 DEBUG: OPENAI_API_KEY exists = ${!!process.env.OPENAI_API_KEY}`);
+        
+        if (process.env.SKIP_AI === 'true') {
+            console.log(`🛑 SKIP_AI er TRUE - hopper over ALL AI-kategorisering`);
+        }
+        
         // Steg 1: Kategoriser synkront (cache + rules)
         const results = offers.map(offer => {
             const productKey = buildProductKey(offer);
@@ -200,7 +341,8 @@ class CategoryService {
                 productKey,
                 ...categorization,
                 categorySource: cacheEntry?.source || 'unknown' as CategorySource,
-                categoryConfidence: avgConfidence
+                categoryConfidence: avgConfidence,
+                cacheStatus: cacheEntry?.cacheStatus
             };
         });
 
@@ -213,37 +355,54 @@ class CategoryService {
                 store: r.store || undefined
             }));
 
-        if (uncategorized.length > 0) {
-            console.log(`🤖 Sender ${uncategorized.length} produkter til AI${USE_MOCK_AI ? ' (MOCK MODE)' : ''}...`);
+        // 🧪 TEST MODE: Begrens til 50 produkter per kjøring
+        const testLimit = 50;
+        const uncategorizedToProcess = uncategorized.slice(0, testLimit);
+        
+        if (uncategorized.length > testLimit) {
+            console.log(`🧪 TEST MODE: Kategoriserer ${uncategorizedToProcess.length} av ${uncategorized.length} ukategoriserte produkter`);
+        }
+
+        // Sjekk om AI er tilgjengelig (dynamisk ved runtime)
+        // Trim SKIP_AI verdien for å håndtere mellomrom fra batch-filer
+        const skipAI = (process.env.SKIP_AI || '').trim().toLowerCase() === 'true';
+        const aiEnabled = !skipAI && !!process.env.OPENAI_API_KEY;
+
+        if (uncategorizedToProcess.length > 0 && !aiEnabled) {
+            console.log(`⚠️ ${uncategorizedToProcess.length} produkter trenger AI-kategorisering, men AI er deaktivert (SKIP_AI="${process.env.SKIP_AI}")`);
+            console.log(`✅ Returnerer ${results.length} offers uten AI-kategorisering`);
+            return results;
+        }
+
+        if (uncategorizedToProcess.length > 0 && aiEnabled) {
+            console.log(`🤖 Sender ${uncategorizedToProcess.length} produkter til AI...`);
             
             // Batch AI-kategorisering
-            const aiResults = await aiCategorize(uncategorized);
+            const aiResults = await batchCategorizeWithAI(uncategorizedToProcess);
             
             // Oppdater resultater og cache
-            let cached = 0;
+            let trusted = 0, pending = 0;
+            const cachedKeys = new Set<string>(); // Spor unike categoryKeys
+            
             for (const result of results) {
                 if (result.mainCategory === DEFAULT_MAIN_CATEGORY && result.ingredientKey === 'produkt') {
                     const aiResult = aiResults.get(result.productKey);
                     if (aiResult) {
-                        // Sjekk om alle confidence-verdier er høye nok
-                        const minConfidence = 0.9;
-                        const shouldCache = aiResult.confidence.main >= minConfidence &&
-                                          aiResult.confidence.sub >= minConfidence &&
-                                          aiResult.confidence.ingredientKey >= minConfidence;
-                        
                         // Beregn gjennomsnittlig confidence
                         const avgConfidence = (aiResult.confidence.main + aiResult.confidence.sub + aiResult.confidence.ingredientKey) / 3;
                         
-                        // Oppdater uansett (vises til bruker)
+                        // Oppdater offer med AI-resultat
                         result.mainCategory = aiResult.mainCategory;
                         result.subCategory = aiResult.subCategory;
                         result.ingredientKey = aiResult.ingredientKey;
                         result.categorySource = 'ai';
                         result.categoryConfidence = avgConfidence;
                         
-                        // Cache kun hvis høy nok confidence
-                        if (shouldCache) {
-                            const categoryKey = buildCategoryKey(result);
+                        // Cache med validering og cacheStatus
+                        const categoryKey = buildCategoryKey(result);
+                        
+                        // Kun cache hvis vi ikke allerede har cached denne categoryKey i denne runden
+                        if (!cachedKeys.has(categoryKey)) {
                             this.setCategoryForProduct(
                                 categoryKey,
                                 aiResult.mainCategory,
@@ -252,13 +411,21 @@ class CategoryService {
                                 'ai',
                                 aiResult.confidence
                             );
-                            cached++;
+                            cachedKeys.add(categoryKey);
+                        }
+                        
+                        // Tell trusted vs pending
+                        const cacheEntry = this.getCategoryForProduct(categoryKey);
+                        if (cacheEntry?.cacheStatus === 'trusted') {
+                            trusted++;
+                        } else {
+                            pending++;
                         }
                     }
                 }
             }
             
-            console.log(`✅ AI-kategorisering: ${aiResults.size} resultater, ${cached} cached (confidence ≥ 0.9)`);
+            console.log(`✅ AI-kategorisering: ${trusted} trusted, ${pending} pending (${cachedKeys.size} unike oppføringer lagret i cache)`);
         }
 
         return results;
@@ -270,6 +437,7 @@ class CategoryService {
         subCategory: SubCategory,
         ingredientKey: string
     ): boolean {
+        // Manuell kategorisering får alltid max confidence og trusted status
         this.setCategoryForProduct(
             productKey,
             mainCategory,
@@ -278,7 +446,30 @@ class CategoryService {
             'manual',
             { main: 1.0, sub: 1.0, ingredientKey: 1.0 }
         );
+        
+        // Fjern gamle pending entries med categoryKey (uten size/pieces)
+        // Dette unngår duplikater når productKey inkluderer size/pieces
+        const categoryKey = this.extractCategoryKey(productKey);
+        if (categoryKey !== productKey && this.cache[categoryKey]?.cacheStatus === 'pending') {
+            console.log(`🧹 Sletter gammel pending entry: ${categoryKey}`);
+            delete this.cache[categoryKey];
+            this.saveCache();
+        }
+        
         return true;
+    }
+    
+    // Hjelper-metode for å ekstrahere categoryKey fra productKey
+    // productKey format: "title|size|pieces|store"
+    // categoryKey format: "title|store"
+    private extractCategoryKey(productKey: string): string {
+        const parts = productKey.split('|');
+        if (parts.length === 4) {
+            // Format: title|size|pieces|store → title|store
+            return `${parts[0]}|${parts[3]}`;
+        }
+        // Allerede i categoryKey format eller ukjent format
+        return productKey;
     }
 }
 

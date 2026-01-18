@@ -29,6 +29,7 @@ interface Offer {
     ingredientKey?: string;
     categorySource?: 'manual' | 'rule' | 'ai' | 'unknown';
     categoryConfidence?: number;
+    cacheStatus?: 'trusted' | 'pending';
     productKey?: string;
 }
 
@@ -126,14 +127,7 @@ class OfferService {
             }
         }
 
-        // 🧪 TEST MODE: Begrens til 50 offers for rask testing
-        const testLimit = 50;
-        const offersToProcess = allOffers.slice(0, testLimit);
-        console.log(`🧪 TEST MODE: Returnerer ${offersToProcess.length} av ${allOffers.length} offers (UTEN AI-kategorisering)`);
-
-        // AI-kategorisering er midlertidig deaktivert
-        // return await categoryService.categorizeOffers(offersToProcess);
-        return offersToProcess;
+        return await categoryService.categorizeOffers(allOffers);
     }
 
     async getOffersByStore(storeName: string) {
@@ -152,18 +146,11 @@ class OfferService {
     async getOffersNeedingReview() {
         const allOffers = await this.getAllOffers();
         
-        // Filtrer produkter som:
-        // 1. Har categorySource: 'unknown' eller 'ai'
-        // 2. Har lav confidence (< 0.9)
-        // 3. Har default kategori (Frukt og grønt + Annet + produkt)
-        return allOffers.filter(offer => {
-            const needsReview = 
-                (offer.categorySource === 'unknown' || offer.categorySource === 'ai') &&
-                (offer.mainCategory === 'Frukt og grønt' && 
-                 offer.subCategory === 'Annet' && 
-                 offer.ingredientKey === 'produkt');
-            
-            return needsReview;
+        // Filtrer KUN produkter med cacheStatus: 'pending'
+        // Dette er produkter som HAR vært gjennom AI men fikk lav confidence eller subCategory='Annet'
+        // Vi ignorerer 'unknown' produkter (de som aldri har vært kategorisert)
+        return allOffers.filter((offer: Offer) => {
+            return offer.cacheStatus === 'pending';
         });
     }
 }

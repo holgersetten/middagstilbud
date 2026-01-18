@@ -1,0 +1,4754 @@
+{
+  "fana kjøtt løkrull|bunnpris": {
+    "mainCategory": "Kjøtt",
+    "subCategory": "Påleggskjøtt",
+    "ingredientKey": "løkrull",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.774Z"
+  },
+  "fana kjøtt røkt bogskinke|bunnpris": {
+    "mainCategory": "Kjøtt",
+    "subCategory": "Påleggskjøtt",
+    "ingredientKey": "røkt bogskinke",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.776Z"
+  },
+  "q frokostyoghurt jordbær og vanilje|bunnpris": {
+    "mainCategory": "Meieri og egg",
+    "subCategory": "Yoghurt",
+    "ingredientKey": "yoghurt",
+    "source": "ai",
+    "confidence": {
+      "main": 0.97,
+      "sub": 0.95,
+      "ingredientKey": 0.96
+    },
+    "timestamp": "2026-01-17T21:23:21.820Z"
+  },
+  "melange margarin soft flora original og lett|bunnpris": {
+    "mainCategory": "Meieri og egg",
+    "subCategory": "Smør og margarin",
+    "ingredientKey": "margarin",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.777Z"
+  },
+  "skyr mini jordbær bringebær og frukt bær|bunnpris": {
+    "mainCategory": "Meieri og egg",
+    "subCategory": "Yoghurt",
+    "ingredientKey": "skyr",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.778Z"
+  },
+  "tine sjokomelk|bunnpris": {
+    "mainCategory": "Drikke",
+    "subCategory": "Sjokolademelk",
+    "ingredientKey": "sjokolademelk",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.778Z"
+  },
+  "makrellfilet i tomat|bunnpris": {
+    "mainCategory": "Fisk og sjømat",
+    "subCategory": "Fisk",
+    "ingredientKey": "makrellfilet",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.779Z"
+  },
+  "skyr luftig bringebær|bunnpris": {
+    "mainCategory": "Meieri og egg",
+    "subCategory": "Yoghurt",
+    "ingredientKey": "skyr",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.779Z"
+  },
+  "sjokolademelk|bunnpris": {
+    "mainCategory": "Drikke",
+    "subCategory": "Sjokolademelk",
+    "ingredientKey": "sjokolademelk",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.779Z"
+  },
+  "go morgen yoghurt|bunnpris": {
+    "mainCategory": "Meieri og egg",
+    "subCategory": "Yoghurt",
+    "ingredientKey": "yoghurt",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.782Z"
+  },
+  "tunfisk olivenoje pepper|bunnpris": {
+    "mainCategory": "Fisk og sjømat",
+    "subCategory": "Fisk",
+    "ingredientKey": "tunfisk",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.781Z"
+  },
+  "prior kyllingpostei|bunnpris": {
+    "mainCategory": "Kjøtt",
+    "subCategory": "Påleggskjøtt",
+    "ingredientKey": "kyllingpostei",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.781Z"
+  },
+  "q frokostyoghurt jordbær og vanije|bunnpris": {
+    "mainCategory": "Meieri og egg",
+    "subCategory": "Yoghurt",
+    "ingredientKey": "frokostyoghurt",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.782Z"
+  },
+  "gilde salami familiens|bunnpris": {
+    "mainCategory": "Kjøtt",
+    "subCategory": "Påleggskjøtt",
+    "ingredientKey": "salami",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.783Z"
+  },
+  "svolværpostei|bunnpris": {
+    "mainCategory": "Kjøtt",
+    "subCategory": "Påleggskjøtt",
+    "ingredientKey": "svolværpostei",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.783Z"
+  },
+  "king oscar tunfisk thai chili|bunnpris": {
+    "mainCategory": "Fisk og sjømat",
+    "subCategory": "Fisk",
+    "ingredientKey": "tunfisk",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.784Z"
+  },
+  "bjørnisbrød|bunnpris": {
+    "mainCategory": "Bakeri og bakst",
+    "subCategory": "Brød",
+    "ingredientKey": "brød",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.784Z"
+  },
+  "mandel soyadrikk og drikkeyoghurt jordbær|bunnpris": {
+    "mainCategory": "Meieri og egg",
+    "subCategory": "Yoghurt",
+    "ingredientKey": "drikkeyoghurt",
+    "source": "ai",
+    "confidence": {
+      "main": 0.9,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.784Z"
+  },
+  "alle syrnet biola|bunnpris": {
+    "mainCategory": "Meieri og egg",
+    "subCategory": "Yoghurt",
+    "ingredientKey": "yoghurt",
+    "source": "ai",
+    "confidence": {
+      "main": 0.9,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.785Z"
+  },
+  "mozzarella ostestenger|bunnpris": {
+    "mainCategory": "Meieri og egg",
+    "subCategory": "Ost",
+    "ingredientKey": "mozzarella",
+    "source": "ai",
+    "confidence": {
+      "main": 0.9,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.785Z"
+  },
+  "kavli tubeost skinke bacon|bunnpris": {
+    "mainCategory": "Pålegg",
+    "subCategory": "Tubeost",
+    "ingredientKey": "tubeost",
+    "source": "ai",
+    "confidence": {
+      "main": 0.9,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.785Z"
+  },
+  "grilstad gullsalami fersk salami og spekeskinke stranda|bunnpris": {
+    "mainCategory": "Kjøtt",
+    "subCategory": "Påleggskjøtt",
+    "ingredientKey": "salami",
+    "source": "ai",
+    "confidence": {
+      "main": 0.9,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.786Z"
+  },
+  "gilde salami siliana skivet|bunnpris": {
+    "mainCategory": "Kjøtt",
+    "subCategory": "Påleggskjøtt",
+    "ingredientKey": "salami",
+    "source": "ai",
+    "confidence": {
+      "main": 0.9,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.786Z"
+  },
+  "jarlsberg og norvegia skivet|bunnpris": {
+    "mainCategory": "Meieri og egg",
+    "subCategory": "Ost",
+    "ingredientKey": "jarlsberg",
+    "source": "ai",
+    "confidence": {
+      "main": 0.9,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.786Z"
+  },
+  "myk og rund havre fullkorn og julius|bunnpris": {
+    "mainCategory": "Frokost og korn",
+    "subCategory": "Havregryn",
+    "ingredientKey": "havregryn",
+    "source": "ai",
+    "confidence": {
+      "main": 0.9,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.787Z"
+  },
+  "potetmos gressløk melk|bunnpris": {
+    "mainCategory": "Middag og ferdigmat",
+    "subCategory": "Potetmos og tilbehør",
+    "ingredientKey": "potetmos",
+    "source": "ai",
+    "confidence": {
+      "main": 0.9,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.787Z"
+  },
+  "mr lee nudler kjøtt og kyllingsmak|bunnpris": {
+    "mainCategory": "Middag og ferdigmat",
+    "subCategory": "Ferdigretter",
+    "ingredientKey": "nudler",
+    "source": "ai",
+    "confidence": {
+      "main": 0.9,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.788Z"
+  },
+  "utvalgte toro posesupper rett i koppen|bunnpris": {
+    "mainCategory": "Middag og ferdigmat",
+    "subCategory": "Supper",
+    "ingredientKey": "suppe",
+    "source": "ai",
+    "confidence": {
+      "main": 0.9,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.788Z"
+  },
+  "tomater hakkede chili hvitløk urter naturell og passata|bunnpris": {
+    "mainCategory": "Frukt og grønt",
+    "subCategory": "Annet",
+    "ingredientKey": "tomat",
+    "source": "ai",
+    "confidence": {
+      "main": 0.9,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.794Z"
+  },
+  "pasta snack pot bolognese og carbonara|bunnpris": {
+    "mainCategory": "Middag og ferdigmat",
+    "subCategory": "Ferdigretter",
+    "ingredientKey": "pasta",
+    "source": "ai",
+    "confidence": {
+      "main": 0.9,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.789Z"
+  },
+  "pasta linguine og penne|bunnpris": {
+    "mainCategory": "Pasta og ris",
+    "subCategory": "Spaghetti",
+    "ingredientKey": "pasta",
+    "source": "ai",
+    "confidence": {
+      "main": 0.9,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.789Z"
+  },
+  "dolmio original garlic alforno og lasagne creamy|bunnpris": {
+    "mainCategory": "Middag og ferdigmat",
+    "subCategory": "Ferdigretter",
+    "ingredientKey": "lasagne",
+    "source": "ai",
+    "confidence": {
+      "main": 0.9,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.790Z"
+  },
+  "peppes snackpizza pepperoni|bunnpris": {
+    "mainCategory": "Middag og ferdigmat",
+    "subCategory": "Pizza",
+    "ingredientKey": "pizza",
+    "source": "ai",
+    "confidence": {
+      "main": 0.9,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.790Z"
+  },
+  "pesto genovese|bunnpris": {
+    "mainCategory": "Middag og ferdigmat",
+    "subCategory": "Sauser og stuinger",
+    "ingredientKey": "pesto",
+    "source": "ai",
+    "confidence": {
+      "main": 0.9,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.790Z"
+  },
+  "lasagne ovnsrett toro|bunnpris": {
+    "mainCategory": "Middag og ferdigmat",
+    "subCategory": "Ferdigretter",
+    "ingredientKey": "lasagne",
+    "source": "ai",
+    "confidence": {
+      "main": 0.9,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.791Z"
+  },
+  "bacon original og tørrsaltet|bunnpris": {
+    "mainCategory": "Kjøtt",
+    "subCategory": "Påleggskjøtt",
+    "ingredientKey": "bacon",
+    "source": "ai",
+    "confidence": {
+      "main": 0.9,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.791Z"
+  },
+  "løkdog ostedog og hot chilidog|bunnpris": {
+    "mainCategory": "Kjøtt",
+    "subCategory": "Deig og farse",
+    "ingredientKey": "hotdog",
+    "source": "ai",
+    "confidence": {
+      "main": 0.9,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.792Z"
+  },
+  "prior grillpølser|bunnpris": {
+    "mainCategory": "Kjøtt",
+    "subCategory": "Kylling og fjærkre",
+    "ingredientKey": "grillpølse",
+    "source": "ai",
+    "confidence": {
+      "main": 0.9,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.792Z"
+  },
+  "prior kalkunkorv|bunnpris": {
+    "mainCategory": "Kjøtt",
+    "subCategory": "Kylling og fjærkre",
+    "ingredientKey": "kalkunkorv",
+    "source": "ai",
+    "confidence": {
+      "main": 0.9,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.793Z"
+  },
+  "mozzarella og cheddar revet ost|bunnpris": {
+    "mainCategory": "Meieri og egg",
+    "subCategory": "Ost",
+    "ingredientKey": "mozzarella",
+    "source": "ai",
+    "confidence": {
+      "main": 0.9,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.793Z"
+  },
+  "asterix pimpernel beate og kerrs pink|bunnpris": {
+    "mainCategory": "Frukt og grønt",
+    "subCategory": "Poteter",
+    "ingredientKey": "potet",
+    "source": "ai",
+    "confidence": {
+      "main": 0.9,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.794Z"
+  },
+  "kylling vingeklubb grillet|bunnpris": {
+    "mainCategory": "Kjøtt",
+    "subCategory": "Kylling og fjærkre",
+    "ingredientKey": "kylling",
+    "source": "ai",
+    "confidence": {
+      "main": 0.97,
+      "sub": 0.95,
+      "ingredientKey": 0.96
+    },
+    "timestamp": "2026-01-17T21:23:21.823Z"
+  },
+  "ritz kjeks original|bunnpris": {
+    "mainCategory": "Snacks og godteri",
+    "subCategory": "Kjeks",
+    "ingredientKey": "kjeks",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.795Z"
+  },
+  "tuc kjeks salt og paprika|bunnpris": {
+    "mainCategory": "Snacks og godteri",
+    "subCategory": "Kjeks",
+    "ingredientKey": "kjeks",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.797Z"
+  },
+  "safari og ballerina kjeks original|bunnpris": {
+    "mainCategory": "Snacks og godteri",
+    "subCategory": "Kjeks",
+    "ingredientKey": "kjeks",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.798Z"
+  },
+  "biscoff kjeks sandwich vanilje|bunnpris": {
+    "mainCategory": "Snacks og godteri",
+    "subCategory": "Kjeks",
+    "ingredientKey": "kjeks",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.798Z"
+  },
+  "nescafe latte mocha og cappuccino|bunnpris": {
+    "mainCategory": "Drikke",
+    "subCategory": "Kaffe",
+    "ingredientKey": "kaffe",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.799Z"
+  },
+  "starbucks tripleshot espresso|bunnpris": {
+    "mainCategory": "Drikke",
+    "subCategory": "Kaffe",
+    "ingredientKey": "kaffe",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.799Z"
+  },
+  "starbucks skinny latte og cappuccino|bunnpris": {
+    "mainCategory": "Drikke",
+    "subCategory": "Kaffe",
+    "ingredientKey": "kaffe",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.800Z"
+  },
+  "bondebrød|bunnpris": {
+    "mainCategory": "Bakeri og bakst",
+    "subCategory": "Brød",
+    "ingredientKey": "brød",
+    "source": "ai",
+    "confidence": {
+      "main": 0.97,
+      "sub": 0.95,
+      "ingredientKey": 0.96
+    },
+    "timestamp": "2026-01-17T21:23:21.822Z"
+  },
+  "lakerol pastiller cactus og salvi|bunnpris": {
+    "mainCategory": "Snacks og godteri",
+    "subCategory": "Annet",
+    "ingredientKey": "produkt",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.801Z"
+  },
+  "extra|bunnpris": {
+    "mainCategory": "Snacks og godteri",
+    "subCategory": "Annet",
+    "ingredientKey": "produkt",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.801Z"
+  },
+  "dent salt lakris og eukalyptus|bunnpris": {
+    "mainCategory": "Snacks og godteri",
+    "subCategory": "Annet",
+    "ingredientKey": "lakris",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.802Z"
+  },
+  "snickers original peanutbutter twix extra milky way twin og mars|bunnpris": {
+    "mainCategory": "Snacks og godteri",
+    "subCategory": "Annet",
+    "ingredientKey": "sjokolade",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.802Z"
+  },
+  "knatter cola og skogsbær|bunnpris": {
+    "mainCategory": "Snacks og godteri",
+    "subCategory": "Annet",
+    "ingredientKey": "produkt",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.803Z"
+  },
+  "mandelstang japp peanøttkube og toppris|bunnpris": {
+    "mainCategory": "Snacks og godteri",
+    "subCategory": "Annet",
+    "ingredientKey": "produkt",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.803Z"
+  },
+  "cheez doodles olw|bunnpris": {
+    "mainCategory": "Snacks og godteri",
+    "subCategory": "Annet",
+    "ingredientKey": "snacks",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.804Z"
+  },
+  "stratos new energy og hobby|bunnpris": {
+    "mainCategory": "Snacks og godteri",
+    "subCategory": "Annet",
+    "ingredientKey": "sjokolade",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.804Z"
+  },
+  "dent crush salty licori bringebær og raspberry|bunnpris": {
+    "mainCategory": "Snacks og godteri",
+    "subCategory": "Annet",
+    "ingredientKey": "lakris",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.804Z"
+  },
+  "seigmenn og pretzel|bunnpris": {
+    "mainCategory": "Snacks og godteri",
+    "subCategory": "Annet",
+    "ingredientKey": "produkt",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.805Z"
+  },
+  "fisherman s friend|bunnpris": {
+    "mainCategory": "Snacks og godteri",
+    "subCategory": "Annet",
+    "ingredientKey": "produkt",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.806Z"
+  },
+  "hubba bubba fruits|bunnpris": {
+    "mainCategory": "Snacks og godteri",
+    "subCategory": "Annet",
+    "ingredientKey": "produkt",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.806Z"
+  },
+  "dumle snack bar fazer|bunnpris": {
+    "mainCategory": "Snacks og godteri",
+    "subCategory": "Annet",
+    "ingredientKey": "produkt",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.807Z"
+  },
+  "melody pops chupa chups love hearts giant chupa chups xxl og mentos frukt|bunnpris": {
+    "mainCategory": "Snacks og godteri",
+    "subCategory": "Annet",
+    "ingredientKey": "produkt",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.807Z"
+  },
+  "müslibar karamell og melkesjokolade|bunnpris": {
+    "mainCategory": "Snacks og godteri",
+    "subCategory": "Annet",
+    "ingredientKey": "produkt",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.808Z"
+  },
+  "poppa chips spansk paprika|bunnpris": {
+    "mainCategory": "Snacks og godteri",
+    "subCategory": "Chips",
+    "ingredientKey": "chips",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.808Z"
+  },
+  "ricola|bunnpris": {
+    "mainCategory": "Snacks og godteri",
+    "subCategory": "Annet",
+    "ingredientKey": "produkt",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.809Z"
+  },
+  "sour mushrooms strimler jordbær og tutti frutti|bunnpris": {
+    "mainCategory": "Snacks og godteri",
+    "subCategory": "Annet",
+    "ingredientKey": "produkt",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.809Z"
+  },
+  "frisk euca menthol|bunnpris": {
+    "mainCategory": "Snacks og godteri",
+    "subCategory": "Annet",
+    "ingredientKey": "produkt",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.810Z"
+  },
+  "doc halslinser original euakalyptus honning lakris bringebær sitron og jordbær appelsin|bunnpris": {
+    "mainCategory": "Snacks og godteri",
+    "subCategory": "Annet",
+    "ingredientKey": "lakris",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.810Z"
+  },
+  "juicy drop pop mega mouth candy spray og gummies|bunnpris": {
+    "mainCategory": "Snacks og godteri",
+    "subCategory": "Annet",
+    "ingredientKey": "produkt",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.811Z"
+  },
+  "micropopcorn saltet peanøtter og chilinøtter|bunnpris": {
+    "mainCategory": "Snacks og godteri",
+    "subCategory": "Annet",
+    "ingredientKey": "popcorn",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.811Z"
+  },
+  "søppeldynga og werthers original|bunnpris": {
+    "mainCategory": "Snacks og godteri",
+    "subCategory": "Annet",
+    "ingredientKey": "produkt",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.812Z"
+  },
+  "lakris toffee|bunnpris": {
+    "mainCategory": "Snacks og godteri",
+    "subCategory": "Annet",
+    "ingredientKey": "lakris",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.812Z"
+  },
+  "kavli cheddar dipp|bunnpris": {
+    "mainCategory": "Meieri og egg",
+    "subCategory": "Annet",
+    "ingredientKey": "ost",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.813Z"
+  },
+  "tynn sprø havsalt pepper havsalt og pesto og mozzarella|bunnpris": {
+    "mainCategory": "Bakeri og bakst",
+    "subCategory": "Annet",
+    "ingredientKey": "produkt",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.813Z"
+  },
+  "nude idyll og nyt is|bunnpris": {
+    "mainCategory": "Is og dessert",
+    "subCategory": "Iskrem",
+    "ingredientKey": "iskrem",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.814Z"
+  },
+  "melkerull smil krokanrull og dobbel daim|bunnpris": {
+    "mainCategory": "Snacks og godteri",
+    "subCategory": "Annet",
+    "ingredientKey": "produkt",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.814Z"
+  },
+  "kims potetgull salt crunch pepper punch paprika kick mexican fiesta og sour cream|bunnpris": {
+    "mainCategory": "Snacks og godteri",
+    "subCategory": "Chips",
+    "ingredientKey": "chips",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.815Z"
+  },
+  "dove roll on|bunnpris": {
+    "mainCategory": "Helse og hygiene",
+    "subCategory": "Personlig hygiene",
+    "ingredientKey": "produkt",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.95
+    },
+    "timestamp": "2026-01-17T21:23:21.816Z"
+  },
+  "libresse intimservietter|bunnpris": {
+    "mainCategory": "Helse og hygiene",
+    "subCategory": "Personlig hygiene",
+    "ingredientKey": "produkt",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.95
+    },
+    "timestamp": "2026-01-17T21:23:21.816Z"
+  },
+  "libresse truseinnlegg|bunnpris": {
+    "mainCategory": "Helse og hygiene",
+    "subCategory": "Personlig hygiene",
+    "ingredientKey": "produkt",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.95
+    },
+    "timestamp": "2026-01-17T21:23:21.818Z"
+  },
+  "dove bar soap original|bunnpris": {
+    "mainCategory": "Helse og hygiene",
+    "subCategory": "Personlig hygiene",
+    "ingredientKey": "produkt",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.95
+    },
+    "timestamp": "2026-01-17T21:23:21.818Z"
+  },
+  "appelsiner|bunnpris": {
+    "mainCategory": "Frukt og grønt",
+    "subCategory": "Frukt",
+    "ingredientKey": "appelsin",
+    "source": "ai",
+    "confidence": {
+      "main": 0.97,
+      "sub": 0.95,
+      "ingredientKey": 0.96
+    },
+    "timestamp": "2026-01-17T21:23:21.825Z"
+  },
+  "latz menybokser til katt|bunnpris": {
+    "mainCategory": "Dyr",
+    "subCategory": "Dyremat",
+    "ingredientKey": "produkt",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.95
+    },
+    "timestamp": "2026-01-17T21:23:21.820Z"
+  },
+  "bacon burger|bunnpris": {
+    "mainCategory": "Kjøtt",
+    "subCategory": "Deig og farse",
+    "ingredientKey": "bacon",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.95
+    },
+    "timestamp": "2026-01-17T21:23:21.821Z"
+  },
+  "asterix pimpernel beate og kerrs|bunnpris": {
+    "mainCategory": "Bakeri og bakst",
+    "subCategory": "Brød",
+    "ingredientKey": "brød",
+    "source": "ai",
+    "confidence": {
+      "main": 0.97,
+      "sub": 0.95,
+      "ingredientKey": 0.96
+    },
+    "timestamp": "2026-01-17T21:23:21.822Z"
+  },
+  "grillpølser|bunnpris": {
+    "mainCategory": "Kjøtt",
+    "subCategory": "Påleggskjøtt",
+    "ingredientKey": "pølse",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.95
+    },
+    "timestamp": "2026-01-17T21:23:21.823Z"
+  },
+  "pasta linguine|bunnpris": {
+    "mainCategory": "Pasta og ris",
+    "subCategory": "Spaghetti",
+    "ingredientKey": "pasta",
+    "source": "ai",
+    "confidence": {
+      "main": 0.97,
+      "sub": 0.95,
+      "ingredientKey": 0.96
+    },
+    "timestamp": "2026-01-17T21:23:21.824Z"
+  },
+  "prior kyllingfilet|bunnpris": {
+    "mainCategory": "Kjøtt",
+    "subCategory": "Kylling og fjærkre",
+    "ingredientKey": "kylling",
+    "source": "ai",
+    "confidence": {
+      "main": 0.97,
+      "sub": 0.95,
+      "ingredientKey": 0.96
+    },
+    "timestamp": "2026-01-17T21:23:21.825Z"
+  },
+  "gulrot|bunnpris": {
+    "mainCategory": "Frukt og grønt",
+    "subCategory": "Grønnsaker",
+    "ingredientKey": "gulrot",
+    "source": "ai",
+    "confidence": {
+      "main": 0.97,
+      "sub": 0.95,
+      "ingredientKey": 0.96
+    },
+    "timestamp": "2026-01-17T21:23:21.826Z"
+  },
+  "skivet kyllingfilet|rema 1000": {
+    "mainCategory": "Kjøtt",
+    "subCategory": "Kylling og fjærkre",
+    "ingredientKey": "kylling",
+    "source": "ai",
+    "confidence": {
+      "main": 0.97,
+      "sub": 0.95,
+      "ingredientKey": 0.96
+    },
+    "timestamp": "2026-01-17T21:23:21.826Z"
+  },
+  "strimlet svinekjøtt|rema 1000": {
+    "mainCategory": "Kjøtt",
+    "subCategory": "Svin",
+    "ingredientKey": "svin",
+    "source": "ai",
+    "confidence": {
+      "main": 0.97,
+      "sub": 0.95,
+      "ingredientKey": 0.96
+    },
+    "timestamp": "2026-01-17T21:23:21.827Z"
+  },
+  "tynnskåret svinefilet|rema 1000": {
+    "mainCategory": "Kjøtt",
+    "subCategory": "Svin",
+    "ingredientKey": "svin",
+    "source": "ai",
+    "confidence": {
+      "main": 0.97,
+      "sub": 0.95,
+      "ingredientKey": 0.96
+    },
+    "timestamp": "2026-01-17T21:23:21.827Z"
+  },
+  "kjøttkaker|rema 1000": {
+    "mainCategory": "Kjøtt",
+    "subCategory": "Deig og farse",
+    "ingredientKey": "kjøttkake",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.95
+    },
+    "timestamp": "2026-01-17T21:23:21.828Z"
+  },
+  "kjøttpølse|rema 1000": {
+    "mainCategory": "Kjøtt",
+    "subCategory": "Påleggskjøtt",
+    "ingredientKey": "kjøttpølse",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.95
+    },
+    "timestamp": "2026-01-17T21:23:21.828Z"
+  },
+  "gulrot beger|rema 1000": {
+    "mainCategory": "Frukt og grønt",
+    "subCategory": "Grønnsaker",
+    "ingredientKey": "gulrot",
+    "source": "ai",
+    "confidence": {
+      "main": 0.97,
+      "sub": 0.95,
+      "ingredientKey": 0.96
+    },
+    "timestamp": "2026-01-17T21:23:21.829Z"
+  },
+  "løk gul 4pk|rema 1000": {
+    "mainCategory": "Frukt og grønt",
+    "subCategory": "Grønnsaker",
+    "ingredientKey": "løk",
+    "source": "ai",
+    "confidence": {
+      "main": 0.97,
+      "sub": 0.95,
+      "ingredientKey": 0.96
+    },
+    "timestamp": "2026-01-17T21:23:21.829Z"
+  },
+  "kyllingkjøttdeig|rema 1000": {
+    "mainCategory": "Kjøtt",
+    "subCategory": "Kylling og fjærkre",
+    "ingredientKey": "kyllingkjøttdeig",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.858Z"
+  },
+  "spagetti|rema 1000": {
+    "mainCategory": "Pasta og ris",
+    "subCategory": "Spaghetti",
+    "ingredientKey": "spagetti",
+    "source": "ai",
+    "confidence": {
+      "main": 0.97,
+      "sub": 0.95,
+      "ingredientKey": 0.96
+    },
+    "timestamp": "2026-01-17T21:23:21.830Z"
+  },
+  "toalettpapir 24pk|rema 1000": {
+    "mainCategory": "Hus og hjem",
+    "subCategory": "Papirvarer",
+    "ingredientKey": "toalettpapir",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.95
+    },
+    "timestamp": "2026-01-17T21:23:21.832Z"
+  },
+  "kyllingkjøttboller|rema 1000": {
+    "mainCategory": "Kjøtt",
+    "subCategory": "Deig og farse",
+    "ingredientKey": "kyllingkjøttboller",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.95
+    },
+    "timestamp": "2026-01-17T21:23:21.832Z"
+  },
+  "kyllinglår m smør og rub|rema 1000": {
+    "mainCategory": "Kjøtt",
+    "subCategory": "Kylling og fjærkre",
+    "ingredientKey": "kyllinglår",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.95
+    },
+    "timestamp": "2026-01-17T21:23:21.833Z"
+  },
+  "hot wings crispy wings|rema 1000": {
+    "mainCategory": "Kjøtt",
+    "subCategory": "Kylling og fjærkre",
+    "ingredientKey": "hot wings",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.95
+    },
+    "timestamp": "2026-01-17T21:23:21.834Z"
+  },
+  "appelsin|rema 1000": {
+    "mainCategory": "Frukt og grønt",
+    "subCategory": "Frukt",
+    "ingredientKey": "appelsin",
+    "source": "ai",
+    "confidence": {
+      "main": 0.97,
+      "sub": 0.95,
+      "ingredientKey": 0.96
+    },
+    "timestamp": "2026-01-17T21:23:21.834Z"
+  },
+  "synnøve gulost|rema 1000": {
+    "mainCategory": "Meieri og egg",
+    "subCategory": "Ost",
+    "ingredientKey": "gulost",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.95
+    },
+    "timestamp": "2026-01-17T21:23:21.835Z"
+  },
+  "eple pink kids|rema 1000": {
+    "mainCategory": "Frukt og grønt",
+    "subCategory": "Frukt",
+    "ingredientKey": "eple",
+    "source": "ai",
+    "confidence": {
+      "main": 0.97,
+      "sub": 0.95,
+      "ingredientKey": 0.96
+    },
+    "timestamp": "2026-01-17T21:23:21.835Z"
+  },
+  "avokado moden 2pk|rema 1000": {
+    "mainCategory": "Frukt og grønt",
+    "subCategory": "Frukt",
+    "ingredientKey": "avokado",
+    "source": "ai",
+    "confidence": {
+      "main": 0.97,
+      "sub": 0.95,
+      "ingredientKey": 0.96
+    },
+    "timestamp": "2026-01-17T21:23:21.836Z"
+  },
+  "blåbær|rema 1000": {
+    "mainCategory": "Frukt og grønt",
+    "subCategory": "Bær",
+    "ingredientKey": "blåbær",
+    "source": "ai",
+    "confidence": {
+      "main": 0.97,
+      "sub": 0.95,
+      "ingredientKey": 0.96
+    },
+    "timestamp": "2026-01-17T21:23:21.837Z"
+  },
+  "egg 6pk|rema 1000": {
+    "mainCategory": "Meieri og egg",
+    "subCategory": "Egg",
+    "ingredientKey": "egg",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.95
+    },
+    "timestamp": "2026-01-17T21:23:21.837Z"
+  },
+  "bacon|rema 1000": {
+    "mainCategory": "Kjøtt",
+    "subCategory": "Svin",
+    "ingredientKey": "bacon",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.95
+    },
+    "timestamp": "2026-01-17T21:23:21.838Z"
+  },
+  "salami|rema 1000": {
+    "mainCategory": "Kjøtt",
+    "subCategory": "Påleggskjøtt",
+    "ingredientKey": "salami",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.95
+    },
+    "timestamp": "2026-01-17T21:23:21.838Z"
+  },
+  "strynskinke|rema 1000": {
+    "mainCategory": "Kjøtt",
+    "subCategory": "Påleggskjøtt",
+    "ingredientKey": "strynskinke",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.95
+    },
+    "timestamp": "2026-01-17T21:23:21.839Z"
+  },
+  "kaviar|rema 1000": {
+    "mainCategory": "Pålegg",
+    "subCategory": "Fiskepålegg",
+    "ingredientKey": "kaviar",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.95
+    },
+    "timestamp": "2026-01-17T21:23:21.839Z"
+  },
+  "kalkunkorv|rema 1000": {
+    "mainCategory": "Kjøtt",
+    "subCategory": "Påleggskjøtt",
+    "ingredientKey": "kalkunkorv",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.95
+    },
+    "timestamp": "2026-01-17T21:23:21.839Z"
+  },
+  "nudelpose|rema 1000": {
+    "mainCategory": "Pasta og ris",
+    "subCategory": "Annet",
+    "ingredientKey": "nudler",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.95
+    },
+    "timestamp": "2026-01-17T21:23:21.840Z"
+  },
+  "nudelkopp|rema 1000": {
+    "mainCategory": "Pasta og ris",
+    "subCategory": "Annet",
+    "ingredientKey": "nudler",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.95
+    },
+    "timestamp": "2026-01-17T21:23:21.841Z"
+  },
+  "svinekjøttdeig 20|rema 1000": {
+    "mainCategory": "Kjøtt",
+    "subCategory": "Svin",
+    "ingredientKey": "svinekjøttdeig",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.95
+    },
+    "timestamp": "2026-01-17T21:23:21.841Z"
+  },
+  "crispy kyllingfilet|rema 1000": {
+    "mainCategory": "Kjøtt",
+    "subCategory": "Kylling og fjærkre",
+    "ingredientKey": "kyllingfilet",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.95
+    },
+    "timestamp": "2026-01-17T21:23:21.842Z"
+  },
+  "scampi marinert|rema 1000": {
+    "mainCategory": "Fisk og sjømat",
+    "subCategory": "Skalldyr",
+    "ingredientKey": "scampi",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.95
+    },
+    "timestamp": "2026-01-17T21:23:21.842Z"
+  },
+  "laks lenke u skinn|rema 1000": {
+    "mainCategory": "Fisk og sjømat",
+    "subCategory": "Fisk",
+    "ingredientKey": "laks",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.95
+    },
+    "timestamp": "2026-01-17T21:23:21.843Z"
+  },
+  "burgerbrød grov|rema 1000": {
+    "mainCategory": "Bakeri og bakst",
+    "subCategory": "Brød",
+    "ingredientKey": "burgerbrød",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.95
+    },
+    "timestamp": "2026-01-17T21:23:21.843Z"
+  },
+  "fullkorntortillas|rema 1000": {
+    "mainCategory": "Bakeri og bakst",
+    "subCategory": "Tortilla og wraps",
+    "ingredientKey": "tortilla",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.95
+    },
+    "timestamp": "2026-01-17T21:23:21.844Z"
+  },
+  "spagetti fullkorn|rema 1000": {
+    "mainCategory": "Pasta og ris",
+    "subCategory": "Spaghetti",
+    "ingredientKey": "spagetti",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.95
+    },
+    "timestamp": "2026-01-17T21:23:21.844Z"
+  },
+  "fullkornsnudler|rema 1000": {
+    "mainCategory": "Pasta og ris",
+    "subCategory": "Annet",
+    "ingredientKey": "nudler",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.95
+    },
+    "timestamp": "2026-01-17T21:23:21.845Z"
+  },
+  "fullkornsris|rema 1000": {
+    "mainCategory": "Pasta og ris",
+    "subCategory": "Ris",
+    "ingredientKey": "ris",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.95
+    },
+    "timestamp": "2026-01-17T21:23:21.846Z"
+  },
+  "fersk juice|rema 1000": {
+    "mainCategory": "Drikke",
+    "subCategory": "Juice",
+    "ingredientKey": "juice",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.95
+    },
+    "timestamp": "2026-01-17T21:23:21.847Z"
+  },
+  "ost sk salat|rema 1000": {
+    "mainCategory": "Meieri og egg",
+    "subCategory": "Ost",
+    "ingredientKey": "ost",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.95
+    },
+    "timestamp": "2026-01-17T21:23:21.847Z"
+  },
+  "avfallspose|rema 1000": {
+    "mainCategory": "Hus og hjem",
+    "subCategory": "Rengjøring",
+    "ingredientKey": "avfallspose",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.850Z"
+  },
+  "avfallssekk klar|rema 1000": {
+    "mainCategory": "Hus og hjem",
+    "subCategory": "Rengjøring",
+    "ingredientKey": "avfallssekk",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.849Z"
+  },
+  "zalo lavendel|rema 1000": {
+    "mainCategory": "Hus og hjem",
+    "subCategory": "Rengjøring",
+    "ingredientKey": "oppvaskmiddel",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.850Z"
+  },
+  "finish ultimate|rema 1000": {
+    "mainCategory": "Hus og hjem",
+    "subCategory": "Rengjøring",
+    "ingredientKey": "oppvaskmiddel",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.851Z"
+  },
+  "finish power|rema 1000": {
+    "mainCategory": "Hus og hjem",
+    "subCategory": "Rengjøring",
+    "ingredientKey": "oppvaskmiddel",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.851Z"
+  },
+  "oppvasksåpe|rema 1000": {
+    "mainCategory": "Hus og hjem",
+    "subCategory": "Rengjøring",
+    "ingredientKey": "oppvaskmiddel",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.852Z"
+  },
+  "zalo spray|rema 1000": {
+    "mainCategory": "Hus og hjem",
+    "subCategory": "Rengjøring",
+    "ingredientKey": "oppvaskmiddel",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.852Z"
+  },
+  "oppvaskbørste|rema 1000": {
+    "mainCategory": "Hus og hjem",
+    "subCategory": "Kjøkken",
+    "ingredientKey": "oppvaskbørste",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.853Z"
+  },
+  "dream is|rema 1000": {
+    "mainCategory": "Is og dessert",
+    "subCategory": "Iskrem",
+    "ingredientKey": "iskrem",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.854Z"
+  },
+  "maxim soft protein|rema 1000": {
+    "mainCategory": "Snacks og godteri",
+    "subCategory": "Proteinbarer",
+    "ingredientKey": "proteinbar",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.854Z"
+  },
+  "vitaminbjørner|rema 1000": {
+    "mainCategory": "Helse og hygiene",
+    "subCategory": "Kosttilskudd",
+    "ingredientKey": "vitamin",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.855Z"
+  },
+  "dino vitaminer|rema 1000": {
+    "mainCategory": "Helse og hygiene",
+    "subCategory": "Kosttilskudd",
+    "ingredientKey": "vitamin",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.855Z"
+  },
+  "multivitamin|rema 1000": {
+    "mainCategory": "Helse og hygiene",
+    "subCategory": "Kosttilskudd",
+    "ingredientKey": "vitamin",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.856Z"
+  },
+  "d vitamin|rema 1000": {
+    "mainCategory": "Helse og hygiene",
+    "subCategory": "Kosttilskudd",
+    "ingredientKey": "vitamin",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.857Z"
+  },
+  "tine skivet ost|meny": {
+    "mainCategory": "Meieri og egg",
+    "subCategory": "Ost",
+    "ingredientKey": "ost",
+    "source": "ai",
+    "confidence": {
+      "main": 0.97,
+      "sub": 0.95,
+      "ingredientKey": 0.96
+    },
+    "timestamp": "2026-01-17T21:23:21.865Z"
+  },
+  "smoothie shots|meny": {
+    "mainCategory": "Drikke",
+    "subCategory": "Smoothie",
+    "ingredientKey": "smoothie",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.860Z"
+  },
+  "kjøttdeig|meny": {
+    "mainCategory": "Kjøtt",
+    "subCategory": "Deig og farse",
+    "ingredientKey": "kjøttdeig",
+    "source": "ai",
+    "confidence": {
+      "main": 1,
+      "sub": 1,
+      "ingredientKey": 1
+    },
+    "timestamp": "2026-01-17T21:23:21.937Z"
+  },
+  "isklar|meny": {
+    "mainCategory": "Drikke",
+    "subCategory": "Vann",
+    "ingredientKey": "vann",
+    "source": "ai",
+    "confidence": {
+      "main": 1,
+      "sub": 1,
+      "ingredientKey": 1
+    },
+    "timestamp": "2026-01-17T21:23:21.914Z"
+  },
+  "poppa chips|meny": {
+    "mainCategory": "Snacks og godteri",
+    "subCategory": "Chips",
+    "ingredientKey": "chips",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.861Z"
+  },
+  "popcorn|meny": {
+    "mainCategory": "Snacks og godteri",
+    "subCategory": "Popcorn",
+    "ingredientKey": "popcorn",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.862Z"
+  },
+  "nøtter|meny": {
+    "mainCategory": "Snacks og godteri",
+    "subCategory": "Nøtter",
+    "ingredientKey": "nøtter",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.862Z"
+  },
+  "castello whipped|meny": {
+    "mainCategory": "Meieri og egg",
+    "subCategory": "Ost",
+    "ingredientKey": "ost",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.863Z"
+  },
+  "grana padano|meny": {
+    "mainCategory": "Meieri og egg",
+    "subCategory": "Ost",
+    "ingredientKey": "ost",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.863Z"
+  },
+  "norsk mozzarella|meny": {
+    "mainCategory": "Meieri og egg",
+    "subCategory": "Ost",
+    "ingredientKey": "ost",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.863Z"
+  },
+  "engelsk cheddar|meny": {
+    "mainCategory": "Meieri og egg",
+    "subCategory": "Ost",
+    "ingredientKey": "ost",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.864Z"
+  },
+  "kulturmelk kefir|meny": {
+    "mainCategory": "Meieri og egg",
+    "subCategory": "Yoghurt",
+    "ingredientKey": "kulturmelk",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.93,
+      "ingredientKey": 0.94
+    },
+    "timestamp": "2026-01-17T21:23:21.866Z"
+  },
+  "starbucks kaffe|meny": {
+    "mainCategory": "Drikke",
+    "subCategory": "Kaffe",
+    "ingredientKey": "kaffe",
+    "source": "ai",
+    "confidence": {
+      "main": 0.98,
+      "sub": 0.96,
+      "ingredientKey": 0.97
+    },
+    "timestamp": "2026-01-17T21:23:21.866Z"
+  },
+  "denja salater|meny": {
+    "mainCategory": "Frukt og grønt",
+    "subCategory": "Salat",
+    "ingredientKey": "salat",
+    "source": "ai",
+    "confidence": {
+      "main": 0.92,
+      "sub": 0.9,
+      "ingredientKey": 0.91
+    },
+    "timestamp": "2026-01-17T21:23:21.867Z"
+  },
+  "klem jordbærsyltetøy|meny": {
+    "mainCategory": "Pålegg",
+    "subCategory": "Syltetøy",
+    "ingredientKey": "jordbærsyltetøy",
+    "source": "ai",
+    "confidence": {
+      "main": 0.93,
+      "sub": 0.91,
+      "ingredientKey": 0.92
+    },
+    "timestamp": "2026-01-17T21:23:21.868Z"
+  },
+  "salami|meny": {
+    "mainCategory": "Kjøtt",
+    "subCategory": "Påleggskjøtt",
+    "ingredientKey": "salami",
+    "source": "ai",
+    "confidence": {
+      "main": 0.97,
+      "sub": 0.95,
+      "ingredientKey": 0.96
+    },
+    "timestamp": "2026-01-17T21:23:21.906Z"
+  },
+  "kalkunkorv|meny": {
+    "mainCategory": "Kjøtt",
+    "subCategory": "Påleggskjøtt",
+    "ingredientKey": "kalkunkorv",
+    "source": "ai",
+    "confidence": {
+      "main": 0.93,
+      "sub": 0.91,
+      "ingredientKey": 0.92
+    },
+    "timestamp": "2026-01-17T21:23:21.884Z"
+  },
+  "smøremyk|meny": {
+    "mainCategory": "Meieri og egg",
+    "subCategory": "Smør og margarin",
+    "ingredientKey": "smøremyk",
+    "source": "ai",
+    "confidence": {
+      "main": 0.97,
+      "sub": 0.95,
+      "ingredientKey": 0.96
+    },
+    "timestamp": "2026-01-17T21:23:21.907Z"
+  },
+  "lettrømme 17|meny": {
+    "mainCategory": "Meieri og egg",
+    "subCategory": "Fløte og rømme",
+    "ingredientKey": "rømme",
+    "source": "ai",
+    "confidence": {
+      "main": 0.92,
+      "sub": 0.9,
+      "ingredientKey": 0.91
+    },
+    "timestamp": "2026-01-17T21:23:21.886Z"
+  },
+  "røros yoghurt|meny": {
+    "mainCategory": "Meieri og egg",
+    "subCategory": "Yoghurt",
+    "ingredientKey": "yoghurt",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.93,
+      "ingredientKey": 0.94
+    },
+    "timestamp": "2026-01-17T21:23:21.886Z"
+  },
+  "yoghurt|meny": {
+    "mainCategory": "Meieri og egg",
+    "subCategory": "Yoghurt",
+    "ingredientKey": "yoghurt",
+    "source": "ai",
+    "confidence": {
+      "main": 0.97,
+      "sub": 0.95,
+      "ingredientKey": 0.96
+    },
+    "timestamp": "2026-01-17T21:23:21.909Z"
+  },
+  "biola yoghurt|meny": {
+    "mainCategory": "Meieri og egg",
+    "subCategory": "Yoghurt",
+    "ingredientKey": "yoghurt",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.93,
+      "ingredientKey": 0.94
+    },
+    "timestamp": "2026-01-17T21:23:21.888Z"
+  },
+  "servelat|meny": {
+    "mainCategory": "Kjøtt",
+    "subCategory": "Påleggskjøtt",
+    "ingredientKey": "servelat",
+    "source": "ai",
+    "confidence": {
+      "main": 0.92,
+      "sub": 0.9,
+      "ingredientKey": 0.91
+    },
+    "timestamp": "2026-01-17T21:23:21.889Z"
+  },
+  "sjokomelk|meny": {
+    "mainCategory": "Drikke",
+    "subCategory": "Sjokolademelk",
+    "ingredientKey": "sjokolademelk",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.93,
+      "ingredientKey": 0.94
+    },
+    "timestamp": "2026-01-17T21:23:21.889Z"
+  },
+  "sjokomjølk|meny": {
+    "mainCategory": "Drikke",
+    "subCategory": "Sjokolademelk",
+    "ingredientKey": "sjokolademelk",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.93,
+      "ingredientKey": 0.94
+    },
+    "timestamp": "2026-01-17T21:23:21.890Z"
+  },
+  "tunfisk i gele|meny": {
+    "mainCategory": "Fisk og sjømat",
+    "subCategory": "Fisk",
+    "ingredientKey": "tunfisk",
+    "source": "ai",
+    "confidence": {
+      "main": 0.92,
+      "sub": 0.9,
+      "ingredientKey": 0.91
+    },
+    "timestamp": "2026-01-17T21:23:21.891Z"
+  },
+  "sweet chilisaus|meny": {
+    "mainCategory": "Middag og ferdigmat",
+    "subCategory": "Sauser og stuinger",
+    "ingredientKey": "sweet chilisaus",
+    "source": "ai",
+    "confidence": {
+      "main": 0.9,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.891Z"
+  },
+  "chili bearnaise saus|meny": {
+    "mainCategory": "Middag og ferdigmat",
+    "subCategory": "Sauser og stuinger",
+    "ingredientKey": "chili bearnaise saus",
+    "source": "ai",
+    "confidence": {
+      "main": 0.9,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.892Z"
+  },
+  "billys pan pizza|meny": {
+    "mainCategory": "Middag og ferdigmat",
+    "subCategory": "Pizza",
+    "ingredientKey": "pizza",
+    "source": "ai",
+    "confidence": {
+      "main": 0.9,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.892Z"
+  },
+  "mango i biter|meny": {
+    "mainCategory": "Frukt og grønt",
+    "subCategory": "Frukt",
+    "ingredientKey": "mango",
+    "source": "ai",
+    "confidence": {
+      "main": 0.9,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.893Z"
+  },
+  "chili peanøtter|meny": {
+    "mainCategory": "Snacks og godteri",
+    "subCategory": "Nøtter",
+    "ingredientKey": "peanøtter",
+    "source": "ai",
+    "confidence": {
+      "main": 0.9,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.894Z"
+  },
+  "tuc kjeks|meny": {
+    "mainCategory": "Snacks og godteri",
+    "subCategory": "Kjeks",
+    "ingredientKey": "kjeks",
+    "source": "ai",
+    "confidence": {
+      "main": 0.9,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.895Z"
+  },
+  "micropopcorn|meny": {
+    "mainCategory": "Snacks og godteri",
+    "subCategory": "Popcorn",
+    "ingredientKey": "popcorn",
+    "source": "ai",
+    "confidence": {
+      "main": 0.9,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.895Z"
+  },
+  "flekkfjernersvamp|meny": {
+    "mainCategory": "Hus og hjem",
+    "subCategory": "Rengjøring",
+    "ingredientKey": "rengjøringsmiddel",
+    "source": "ai",
+    "confidence": {
+      "main": 0.9,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.896Z"
+  },
+  "unik kluter|meny": {
+    "mainCategory": "Hus og hjem",
+    "subCategory": "Kjøkken",
+    "ingredientKey": "kluter",
+    "source": "ai",
+    "confidence": {
+      "main": 0.9,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.897Z"
+  },
+  "kebab djevelsaus|meny": {
+    "mainCategory": "Middag og ferdigmat",
+    "subCategory": "Sauser og stuinger",
+    "ingredientKey": "kebab saus",
+    "source": "ai",
+    "confidence": {
+      "main": 0.9,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.898Z"
+  },
+  "grillpølser|meny": {
+    "mainCategory": "Kjøtt",
+    "subCategory": "Kylling og fjærkre",
+    "ingredientKey": "pølse",
+    "source": "ai",
+    "confidence": {
+      "main": 0.9,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.944Z"
+  },
+  "apetina original|meny": {
+    "mainCategory": "Meieri og egg",
+    "subCategory": "Ost",
+    "ingredientKey": "ost",
+    "source": "ai",
+    "confidence": {
+      "main": 0.9,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.899Z"
+  },
+  "piadina|meny": {
+    "mainCategory": "Bakeri og bakst",
+    "subCategory": "Tortilla og wraps",
+    "ingredientKey": "piadina",
+    "source": "ai",
+    "confidence": {
+      "main": 0.9,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.899Z"
+  },
+  "kyllingfilet|meny": {
+    "mainCategory": "Kjøtt",
+    "subCategory": "Kylling og fjærkre",
+    "ingredientKey": "kylling",
+    "source": "ai",
+    "confidence": {
+      "main": 0.9,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.900Z"
+  },
+  "proteingrøt|meny": {
+    "mainCategory": "Frokost og korn",
+    "subCategory": "Grøt",
+    "ingredientKey": "grøt",
+    "source": "ai",
+    "confidence": {
+      "main": 0.9,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.901Z"
+  },
+  "tomatketchup|meny": {
+    "mainCategory": "Middag og ferdigmat",
+    "subCategory": "Sauser og stuinger",
+    "ingredientKey": "ketchup",
+    "source": "ai",
+    "confidence": {
+      "main": 0.9,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.901Z"
+  },
+  "my pizza slice|meny": {
+    "mainCategory": "Middag og ferdigmat",
+    "subCategory": "Pizza",
+    "ingredientKey": "pizza",
+    "source": "ai",
+    "confidence": {
+      "main": 0.9,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.902Z"
+  },
+  "maasdam landana|meny": {
+    "mainCategory": "Meieri og egg",
+    "subCategory": "Ost",
+    "ingredientKey": "ost",
+    "source": "ai",
+    "confidence": {
+      "main": 0.9,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.903Z"
+  },
+  "magerost|meny": {
+    "mainCategory": "Meieri og egg",
+    "subCategory": "Ost",
+    "ingredientKey": "ost",
+    "source": "ai",
+    "confidence": {
+      "main": 0.9,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.903Z"
+  },
+  "majones|meny": {
+    "mainCategory": "Middag og ferdigmat",
+    "subCategory": "Sauser og stuinger",
+    "ingredientKey": "majones",
+    "source": "ai",
+    "confidence": {
+      "main": 0.9,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.904Z"
+  },
+  "gårdsegg|meny": {
+    "mainCategory": "Meieri og egg",
+    "subCategory": "Egg",
+    "ingredientKey": "egg",
+    "source": "ai",
+    "confidence": {
+      "main": 0.9,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.905Z"
+  },
+  "biola|meny": {
+    "mainCategory": "Meieri og egg",
+    "subCategory": "Yoghurt",
+    "ingredientKey": "biola",
+    "source": "ai",
+    "confidence": {
+      "main": 0.97,
+      "sub": 0.95,
+      "ingredientKey": 0.96
+    },
+    "timestamp": "2026-01-17T21:23:21.908Z"
+  },
+  "rundstykker|meny": {
+    "mainCategory": "Bakeri og bakst",
+    "subCategory": "Rundstykker",
+    "ingredientKey": "rundstykke",
+    "source": "ai",
+    "confidence": {
+      "main": 1,
+      "sub": 1,
+      "ingredientKey": 1
+    },
+    "timestamp": "2026-01-17T21:23:21.913Z"
+  },
+  "ferdig saus|meny": {
+    "mainCategory": "Middag og ferdigmat",
+    "subCategory": "Sauser og stuinger",
+    "ingredientKey": "ferdig saus",
+    "source": "ai",
+    "confidence": {
+      "main": 0.97,
+      "sub": 0.95,
+      "ingredientKey": 0.96
+    },
+    "timestamp": "2026-01-17T21:23:21.910Z"
+  },
+  "angus svinesnadder|meny": {
+    "mainCategory": "Kjøtt",
+    "subCategory": "Svin",
+    "ingredientKey": "angus svinesnadder",
+    "source": "ai",
+    "confidence": {
+      "main": 0.97,
+      "sub": 0.95,
+      "ingredientKey": 0.96
+    },
+    "timestamp": "2026-01-17T21:23:21.911Z"
+  },
+  "fiskepinner|meny": {
+    "mainCategory": "Fisk og sjømat",
+    "subCategory": "Ferdig fisk",
+    "ingredientKey": "fiskepinner",
+    "source": "ai",
+    "confidence": {
+      "main": 0.97,
+      "sub": 0.95,
+      "ingredientKey": 0.96
+    },
+    "timestamp": "2026-01-17T21:23:21.911Z"
+  },
+  "havregrøt|meny": {
+    "mainCategory": "Frokost og korn",
+    "subCategory": "Grøt",
+    "ingredientKey": "havregrøt",
+    "source": "ai",
+    "confidence": {
+      "main": 0.97,
+      "sub": 0.95,
+      "ingredientKey": 0.96
+    },
+    "timestamp": "2026-01-17T21:23:21.912Z"
+  },
+  "muffins|meny": {
+    "mainCategory": "Bakeri og bakst",
+    "subCategory": "Kaker",
+    "ingredientKey": "muffins",
+    "source": "ai",
+    "confidence": {
+      "main": 0.9,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.913Z"
+  },
+  "go morgen yoghurt|meny": {
+    "mainCategory": "Meieri og egg",
+    "subCategory": "Yoghurt",
+    "ingredientKey": "yoghurt",
+    "source": "ai",
+    "confidence": {
+      "main": 0.9,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.915Z"
+  },
+  "junior yoghurt 0|meny": {
+    "mainCategory": "Meieri og egg",
+    "subCategory": "Yoghurt",
+    "ingredientKey": "yoghurt",
+    "source": "ai",
+    "confidence": {
+      "main": 0.9,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.916Z"
+  },
+  "danonino yoghurt|meny": {
+    "mainCategory": "Meieri og egg",
+    "subCategory": "Yoghurt",
+    "ingredientKey": "yoghurt",
+    "source": "ai",
+    "confidence": {
+      "main": 0.9,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.917Z"
+  },
+  "syrna melk|meny": {
+    "mainCategory": "Meieri og egg",
+    "subCategory": "Melk",
+    "ingredientKey": "melk",
+    "source": "ai",
+    "confidence": {
+      "main": 0.9,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.917Z"
+  },
+  "melange|meny": {
+    "mainCategory": "Meieri og egg",
+    "subCategory": "Smør og margarin",
+    "ingredientKey": "melange",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.918Z"
+  },
+  "revet ost|meny": {
+    "mainCategory": "Meieri og egg",
+    "subCategory": "Ost",
+    "ingredientKey": "revet ost",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.919Z"
+  },
+  "camembert brie|meny": {
+    "mainCategory": "Meieri og egg",
+    "subCategory": "Ost",
+    "ingredientKey": "camembert brie",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.919Z"
+  },
+  "håndskåret ost|meny": {
+    "mainCategory": "Meieri og egg",
+    "subCategory": "Ost",
+    "ingredientKey": "håndskåret ost",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.920Z"
+  },
+  "isberg hjerte crispi salat|meny": {
+    "mainCategory": "Frukt og grønt",
+    "subCategory": "Salat",
+    "ingredientKey": "isberg hjerte crispi salat",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.921Z"
+  },
+  "løk|meny": {
+    "mainCategory": "Frukt og grønt",
+    "subCategory": "Grønnsaker",
+    "ingredientKey": "løk",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.922Z"
+  },
+  "grønn frisk salat mix|meny": {
+    "mainCategory": "Frukt og grønt",
+    "subCategory": "Salat",
+    "ingredientKey": "grønn frisk salat mix",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.922Z"
+  },
+  "kiwi|meny": {
+    "mainCategory": "Frukt og grønt",
+    "subCategory": "Frukt",
+    "ingredientKey": "kiwi",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.923Z"
+  },
+  "norsk gulrot|meny": {
+    "mainCategory": "Frukt og grønt",
+    "subCategory": "Grønnsaker",
+    "ingredientKey": "norsk gulrot",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.924Z"
+  },
+  "cevita appelsiner|meny": {
+    "mainCategory": "Frukt og grønt",
+    "subCategory": "Frukt",
+    "ingredientKey": "cevita appelsiner",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.925Z"
+  },
+  "bananer|meny": {
+    "mainCategory": "Frukt og grønt",
+    "subCategory": "Frukt",
+    "ingredientKey": "bananer",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.926Z"
+  },
+  "norske poteter|meny": {
+    "mainCategory": "Frukt og grønt",
+    "subCategory": "Poteter",
+    "ingredientKey": "norske poteter",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.926Z"
+  },
+  "grønn frisk salater|meny": {
+    "mainCategory": "Frukt og grønt",
+    "subCategory": "Salat",
+    "ingredientKey": "grønn frisk salater",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.927Z"
+  },
+  "plommer|meny": {
+    "mainCategory": "Frukt og grønt",
+    "subCategory": "Frukt",
+    "ingredientKey": "plomme",
+    "source": "ai",
+    "confidence": {
+      "main": 1,
+      "sub": 1,
+      "ingredientKey": 1
+    },
+    "timestamp": "2026-01-17T21:23:21.928Z"
+  },
+  "toalettpapir|meny": {
+    "mainCategory": "Hus og hjem",
+    "subCategory": "Papirvarer",
+    "ingredientKey": "produkt",
+    "source": "ai",
+    "confidence": {
+      "main": 1,
+      "sub": 1,
+      "ingredientKey": 1
+    },
+    "timestamp": "2026-01-17T21:23:21.929Z"
+  },
+  "tørkeruller|meny": {
+    "mainCategory": "Hus og hjem",
+    "subCategory": "Papirvarer",
+    "ingredientKey": "produkt",
+    "source": "ai",
+    "confidence": {
+      "main": 1,
+      "sub": 1,
+      "ingredientKey": 1
+    },
+    "timestamp": "2026-01-17T21:23:21.929Z"
+  },
+  "omo color hvitt|meny": {
+    "mainCategory": "Hus og hjem",
+    "subCategory": "Rengjøring",
+    "ingredientKey": "produkt",
+    "source": "ai",
+    "confidence": {
+      "main": 1,
+      "sub": 1,
+      "ingredientKey": 1
+    },
+    "timestamp": "2026-01-17T21:23:21.930Z"
+  },
+  "polar levain|meny": {
+    "mainCategory": "Bakeri og bakst",
+    "subCategory": "Brød",
+    "ingredientKey": "brød",
+    "source": "ai",
+    "confidence": {
+      "main": 1,
+      "sub": 1,
+      "ingredientKey": 1
+    },
+    "timestamp": "2026-01-17T21:23:21.931Z"
+  },
+  "krydderskinke|meny": {
+    "mainCategory": "Kjøtt",
+    "subCategory": "Påleggskjøtt",
+    "ingredientKey": "skinke",
+    "source": "ai",
+    "confidence": {
+      "main": 0.9,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.931Z"
+  },
+  "lakserøre|meny": {
+    "mainCategory": "Fisk og sjømat",
+    "subCategory": "Ferdig fisk",
+    "ingredientKey": "lakserøre",
+    "source": "ai",
+    "confidence": {
+      "main": 0.9,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.932Z"
+  },
+  "brunost|meny": {
+    "mainCategory": "Meieri og egg",
+    "subCategory": "Ost",
+    "ingredientKey": "brunost",
+    "source": "ai",
+    "confidence": {
+      "main": 1,
+      "sub": 1,
+      "ingredientKey": 1
+    },
+    "timestamp": "2026-01-17T21:23:21.933Z"
+  },
+  "serranoskinke|meny": {
+    "mainCategory": "Kjøtt",
+    "subCategory": "Påleggskjøtt",
+    "ingredientKey": "skinke",
+    "source": "ai",
+    "confidence": {
+      "main": 0.9,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.934Z"
+  },
+  "trøffelsalami|meny": {
+    "mainCategory": "Kjøtt",
+    "subCategory": "Påleggskjøtt",
+    "ingredientKey": "salami",
+    "source": "ai",
+    "confidence": {
+      "main": 0.9,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.935Z"
+  },
+  "lettmelk sjokolade|meny": {
+    "mainCategory": "Meieri og egg",
+    "subCategory": "Sjokolademelk",
+    "ingredientKey": "sjokolademelk",
+    "source": "ai",
+    "confidence": {
+      "main": 1,
+      "sub": 1,
+      "ingredientKey": 1
+    },
+    "timestamp": "2026-01-17T21:23:21.935Z"
+  },
+  "gresk yoghurt|meny": {
+    "mainCategory": "Meieri og egg",
+    "subCategory": "Yoghurt",
+    "ingredientKey": "yoghurt",
+    "source": "ai",
+    "confidence": {
+      "main": 1,
+      "sub": 1,
+      "ingredientKey": 1
+    },
+    "timestamp": "2026-01-17T21:23:21.937Z"
+  },
+  "tørrshampo|meny": {
+    "mainCategory": "Helse og hygiene",
+    "subCategory": "Personlig hygiene",
+    "ingredientKey": "produkt",
+    "source": "ai",
+    "confidence": {
+      "main": 1,
+      "sub": 1,
+      "ingredientKey": 1
+    },
+    "timestamp": "2026-01-17T21:23:21.938Z"
+  },
+  "løvbiff|meny": {
+    "mainCategory": "Kjøtt",
+    "subCategory": "Storfe",
+    "ingredientKey": "biff",
+    "source": "ai",
+    "confidence": {
+      "main": 0.9,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.939Z"
+  },
+  "fries chips|meny": {
+    "mainCategory": "Snacks og godteri",
+    "subCategory": "Chips",
+    "ingredientKey": "chips",
+    "source": "ai",
+    "confidence": {
+      "main": 1,
+      "sub": 1,
+      "ingredientKey": 1
+    },
+    "timestamp": "2026-01-17T21:23:21.940Z"
+  },
+  "mørk sjokolade|meny": {
+    "mainCategory": "Snacks og godteri",
+    "subCategory": "Sjokolade",
+    "ingredientKey": "sjokolade",
+    "source": "ai",
+    "confidence": {
+      "main": 1,
+      "sub": 1,
+      "ingredientKey": 1
+    },
+    "timestamp": "2026-01-17T21:23:21.940Z"
+  },
+  "plantebasert burger|meny": {
+    "mainCategory": "Plantebasert",
+    "subCategory": "Kjøtterstatning",
+    "ingredientKey": "burger",
+    "source": "ai",
+    "confidence": {
+      "main": 0.9,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.941Z"
+  },
+  "jærsk kvitskimmel|meny": {
+    "mainCategory": "Meieri og egg",
+    "subCategory": "Ost",
+    "ingredientKey": "ost",
+    "source": "ai",
+    "confidence": {
+      "main": 1,
+      "sub": 1,
+      "ingredientKey": 1
+    },
+    "timestamp": "2026-01-17T21:23:21.942Z"
+  },
+  "chili ostepølse|meny": {
+    "mainCategory": "Kjøtt",
+    "subCategory": "Deig og farse",
+    "ingredientKey": "pølse",
+    "source": "ai",
+    "confidence": {
+      "main": 0.9,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.943Z"
+  },
+  "dressing|meny": {
+    "mainCategory": "Middag og ferdigmat",
+    "subCategory": "Sauser og stuinger",
+    "ingredientKey": "dressing",
+    "source": "ai",
+    "confidence": {
+      "main": 0.9,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.944Z"
+  },
+  "sellerirot pastinakk|meny": {
+    "mainCategory": "Frukt og grønt",
+    "subCategory": "Grønnsaker",
+    "ingredientKey": "sellerirot",
+    "source": "ai",
+    "confidence": {
+      "main": 0.9,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.945Z"
+  },
+  "mozzarella|meny": {
+    "mainCategory": "Meieri og egg",
+    "subCategory": "Ost",
+    "ingredientKey": "mozzarella",
+    "source": "ai",
+    "confidence": {
+      "main": 0.97,
+      "sub": 0.95,
+      "ingredientKey": 0.96
+    },
+    "timestamp": "2026-01-17T21:23:21.946Z"
+  },
+  "lakseburger|meny": {
+    "mainCategory": "Fisk og sjømat",
+    "subCategory": "Ferdig fisk",
+    "ingredientKey": "lakseburger",
+    "source": "ai",
+    "confidence": {
+      "main": 0.97,
+      "sub": 0.95,
+      "ingredientKey": 0.96
+    },
+    "timestamp": "2026-01-17T21:23:21.947Z"
+  },
+  "karbonader kjøttkaker|meny": {
+    "mainCategory": "Kjøtt",
+    "subCategory": "Deig og farse",
+    "ingredientKey": "karbonader",
+    "source": "ai",
+    "confidence": {
+      "main": 0.97,
+      "sub": 0.95,
+      "ingredientKey": 0.96
+    },
+    "timestamp": "2026-01-17T21:23:21.947Z"
+  },
+  "egg 12 pk|spar": {
+    "mainCategory": "Meieri og egg",
+    "subCategory": "Egg",
+    "ingredientKey": "egg",
+    "source": "ai",
+    "confidence": {
+      "main": 0.97,
+      "sub": 0.95,
+      "ingredientKey": 0.96
+    },
+    "timestamp": "2026-01-17T21:23:21.948Z"
+  },
+  "gulrot|spar": {
+    "mainCategory": "Frukt og grønt",
+    "subCategory": "Grønnsaker",
+    "ingredientKey": "gulrot",
+    "source": "ai",
+    "confidence": {
+      "main": 0.97,
+      "sub": 0.95,
+      "ingredientKey": 0.96
+    },
+    "timestamp": "2026-01-17T21:23:21.949Z"
+  },
+  "norsk gul løk rødløk 4 pk|spar": {
+    "mainCategory": "Frukt og grønt",
+    "subCategory": "Grønnsaker",
+    "ingredientKey": "løk",
+    "source": "ai",
+    "confidence": {
+      "main": 0.97,
+      "sub": 0.95,
+      "ingredientKey": 0.96
+    },
+    "timestamp": "2026-01-17T21:23:21.949Z"
+  },
+  "isbergsalat|spar": {
+    "mainCategory": "Frukt og grønt",
+    "subCategory": "Salat",
+    "ingredientKey": "isbergsalat",
+    "source": "ai",
+    "confidence": {
+      "main": 0.97,
+      "sub": 0.95,
+      "ingredientKey": 0.96
+    },
+    "timestamp": "2026-01-17T21:23:21.950Z"
+  },
+  "appelsiner|spar": {
+    "mainCategory": "Frukt og grønt",
+    "subCategory": "Frukt",
+    "ingredientKey": "appelsin",
+    "source": "ai",
+    "confidence": {
+      "main": 0.97,
+      "sub": 0.95,
+      "ingredientKey": 0.96
+    },
+    "timestamp": "2026-01-17T21:23:21.951Z"
+  },
+  "bananer|spar": {
+    "mainCategory": "Frukt og grønt",
+    "subCategory": "Frukt",
+    "ingredientKey": "banan",
+    "source": "ai",
+    "confidence": {
+      "main": 0.97,
+      "sub": 0.95,
+      "ingredientKey": 0.96
+    },
+    "timestamp": "2026-01-17T21:23:21.952Z"
+  },
+  "kiwi|spar": {
+    "mainCategory": "Frukt og grønt",
+    "subCategory": "Frukt",
+    "ingredientKey": "kiwi",
+    "source": "ai",
+    "confidence": {
+      "main": 0.97,
+      "sub": 0.95,
+      "ingredientKey": 0.96
+    },
+    "timestamp": "2026-01-17T21:23:21.953Z"
+  },
+  "fiskepinner 10 pk|spar": {
+    "mainCategory": "Fisk og sjømat",
+    "subCategory": "Ferdig fisk",
+    "ingredientKey": "fiskepinner",
+    "source": "ai",
+    "confidence": {
+      "main": 0.97,
+      "sub": 0.95,
+      "ingredientKey": 0.96
+    },
+    "timestamp": "2026-01-17T21:23:21.954Z"
+  },
+  "lasagne|spar": {
+    "mainCategory": "Middag og ferdigmat",
+    "subCategory": "Ferdigretter",
+    "ingredientKey": "lasagne",
+    "source": "ai",
+    "confidence": {
+      "main": 0.97,
+      "sub": 0.95,
+      "ingredientKey": 0.96
+    },
+    "timestamp": "2026-01-17T21:23:21.954Z"
+  },
+  "julius favorittbrød|spar": {
+    "mainCategory": "Bakeri og bakst",
+    "subCategory": "Brød",
+    "ingredientKey": "brød",
+    "source": "ai",
+    "confidence": {
+      "main": 0.9,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.955Z"
+  },
+  "rundstykker|spar": {
+    "mainCategory": "Bakeri og bakst",
+    "subCategory": "Rundstykker",
+    "ingredientKey": "rundstykker",
+    "source": "ai",
+    "confidence": {
+      "main": 0.9,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.956Z"
+  },
+  "sprøstekte fiskefileter|kiwi": {
+    "mainCategory": "Fisk og sjømat",
+    "subCategory": "Ferdig fisk",
+    "ingredientKey": "sprøstekte fiskefileter",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.93,
+      "ingredientKey": 0.92
+    },
+    "timestamp": "2026-01-17T21:23:21.961Z"
+  },
+  "blåbær|kiwi": {
+    "mainCategory": "Frukt og grønt",
+    "subCategory": "Bær",
+    "ingredientKey": "blåbær",
+    "source": "ai",
+    "confidence": {
+      "main": 1,
+      "sub": 1,
+      "ingredientKey": 1
+    },
+    "timestamp": "2026-01-17T21:23:21.991Z"
+  },
+  "laksefilet|kiwi": {
+    "mainCategory": "Fisk og sjømat",
+    "subCategory": "Fisk",
+    "ingredientKey": "laks",
+    "source": "ai",
+    "confidence": {
+      "main": 0.97,
+      "sub": 0.95,
+      "ingredientKey": 0.96
+    },
+    "timestamp": "2026-01-17T21:23:21.958Z"
+  },
+  "skreikaker|kiwi": {
+    "mainCategory": "Fisk og sjømat",
+    "subCategory": "Ferdig fisk",
+    "ingredientKey": "skreikaker",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.93,
+      "ingredientKey": 0.92
+    },
+    "timestamp": "2026-01-17T21:23:21.959Z"
+  },
+  "skreiburger|kiwi": {
+    "mainCategory": "Fisk og sjømat",
+    "subCategory": "Ferdig fisk",
+    "ingredientKey": "skreiburger",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.93,
+      "ingredientKey": 0.92
+    },
+    "timestamp": "2026-01-17T21:23:21.959Z"
+  },
+  "fiskekaker m gulrotpure|kiwi": {
+    "mainCategory": "Fisk og sjømat",
+    "subCategory": "Ferdig fisk",
+    "ingredientKey": "fiskekaker",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.93,
+      "ingredientKey": 0.92
+    },
+    "timestamp": "2026-01-17T21:23:21.960Z"
+  },
+  "fullkornsris|kiwi": {
+    "mainCategory": "Pasta og ris",
+    "subCategory": "Ris",
+    "ingredientKey": "ris",
+    "source": "ai",
+    "confidence": {
+      "main": 0.97,
+      "sub": 0.95,
+      "ingredientKey": 0.96
+    },
+    "timestamp": "2026-01-17T21:23:21.962Z"
+  },
+  "brokkoli blomkål|kiwi": {
+    "mainCategory": "Frukt og grønt",
+    "subCategory": "Grønnsaker",
+    "ingredientKey": "brokkoli",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.93,
+      "ingredientKey": 0.92
+    },
+    "timestamp": "2026-01-17T21:23:21.962Z"
+  },
+  "kyllingfilet strimler|kiwi": {
+    "mainCategory": "Kjøtt",
+    "subCategory": "Kylling og fjærkre",
+    "ingredientKey": "kylling",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.93,
+      "ingredientKey": 0.92
+    },
+    "timestamp": "2026-01-17T21:23:21.963Z"
+  },
+  "kyllingfilet|kiwi": {
+    "mainCategory": "Kjøtt",
+    "subCategory": "Kylling og fjærkre",
+    "ingredientKey": "kylling",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.93,
+      "ingredientKey": 0.92
+    },
+    "timestamp": "2026-01-17T21:23:21.964Z"
+  },
+  "grillede kyllinglår|kiwi": {
+    "mainCategory": "Kjøtt",
+    "subCategory": "Kylling og fjærkre",
+    "ingredientKey": "kylling",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.93,
+      "ingredientKey": 0.92
+    },
+    "timestamp": "2026-01-17T21:23:21.964Z"
+  },
+  "havredrikk|kiwi": {
+    "mainCategory": "Plantebasert",
+    "subCategory": "Plantedrikk",
+    "ingredientKey": "havredrikk",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.93,
+      "ingredientKey": 0.92
+    },
+    "timestamp": "2026-01-17T21:23:21.966Z"
+  },
+  "gulost lett 16 skivet|kiwi": {
+    "mainCategory": "Meieri og egg",
+    "subCategory": "Ost",
+    "ingredientKey": "ost",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.93,
+      "ingredientKey": 0.92
+    },
+    "timestamp": "2026-01-17T21:23:21.967Z"
+  },
+  "havrebrød glutenfri|kiwi": {
+    "mainCategory": "Bakeri og bakst",
+    "subCategory": "Brød",
+    "ingredientKey": "brød",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.93,
+      "ingredientKey": 0.92
+    },
+    "timestamp": "2026-01-17T21:23:21.968Z"
+  },
+  "frukost fullkorn|kiwi": {
+    "mainCategory": "Frokost og korn",
+    "subCategory": "Frokostblanding",
+    "ingredientKey": "frokostblanding",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.93,
+      "ingredientKey": 0.92
+    },
+    "timestamp": "2026-01-17T21:23:21.969Z"
+  },
+  "100 grovbrød|kiwi": {
+    "mainCategory": "Bakeri og bakst",
+    "subCategory": "Brød",
+    "ingredientKey": "brød",
+    "source": "ai",
+    "confidence": {
+      "main": 0.97,
+      "sub": 0.95,
+      "ingredientKey": 0.96
+    },
+    "timestamp": "2026-01-17T21:23:21.969Z"
+  },
+  "ostebaguette|kiwi": {
+    "mainCategory": "Bakeri og bakst",
+    "subCategory": "Bakervarer",
+    "ingredientKey": "baguette",
+    "source": "ai",
+    "confidence": {
+      "main": 0.97,
+      "sub": 0.95,
+      "ingredientKey": 0.96
+    },
+    "timestamp": "2026-01-17T21:23:21.970Z"
+  },
+  "urkorn ekstra grovt|kiwi": {
+    "mainCategory": "Bakeri og bakst",
+    "subCategory": "Brød",
+    "ingredientKey": "brød",
+    "source": "ai",
+    "confidence": {
+      "main": 0.97,
+      "sub": 0.95,
+      "ingredientKey": 0.96
+    },
+    "timestamp": "2026-01-17T21:23:21.970Z"
+  },
+  "mager cottage cheese|kiwi": {
+    "mainCategory": "Meieri og egg",
+    "subCategory": "Ost",
+    "ingredientKey": "cottage cheese",
+    "source": "ai",
+    "confidence": {
+      "main": 0.97,
+      "sub": 0.95,
+      "ingredientKey": 0.96
+    },
+    "timestamp": "2026-01-17T21:23:21.971Z"
+  },
+  "nude sorbet|kiwi": {
+    "mainCategory": "Is og dessert",
+    "subCategory": "Iskrem",
+    "ingredientKey": "sorbet",
+    "source": "ai",
+    "confidence": {
+      "main": 0.97,
+      "sub": 0.95,
+      "ingredientKey": 0.96
+    },
+    "timestamp": "2026-01-17T21:23:21.972Z"
+  },
+  "nyt iskrem|kiwi": {
+    "mainCategory": "Is og dessert",
+    "subCategory": "Iskrem",
+    "ingredientKey": "iskrem",
+    "source": "ai",
+    "confidence": {
+      "main": 0.97,
+      "sub": 0.95,
+      "ingredientKey": 0.96
+    },
+    "timestamp": "2026-01-17T21:23:21.973Z"
+  },
+  "smoothie mix|kiwi": {
+    "mainCategory": "Drikke",
+    "subCategory": "Smoothie",
+    "ingredientKey": "smoothie",
+    "source": "ai",
+    "confidence": {
+      "main": 0.97,
+      "sub": 0.95,
+      "ingredientKey": 0.96
+    },
+    "timestamp": "2026-01-17T21:23:21.975Z"
+  },
+  "mango i biter|kiwi": {
+    "mainCategory": "Frukt og grønt",
+    "subCategory": "Frukt",
+    "ingredientKey": "mango",
+    "source": "ai",
+    "confidence": {
+      "main": 0.97,
+      "sub": 0.95,
+      "ingredientKey": 0.96
+    },
+    "timestamp": "2026-01-17T21:23:21.974Z"
+  },
+  "bringebær skogsbær|kiwi": {
+    "mainCategory": "Frukt og grønt",
+    "subCategory": "Bær",
+    "ingredientKey": "bringebær",
+    "source": "ai",
+    "confidence": {
+      "main": 0.97,
+      "sub": 0.95,
+      "ingredientKey": 0.96
+    },
+    "timestamp": "2026-01-17T21:23:21.976Z"
+  },
+  "shower cream|kiwi": {
+    "mainCategory": "Helse og hygiene",
+    "subCategory": "Personlig hygiene",
+    "ingredientKey": "produkt",
+    "source": "ai",
+    "confidence": {
+      "main": 0.97,
+      "sub": 0.95,
+      "ingredientKey": 0.96
+    },
+    "timestamp": "2026-01-17T21:23:21.976Z"
+  },
+  "toalettpapir|kiwi": {
+    "mainCategory": "Hus og hjem",
+    "subCategory": "Papirvarer",
+    "ingredientKey": "toalettpapir",
+    "source": "ai",
+    "confidence": {
+      "main": 0.97,
+      "sub": 0.95,
+      "ingredientKey": 0.96
+    },
+    "timestamp": "2026-01-17T21:23:21.977Z"
+  },
+  "jasminris|kiwi": {
+    "mainCategory": "Pasta og ris",
+    "subCategory": "Ris",
+    "ingredientKey": "ris",
+    "source": "ai",
+    "confidence": {
+      "main": 0.97,
+      "sub": 0.95,
+      "ingredientKey": 0.96
+    },
+    "timestamp": "2026-01-17T21:23:21.978Z"
+  },
+  "fish crisp|kiwi": {
+    "mainCategory": "Fisk og sjømat",
+    "subCategory": "Ferdig fisk",
+    "ingredientKey": "fisk",
+    "source": "ai",
+    "confidence": {
+      "main": 0.97,
+      "sub": 0.95,
+      "ingredientKey": 0.96
+    },
+    "timestamp": "2026-01-17T21:23:21.979Z"
+  },
+  "kyllingklubber|kiwi": {
+    "mainCategory": "Kjøtt",
+    "subCategory": "Kylling og fjærkre",
+    "ingredientKey": "kylling",
+    "source": "ai",
+    "confidence": {
+      "main": 0.97,
+      "sub": 0.95,
+      "ingredientKey": 0.96
+    },
+    "timestamp": "2026-01-17T21:23:21.979Z"
+  },
+  "kjøttpølser|kiwi": {
+    "mainCategory": "Kjøtt",
+    "subCategory": "Deig og farse",
+    "ingredientKey": "pølse",
+    "source": "ai",
+    "confidence": {
+      "main": 0.97,
+      "sub": 0.95,
+      "ingredientKey": 0.96
+    },
+    "timestamp": "2026-01-17T21:23:21.981Z"
+  },
+  "norvegia|kiwi": {
+    "mainCategory": "Meieri og egg",
+    "subCategory": "Ost",
+    "ingredientKey": "ost",
+    "source": "ai",
+    "confidence": {
+      "main": 0.97,
+      "sub": 0.95,
+      "ingredientKey": 0.96
+    },
+    "timestamp": "2026-01-17T21:23:21.981Z"
+  },
+  "makaroni|kiwi": {
+    "mainCategory": "Pasta og ris",
+    "subCategory": "Annet",
+    "ingredientKey": "pasta",
+    "source": "ai",
+    "confidence": {
+      "main": 0.97,
+      "sub": 0.95,
+      "ingredientKey": 0.96
+    },
+    "timestamp": "2026-01-17T21:23:21.982Z"
+  },
+  "frukost|kiwi": {
+    "mainCategory": "Frokost og korn",
+    "subCategory": "Frokostblanding",
+    "ingredientKey": "frokostblanding",
+    "source": "ai",
+    "confidence": {
+      "main": 0.97,
+      "sub": 0.95,
+      "ingredientKey": 0.96
+    },
+    "timestamp": "2026-01-17T21:23:21.983Z"
+  },
+  "pizzabunn|kiwi": {
+    "mainCategory": "Middag og ferdigmat",
+    "subCategory": "Pizza",
+    "ingredientKey": "pizzabunn",
+    "source": "ai",
+    "confidence": {
+      "main": 0.97,
+      "sub": 0.95,
+      "ingredientKey": 0.96
+    },
+    "timestamp": "2026-01-17T21:23:21.984Z"
+  },
+  "spaghetti|kiwi": {
+    "mainCategory": "Pasta og ris",
+    "subCategory": "Spaghetti",
+    "ingredientKey": "spaghetti",
+    "source": "ai",
+    "confidence": {
+      "main": 0.97,
+      "sub": 0.95,
+      "ingredientKey": 0.96
+    },
+    "timestamp": "2026-01-17T21:23:21.984Z"
+  },
+  "romano mix crispi mix middelshavs mix|kiwi": {
+    "mainCategory": "Frukt og grønt",
+    "subCategory": "Annet",
+    "ingredientKey": "mix",
+    "source": "ai",
+    "confidence": {
+      "main": 0.97,
+      "sub": 0.95,
+      "ingredientKey": 0.96
+    },
+    "timestamp": "2026-01-17T21:23:21.985Z"
+  },
+  "isberg mix meksikansk mix|kiwi": {
+    "mainCategory": "Frukt og grønt",
+    "subCategory": "Salat",
+    "ingredientKey": "salat",
+    "source": "ai",
+    "confidence": {
+      "main": 0.97,
+      "sub": 0.95,
+      "ingredientKey": 0.96
+    },
+    "timestamp": "2026-01-17T21:23:21.986Z"
+  },
+  "små tomater|kiwi": {
+    "mainCategory": "Frukt og grønt",
+    "subCategory": "Grønnsaker",
+    "ingredientKey": "tomat",
+    "source": "ai",
+    "confidence": {
+      "main": 0.97,
+      "sub": 0.95,
+      "ingredientKey": 0.96
+    },
+    "timestamp": "2026-01-17T21:23:21.987Z"
+  },
+  "brokkoli|kiwi": {
+    "mainCategory": "Frukt og grønt",
+    "subCategory": "Grønnsaker",
+    "ingredientKey": "brokkoli",
+    "source": "ai",
+    "confidence": {
+      "main": 0.97,
+      "sub": 0.95,
+      "ingredientKey": 0.96
+    },
+    "timestamp": "2026-01-17T21:23:21.987Z"
+  },
+  "små gule poteter|kiwi": {
+    "mainCategory": "Frukt og grønt",
+    "subCategory": "Poteter",
+    "ingredientKey": "potet",
+    "source": "ai",
+    "confidence": {
+      "main": 0.97,
+      "sub": 0.95,
+      "ingredientKey": 0.96
+    },
+    "timestamp": "2026-01-17T21:23:21.988Z"
+  },
+  "gulrot|kiwi": {
+    "mainCategory": "Frukt og grønt",
+    "subCategory": "Grønnsaker",
+    "ingredientKey": "gulrot",
+    "source": "ai",
+    "confidence": {
+      "main": 0.97,
+      "sub": 0.95,
+      "ingredientKey": 0.96
+    },
+    "timestamp": "2026-01-17T21:23:21.989Z"
+  },
+  "appelsiner|kiwi": {
+    "mainCategory": "Frukt og grønt",
+    "subCategory": "Frukt",
+    "ingredientKey": "appelsin",
+    "source": "ai",
+    "confidence": {
+      "main": 1,
+      "sub": 1,
+      "ingredientKey": 1
+    },
+    "timestamp": "2026-01-17T21:23:21.990Z"
+  },
+  "smoothie|kiwi": {
+    "mainCategory": "Drikke",
+    "subCategory": "Smoothie",
+    "ingredientKey": "smoothie",
+    "source": "ai",
+    "confidence": {
+      "main": 1,
+      "sub": 1,
+      "ingredientKey": 1
+    },
+    "timestamp": "2026-01-17T21:23:21.992Z"
+  },
+  "havrebrød solsikkebrød kornbrød|kiwi": {
+    "mainCategory": "Bakeri og bakst",
+    "subCategory": "Brød",
+    "ingredientKey": "brød",
+    "source": "ai",
+    "confidence": {
+      "main": 1,
+      "sub": 1,
+      "ingredientKey": 1
+    },
+    "timestamp": "2026-01-17T21:23:21.993Z"
+  },
+  "gourmetstykker|kiwi": {
+    "mainCategory": "Bakeri og bakst",
+    "subCategory": "Kaker",
+    "ingredientKey": "kake",
+    "source": "ai",
+    "confidence": {
+      "main": 0.9,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.994Z"
+  },
+  "havrestykker bjørn|kiwi": {
+    "mainCategory": "Bakeri og bakst",
+    "subCategory": "Kaker",
+    "ingredientKey": "kake",
+    "source": "ai",
+    "confidence": {
+      "main": 0.9,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.995Z"
+  },
+  "2 5 kg meråker kjøtt karbonader kjøttkaker|obs": {
+    "mainCategory": "Kjøtt",
+    "subCategory": "Deig og farse",
+    "ingredientKey": "kjøttkake",
+    "source": "ai",
+    "confidence": {
+      "main": 0.9,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:21.996Z"
+  },
+  "ytterøy kyllingfilet|obs": {
+    "mainCategory": "Kjøtt",
+    "subCategory": "Kylling og fjærkre",
+    "ingredientKey": "kylling",
+    "source": "ai",
+    "confidence": {
+      "main": 0.98,
+      "sub": 0.95,
+      "ingredientKey": 0.96
+    },
+    "timestamp": "2026-01-17T21:23:22.020Z"
+  },
+  "brusbrett|obs": {
+    "mainCategory": "Drikke",
+    "subCategory": "Brus",
+    "ingredientKey": "brus",
+    "source": "ai",
+    "confidence": {
+      "main": 1,
+      "sub": 1,
+      "ingredientKey": 1
+    },
+    "timestamp": "2026-01-17T21:23:21.997Z"
+  },
+  "gilde svinekoteletter|obs": {
+    "mainCategory": "Kjøtt",
+    "subCategory": "Svin",
+    "ingredientKey": "svinekoteletter",
+    "source": "ai",
+    "confidence": {
+      "main": 0.97,
+      "sub": 0.95,
+      "ingredientKey": 0.96
+    },
+    "timestamp": "2026-01-17T21:23:22.018Z"
+  },
+  "purre i bunt|obs": {
+    "mainCategory": "Frukt og grønt",
+    "subCategory": "Grønnsaker",
+    "ingredientKey": "purre",
+    "source": "ai",
+    "confidence": {
+      "main": 1,
+      "sub": 1,
+      "ingredientKey": 1
+    },
+    "timestamp": "2026-01-17T21:23:21.999Z"
+  },
+  "sellerirot i bunt|obs": {
+    "mainCategory": "Frukt og grønt",
+    "subCategory": "Grønnsaker",
+    "ingredientKey": "sellerirot",
+    "source": "ai",
+    "confidence": {
+      "main": 1,
+      "sub": 1,
+      "ingredientKey": 1
+    },
+    "timestamp": "2026-01-17T21:23:21.999Z"
+  },
+  "rødbete bunt|obs": {
+    "mainCategory": "Frukt og grønt",
+    "subCategory": "Grønnsaker",
+    "ingredientKey": "rødbete",
+    "source": "ai",
+    "confidence": {
+      "main": 1,
+      "sub": 1,
+      "ingredientKey": 1
+    },
+    "timestamp": "2026-01-17T21:23:22.000Z"
+  },
+  "gulrot i bunt|obs": {
+    "mainCategory": "Frukt og grønt",
+    "subCategory": "Grønnsaker",
+    "ingredientKey": "gulrot",
+    "source": "ai",
+    "confidence": {
+      "main": 1,
+      "sub": 1,
+      "ingredientKey": 1
+    },
+    "timestamp": "2026-01-17T21:23:22.001Z"
+  },
+  "kålrot|obs": {
+    "mainCategory": "Frukt og grønt",
+    "subCategory": "Grønnsaker",
+    "ingredientKey": "kålrot",
+    "source": "ai",
+    "confidence": {
+      "main": 1,
+      "sub": 1,
+      "ingredientKey": 1
+    },
+    "timestamp": "2026-01-17T21:23:22.001Z"
+  },
+  "hodekål|obs": {
+    "mainCategory": "Frukt og grønt",
+    "subCategory": "Grønnsaker",
+    "ingredientKey": "hodekål",
+    "source": "ai",
+    "confidence": {
+      "main": 1,
+      "sub": 1,
+      "ingredientKey": 1
+    },
+    "timestamp": "2026-01-17T21:23:22.002Z"
+  },
+  "blomkål|obs": {
+    "mainCategory": "Frukt og grønt",
+    "subCategory": "Grønnsaker",
+    "ingredientKey": "blomkål",
+    "source": "ai",
+    "confidence": {
+      "main": 1,
+      "sub": 1,
+      "ingredientKey": 1
+    },
+    "timestamp": "2026-01-17T21:23:22.003Z"
+  },
+  "brokkoli|obs": {
+    "mainCategory": "Frukt og grønt",
+    "subCategory": "Grønnsaker",
+    "ingredientKey": "brokkoli",
+    "source": "ai",
+    "confidence": {
+      "main": 1,
+      "sub": 1,
+      "ingredientKey": 1
+    },
+    "timestamp": "2026-01-17T21:23:22.004Z"
+  },
+  "knutekål|obs": {
+    "mainCategory": "Frukt og grønt",
+    "subCategory": "Grønnsaker",
+    "ingredientKey": "knutekål",
+    "source": "ai",
+    "confidence": {
+      "main": 1,
+      "sub": 1,
+      "ingredientKey": 1
+    },
+    "timestamp": "2026-01-17T21:23:22.004Z"
+  },
+  "reddiker|obs": {
+    "mainCategory": "Frukt og grønt",
+    "subCategory": "Grønnsaker",
+    "ingredientKey": "reddik",
+    "source": "ai",
+    "confidence": {
+      "main": 1,
+      "sub": 1,
+      "ingredientKey": 1
+    },
+    "timestamp": "2026-01-17T21:23:22.005Z"
+  },
+  "neper|obs": {
+    "mainCategory": "Frukt og grønt",
+    "subCategory": "Grønnsaker",
+    "ingredientKey": "nepe",
+    "source": "ai",
+    "confidence": {
+      "main": 1,
+      "sub": 1,
+      "ingredientKey": 1
+    },
+    "timestamp": "2026-01-17T21:23:22.006Z"
+  },
+  "poteter|obs": {
+    "mainCategory": "Frukt og grønt",
+    "subCategory": "Poteter",
+    "ingredientKey": "potet",
+    "source": "ai",
+    "confidence": {
+      "main": 1,
+      "sub": 1,
+      "ingredientKey": 1
+    },
+    "timestamp": "2026-01-17T21:23:22.006Z"
+  },
+  "vårløk|obs": {
+    "mainCategory": "Frukt og grønt",
+    "subCategory": "Grønnsaker",
+    "ingredientKey": "vårløk",
+    "source": "ai",
+    "confidence": {
+      "main": 1,
+      "sub": 1,
+      "ingredientKey": 1
+    },
+    "timestamp": "2026-01-17T21:23:22.007Z"
+  },
+  "2 kg inderøy kjøttfarse|obs": {
+    "mainCategory": "Kjøtt",
+    "subCategory": "Deig og farse",
+    "ingredientKey": "kjøttfarse",
+    "source": "ai",
+    "confidence": {
+      "main": 0.9,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:22.008Z"
+  },
+  "ferskvarehuset blomkålog brokkolitopper|obs": {
+    "mainCategory": "Frukt og grønt",
+    "subCategory": "Grønnsaker",
+    "ingredientKey": "blomkål",
+    "source": "ai",
+    "confidence": {
+      "main": 0.97,
+      "sub": 0.95,
+      "ingredientKey": 0.96
+    },
+    "timestamp": "2026-01-17T21:23:22.009Z"
+  },
+  "coop stor pakke strimlet kylling lårkjøtt|obs": {
+    "mainCategory": "Kjøtt",
+    "subCategory": "Kylling og fjærkre",
+    "ingredientKey": "strimlet kylling",
+    "source": "ai",
+    "confidence": {
+      "main": 0.97,
+      "sub": 0.95,
+      "ingredientKey": 0.96
+    },
+    "timestamp": "2026-01-17T21:23:22.010Z"
+  },
+  "coop stor pakke kyllingkjøttdeig|obs": {
+    "mainCategory": "Kjøtt",
+    "subCategory": "Kylling og fjærkre",
+    "ingredientKey": "kyllingkjøttdeig",
+    "source": "ai",
+    "confidence": {
+      "main": 0.97,
+      "sub": 0.95,
+      "ingredientKey": 0.96
+    },
+    "timestamp": "2026-01-17T21:23:22.010Z"
+  },
+  "coop stor pakke kjøttboller|obs": {
+    "mainCategory": "Kjøtt",
+    "subCategory": "Deig og farse",
+    "ingredientKey": "kjøttboller",
+    "source": "ai",
+    "confidence": {
+      "main": 0.97,
+      "sub": 0.95,
+      "ingredientKey": 0.96
+    },
+    "timestamp": "2026-01-17T21:23:22.011Z"
+  },
+  "henriettes fårikålkjøtt av bog|obs": {
+    "mainCategory": "Kjøtt",
+    "subCategory": "Storfe",
+    "ingredientKey": "fårikålkjøtt",
+    "source": "ai",
+    "confidence": {
+      "main": 0.97,
+      "sub": 0.95,
+      "ingredientKey": 0.96
+    },
+    "timestamp": "2026-01-17T21:23:22.012Z"
+  },
+  "gilde kjøttboller|obs": {
+    "mainCategory": "Kjøtt",
+    "subCategory": "Deig og farse",
+    "ingredientKey": "kjøttboller",
+    "source": "ai",
+    "confidence": {
+      "main": 0.97,
+      "sub": 0.95,
+      "ingredientKey": 0.96
+    },
+    "timestamp": "2026-01-17T21:23:22.012Z"
+  },
+  "fjordland supper|obs": {
+    "mainCategory": "Middag og ferdigmat",
+    "subCategory": "Supper",
+    "ingredientKey": "supper",
+    "source": "ai",
+    "confidence": {
+      "main": 0.97,
+      "sub": 0.95,
+      "ingredientKey": 0.96
+    },
+    "timestamp": "2026-01-17T21:23:22.014Z"
+  },
+  "rana ravioli tortelloni|obs": {
+    "mainCategory": "Middag og ferdigmat",
+    "subCategory": "Ferdigretter",
+    "ingredientKey": "produkt",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:22.019Z"
+  },
+  "coop svin indrefilet|obs": {
+    "mainCategory": "Kjøtt",
+    "subCategory": "Svin",
+    "ingredientKey": "indrefilet av svin",
+    "source": "ai",
+    "confidence": {
+      "main": 0.97,
+      "sub": 0.95,
+      "ingredientKey": 0.96
+    },
+    "timestamp": "2026-01-17T21:23:22.015Z"
+  },
+  "dsh grillede kyllingvinger|obs": {
+    "mainCategory": "Kjøtt",
+    "subCategory": "Kylling og fjærkre",
+    "ingredientKey": "grillede kyllingvinger",
+    "source": "ai",
+    "confidence": {
+      "main": 0.97,
+      "sub": 0.95,
+      "ingredientKey": 0.96
+    },
+    "timestamp": "2026-01-17T21:23:22.016Z"
+  },
+  "coop svinekam|obs": {
+    "mainCategory": "Kjøtt",
+    "subCategory": "Svin",
+    "ingredientKey": "svinekam",
+    "source": "ai",
+    "confidence": {
+      "main": 0.97,
+      "sub": 0.95,
+      "ingredientKey": 0.96
+    },
+    "timestamp": "2026-01-17T21:23:22.017Z"
+  },
+  "tyttebær|obs": {
+    "mainCategory": "Frukt og grønt",
+    "subCategory": "Bær",
+    "ingredientKey": "tyttebær",
+    "source": "ai",
+    "confidence": {
+      "main": 0.97,
+      "sub": 0.95,
+      "ingredientKey": 0.96
+    },
+    "timestamp": "2026-01-17T21:23:22.017Z"
+  },
+  "coast røkt laks i skiver|obs": {
+    "mainCategory": "Fisk og sjømat",
+    "subCategory": "Ferdig fisk",
+    "ingredientKey": "røkt laks",
+    "source": "ai",
+    "confidence": {
+      "main": 0.97,
+      "sub": 0.9,
+      "ingredientKey": 0.95
+    },
+    "timestamp": "2026-01-17T21:23:22.028Z"
+  },
+  "coop fiskekaker|obs": {
+    "mainCategory": "Fisk og sjømat",
+    "subCategory": "Ferdig fisk",
+    "ingredientKey": "fiskekaker",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:22.021Z"
+  },
+  "coop scampi|obs": {
+    "mainCategory": "Fisk og sjømat",
+    "subCategory": "Skalldyr",
+    "ingredientKey": "scampi",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:22.022Z"
+  },
+  "findus fiskesuppe original|obs": {
+    "mainCategory": "Middag og ferdigmat",
+    "subCategory": "Supper",
+    "ingredientKey": "fiskesuppe",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:22.023Z"
+  },
+  "findus våre beste fiskepinner|obs": {
+    "mainCategory": "Fisk og sjømat",
+    "subCategory": "Ferdig fisk",
+    "ingredientKey": "fiskepinner",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:22.024Z"
+  },
+  "grande sjømat seifilet u skinn|obs": {
+    "mainCategory": "Fisk og sjømat",
+    "subCategory": "Fisk",
+    "ingredientKey": "seifilet",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:22.025Z"
+  },
+  "blåskjell|obs": {
+    "mainCategory": "Fisk og sjømat",
+    "subCategory": "Skalldyr",
+    "ingredientKey": "blåskjell",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:22.026Z"
+  },
+  "grande sjømat lettsaltet uer i skiver|obs": {
+    "mainCategory": "Fisk og sjømat",
+    "subCategory": "Fisk",
+    "ingredientKey": "uer",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:22.027Z"
+  },
+  "kokt sjøkreps|obs": {
+    "mainCategory": "Fisk og sjømat",
+    "subCategory": "Skalldyr",
+    "ingredientKey": "sjøkreps",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:22.028Z"
+  },
+  "synnøve kongsgård|obs": {
+    "mainCategory": "Meieri og egg",
+    "subCategory": "Ost",
+    "ingredientKey": "ost",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:22.029Z"
+  },
+  "sunniva juice|obs": {
+    "mainCategory": "Drikke",
+    "subCategory": "Juice",
+    "ingredientKey": "juice",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:22.030Z"
+  },
+  "tine yoghurt|obs": {
+    "mainCategory": "Meieri og egg",
+    "subCategory": "Yoghurt",
+    "ingredientKey": "yoghurt",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:22.031Z"
+  },
+  "yoplait double 00|obs": {
+    "mainCategory": "Meieri og egg",
+    "subCategory": "Yoghurt",
+    "ingredientKey": "yoghurt",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:22.031Z"
+  },
+  "grilstad gull salami xxl|obs": {
+    "mainCategory": "Kjøtt",
+    "subCategory": "Påleggskjøtt",
+    "ingredientKey": "salami",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:22.032Z"
+  },
+  "tyrkisk gresk yoghurt|obs": {
+    "mainCategory": "Meieri og egg",
+    "subCategory": "Yoghurt",
+    "ingredientKey": "gresk yoghurt",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:22.033Z"
+  },
+  "oatly havredrikk|obs": {
+    "mainCategory": "Plantebasert",
+    "subCategory": "Plantedrikk",
+    "ingredientKey": "havredrikk",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:22.034Z"
+  },
+  "mon ami brie|obs": {
+    "mainCategory": "Meieri og egg",
+    "subCategory": "Ost",
+    "ingredientKey": "brie",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:22.035Z"
+  },
+  "axa bjørn store havregryn|obs": {
+    "mainCategory": "Frokost og korn",
+    "subCategory": "Havregryn",
+    "ingredientKey": "havregryn",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:22.035Z"
+  },
+  "coop skåret brød|obs": {
+    "mainCategory": "Bakeri og bakst",
+    "subCategory": "Brød",
+    "ingredientKey": "brød",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:22.036Z"
+  },
+  "coop stenovnsbakte rundstykker|obs": {
+    "mainCategory": "Bakeri og bakst",
+    "subCategory": "Rundstykker",
+    "ingredientKey": "rundstykker",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:22.037Z"
+  },
+  "coop ostelandgang|obs": {
+    "mainCategory": "Meieri og egg",
+    "subCategory": "Ost",
+    "ingredientKey": "ost",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:22.038Z"
+  },
+  "coop brød|obs": {
+    "mainCategory": "Bakeri og bakst",
+    "subCategory": "Brød",
+    "ingredientKey": "brød",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:22.038Z"
+  },
+  "monster energidrikk|obs": {
+    "mainCategory": "Drikke",
+    "subCategory": "Energidrikk",
+    "ingredientKey": "energidrikk",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:22.040Z"
+  },
+  "2 pk coop kakestykke|obs": {
+    "mainCategory": "Bakeri og bakst",
+    "subCategory": "Kaker",
+    "ingredientKey": "kake",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:22.040Z"
+  },
+  "maarud intense|obs": {
+    "mainCategory": "Snacks og godteri",
+    "subCategory": "Chips",
+    "ingredientKey": "chips",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:22.041Z"
+  },
+  "coop skillingsboller solboller skolebrød|obs": {
+    "mainCategory": "Bakeri og bakst",
+    "subCategory": "Kaker",
+    "ingredientKey": "kake",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:22.042Z"
+  },
+  "12 pk diplom is krone is|obs": {
+    "mainCategory": "Is og dessert",
+    "subCategory": "Iskrem",
+    "ingredientKey": "iskrem",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:22.043Z"
+  },
+  "colgate tannkrem karies kontroll|obs": {
+    "mainCategory": "Helse og hygiene",
+    "subCategory": "Personlig hygiene",
+    "ingredientKey": "tannkrem",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:22.043Z"
+  },
+  "head shoulders shampoo|obs": {
+    "mainCategory": "Helse og hygiene",
+    "subCategory": "Personlig hygiene",
+    "ingredientKey": "shampoo",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:22.044Z"
+  },
+  "norske poteter|obs": {
+    "mainCategory": "Frukt og grønt",
+    "subCategory": "Poteter",
+    "ingredientKey": "potet",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:22.045Z"
+  },
+  "bananas|obs": {
+    "mainCategory": "Frukt og grønt",
+    "subCategory": "Frukt",
+    "ingredientKey": "banan",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:22.046Z"
+  },
+  "kiwi|obs": {
+    "mainCategory": "Frukt og grønt",
+    "subCategory": "Frukt",
+    "ingredientKey": "kiwi",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:22.047Z"
+  },
+  "änglamark krydderurter|coop extra": {
+    "mainCategory": "Frukt og grønt",
+    "subCategory": "Urter",
+    "ingredientKey": "krydderurter",
+    "source": "ai",
+    "confidence": {
+      "main": 0.97,
+      "sub": 0.95,
+      "ingredientKey": 0.96
+    },
+    "timestamp": "2026-01-17T21:23:22.048Z"
+  },
+  "coop blåbær|coop mega": {
+    "mainCategory": "Frukt og grønt",
+    "subCategory": "Bær",
+    "ingredientKey": "blåbær",
+    "source": "ai",
+    "confidence": {
+      "main": 0.97,
+      "sub": 0.95,
+      "ingredientKey": 0.96
+    },
+    "timestamp": "2026-01-17T21:23:22.048Z"
+  },
+  "tine meierismør|coop mega": {
+    "mainCategory": "Meieri og egg",
+    "subCategory": "Smør og margarin",
+    "ingredientKey": "smør",
+    "source": "ai",
+    "confidence": {
+      "main": 0.97,
+      "sub": 0.95,
+      "ingredientKey": 0.96
+    },
+    "timestamp": "2026-01-17T21:23:22.049Z"
+  },
+  "appelsiner|coop prix": {
+    "mainCategory": "Frukt og grønt",
+    "subCategory": "Frukt",
+    "ingredientKey": "appelsin",
+    "source": "ai",
+    "confidence": {
+      "main": 0.9,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:22.068Z"
+  },
+  "coop jasminris|coop prix": {
+    "mainCategory": "Pasta og ris",
+    "subCategory": "Ris",
+    "ingredientKey": "jasminris",
+    "source": "ai",
+    "confidence": {
+      "main": 0.97,
+      "sub": 0.95,
+      "ingredientKey": 0.96
+    },
+    "timestamp": "2026-01-17T21:23:22.051Z"
+  },
+  "polarbrød havre 12 pk|coop prix": {
+    "mainCategory": "Bakeri og bakst",
+    "subCategory": "Brød",
+    "ingredientKey": "polarbrød",
+    "source": "ai",
+    "confidence": {
+      "main": 0.97,
+      "sub": 0.95,
+      "ingredientKey": 0.96
+    },
+    "timestamp": "2026-01-17T21:23:22.052Z"
+  },
+  "frokostbrød|coop prix": {
+    "mainCategory": "Bakeri og bakst",
+    "subCategory": "Brød",
+    "ingredientKey": "frokostbrød",
+    "source": "ai",
+    "confidence": {
+      "main": 0.97,
+      "sub": 0.95,
+      "ingredientKey": 0.96
+    },
+    "timestamp": "2026-01-17T21:23:22.053Z"
+  },
+  "skolebrød solboller|coop prix": {
+    "mainCategory": "Bakeri og bakst",
+    "subCategory": "Kaker",
+    "ingredientKey": "skolebrød",
+    "source": "ai",
+    "confidence": {
+      "main": 0.9,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:22.054Z"
+  },
+  "grilstad gullsalami|coop prix": {
+    "mainCategory": "Kjøtt",
+    "subCategory": "Påleggskjøtt",
+    "ingredientKey": "salami",
+    "source": "ai",
+    "confidence": {
+      "main": 0.9,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:22.055Z"
+  },
+  "tine kulturmelk|coop prix": {
+    "mainCategory": "Meieri og egg",
+    "subCategory": "Melk",
+    "ingredientKey": "kulturmelk",
+    "source": "ai",
+    "confidence": {
+      "main": 0.9,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:22.056Z"
+  },
+  "coop sprudle|coop prix": {
+    "mainCategory": "Drikke",
+    "subCategory": "Brus",
+    "ingredientKey": "brus",
+    "source": "ai",
+    "confidence": {
+      "main": 0.9,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:22.056Z"
+  },
+  "cloetta pops|coop prix": {
+    "mainCategory": "Snacks og godteri",
+    "subCategory": "Smågodt",
+    "ingredientKey": "smågodt",
+    "source": "ai",
+    "confidence": {
+      "main": 0.9,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:22.057Z"
+  },
+  "kims chips|coop prix": {
+    "mainCategory": "Snacks og godteri",
+    "subCategory": "Chips",
+    "ingredientKey": "chips",
+    "source": "ai",
+    "confidence": {
+      "main": 0.9,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:22.059Z"
+  },
+  "fun light|coop prix": {
+    "mainCategory": "Drikke",
+    "subCategory": "Saft",
+    "ingredientKey": "saft",
+    "source": "ai",
+    "confidence": {
+      "main": 0.9,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:22.059Z"
+  },
+  "coop juice iste|coop prix": {
+    "mainCategory": "Drikke",
+    "subCategory": "Juice",
+    "ingredientKey": "iste",
+    "source": "ai",
+    "confidence": {
+      "main": 0.9,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:22.060Z"
+  },
+  "move energidrikk|coop prix": {
+    "mainCategory": "Drikke",
+    "subCategory": "Energidrikk",
+    "ingredientKey": "energidrikk",
+    "source": "ai",
+    "confidence": {
+      "main": 0.9,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:22.062Z"
+  },
+  "coop poppet popcorn|coop prix": {
+    "mainCategory": "Snacks og godteri",
+    "subCategory": "Popcorn",
+    "ingredientKey": "popcorn",
+    "source": "ai",
+    "confidence": {
+      "main": 0.9,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:22.062Z"
+  },
+  "coop nøttemiks sweet salty|coop prix": {
+    "mainCategory": "Snacks og godteri",
+    "subCategory": "Nøtter",
+    "ingredientKey": "nøttemiks",
+    "source": "ai",
+    "confidence": {
+      "main": 0.9,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:22.063Z"
+  },
+  "coop valnøttkjerner|coop prix": {
+    "mainCategory": "Snacks og godteri",
+    "subCategory": "Nøtter",
+    "ingredientKey": "valnøttkjerner",
+    "source": "ai",
+    "confidence": {
+      "main": 0.9,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:22.065Z"
+  },
+  "coop sprø chips|coop prix": {
+    "mainCategory": "Snacks og godteri",
+    "subCategory": "Chips",
+    "ingredientKey": "chips",
+    "source": "ai",
+    "confidence": {
+      "main": 0.9,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:22.066Z"
+  },
+  "old el paso tortilla chips cheese green giant mais 3 pk|coop prix": {
+    "mainCategory": "Snacks og godteri",
+    "subCategory": "Chips",
+    "ingredientKey": "tortilla chips",
+    "source": "ai",
+    "confidence": {
+      "main": 0.9,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:22.067Z"
+  },
+  "mills tuber|coop prix": {
+    "mainCategory": "Pålegg",
+    "subCategory": "Tubeost",
+    "ingredientKey": "tuber",
+    "source": "ai",
+    "confidence": {
+      "main": 0.9,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:22.067Z"
+  },
+  "coop blåbær shaker|coop prix": {
+    "mainCategory": "Frukt og grønt",
+    "subCategory": "Bær",
+    "ingredientKey": "blåbær",
+    "source": "ai",
+    "confidence": {
+      "main": 0.9,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:22.069Z"
+  },
+  "coop spisemoden avokado 2 pk|coop prix": {
+    "mainCategory": "Frukt og grønt",
+    "subCategory": "Annet",
+    "ingredientKey": "avokado",
+    "source": "ai",
+    "confidence": {
+      "main": 0.9,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:22.070Z"
+  },
+  "coop hjertesalat 2 stk|coop prix": {
+    "mainCategory": "Frukt og grønt",
+    "subCategory": "Salat",
+    "ingredientKey": "hjertesalat",
+    "source": "ai",
+    "confidence": {
+      "main": 0.9,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:22.071Z"
+  },
+  "nidar smågodt i løsvekt|coop prix": {
+    "mainCategory": "Snacks og godteri",
+    "subCategory": "Smågodt",
+    "ingredientKey": "smågodt",
+    "source": "ai",
+    "confidence": {
+      "main": 0.9,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:22.072Z"
+  },
+  "big one classic pizza|coop prix": {
+    "mainCategory": "Middag og ferdigmat",
+    "subCategory": "Pizza",
+    "ingredientKey": "pizza",
+    "source": "ai",
+    "confidence": {
+      "main": 0.9,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:22.073Z"
+  },
+  "norvegia|coop prix": {
+    "mainCategory": "Meieri og egg",
+    "subCategory": "Ost",
+    "ingredientKey": "ost",
+    "source": "ai",
+    "confidence": {
+      "main": 0.9,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:22.074Z"
+  },
+  "appelsiner|coop marked": {
+    "mainCategory": "Frukt og grønt",
+    "subCategory": "Frukt",
+    "ingredientKey": "appelsin",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.95
+    },
+    "timestamp": "2026-01-17T21:23:22.087Z"
+  },
+  "santa maria mango chutney original|coop marked": {
+    "mainCategory": "Middag og ferdigmat",
+    "subCategory": "Sauser og stuinger",
+    "ingredientKey": "mango chutney",
+    "source": "ai",
+    "confidence": {
+      "main": 0.9,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:22.076Z"
+  },
+  "coop jasminris|coop marked": {
+    "mainCategory": "Pasta og ris",
+    "subCategory": "Ris",
+    "ingredientKey": "jasminris",
+    "source": "ai",
+    "confidence": {
+      "main": 0.9,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:22.077Z"
+  },
+  "grilstad gullsalami|coop marked": {
+    "mainCategory": "Kjøtt",
+    "subCategory": "Påleggskjøtt",
+    "ingredientKey": "salami",
+    "source": "ai",
+    "confidence": {
+      "main": 0.9,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:22.078Z"
+  },
+  "tine kulturmelk|coop marked": {
+    "mainCategory": "Meieri og egg",
+    "subCategory": "Melk",
+    "ingredientKey": "kulturmelk",
+    "source": "ai",
+    "confidence": {
+      "main": 0.9,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:22.079Z"
+  },
+  "1 valgfritt grovbrød fra coop 1 liter melk fra tine|coop marked": {
+    "mainCategory": "Bakeri og bakst",
+    "subCategory": "Brød",
+    "ingredientKey": "grovbrød",
+    "source": "ai",
+    "confidence": {
+      "main": 0.9,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:22.080Z"
+  },
+  "coop spekeskinke|coop marked": {
+    "mainCategory": "Kjøtt",
+    "subCategory": "Påleggskjøtt",
+    "ingredientKey": "spekeskinke",
+    "source": "ai",
+    "confidence": {
+      "main": 0.9,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "timestamp": "2026-01-17T21:23:22.081Z"
+  },
+  "coop pasta|coop marked": {
+    "mainCategory": "Pasta og ris",
+    "subCategory": "Annet",
+    "ingredientKey": "pasta",
+    "source": "ai",
+    "confidence": {
+      "main": 1,
+      "sub": 1,
+      "ingredientKey": 1
+    },
+    "timestamp": "2026-01-17T21:23:22.082Z"
+  },
+  "coop mixed breakfast rolls 8 pk|coop marked": {
+    "mainCategory": "Bakeri og bakst",
+    "subCategory": "Rundstykker",
+    "ingredientKey": "rundstykker",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.95
+    },
+    "timestamp": "2026-01-17T21:23:22.083Z"
+  },
+  "coop steinovnspizza|coop marked": {
+    "mainCategory": "Middag og ferdigmat",
+    "subCategory": "Pizza",
+    "ingredientKey": "pizza",
+    "source": "ai",
+    "confidence": {
+      "main": 1,
+      "sub": 1,
+      "ingredientKey": 1
+    },
+    "timestamp": "2026-01-17T21:23:22.085Z"
+  },
+  "coop hjertesalat 2 stk|coop marked": {
+    "mainCategory": "Frukt og grønt",
+    "subCategory": "Salat",
+    "ingredientKey": "hjertesalat",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.95
+    },
+    "timestamp": "2026-01-17T21:23:22.086Z"
+  },
+  "blåbær shaker|coop marked": {
+    "mainCategory": "Frukt og grønt",
+    "subCategory": "Bær",
+    "ingredientKey": "blåbær",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.9,
+      "ingredientKey": 0.95
+    },
+    "timestamp": "2026-01-17T21:23:22.087Z"
+  }
+}

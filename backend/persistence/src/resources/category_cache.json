@@ -1,495 +1,289 @@
 {
   "fana kjøtt løkrull|bunnpris": {
-    "mainCategory": "Kjøtt",
-    "subCategory": "Påleggskjøtt",
+    "mainCategory": "Pålegg & frokost",
+    "subCategory": "Kjøttpålegg",
     "ingredientKey": "løkrull",
     "source": "ai",
     "confidence": {
       "main": 0.95,
-      "sub": 0.9,
-      "ingredientKey": 0.9
+      "sub": 0.95,
+      "ingredientKey": 0.95
     },
-    "timestamp": "2026-01-17T20:02:01.872Z"
+    "cacheStatus": "trusted",
+    "timestamp": "2026-01-18T02:00:52.331Z"
   },
   "fana kjøtt røkt bogskinke|bunnpris": {
-    "mainCategory": "Kjøtt",
-    "subCategory": "Påleggskjøtt",
+    "mainCategory": "Pålegg & frokost",
+    "subCategory": "Kjøttpålegg",
     "ingredientKey": "bogskinke",
     "source": "ai",
     "confidence": {
       "main": 0.95,
-      "sub": 0.9,
-      "ingredientKey": 0.9
+      "sub": 0.95,
+      "ingredientKey": 0.95
     },
-    "timestamp": "2026-01-17T20:02:01.873Z"
+    "cacheStatus": "trusted",
+    "timestamp": "2026-01-18T02:00:52.334Z"
+  },
+  "makrell i tomat original og spicy|bunnpris": {
+    "mainCategory": "Pålegg & frokost",
+    "subCategory": "Fiskepålegg",
+    "ingredientKey": "makrell",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.95,
+      "ingredientKey": 0.95
+    },
+    "cacheStatus": "trusted",
+    "timestamp": "2026-01-18T02:00:52.334Z"
   },
   "q frokostyoghurt jordbær og vanilje|bunnpris": {
-    "mainCategory": "Meieri og egg",
+    "mainCategory": "Meieri & egg",
     "subCategory": "Yoghurt",
     "ingredientKey": "frokostyoghurt",
     "source": "ai",
     "confidence": {
       "main": 0.95,
-      "sub": 0.9,
-      "ingredientKey": 0.9
+      "sub": 0.95,
+      "ingredientKey": 0.95
     },
-    "timestamp": "2026-01-17T20:02:01.873Z"
-  },
-  "melange margarin soft flora original og lett|bunnpris": {
-    "mainCategory": "Meieri og egg",
-    "subCategory": "Smør og margarin",
-    "ingredientKey": "margarin",
-    "source": "ai",
-    "confidence": {
-      "main": 0.95,
-      "sub": 0.9,
-      "ingredientKey": 0.9
-    },
-    "timestamp": "2026-01-17T20:02:01.874Z"
-  },
-  "skyr mini jordbær bringebær og frukt bær|bunnpris": {
-    "mainCategory": "Meieri og egg",
-    "subCategory": "Yoghurt",
-    "ingredientKey": "skyr",
-    "source": "ai",
-    "confidence": {
-      "main": 0.95,
-      "sub": 0.9,
-      "ingredientKey": 0.9
-    },
-    "timestamp": "2026-01-17T20:02:01.874Z"
-  },
-  "tine sjokomelk|bunnpris": {
-    "mainCategory": "Drikke",
-    "subCategory": "Sjokolademelk",
-    "ingredientKey": "sjokolademelk",
-    "source": "ai",
-    "confidence": {
-      "main": 0.95,
-      "sub": 0.9,
-      "ingredientKey": 0.9
-    },
-    "timestamp": "2026-01-17T20:02:01.874Z"
-  },
-  "makrellfilet i tomat|bunnpris": {
-    "mainCategory": "Fisk og sjømat",
-    "subCategory": "Ferdig fisk",
-    "ingredientKey": "makrellfilet",
-    "source": "ai",
-    "confidence": {
-      "main": 0.95,
-      "sub": 0.9,
-      "ingredientKey": 0.9
-    },
-    "timestamp": "2026-01-17T20:02:01.874Z"
-  },
-  "skyr luftig bringebær|bunnpris": {
-    "mainCategory": "Meieri og egg",
-    "subCategory": "Yoghurt",
-    "ingredientKey": "skyr",
-    "source": "ai",
-    "confidence": {
-      "main": 0.95,
-      "sub": 0.9,
-      "ingredientKey": 0.9
-    },
-    "timestamp": "2026-01-17T20:02:01.875Z"
-  },
-  "gilde fin fersk leverpostei|bunnpris": {
-    "mainCategory": "Kjøtt",
-    "subCategory": "Påleggskjøtt",
-    "ingredientKey": "leverpostei",
-    "source": "ai",
-    "confidence": {
-      "main": 0.95,
-      "sub": 0.9,
-      "ingredientKey": 0.9
-    },
-    "timestamp": "2026-01-17T20:02:01.875Z"
-  },
-  "sjokolademelk|bunnpris": {
-    "mainCategory": "Drikke",
-    "subCategory": "Sjokolademelk",
-    "ingredientKey": "sjokolademelk",
-    "source": "ai",
-    "confidence": {
-      "main": 0.95,
-      "sub": 0.9,
-      "ingredientKey": 0.9
-    },
-    "timestamp": "2026-01-17T20:02:01.875Z"
-  },
-  "go morgen yoghurt|bunnpris": {
-    "mainCategory": "Meieri og egg",
-    "subCategory": "Yoghurt",
-    "ingredientKey": "yoghurt",
-    "source": "ai",
-    "confidence": {
-      "main": 0.95,
-      "sub": 0.9,
-      "ingredientKey": 0.9
-    },
-    "timestamp": "2026-01-17T20:02:01.877Z"
-  },
-  "tunfisk olivenoje pepper|bunnpris": {
-    "mainCategory": "Fisk og sjømat",
-    "subCategory": "Fisk",
-    "ingredientKey": "tunfisk",
-    "source": "ai",
-    "confidence": {
-      "main": 0.95,
-      "sub": 0.9,
-      "ingredientKey": 0.9
-    },
-    "timestamp": "2026-01-17T20:02:01.876Z"
-  },
-  "leverpostei|bunnpris": {
-    "mainCategory": "Kjøtt",
-    "subCategory": "Påleggskjøtt",
-    "ingredientKey": "leverpostei",
-    "source": "ai",
-    "confidence": {
-      "main": 0.95,
-      "sub": 0.9,
-      "ingredientKey": 0.9
-    },
-    "timestamp": "2026-01-17T20:02:01.876Z"
-  },
-  "prior kyllingpostei|bunnpris": {
-    "mainCategory": "Kjøtt",
-    "subCategory": "Påleggskjøtt",
-    "ingredientKey": "kyllingpostei",
-    "source": "ai",
-    "confidence": {
-      "main": 0.95,
-      "sub": 0.9,
-      "ingredientKey": 0.9
-    },
-    "timestamp": "2026-01-17T20:02:01.877Z"
-  },
-  "q frokostyoghurt jordbær og vanije|bunnpris": {
-    "mainCategory": "Meieri og egg",
-    "subCategory": "Yoghurt",
-    "ingredientKey": "frokostyoghurt",
-    "source": "ai",
-    "confidence": {
-      "main": 0.95,
-      "sub": 0.9,
-      "ingredientKey": 0.9
-    },
-    "timestamp": "2026-01-17T20:02:01.877Z"
-  },
-  "gilde salami familiens|bunnpris": {
-    "mainCategory": "Kjøtt",
-    "subCategory": "Påleggskjøtt",
-    "ingredientKey": "salami",
-    "source": "ai",
-    "confidence": {
-      "main": 0.95,
-      "sub": 0.9,
-      "ingredientKey": 0.9
-    },
-    "timestamp": "2026-01-17T20:02:01.877Z"
-  },
-  "svolværpostei|bunnpris": {
-    "mainCategory": "Kjøtt",
-    "subCategory": "Påleggskjøtt",
-    "ingredientKey": "svolværpostei",
-    "source": "ai",
-    "confidence": {
-      "main": 0.95,
-      "sub": 0.9,
-      "ingredientKey": 0.9
-    },
-    "timestamp": "2026-01-17T20:02:01.878Z"
-  },
-  "utvalgte yoplait fra fjordland|bunnpris": {
-    "mainCategory": "Meieri og egg",
-    "subCategory": "Yoghurt",
-    "ingredientKey": "yoghurt",
-    "source": "ai",
-    "confidence": {
-      "main": 0.95,
-      "sub": 0.9,
-      "ingredientKey": 0.9
-    },
-    "timestamp": "2026-01-17T20:02:01.878Z"
-  },
-  "king oscar tunfisk thai chili|bunnpris": {
-    "mainCategory": "Fisk og sjømat",
-    "subCategory": "Fisk",
-    "ingredientKey": "tunfisk",
-    "source": "ai",
-    "confidence": {
-      "main": 0.95,
-      "sub": 0.9,
-      "ingredientKey": 0.9
-    },
-    "timestamp": "2026-01-17T20:02:01.878Z"
-  },
-  "min frukt smoothie jordbær og eple pære|bunnpris": {
-    "mainCategory": "Frukt og grønt",
-    "subCategory": "Bær",
-    "ingredientKey": "jordbær",
-    "source": "ai",
-    "confidence": {
-      "main": 0.9,
-      "sub": 0.9,
-      "ingredientKey": 0.9
-    },
-    "timestamp": "2026-01-17T20:02:01.879Z"
-  },
-  "bjørnisbrød|bunnpris": {
-    "mainCategory": "Bakeri og bakst",
-    "subCategory": "Brød",
-    "ingredientKey": "brød",
-    "source": "ai",
-    "confidence": {
-      "main": 1,
-      "sub": 1,
-      "ingredientKey": 1
-    },
-    "timestamp": "2026-01-17T20:02:01.879Z"
-  },
-  "alle syrnet biola|bunnpris": {
-    "mainCategory": "Meieri og egg",
-    "subCategory": "Yoghurt",
-    "ingredientKey": "yoghurt",
-    "source": "ai",
-    "confidence": {
-      "main": 1,
-      "sub": 1,
-      "ingredientKey": 1
-    },
-    "timestamp": "2026-01-17T20:02:01.879Z"
-  },
-  "stabburet leverpostei|bunnpris": {
-    "mainCategory": "Kjøtt",
-    "subCategory": "Påleggskjøtt",
-    "ingredientKey": "leverpostei",
-    "source": "ai",
-    "confidence": {
-      "main": 0.9,
-      "sub": 0.9,
-      "ingredientKey": 0.9
-    },
-    "timestamp": "2026-01-17T20:02:01.880Z"
-  },
-  "mozzarella ostestenger|bunnpris": {
-    "mainCategory": "Meieri og egg",
-    "subCategory": "Ost",
-    "ingredientKey": "mozzarella",
-    "source": "ai",
-    "confidence": {
-      "main": 0.9,
-      "sub": 0.9,
-      "ingredientKey": 0.9
-    },
-    "timestamp": "2026-01-17T20:02:01.880Z"
-  },
-  "kavli tubeost skinke bacon|bunnpris": {
-    "mainCategory": "Pålegg",
-    "subCategory": "Kjøttpålegg",
-    "ingredientKey": "tubeost",
-    "source": "ai",
-    "confidence": {
-      "main": 0.9,
-      "sub": 0.9,
-      "ingredientKey": 0.9
-    },
-    "timestamp": "2026-01-17T20:02:01.880Z"
-  },
-  "grilstad gullsalami fersk salami og spekeskinke stranda|bunnpris": {
-    "mainCategory": "Kjøtt",
-    "subCategory": "Påleggskjøtt",
-    "ingredientKey": "salami",
-    "source": "ai",
-    "confidence": {
-      "main": 0.9,
-      "sub": 0.9,
-      "ingredientKey": 0.9
-    },
-    "timestamp": "2026-01-17T20:02:01.880Z"
-  },
-  "gilde salami siliana skivet|bunnpris": {
-    "mainCategory": "Kjøtt",
-    "subCategory": "Påleggskjøtt",
-    "ingredientKey": "salami",
-    "source": "ai",
-    "confidence": {
-      "main": 0.9,
-      "sub": 0.9,
-      "ingredientKey": 0.9
-    },
-    "timestamp": "2026-01-17T20:02:01.881Z"
-  },
-  "jarlsberg og norvegia skivet|bunnpris": {
-    "mainCategory": "Meieri og egg",
-    "subCategory": "Ost",
-    "ingredientKey": "jarlsberg",
-    "source": "ai",
-    "confidence": {
-      "main": 0.9,
-      "sub": 0.9,
-      "ingredientKey": 0.9
-    },
-    "timestamp": "2026-01-17T20:02:01.881Z"
-  },
-  "myk og rund havre fullkorn og julius|bunnpris": {
-    "mainCategory": "Frokost og korn",
-    "subCategory": "Havregryn",
-    "ingredientKey": "havregryn",
-    "source": "ai",
-    "confidence": {
-      "main": 0.9,
-      "sub": 0.9,
-      "ingredientKey": 0.9
-    },
-    "timestamp": "2026-01-17T20:02:01.881Z"
-  },
-  "eldorado linser bønner og kikerter|bunnpris": {
-    "mainCategory": "Plantebasert",
-    "subCategory": "Annet",
-    "ingredientKey": "linser",
-    "source": "ai",
-    "confidence": {
-      "main": 0.9,
-      "sub": 0.9,
-      "ingredientKey": 0.9
-    },
-    "timestamp": "2026-01-17T20:02:01.882Z"
-  },
-  "potetmos gressløk melk|bunnpris": {
-    "mainCategory": "Middag og ferdigmat",
-    "subCategory": "Tilbehør",
-    "ingredientKey": "potetmos",
-    "source": "ai",
-    "confidence": {
-      "main": 0.9,
-      "sub": 0.9,
-      "ingredientKey": 0.9
-    },
-    "timestamp": "2026-01-17T20:02:01.882Z"
-  },
-  "mr lee nudler kjøtt og kyllingsmak|bunnpris": {
-    "mainCategory": "Middag og ferdigmat",
-    "subCategory": "Ferdigretter",
-    "ingredientKey": "nudler",
-    "source": "ai",
-    "confidence": {
-      "main": 0.9,
-      "sub": 0.9,
-      "ingredientKey": 0.9
-    },
-    "timestamp": "2026-01-17T20:02:01.882Z"
-  },
-  "utvalgte toro posesupper rett i koppen|bunnpris": {
-    "mainCategory": "Middag og ferdigmat",
-    "subCategory": "Supper",
-    "ingredientKey": "suppe",
-    "source": "ai",
-    "confidence": {
-      "main": 0.9,
-      "sub": 0.9,
-      "ingredientKey": 0.9
-    },
-    "timestamp": "2026-01-17T20:02:01.883Z"
-  },
-  "tomater hakkede chili hvitløk urter naturell og passata|bunnpris": {
-    "mainCategory": "Frukt og grønt",
-    "subCategory": "Grønnsaker",
-    "ingredientKey": "tomat",
-    "source": "ai",
-    "confidence": {
-      "main": 0.9,
-      "sub": 0.9,
-      "ingredientKey": 0.9
-    },
-    "timestamp": "2026-01-17T20:02:01.883Z"
-  },
-  "pasta snack pot bolognese og carbonara|bunnpris": {
-    "mainCategory": "Middag og ferdigmat",
-    "subCategory": "Ferdigretter",
-    "ingredientKey": "pasta",
-    "source": "ai",
-    "confidence": {
-      "main": 0.9,
-      "sub": 0.9,
-      "ingredientKey": 0.9
-    },
-    "timestamp": "2026-01-17T20:02:01.883Z"
-  },
-  "pasta linguine og penne|bunnpris": {
-    "mainCategory": "Middag og ferdigmat",
-    "subCategory": "Annet",
-    "ingredientKey": "pasta",
-    "source": "ai",
-    "confidence": {
-      "main": 0.9,
-      "sub": 0.9,
-      "ingredientKey": 0.9
-    },
-    "timestamp": "2026-01-17T20:02:01.883Z"
-  },
-  "dolmio original garlic alforno og lasagne creamy|bunnpris": {
-    "mainCategory": "Middag og ferdigmat",
-    "subCategory": "Sauser",
-    "ingredientKey": "sauce",
-    "source": "ai",
-    "confidence": {
-      "main": 0.9,
-      "sub": 0.9,
-      "ingredientKey": 0.9
-    },
-    "timestamp": "2026-01-17T20:02:01.884Z"
+    "cacheStatus": "trusted",
+    "timestamp": "2026-01-18T02:00:52.335Z"
   },
   "mills majones ekte og lett|bunnpris": {
-    "mainCategory": "Pålegg",
-    "subCategory": "Annet",
+    "mainCategory": "Tilbehør",
+    "subCategory": "Sauser og dressing",
     "ingredientKey": "majones",
     "source": "ai",
     "confidence": {
       "main": 0.95,
-      "sub": 0.9,
+      "sub": 0.95,
       "ingredientKey": 0.95
     },
-    "timestamp": "2026-01-17T20:28:02.927Z"
+    "cacheStatus": "trusted",
+    "timestamp": "2026-01-18T02:00:52.335Z"
+  },
+  "melange margarin soft flora original og lett|bunnpris": {
+    "mainCategory": "Pålegg & frokost",
+    "subCategory": "Smør, margarin og matfett",
+    "ingredientKey": "margarin",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.95,
+      "ingredientKey": 0.95
+    },
+    "cacheStatus": "trusted",
+    "timestamp": "2026-01-18T02:00:52.336Z"
   },
   "tine rislunsj jordbær bringebær og blåbær|bunnpris": {
-    "mainCategory": "Meieri og egg",
+    "mainCategory": "Meieri & egg",
     "subCategory": "Yoghurt",
-    "ingredientKey": "yoghurt",
+    "ingredientKey": "rislunsj",
     "source": "ai",
     "confidence": {
       "main": 0.95,
-      "sub": 0.9,
-      "ingredientKey": 0.9
+      "sub": 0.95,
+      "ingredientKey": 0.95
     },
-    "timestamp": "2026-01-17T20:28:34.101Z"
+    "cacheStatus": "trusted",
+    "timestamp": "2026-01-18T02:00:52.337Z"
   },
-  "sandwich|bunnpris": {
-    "mainCategory": "Middag og ferdigmat",
-    "subCategory": "Ferdigretter",
-    "ingredientKey": "sandwich",
+  "skyr mini jordbær bringebær og frukt bær|bunnpris": {
+    "mainCategory": "Meieri & egg",
+    "subCategory": "Yoghurt",
+    "ingredientKey": "skyr",
     "source": "ai",
     "confidence": {
       "main": 0.95,
-      "sub": 0.9,
-      "ingredientKey": 0.9
+      "sub": 0.95,
+      "ingredientKey": 0.95
     },
-    "timestamp": "2026-01-17T20:34:24.930Z"
+    "cacheStatus": "trusted",
+    "timestamp": "2026-01-18T02:00:52.338Z"
+  },
+  "tine sjokomelk|bunnpris": {
+    "mainCategory": "Drikke",
+    "subCategory": "Sjokoladedrikk",
+    "ingredientKey": "sjokomelk",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.95,
+      "ingredientKey": 0.95
+    },
+    "cacheStatus": "trusted",
+    "timestamp": "2026-01-18T02:00:52.338Z"
+  },
+  "makrellfilet i tomat|bunnpris": {
+    "mainCategory": "Pålegg & frokost",
+    "subCategory": "Fiskepålegg",
+    "ingredientKey": "makrellfilet",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.95,
+      "ingredientKey": 0.95
+    },
+    "cacheStatus": "trusted",
+    "timestamp": "2026-01-18T02:00:52.340Z"
+  },
+  "skyr luftig bringebær|bunnpris": {
+    "mainCategory": "Meieri & egg",
+    "subCategory": "Yoghurt",
+    "ingredientKey": "skyr",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.95,
+      "ingredientKey": 0.95
+    },
+    "cacheStatus": "trusted",
+    "timestamp": "2026-01-18T02:00:52.342Z"
+  },
+  "gilde fin fersk leverpostei|bunnpris": {
+    "mainCategory": "Pålegg & frokost",
+    "subCategory": "Leverpostei",
+    "ingredientKey": "leverpostei",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.95,
+      "ingredientKey": 0.95
+    },
+    "cacheStatus": "trusted",
+    "timestamp": "2026-01-18T02:00:52.343Z"
+  },
+  "tine kremgo pepper urter krydder og chimichurri|bunnpris": {
+    "mainCategory": "Ost",
+    "subCategory": "Smøreoster",
+    "ingredientKey": "kremgo",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.95,
+      "ingredientKey": 0.95
+    },
+    "cacheStatus": "trusted",
+    "timestamp": "2026-01-18T02:00:52.343Z"
   },
   "bygglunsj bringebær blåbær jordbær og eple havrelunsj|bunnpris": {
-    "mainCategory": "Frokost og korn",
-    "subCategory": "Frokostblanding",
-    "ingredientKey": "havregryn",
+    "mainCategory": "Meieri & egg",
+    "subCategory": "Yoghurt",
+    "ingredientKey": "bygglunsj",
     "source": "ai",
     "confidence": {
       "main": 0.95,
+      "sub": 0.95,
+      "ingredientKey": 0.95
+    },
+    "cacheStatus": "trusted",
+    "timestamp": "2026-01-18T02:00:52.344Z"
+  },
+  "sjokolademelk|bunnpris": {
+    "mainCategory": "Drikke",
+    "subCategory": "Sjokoladedrikk",
+    "ingredientKey": "sjokolademelk",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.95,
+      "ingredientKey": 0.95
+    },
+    "cacheStatus": "trusted",
+    "timestamp": "2026-01-18T02:00:52.345Z"
+  },
+  "be kind nøttebar choco nuts seasalt og caramel almond seasalt|bunnpris": {
+    "mainCategory": "Snacks, godteri & sjokolade",
+    "subCategory": "Nøtter",
+    "ingredientKey": "nøttebar",
+    "source": "ai",
+    "confidence": {
+      "main": 0.9,
       "sub": 0.9,
       "ingredientKey": 0.9
     },
-    "timestamp": "2026-01-17T20:34:24.930Z"
+    "cacheStatus": "pending",
+    "timestamp": "2026-01-18T02:00:52.345Z"
+  },
+  "go morgen yoghurt|bunnpris": {
+    "mainCategory": "Meieri & egg",
+    "subCategory": "Yoghurt",
+    "ingredientKey": "go morgen",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.95,
+      "ingredientKey": 0.95
+    },
+    "cacheStatus": "trusted",
+    "timestamp": "2026-01-18T02:00:52.347Z"
+  },
+  "nutbar ristede nøtter kokos og nøtter frø|bunnpris": {
+    "mainCategory": "Snacks, godteri & sjokolade",
+    "subCategory": "Nøtter",
+    "ingredientKey": "nutbar",
+    "source": "ai",
+    "confidence": {
+      "main": 0.9,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "cacheStatus": "pending",
+    "timestamp": "2026-01-18T02:00:52.348Z"
+  },
+  "tunfisk olivenoje pepper|bunnpris": {
+    "mainCategory": "Pålegg & frokost",
+    "subCategory": "Fiskepålegg",
+    "ingredientKey": "tunfisk",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.95,
+      "ingredientKey": 0.95
+    },
+    "cacheStatus": "trusted",
+    "timestamp": "2026-01-18T02:00:52.349Z"
+  },
+  "leverpostei|bunnpris": {
+    "mainCategory": "Pålegg & frokost",
+    "subCategory": "Leverpostei",
+    "ingredientKey": "leverpostei",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.95,
+      "ingredientKey": 0.95
+    },
+    "cacheStatus": "trusted",
+    "timestamp": "2026-01-18T02:00:52.350Z"
+  },
+  "prior kyllingpostei|bunnpris": {
+    "mainCategory": "Pålegg & frokost",
+    "subCategory": "Kjøttpålegg",
+    "ingredientKey": "kyllingpostei",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.95,
+      "ingredientKey": 0.95
+    },
+    "cacheStatus": "pending",
+    "timestamp": "2026-01-18T02:00:52.350Z"
+  },
+  "mills italiensk salat og ovnsbakt postei|bunnpris": {
+    "mainCategory": "Pålegg & frokost",
+    "subCategory": "Kjøttpålegg",
+    "ingredientKey": "italiensk salat",
+    "source": "ai",
+    "confidence": {
+      "main": 0.9,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "cacheStatus": "pending",
+    "timestamp": "2026-01-18T02:00:52.351Z"
   },
   "utvalgte smoothies bendit|bunnpris": {
     "mainCategory": "Drikke",
@@ -497,10 +291,349 @@
     "ingredientKey": "smoothie",
     "source": "ai",
     "confidence": {
-      "main": 0.95,
+      "main": 0.9,
       "sub": 0.9,
       "ingredientKey": 0.9
     },
-    "timestamp": "2026-01-17T20:34:24.931Z"
+    "cacheStatus": "pending",
+    "timestamp": "2026-01-18T02:00:52.352Z"
+  },
+  "q frokostyoghurt jordbær og vanije|bunnpris": {
+    "mainCategory": "Meieri & egg",
+    "subCategory": "Yoghurt",
+    "ingredientKey": "frokostyoghurt",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.95,
+      "ingredientKey": 0.95
+    },
+    "cacheStatus": "trusted",
+    "timestamp": "2026-01-18T02:00:52.353Z"
+  },
+  "gilde salami familiens|bunnpris": {
+    "mainCategory": "Pålegg & frokost",
+    "subCategory": "Kjøttpålegg",
+    "ingredientKey": "salami",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.95,
+      "ingredientKey": 0.95
+    },
+    "cacheStatus": "trusted",
+    "timestamp": "2026-01-18T02:00:52.354Z"
+  },
+  "proteinbar powerking peanøtt karamell|bunnpris": {
+    "mainCategory": "Snacks, godteri & sjokolade",
+    "subCategory": "Mellommåltid",
+    "ingredientKey": "proteinbar",
+    "source": "ai",
+    "confidence": {
+      "main": 0.9,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "cacheStatus": "pending",
+    "timestamp": "2026-01-18T02:00:52.355Z"
+  },
+  "svolværpostei|bunnpris": {
+    "mainCategory": "Pålegg & frokost",
+    "subCategory": "Leverpostei",
+    "ingredientKey": "svolværpostei",
+    "source": "ai",
+    "confidence": {
+      "main": 0.9,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "cacheStatus": "pending",
+    "timestamp": "2026-01-18T02:00:52.355Z"
+  },
+  "utvalgte yoplait fra fjordland|bunnpris": {
+    "mainCategory": "Meieri & egg",
+    "subCategory": "Yoghurt",
+    "ingredientKey": "yoplait",
+    "source": "ai",
+    "confidence": {
+      "main": 0.9,
+      "sub": 0.9,
+      "ingredientKey": 0.9
+    },
+    "cacheStatus": "pending",
+    "timestamp": "2026-01-18T02:00:52.357Z"
+  },
+  "king oscar tunfisk thai chili|bunnpris": {
+    "mainCategory": "Pålegg & frokost",
+    "subCategory": "Fiskepålegg",
+    "ingredientKey": "tunfisk thai",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.95,
+      "ingredientKey": 0.95
+    },
+    "cacheStatus": "trusted",
+    "timestamp": "2026-01-18T02:00:52.358Z"
+  },
+  "min frukt smoothie jordbær og eple pære|bunnpris": {
+    "mainCategory": "Drikke",
+    "subCategory": "Smoothie",
+    "ingredientKey": "smoothie",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.95,
+      "ingredientKey": 0.95
+    },
+    "cacheStatus": "trusted",
+    "timestamp": "2026-01-18T02:00:52.359Z"
+  },
+  "bjørnisbrød|bunnpris": {
+    "mainCategory": "Brød",
+    "subCategory": "Brød",
+    "ingredientKey": "brød",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.95,
+      "ingredientKey": 0.95
+    },
+    "cacheStatus": "trusted",
+    "timestamp": "2026-01-18T02:00:52.360Z"
+  },
+  "mandel soyadrikk og drikkeyoghurt jordbær|bunnpris": {
+    "mainCategory": "Meieri & egg",
+    "subCategory": "Drikkeyoghurt",
+    "ingredientKey": "drikkeyoghurt",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.95,
+      "ingredientKey": 0.95
+    },
+    "cacheStatus": "trusted",
+    "timestamp": "2026-01-18T02:00:52.361Z"
+  },
+  "alle syrnet biola|bunnpris": {
+    "mainCategory": "Meieri & egg",
+    "subCategory": "Yoghurt",
+    "ingredientKey": "yoghurt",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.95,
+      "ingredientKey": 0.95
+    },
+    "cacheStatus": "trusted",
+    "timestamp": "2026-01-18T02:00:52.362Z"
+  },
+  "stabburet leverpostei|bunnpris": {
+    "mainCategory": "Pålegg & frokost",
+    "subCategory": "Leverpostei",
+    "ingredientKey": "leverpostei",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.95,
+      "ingredientKey": 0.95
+    },
+    "cacheStatus": "trusted",
+    "timestamp": "2026-01-18T02:00:52.363Z"
+  },
+  "mozzarella ostestenger|bunnpris": {
+    "mainCategory": "Ost",
+    "subCategory": "Mozzarella",
+    "ingredientKey": "mozzarella",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.95,
+      "ingredientKey": 0.95
+    },
+    "cacheStatus": "trusted",
+    "timestamp": "2026-01-18T02:00:52.363Z"
+  },
+  "kavli tubeost skinke bacon|bunnpris": {
+    "mainCategory": "Pålegg & frokost",
+    "subCategory": "Tubeost",
+    "ingredientKey": "tubeost",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.95,
+      "ingredientKey": 0.95
+    },
+    "cacheStatus": "trusted",
+    "timestamp": "2026-01-18T02:00:52.364Z"
+  },
+  "grilstad gullsalami fersk salami og spekeskinke stranda|bunnpris": {
+    "mainCategory": "Pålegg & frokost",
+    "subCategory": "Kjøttpålegg",
+    "ingredientKey": "salami",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.95,
+      "ingredientKey": 0.95
+    },
+    "cacheStatus": "trusted",
+    "timestamp": "2026-01-18T02:00:52.365Z"
+  },
+  "gilde salami siliana skivet|bunnpris": {
+    "mainCategory": "Pålegg & frokost",
+    "subCategory": "Kjøttpålegg",
+    "ingredientKey": "salami",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.95,
+      "ingredientKey": 0.95
+    },
+    "cacheStatus": "trusted",
+    "timestamp": "2026-01-18T02:00:52.366Z"
+  },
+  "jarlsberg og norvegia skivet|bunnpris": {
+    "mainCategory": "Ost",
+    "subCategory": "Gulost",
+    "ingredientKey": "gulost",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.95,
+      "ingredientKey": 0.95
+    },
+    "cacheStatus": "trusted",
+    "timestamp": "2026-01-18T02:00:52.367Z"
+  },
+  "myk og rund havre fullkorn og julius|bunnpris": {
+    "mainCategory": "Baking",
+    "subCategory": "Havregryn",
+    "ingredientKey": "havregryn",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.95,
+      "ingredientKey": 0.95
+    },
+    "cacheStatus": "trusted",
+    "timestamp": "2026-01-18T02:00:52.367Z"
+  },
+  "eldorado linser bønner og kikerter|bunnpris": {
+    "mainCategory": "Tilbehør",
+    "subCategory": "Linser og frø",
+    "ingredientKey": "linser",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.95,
+      "ingredientKey": 0.95
+    },
+    "cacheStatus": "trusted",
+    "timestamp": "2026-01-18T02:00:52.368Z"
+  },
+  "potetmos gressløk melk|bunnpris": {
+    "mainCategory": "Tilbehør",
+    "subCategory": "Stuinger",
+    "ingredientKey": "potetmos",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.95,
+      "ingredientKey": 0.95
+    },
+    "cacheStatus": "trusted",
+    "timestamp": "2026-01-18T02:00:52.369Z"
+  },
+  "mr lee nudler kjøtt og kyllingsmak|bunnpris": {
+    "mainCategory": "Middag",
+    "subCategory": "Nudler",
+    "ingredientKey": "nudler",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.95,
+      "ingredientKey": 0.95
+    },
+    "cacheStatus": "trusted",
+    "timestamp": "2026-01-18T02:00:52.370Z"
+  },
+  "utvalgte toro posesupper rett i koppen|bunnpris": {
+    "mainCategory": "Middag",
+    "subCategory": "Supper",
+    "ingredientKey": "suppe",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.95,
+      "ingredientKey": 0.95
+    },
+    "cacheStatus": "trusted",
+    "timestamp": "2026-01-18T02:00:52.372Z"
+  },
+  "tomater hakkede chili hvitløk urter naturell og passata|bunnpris": {
+    "mainCategory": "Tilbehør",
+    "subCategory": "Hermetisk grønt",
+    "ingredientKey": "tomater",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.95,
+      "ingredientKey": 0.95
+    },
+    "cacheStatus": "trusted",
+    "timestamp": "2026-01-18T02:00:52.374Z"
+  },
+  "pasta snack pot bolognese og carbonara|bunnpris": {
+    "mainCategory": "Middag",
+    "subCategory": "Ferdigretter",
+    "ingredientKey": "pasta",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.95,
+      "ingredientKey": 0.95
+    },
+    "cacheStatus": "trusted",
+    "timestamp": "2026-01-18T02:00:52.375Z"
+  },
+  "pasta linguine og penne|bunnpris": {
+    "mainCategory": "Middag",
+    "subCategory": "Pasta",
+    "ingredientKey": "pasta",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.95,
+      "ingredientKey": 0.95
+    },
+    "cacheStatus": "trusted",
+    "timestamp": "2026-01-18T02:00:52.377Z"
+  },
+  "dolmio original garlic alforno og lasagne creamy|bunnpris": {
+    "mainCategory": "Middag",
+    "subCategory": "Ferdigretter",
+    "ingredientKey": "lasagne",
+    "source": "ai",
+    "confidence": {
+      "main": 0.95,
+      "sub": 0.95,
+      "ingredientKey": 0.95
+    },
+    "cacheStatus": "trusted",
+    "timestamp": "2026-01-18T02:00:52.377Z"
+  },
+  "sandwich|30g|x1|bunnpris": {
+    "mainCategory": "Snacks, godteri & sjokolade",
+    "subCategory": "Mellommåltid",
+    "ingredientKey": "sandwich, knekkebrød",
+    "source": "manual",
+    "confidence": {
+      "main": 1,
+      "sub": 1,
+      "ingredientKey": 1
+    },
+    "cacheStatus": "trusted",
+    "timestamp": "2026-01-18T02:07:35.912Z"
   }
 }

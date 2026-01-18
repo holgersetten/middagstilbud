@@ -2,6 +2,7 @@ import express, { Request, Response } from 'express';
 import offerService from '../../../core/src/services/offerService';
 import categoryService from '../../../core/src/services/categoryService';
 import categoryConfigService from '../../../core/src/services/categoryConfigService';
+import imageService from '../../../persistence/src/services/imageService';
 import { MainCategory, SubCategory, CATEGORY_HIERARCHY } from '../../../core/src/config/categories';
 
 const router = express.Router();
@@ -19,7 +20,6 @@ router.get('/offers', async (req: Request, res: Response) => {
             offers = await offerService.getAllOffers();
         }
         
-        console.log(`📦 Returnerer ${offers.length} tilbud${storeName ? ` fra ${storeName}` : ''}`);
         res.json({
             count: offers.length,
             store: storeName || 'alle',
@@ -39,7 +39,6 @@ router.get('/offers/review', async (req: Request, res: Response) => {
     try {
         const offersNeedingReview = await offerService.getOffersNeedingReview();
         
-        console.log(`🔍 Returnerer ${offersNeedingReview.length} tilbud som trenger review`);
         res.json({
             count: offersNeedingReview.length,
             offers: offersNeedingReview
@@ -331,6 +330,32 @@ router.post('/categories/main/rename', async (req: Request, res: Response) => {
         console.error('❌ Feil ved omdøping av hovedkategori:', (error as Error).message);
         return res.status(500).json({
             error: 'Kunne ikke omdøpe hovedkategori',
+            message: (error as Error).message
+        });
+    }
+});
+
+// GET /api/offers/:hotspotId/image - Hent bilde for et tilbud
+router.get('/offers/:hotspotId/image', async (req: Request, res: Response) => {
+    try {
+        const hotspotId = req.params.hotspotId;
+        
+        if (!hotspotId || typeof hotspotId !== 'string') {
+            return res.status(400).json({ error: 'hotspotId er påkrevd' });
+        }
+
+        const images = await imageService.getOfferImage(hotspotId);
+        const bestImage = imageService.getBestImage(images);
+
+        return res.json({
+            hotspotId,
+            images,
+            bestImage
+        });
+    } catch (error) {
+        console.error('❌ Feil ved henting av bilde:', (error as Error).message);
+        return res.status(500).json({
+            error: 'Kunne ikke hente bilde',
             message: (error as Error).message
         });
     }

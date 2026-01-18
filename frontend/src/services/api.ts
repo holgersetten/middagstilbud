@@ -36,6 +36,11 @@ export const offersApi = {
     return response.data;
   },
 
+  getOfferImage: async (hotspotId: string): Promise<{ hotspotId: string; images: { view: string | null; zoom: string | null; thumb: string | null }; bestImage: string | null }> => {
+    const response = await axios.get(`${API_BASE_URL}/offers/${hotspotId}/image`);
+    return response.data;
+  },
+
   // Category management
   addSubCategory: async (mainCategory: string, subCategory: string): Promise<{ success: boolean; message: string; note: string }> => {
     const response = await axios.post(`${API_BASE_URL}/categories/subcategory/add`, {

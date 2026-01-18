@@ -4,137 +4,254 @@
  */
 
 export const CATEGORY_HIERARCHY = {
-  "Frukt og grønt": [
-    "Frukt",
-    "Grønnsaker",
-    "Salat",
+  "Frukt & grønt": [
     "Bær",
-    "Urter",
+    "Frosne bær og grønnsaker",
+    "Frukt",
+    "Fruktkurv",
+    "Grønnsaker",
+    "Krydderurter",
     "Poteter",
-    "Annet"
+    "Sopp",
+    "Annet",
   ],
-  "Bakeri og bakst": [
-    "Brød",
-    "Rundstykker",
-    "Kaker",
-    "Bakervarer",
-    "Tortilla og wraps",
-    "Annet"
-  ],
-  "Frokost og korn": [
-    "Frokostblanding",
-    "Havregryn",
-    "Müsli",
-    "Grøt",
-    "Bars",
-    "Annet"
-  ],
-  "Meieri og egg": [
-    "Melk",
-    "Yoghurt",
-    "Ost",
-    "Smør og margarin",
-    "Fløte og rømme",
-    "Egg",
-    "Sjokolademelk",
-    "Annet"
-  ],
-  "Plantebasert": [
-    "Kjøtterstatning",
-    "Plantedrikk",
-    "Vegetarretter",
-    "Annet"
-  ],
-  "Kjøtt": [
-    "Storfe",
-    "Svin",
-    "Kylling og fjærkre",
-    "Deig og farse",
-    "Påleggskjøtt",
-    "Annet"
-  ],
-  "Fisk og sjømat": [
+
+  "Fisk & skalldyr": [
     "Fisk",
+    "Hvalkjøtt",
     "Skalldyr",
-    "Ferdig fisk",
-    "Annet"
+    "Skjell",
+    "Sushi",
+    "Tørket fisk",
+    "Annet",
   ],
-  "Middag og ferdigmat": [
+
+  "Brød": [
+    "Boller og småkaker",
+    "Brød",
+    "Hamburgerbrød",
+    "Knekkebrød",
+    "Lefser",
+    "Loff",
+    "Lomper",
+    "Maiskaker",
+    "Pita og nan",
+    "Pølsebrød",
+    "Baguetter",
+    "Lefser",
+    "Riskaker",
+    "Rundstykker",
+    "Annet",
+  ],
+
+  "Middag": [
     "Ferdigretter",
+    "Fiskeretter",
+    "Grøt",
+    "Middagshermetikk",
+    "Nudler",
+    "Pasta",
     "Pizza",
     "Supper",
-    "Sauser og stuinger",
-    "Potetmos og tilbehør",
-    "Vegetar",
-    "Annet"
+    "Taco",
+    "Vegetarretter",
+    "Annet",
   ],
-  "Pålegg": [
-    "Kjøttpålegg",
+
+  "Kylling og fjærkre": [
+    "And",
+    "Kalkun",
+    "Kylling",
+    "Rype",
+    "Annet",
+  ],
+
+  "Meieri & egg": [
+    "Cottage cheese",
+    "Creme fraiche",
+    "Egg",
+    "Fløte",
+    "Kesam",
+    "Melk",
+    "Proteinpudding",
+    "Rømme",
+    "Yoghurt",
+    "Drikkeyoghurt",
+    "Annet",
+  ],
+
+  "Pålegg & frokost": [
+    "Bacon",
     "Fiskepålegg",
+    "Frokostblandinger og müsli",
+    "Kjøttpålegg",
     "Leverpostei",
-    "Ost",
+    "Påleggsalat",
+    "Smør, margarin og matfett",
     "Syltetøy",
-    "Søtt pålegg",
-    "Vegetar",
+    "Vegansk pålegg",
     "Tubeost",
-    "Annet"
+    "Annet",
   ],
+
+  "Kjøtt": [
+    "Hamburger",
+    "Kjøttdeig og farse",
+    "Andre kjøttretter",
+    "Lammekjøtt",
+    "Pølser",
+    "Storfekjøtt",
+    "Svinekjøtt",
+    "Viltkjøtt",
+    "Annet",
+  ],
+
+  "Tilbehør": [
+    "Eddik",
+    "Hermetisk grønt",
+    "Tomatsaus",
+    "Ketchup og sennep",
+    "Kokosmelk",
+    "Kraft og buljong",
+    "Krydder",
+    "Linser og frø",
+    "Marinader og BBQ-saus",
+    "Matoljer",
+    "Middagssalat",
+    "Pizzatopping",
+    "Potetsalat",
+    "Sauser og dressing",
+    "Stuinger",
+    "Sushitilbehør",
+    "Annet",
+  ],
+
   "Drikke": [
     "Brus",
-    "Vann",
-    "Juice",
-    "Smoothie",
+    "Drinkmikser",
     "Energidrikk",
+    "Ferdigdrinker",
+    "Iskaffe",
+    "Iste",
+    "Juice",
     "Kaffe",
-    "Te",
-    "Sjokolademelk",
+    "Leskedrikk",
     "Saft",
-    "Annet"
+    "Sjokoladedrikk",
+    "Smoothie",
+    "Te",
+    "Toddy",
+    "Vann",
+    "Øl og cider",
+    "Annet",
   ],
-  "Snacks og godteri": [
-    "Sjokolade",
-    "Chips",
+
+  "Ost": [
+    "Blåmuggost",
+    "Brunost",
+    "Cheddar",
+    "Fetaost",
+    "Gulost",
+    "Halloumi",
+    "Manchego",
+    "Mozzarella",
+    "Parmesan",
+    "Plantebasert ost",
+    "Pultost",
+    "Revet ost",
+    "Smøreoster",
+    "Annet",
+  ],
+
+  "Dessert og iskrem": [
+    "Dessertpuddinger",
+    "Dessertsaucer",
+    "Dessertsuppe",
+    "Gele",
+    "Hermetisk frukt og bær",
+    "Is",
+    "Mousse",
+    "Riskrem",
+    "Tiramisu",
+    "Annet",
+  ],
+
+  "Baking": [
+    "Bakemixer",
+    "Melis",
+    "Bakepulver",
+    "Gjær",
+    "Mel",
+    "Havregryn",
+    "Sukker",
+    "Sukkerbiter",
+    "Tørket frukt og nøtter",
+    "Annet",
+  ],
+
+  "Snacks, godteri & sjokolade": [
+    "Dip",
+    "Godteri",
+    "Konfekt",
     "Nøtter",
-    "Smågodt",
-    "Kjeks",
-    "Proteinbarer",
+    "Pastiller",
     "Popcorn",
-    "Annet"
+    "Sjokolade",
+    "Tyggegummi",
+    "Mellommåltid",
+    "Kjeks",
+    "Annet",
   ],
-  "Is og dessert": [
-    "Iskrem",
-    "Kaker",
-    "Annet"
+
+  "Barneprodukter": [
+    "Babyartikler",
+    "Barnemat",
+    "Annet",
   ],
-  "Baby og barn": [
-    "Babymat",
-    "Bleier",
-    "Barnesnacks",
-    "Annet"
-  ],
-  "Hus og hjem": [
-    "Rengjøring",
-    "Papirvarer",
-    "Kjøkken",
-    "Interiør",
-    "Annet"
-  ],
-  "Helse og hygiene": [
+
+  "Personlige artikler": [
+    "Barbering",
+    "Bind og tamponger",
+    "Briller",
+    "Helsekost",
+    "Hår og hud",
+    "Klær",
     "Personlig hygiene",
-    "Apotekvarer",
-    "Kosttilskudd",
-    "Annet"
+    "Sminke",
+    "Tannpleie",
+    "Annet",
   ],
+
+  "Hus & hjem": [
+    "Belysning",
+    "Bilpleie",
+    "Borddekning og servietter",
+    "Grill",
+    "Kjøkken",
+    "Klesvask",
+    "Kontorrekvisita",
+    "Poser, papir og folie",
+    "Renhold",
+    "Fest",
+    "Sport",
+    "Annet",
+  ],
+
   "Dyr": [
-    "Dyremat",
-    "Dyreutstyr",
-    "Annet"
+    "Dyreartikler",
+    "Fuglemat",
+    "Hundemat",
+    "Kattemat",
+    "Annet",
   ],
-  "Pasta og ris": [
-    "Spaghetti",
-    "Ris",
-    "Annet"
-  ]
+
+  "Blomster og planter": [
+    "Blomster",
+    "Plantejord",
+    "Plantenæring",
+    "Potteplanter",
+    "Annet",
+  ],
 } as const;
 
 export type MainCategory = keyof typeof CATEGORY_HIERARCHY;
@@ -142,7 +259,7 @@ export type SubCategory = typeof CATEGORY_HIERARCHY[MainCategory][number];
 
 export const MAIN_CATEGORIES = Object.keys(CATEGORY_HIERARCHY) as MainCategory[];
 
-export const DEFAULT_MAIN_CATEGORY: MainCategory = "Frukt og grønt";
+export const DEFAULT_MAIN_CATEGORY: MainCategory = "Frukt & grønt";
 export const DEFAULT_SUB_CATEGORY: SubCategory = "Annet";
 
 export function isValidMainCategory(cat: string): cat is MainCategory {
