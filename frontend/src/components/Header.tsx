@@ -1,9 +1,13 @@
 function Header() {
   return (
-    <header className="bg-gradient-to-r from-purple-600 to-indigo-600 text-white py-8 px-4 shadow-lg">
-      <div className="max-w-7xl mx-auto text-center">
-        <h1 className="text-4xl md:text-5xl font-bold mb-2">middag på tilbud</h1>
-        <p className="text-lg md:text-xl text-purple-100">Finn de beste tilbudene på ingredienser</p>
+    <header className="bg-gradient-to-r from-violet-800 to-indigo-800 text-white">
+      <div className="mx-auto max-w-7xl px-4 py-10 sm:py-12 text-center">
+        <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight">
+          middag på tilbud
+        </h1>
+        <p className="mt-2 text-base sm:text-lg text-white/80">
+          Finn de beste tilbudene på ingredienser
+        </p>
       </div>
     </header>
   );
