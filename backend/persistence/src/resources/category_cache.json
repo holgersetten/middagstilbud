@@ -60,8 +60,8 @@
     "timestamp": "2026-01-18T12:22:38.527Z"
   },
   "melange margarin soft flora original og lett|bunnpris": {
-    "mainCategory": "Pålegg & frokost",
-    "subCategory": "Smør, margarin og matfett",
+    "mainCategory": "Meieri & egg",
+    "subCategory": "Smør og margarin",
     "ingredientKey": "margarin",
     "source": "ai",
     "confidence": {
@@ -2964,8 +2964,8 @@
     "timestamp": "2026-01-18T12:22:38.903Z"
   },
   "smøremyk|meny": {
-    "mainCategory": "Pålegg & frokost",
-    "subCategory": "Smør, margarin og matfett",
+    "mainCategory": "Meieri & egg",
+    "subCategory": "Smør og margarin",
     "ingredientKey": "smøremyk",
     "source": "ai",
     "confidence": {
@@ -4129,7 +4129,7 @@
   },
   "klippfisk|spar": {
     "mainCategory": "Fisk & skalldyr",
-    "subCategory": "Fisk",
+    "subCategory": "Tørket fisk",
     "ingredientKey": "klippfisk",
     "source": "ai",
     "confidence": {
@@ -4657,7 +4657,7 @@
   },
   "skreiburger|kiwi": {
     "mainCategory": "Fisk & skalldyr",
-    "subCategory": "Fisk",
+    "subCategory": "Fiskeburger",
     "ingredientKey": "skreiburger",
     "source": "ai",
     "confidence": {
@@ -6828,8 +6828,8 @@
     "timestamp": "2026-01-18T12:29:47.445Z"
   },
   "tine meierismør|coop mega": {
-    "mainCategory": "Pålegg & frokost",
-    "subCategory": "Smør, margarin og matfett",
+    "mainCategory": "Meieri & egg",
+    "subCategory": "Smør og margarin",
     "ingredientKey": "smør",
     "source": "ai",
     "confidence": {
@@ -8101,15 +8101,15 @@
   },
   "asterix pimpernel beate og kerrs|bunnpris": {
     "mainCategory": "Frukt & grønt",
-    "subCategory": "Annet",
-    "ingredientKey": "ananas",
-    "source": "ai",
+    "subCategory": "Poteter",
+    "ingredientKey": "potet",
+    "source": "manual",
     "confidence": {
-      "main": 0.85,
-      "sub": 0.85,
-      "ingredientKey": 0.85
+      "main": 1,
+      "sub": 1,
+      "ingredientKey": 1
     },
-    "timestamp": "2026-01-18T13:17:43.949Z"
+    "timestamp": "2026-01-18T13:32:04.938Z"
   },
   "wok mix|rema 1000": {
     "mainCategory": "Frukt & grønt",
@@ -8125,15 +8125,15 @@
   },
   "boil in bag jasmin|rema 1000": {
     "mainCategory": "Middag",
-    "subCategory": "Annet",
-    "ingredientKey": "jasminris",
-    "source": "ai",
+    "subCategory": "Ris",
+    "ingredientKey": "jasminris, ris",
+    "source": "manual",
     "confidence": {
-      "main": 0.9,
-      "sub": 0.9,
-      "ingredientKey": 0.9
+      "main": 1,
+      "sub": 1,
+      "ingredientKey": 1
     },
-    "timestamp": "2026-01-18T13:17:43.954Z"
+    "timestamp": "2026-01-18T13:34:47.925Z"
   },
   "hot wings crispy wings|rema 1000": {
     "mainCategory": "Kylling og fjærkre",
@@ -8161,15 +8161,15 @@
   },
   "fullkornsris|rema 1000": {
     "mainCategory": "Middag",
-    "subCategory": "Annet",
+    "subCategory": "Ris",
     "ingredientKey": "fullkornsris",
-    "source": "ai",
+    "source": "manual",
     "confidence": {
-      "main": 0.9,
-      "sub": 0.9,
-      "ingredientKey": 0.9
+      "main": 1,
+      "sub": 1,
+      "ingredientKey": 1
     },
-    "timestamp": "2026-01-18T13:17:43.964Z"
+    "timestamp": "2026-01-18T13:34:52.792Z"
   },
   "oliven|meny": {
     "mainCategory": "Frukt & grønt",
@@ -8185,39 +8185,39 @@
   },
   "hvitløksbrød|meny": {
     "mainCategory": "Brød",
-    "subCategory": "Annet",
+    "subCategory": "Baguetter",
     "ingredientKey": "hvitløksbrød",
-    "source": "ai",
+    "source": "manual",
     "confidence": {
-      "main": 0.9,
-      "sub": 0.9,
-      "ingredientKey": 0.9
+      "main": 1,
+      "sub": 1,
+      "ingredientKey": 1
     },
-    "timestamp": "2026-01-18T13:17:43.970Z"
+    "timestamp": "2026-01-18T13:35:37.506Z"
   },
   "naan brød|meny": {
     "mainCategory": "Brød",
-    "subCategory": "Annet",
-    "ingredientKey": "naan brød",
-    "source": "ai",
+    "subCategory": "Pita og nan",
+    "ingredientKey": "naan",
+    "source": "manual",
     "confidence": {
-      "main": 0.9,
-      "sub": 0.9,
-      "ingredientKey": 0.9
+      "main": 1,
+      "sub": 1,
+      "ingredientKey": 1
     },
-    "timestamp": "2026-01-18T13:17:43.974Z"
+    "timestamp": "2026-01-18T13:35:25.801Z"
   },
   "piadina|meny": {
     "mainCategory": "Brød",
-    "subCategory": "Annet",
+    "subCategory": "Pita og nan",
     "ingredientKey": "piadina",
-    "source": "ai",
+    "source": "manual",
     "confidence": {
-      "main": 0.9,
-      "sub": 0.9,
-      "ingredientKey": 0.9
+      "main": 1,
+      "sub": 1,
+      "ingredientKey": 1
     },
-    "timestamp": "2026-01-18T13:17:43.978Z"
+    "timestamp": "2026-01-18T13:36:03.975Z"
   },
   "grissini|meny": {
     "mainCategory": "Snacks, godteri & sjokolade",
@@ -8233,27 +8233,27 @@
   },
   "hvitløksbaguetter|meny": {
     "mainCategory": "Brød",
-    "subCategory": "Annet",
+    "subCategory": "Baguetter",
     "ingredientKey": "hvitløksbaguetter",
-    "source": "ai",
+    "source": "manual",
     "confidence": {
-      "main": 0.9,
-      "sub": 0.9,
-      "ingredientKey": 0.9
+      "main": 1,
+      "sub": 1,
+      "ingredientKey": 1
     },
-    "timestamp": "2026-01-18T13:17:43.984Z"
+    "timestamp": "2026-01-18T13:36:08.323Z"
   },
   "couscous|meny": {
     "mainCategory": "Middag",
-    "subCategory": "Annet",
+    "subCategory": "Ris",
     "ingredientKey": "couscous",
-    "source": "ai",
+    "source": "manual",
     "confidence": {
-      "main": 0.9,
-      "sub": 0.9,
-      "ingredientKey": 0.9
+      "main": 1,
+      "sub": 1,
+      "ingredientKey": 1
     },
-    "timestamp": "2026-01-18T13:17:43.987Z"
+    "timestamp": "2026-01-18T13:36:17.597Z"
   },
   "wasa sandwich|meny": {
     "mainCategory": "Snacks, godteri & sjokolade",
@@ -8269,15 +8269,15 @@
   },
   "asparges bambusskudd vannkastanjer|meny": {
     "mainCategory": "Frukt & grønt",
-    "subCategory": "Annet",
+    "subCategory": "Grønnsaker",
     "ingredientKey": "asparges",
-    "source": "ai",
+    "source": "manual",
     "confidence": {
-      "main": 0.9,
-      "sub": 0.9,
-      "ingredientKey": 0.9
+      "main": 1,
+      "sub": 1,
+      "ingredientKey": 1
     },
-    "timestamp": "2026-01-18T13:17:43.993Z"
+    "timestamp": "2026-01-18T13:36:25.075Z"
   },
   "saritas|meny": {
     "mainCategory": "Snacks, godteri & sjokolade",
@@ -8293,39 +8293,39 @@
   },
   "melange|meny": {
     "mainCategory": "Meieri & egg",
-    "subCategory": "Annet",
-    "ingredientKey": "margarin",
-    "source": "ai",
+    "subCategory": "Smør og margarin",
+    "ingredientKey": "margarin, melange",
+    "source": "manual",
     "confidence": {
-      "main": 0.95,
-      "sub": 0.5,
-      "ingredientKey": 0.95
+      "main": 1,
+      "sub": 1,
+      "ingredientKey": 1
     },
-    "timestamp": "2026-01-18T13:17:43.999Z"
+    "timestamp": "2026-01-18T13:36:50.402Z"
   },
   "maiskorn|meny": {
     "mainCategory": "Frukt & grønt",
-    "subCategory": "Annet",
-    "ingredientKey": "maiskorn",
-    "source": "ai",
+    "subCategory": "Grønnsaker",
+    "ingredientKey": "mais",
+    "source": "manual",
     "confidence": {
-      "main": 0.9,
-      "sub": 0.9,
-      "ingredientKey": 0.9
+      "main": 1,
+      "sub": 1,
+      "ingredientKey": 1
     },
-    "timestamp": "2026-01-18T13:17:44.002Z"
+    "timestamp": "2026-01-18T13:37:02.672Z"
   },
   "erter|meny": {
     "mainCategory": "Frukt & grønt",
-    "subCategory": "Annet",
+    "subCategory": "Grønnsaker",
     "ingredientKey": "erter",
-    "source": "ai",
+    "source": "manual",
     "confidence": {
-      "main": 0.9,
-      "sub": 0.9,
-      "ingredientKey": 0.9
+      "main": 1,
+      "sub": 1,
+      "ingredientKey": 1
     },
-    "timestamp": "2026-01-18T13:17:44.005Z"
+    "timestamp": "2026-01-18T13:37:16.456Z"
   },
   "fish crisp|meny": {
     "mainCategory": "Snacks, godteri & sjokolade",
@@ -8364,28 +8364,28 @@
     "timestamp": "2026-01-18T13:17:44.013Z"
   },
   "gnist fløjl|meny": {
-    "mainCategory": "Hus & hjem",
-    "subCategory": "Annet",
-    "ingredientKey": "fløjl",
-    "source": "ai",
+    "mainCategory": "Ost",
+    "subCategory": "Cheddar",
+    "ingredientKey": "fløjl, gnist",
+    "source": "manual",
     "confidence": {
-      "main": 0.85,
-      "sub": 0.85,
-      "ingredientKey": 0.85
+      "main": 1,
+      "sub": 1,
+      "ingredientKey": 1
     },
-    "timestamp": "2026-01-18T13:17:44.015Z"
+    "timestamp": "2026-01-18T13:40:29.237Z"
   },
   "dadler|meny": {
     "mainCategory": "Frukt & grønt",
-    "subCategory": "Annet",
+    "subCategory": "Frukt",
     "ingredientKey": "dadler",
-    "source": "ai",
+    "source": "manual",
     "confidence": {
-      "main": 0.95,
-      "sub": 0.95,
-      "ingredientKey": 0.95
+      "main": 1,
+      "sub": 1,
+      "ingredientKey": 1
     },
-    "timestamp": "2026-01-18T13:17:44.018Z"
+    "timestamp": "2026-01-18T13:40:43.181Z"
   },
   "torky|meny": {
     "mainCategory": "Snacks, godteri & sjokolade",
@@ -8412,16 +8412,16 @@
     "timestamp": "2026-01-18T13:17:44.025Z"
   },
   "poteter sticks nuggets|meny": {
-    "mainCategory": "Frukt & grønt",
-    "subCategory": "Annet",
+    "mainCategory": "Middag",
+    "subCategory": "Andre middagsretter",
     "ingredientKey": "potetsticks",
-    "source": "ai",
+    "source": "manual",
     "confidence": {
-      "main": 0.9,
-      "sub": 0.9,
-      "ingredientKey": 0.9
+      "main": 1,
+      "sub": 1,
+      "ingredientKey": 1
     },
-    "timestamp": "2026-01-18T13:17:44.028Z"
+    "timestamp": "2026-01-18T13:44:41.583Z"
   },
   "plantebasert burger|meny": {
     "mainCategory": "Kjøtt",
@@ -8485,15 +8485,15 @@
   },
   "salater|spar": {
     "mainCategory": "Frukt & grønt",
-    "subCategory": "Annet",
+    "subCategory": "Grønnsaker",
     "ingredientKey": "salat",
-    "source": "ai",
+    "source": "manual",
     "confidence": {
-      "main": 0.9,
-      "sub": 0.85,
-      "ingredientKey": 0.9
+      "main": 1,
+      "sub": 1,
+      "ingredientKey": 1
     },
-    "timestamp": "2026-01-18T13:17:44.063Z"
+    "timestamp": "2026-01-18T13:45:05.157Z"
   },
   "fish crisp 2 pk|spar": {
     "mainCategory": "Snacks, godteri & sjokolade",
@@ -8509,39 +8509,39 @@
   },
   "flytende|spar": {
     "mainCategory": "Meieri & egg",
-    "subCategory": "Annet",
-    "ingredientKey": "flytende margarin",
-    "source": "ai",
+    "subCategory": "Smør og margarin",
+    "ingredientKey": "flytende margarin, smør",
+    "source": "manual",
     "confidence": {
-      "main": 0.95,
-      "sub": 0.5,
-      "ingredientKey": 0.95
+      "main": 1,
+      "sub": 1,
+      "ingredientKey": 1
     },
-    "timestamp": "2026-01-18T13:17:44.071Z"
+    "timestamp": "2026-01-18T13:45:56.813Z"
   },
   "saritas|spar": {
-    "mainCategory": "Middag",
-    "subCategory": "Andre middagsretter",
-    "ingredientKey": "salsa",
-    "source": "ai",
+    "mainCategory": "Tilbehør",
+    "subCategory": "Sauser og dressing",
+    "ingredientKey": "saritas, saus, tandoori",
+    "source": "manual",
     "confidence": {
-      "main": 0.9,
-      "sub": 0.85,
-      "ingredientKey": 0.9
+      "main": 1,
+      "sub": 1,
+      "ingredientKey": 1
     },
-    "timestamp": "2026-01-18T13:17:44.075Z"
+    "timestamp": "2026-01-18T13:48:05.391Z"
   },
   "ostestenger|spar": {
-    "mainCategory": "Snacks, godteri & sjokolade",
-    "subCategory": "Kjeks",
+    "mainCategory": "Ost",
+    "subCategory": "Øvrig ost",
     "ingredientKey": "ostestenger",
-    "source": "ai",
+    "source": "manual",
     "confidence": {
-      "main": 0.9,
-      "sub": 0.85,
-      "ingredientKey": 0.9
+      "main": 1,
+      "sub": 1,
+      "ingredientKey": 1
     },
-    "timestamp": "2026-01-18T13:17:44.078Z"
+    "timestamp": "2026-01-18T13:48:26.142Z"
   },
   "aunt mabel s|spar": {
     "mainCategory": "Snacks, godteri & sjokolade",
@@ -8568,16 +8568,16 @@
     "timestamp": "2026-01-18T13:17:44.086Z"
   },
   "ildtopp mini|spar": {
-    "mainCategory": "Snacks, godteri & sjokolade",
-    "subCategory": "Annet",
-    "ingredientKey": "snack",
-    "source": "ai",
+    "mainCategory": "Blomster og planter",
+    "subCategory": "Blomster",
+    "ingredientKey": "ildtopp, blomst",
+    "source": "manual",
     "confidence": {
-      "main": 0.9,
-      "sub": 0.85,
-      "ingredientKey": 0.9
+      "main": 1,
+      "sub": 1,
+      "ingredientKey": 1
     },
-    "timestamp": "2026-01-18T13:17:44.089Z"
+    "timestamp": "2026-01-18T13:49:17.627Z"
   },
   "shower gel|spar": {
     "mainCategory": "Personlige artikler",
@@ -8641,27 +8641,27 @@
   },
   "fullkornsris|kiwi": {
     "mainCategory": "Middag",
-    "subCategory": "Annet",
-    "ingredientKey": "ris",
-    "source": "ai",
+    "subCategory": "Ris",
+    "ingredientKey": "ris, fullkornsris",
+    "source": "manual",
     "confidence": {
-      "main": 0.9,
-      "sub": 0.85,
-      "ingredientKey": 0.9
+      "main": 1,
+      "sub": 1,
+      "ingredientKey": 1
     },
-    "timestamp": "2026-01-18T13:17:44.113Z"
+    "timestamp": "2026-01-18T13:49:57.976Z"
   },
   "maiskorn|kiwi": {
     "mainCategory": "Frukt & grønt",
-    "subCategory": "Annet",
+    "subCategory": "Grønnsaker",
     "ingredientKey": "mais",
-    "source": "ai",
+    "source": "manual",
     "confidence": {
-      "main": 0.9,
-      "sub": 0.85,
-      "ingredientKey": 0.9
+      "main": 1,
+      "sub": 1,
+      "ingredientKey": 1
     },
-    "timestamp": "2026-01-18T13:17:44.117Z"
+    "timestamp": "2026-01-18T13:50:02.372Z"
   },
   "havredrikk|kiwi": {
     "mainCategory": "Meieri & egg",
@@ -8701,110 +8701,110 @@
   },
   "jasminris|kiwi": {
     "mainCategory": "Middag",
-    "subCategory": "Annet",
-    "ingredientKey": "ris",
-    "source": "ai",
+    "subCategory": "Ris",
+    "ingredientKey": "ris, jasminris",
+    "source": "manual",
     "confidence": {
-      "main": 0.9,
-      "sub": 0.85,
-      "ingredientKey": 0.9
+      "main": 1,
+      "sub": 1,
+      "ingredientKey": 1
     },
-    "timestamp": "2026-01-18T13:17:44.133Z"
+    "timestamp": "2026-01-18T13:51:34.498Z"
   },
   "oatly havredrikk|obs": {
     "mainCategory": "Meieri & egg",
-    "subCategory": "Annet",
+    "subCategory": "Melk",
     "ingredientKey": "havredrikk",
-    "source": "ai",
+    "source": "manual",
     "confidence": {
-      "main": 0.95,
-      "sub": 0.95,
-      "ingredientKey": 0.95
+      "main": 1,
+      "sub": 1,
+      "ingredientKey": 1
     },
-    "timestamp": "2026-01-18T13:17:44.138Z"
+    "timestamp": "2026-01-18T13:51:40.762Z"
   },
   "mon ami brie|obs": {
     "mainCategory": "Ost",
-    "subCategory": "Annet",
+    "subCategory": "Øvrig ost",
     "ingredientKey": "brieost",
-    "source": "ai",
+    "source": "manual",
     "confidence": {
-      "main": 0.95,
-      "sub": 0.5,
-      "ingredientKey": 0.95
+      "main": 1,
+      "sub": 1,
+      "ingredientKey": 1
     },
-    "timestamp": "2026-01-18T13:17:44.141Z"
+    "timestamp": "2026-01-18T13:51:49.369Z"
   },
   "click grow 3 smart garden|obs": {
-    "mainCategory": "Hus & hjem",
-    "subCategory": "Annet",
+    "mainCategory": "Blomster og planter",
+    "subCategory": "Blomster",
     "ingredientKey": "smart garden",
-    "source": "ai",
+    "source": "manual",
     "confidence": {
-      "main": 0.9,
-      "sub": 0.85,
-      "ingredientKey": 0.9
+      "main": 1,
+      "sub": 1,
+      "ingredientKey": 1
     },
-    "timestamp": "2026-01-18T13:17:44.144Z"
+    "timestamp": "2026-01-18T13:52:13.979Z"
   },
   "coop jasminris|coop prix": {
-    "mainCategory": "Frukt & grønt",
-    "subCategory": "Annet",
+    "mainCategory": "Middag",
+    "subCategory": "Ris",
     "ingredientKey": "jasminris",
-    "source": "ai",
+    "source": "manual",
     "confidence": {
-      "main": 0.95,
-      "sub": 0.9,
-      "ingredientKey": 0.95
+      "main": 1,
+      "sub": 1,
+      "ingredientKey": 1
     },
-    "timestamp": "2026-01-18T13:17:44.148Z"
+    "timestamp": "2026-01-18T13:52:26.096Z"
   },
   "old el paso tortilla chips cheese green giant mais 3 pk|coop prix": {
-    "mainCategory": "Snacks, godteri & sjokolade",
-    "subCategory": "Annet",
-    "ingredientKey": "tortilla chips",
-    "source": "ai",
+    "mainCategory": "Middag",
+    "subCategory": "Taco",
+    "ingredientKey": "tortilla chips, mais",
+    "source": "manual",
     "confidence": {
-      "main": 0.95,
-      "sub": 0.9,
-      "ingredientKey": 0.95
+      "main": 1,
+      "sub": 1,
+      "ingredientKey": 1
     },
-    "timestamp": "2026-01-18T13:17:44.151Z"
+    "timestamp": "2026-01-18T13:52:47.164Z"
   },
   "coop spisemoden avokado 2 pk|coop prix": {
     "mainCategory": "Frukt & grønt",
-    "subCategory": "Annet",
+    "subCategory": "Grønnsaker",
     "ingredientKey": "avokado",
-    "source": "ai",
+    "source": "manual",
     "confidence": {
-      "main": 0.95,
-      "sub": 0.9,
-      "ingredientKey": 0.95
+      "main": 1,
+      "sub": 1,
+      "ingredientKey": 1
     },
-    "timestamp": "2026-01-18T13:17:44.154Z"
+    "timestamp": "2026-01-18T13:52:55.443Z"
   },
   "coop jasminris|coop marked": {
-    "mainCategory": "Frukt & grønt",
-    "subCategory": "Annet",
+    "mainCategory": "Middag",
+    "subCategory": "Ris",
     "ingredientKey": "jasminris",
-    "source": "ai",
+    "source": "manual",
     "confidence": {
-      "main": 0.95,
-      "sub": 0.9,
-      "ingredientKey": 0.95
+      "main": 1,
+      "sub": 1,
+      "ingredientKey": 1
     },
-    "timestamp": "2026-01-18T13:17:44.157Z"
+    "timestamp": "2026-01-18T13:53:01.254Z"
   },
   "modnet avokado 2 pk|coop marked": {
     "mainCategory": "Frukt & grønt",
-    "subCategory": "Annet",
+    "subCategory": "Grønnsaker",
     "ingredientKey": "avokado",
-    "source": "ai",
+    "source": "manual",
     "confidence": {
-      "main": 0.95,
-      "sub": 0.9,
-      "ingredientKey": 0.95
+      "main": 1,
+      "sub": 1,
+      "ingredientKey": 1
     },
-    "timestamp": "2026-01-18T13:17:44.161Z"
+    "timestamp": "2026-01-18T13:53:06.816Z"
   }
 }

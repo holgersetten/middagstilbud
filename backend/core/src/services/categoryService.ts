@@ -418,24 +418,21 @@ class CategoryService {
         subCategory: SubCategory,
         ingredientKey: string
     ): boolean {
+        // Konverter productKey til categoryKey for konsistent lagring
+        // productKey: "title|size|pieces|store" → categoryKey: "title|store"
+        const categoryKey = this.extractCategoryKey(productKey);
+        
+        console.log(`📝 Manuell kategorisering: ${productKey} → ${categoryKey}`);
+        
         // Manuell kategorisering får alltid max confidence og trusted status
         this.setCategoryForProduct(
-            productKey,
+            categoryKey,
             mainCategory,
             subCategory,
             ingredientKey,
             'manual',
             { main: 1.0, sub: 1.0, ingredientKey: 1.0 }
         );
-        
-        // Fjern gamle pending entries med categoryKey (uten size/pieces)
-        // Dette unngår duplikater når productKey inkluderer size/pieces
-        const categoryKey = this.extractCategoryKey(productKey);
-        if (categoryKey !== productKey && this.cache[categoryKey]?.cacheStatus === 'pending') {
-            console.log(`🧹 Sletter gammel pending entry: ${categoryKey}`);
-            delete this.cache[categoryKey];
-            this.saveCache();
-        }
         
         return true;
     }
