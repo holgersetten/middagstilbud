@@ -19,7 +19,7 @@ interface CategoryCacheEntry {
         sub: number;
         ingredientKey: number;
     };
-    cacheStatus: CacheStatus;
+    cacheStatus?: CacheStatus; // Optional - beregnes dynamisk, lagres ikke
     timestamp?: string;
 }
 
@@ -146,10 +146,7 @@ class CategoryService {
                     ? 'trusted'
                     : 'pending';
         
-        // Debug logging for å se hva som skjer
-        if (recalculatedStatus !== entry.cacheStatus) {
-            console.log(`🔄 Rekalkulerer ${productKey}: ${entry.cacheStatus} → ${recalculatedStatus} (sub: ${entry.subCategory}, conf: ${entry.confidence.main}/${entry.confidence.sub}/${entry.confidence.ingredientKey})`);
-        }
+        // cacheStatus beregnes alltid dynamisk basert på gjeldende regler
         
         return {
             ...entry,
@@ -173,22 +170,14 @@ class CategoryService {
             confidence.sub = 0.5; // Redusert confidence for reparert kategori
         }
 
-        // Beregn cacheStatus basert på confidence-terskler
-        // Hvis subCategory er "Annet", sett alltid som pending
-        const cacheStatus: CacheStatus = 
-            (subCategory === 'Annet')
-                ? 'pending'
-                : (confidence.main >= 0.90 && confidence.sub >= 0.92 && confidence.ingredientKey >= 0.90)
-                    ? 'trusted'
-                    : 'pending';
-
+        // cacheStatus beregnes dynamisk i getCategoryForProduct()
+        // og lagres IKKE i filen for å unngå inkonsistens ved threshold-endringer
         this.cache[productKey] = {
             mainCategory,
             subCategory,
             ingredientKey,
             source,
             confidence,
-            cacheStatus,
             timestamp: new Date().toISOString()
         };
         this.saveCache();
@@ -215,10 +204,10 @@ class CategoryService {
             };
         }
 
-        // 1. Prøv produktnøkkel (eksakt match) - KUN TRUSTED
+        // 1. Prøv produktnøkkel (eksakt match) - bruk ALLE cache entries
         const productKey = buildProductKey(offer);
         const productEntry = this.getCategoryForProduct(productKey);
-        if (productEntry && productEntry.cacheStatus === 'trusted') {
+        if (productEntry) {
             return {
                 mainCategory: productEntry.mainCategory,
                 subCategory: productEntry.subCategory,
@@ -226,9 +215,9 @@ class CategoryService {
             };
         }
 
-        // 2. Prøv kategorinøkkel (uten størrelse) - KUN TRUSTED
+        // 2. Prøv kategorinøkkel (uten størrelse) - bruk ALLE cache entries
         const categoryEntry = this.getCategoryForProduct(categoryKey);
-        if (categoryEntry && categoryEntry.cacheStatus === 'trusted') {
+        if (categoryEntry) {
             return {
                 mainCategory: categoryEntry.mainCategory,
                 subCategory: categoryEntry.subCategory,
@@ -265,14 +254,13 @@ class CategoryService {
         categoryConfidence: number;
         cacheStatus?: CacheStatus;
     })[]> {
-        const requestId = Math.random().toString(36).substring(7);
-        console.log(`🆔 categorizeOffers kallrequestId=${requestId}, ${offers.length} offers`);
+        console.log(`📋 Kategoriserer ${offers.length} tilbud...`);
         
         // Hvis kategorisering pågår, vent og returner synkron kategorisering
         if (this.ongoingCategorization) {
-            console.log(`⏸️ [${requestId}] AI-kategorisering pågår allerede, venter på ferdigstillelse...`);
+            console.log(`⏸️ Venter på pågående AI-kategorisering...`);
             await this.ongoingCategorization;
-            console.log(`✅ [${requestId}] Pågående kategorisering ferdig, returnerer cached resultater`);
+            console.log(`✅ Bruker cached resultater`);
             
             // Returner synkron kategorisering (bruker cache fra den pågående kategoriseringen)
             return offers.map(offer => {
@@ -316,14 +304,6 @@ class CategoryService {
         categoryConfidence: number;
         cacheStatus?: CacheStatus;
     })[]> {
-        // KRITISK: Sjekk SKIP_AI før noe annet!
-        console.log(`🔍 DEBUG: SKIP_AI = "${process.env.SKIP_AI}"`);
-        console.log(`🔍 DEBUG: OPENAI_API_KEY exists = ${!!process.env.OPENAI_API_KEY}`);
-        
-        if (process.env.SKIP_AI === 'true') {
-            console.log(`🛑 SKIP_AI er TRUE - hopper over ALL AI-kategorisering`);
-        }
-        
         // Steg 1: Kategoriser synkront (cache + rules)
         const results = offers.map(offer => {
             const productKey = buildProductKey(offer);
@@ -355,12 +335,14 @@ class CategoryService {
                 store: r.store || undefined
             }));
 
-        // 🧪 TEST MODE: Begrens til 50 produkter per kjøring
-        const testLimit = 50;
-        const uncategorizedToProcess = uncategorized.slice(0, testLimit);
+        const cachedCount = results.length - uncategorized.length;
+        console.log(`✅ ${cachedCount} produkter fra cache, ${uncategorized.length} trenger kategorisering`);
+
+        // Kategoriser ALLE ukategoriserte produkter (ingen limit)
+        const uncategorizedToProcess = uncategorized;
         
-        if (uncategorized.length > testLimit) {
-            console.log(`🧪 TEST MODE: Kategoriserer ${uncategorizedToProcess.length} av ${uncategorized.length} ukategoriserte produkter`);
+        if (uncategorizedToProcess.length > 0) {
+            console.log(`🚀 Kategoriserer ${uncategorizedToProcess.length} produkter med AI...`);
         }
 
         // Sjekk om AI er tilgjengelig (dynamisk ved runtime)
@@ -369,8 +351,7 @@ class CategoryService {
         const aiEnabled = !skipAI && !!process.env.OPENAI_API_KEY;
 
         if (uncategorizedToProcess.length > 0 && !aiEnabled) {
-            console.log(`⚠️ ${uncategorizedToProcess.length} produkter trenger AI-kategorisering, men AI er deaktivert (SKIP_AI="${process.env.SKIP_AI}")`);
-            console.log(`✅ Returnerer ${results.length} offers uten AI-kategorisering`);
+            console.log(`⚠️ ${uncategorizedToProcess.length} produkter mangler kategorisering (AI deaktivert)`);
             return results;
         }
 

@@ -77,7 +77,10 @@ async function categorizeBatch(
 
     const categoryStructure = JSON.stringify(CATEGORY_HIERARCHY, null, 2);
     
-    const prompt = `Du er en ekspert på norske matvarer. Kategoriser følgende produkter.
+    const prompt = `Du er en ekspert på norske matvarer og dagligvarer. Kategoriser følgende produkter.
+
+VIKTIG: Dette inkluderer både matvarer OG andre dagligvarer som selges i butikker (husholdningsartikler, klær, verktøy, byggevarer osv). 
+Bruk "Hus & hjem" kategorien for ikke-matvarer.
 
 KATEGORISTRUKTUR:
 ${categoryStructure}
@@ -125,16 +128,26 @@ STEG 2 - Velg subCategory:
   * "Bygglunsj" → "Meieri & egg > Yoghurt" (norsk frokostprodukt med yoghurt)
   * "Potetmos" → "Tilbehør > Stuinger" (IKKE "Middag > Ferdigretter")
   * "Brød" → "Brød > Brød" (hovedkategori er nå "Brød", ikke "Bakeri")
+  * "Panelovn" → "Hus & hjem > Oppvarming"
+  * "Varmepumpe" → "Hus & hjem > Oppvarming"
+  * "Interiørmaling" → "Hus & hjem > Byggevarer"
+  * "Laminatgulv" → "Hus & hjem > Byggevarer"
+  * "Brannslukker" → "Hus & hjem > Sikkerhet"
+  * "Verktøysett" → "Hus & hjem > Verktøy"
+  * "Regnjakke" → "Hus & hjem > Klær og sko"
+  * "Gryte" → "Hus & hjem > Kjøkken"
 - Bruk "Annet" KUN hvis produktet virkelig ikke passer i noen av de spesifikke subkategoriene
 
 STEG 3 - Velg ingredientKey:
 - 1-2 nært beslektede søkeord som beskriver hovedingrediensen eller produkttypen
 - ALDRI bruk "produkt" - finn alltid et spesifikt navn!
-- Eksempler med ETT ord: "tyggegummi", "tomat", "melk", "leverpostei", "salami", "proteinbar"
-- Eksempler med TO ord når VELDIG nært beslektet: "sjokolademelk", "tunfisk thai", "spekeskinke"
-- For sammensatte: Bruk hovedingrediensen ("torskegryte" → "torsk")
-- For merkevarer: Generaliser ("Nugatti" → "sjokoladepålegg", "Extra" → "tyggegummi")
-- VIKTIG: Maksimalt 1-2 ord, skal reflektere hva tingen er, også tillat med ord som er VELDIG nært beslektet - IKKE liste mange ingredienser med komma!
+- For MATVARER: Hovedingrediens eller produkttype
+  * Eksempler: "tyggegummi", "tomat", "melk", "leverpostei", "salami", "proteinbar"
+  * Sammensatte: "sjokolademelk", "tunfisk thai", "spekeskinke"
+  * Merkevarer: Generaliser ("Nugatti" → "sjokoladepålegg", "Extra" → "tyggegummi")
+- For IKKE-MATVARER: Produkttype eller funksjon
+  * Eksempler: "panelovn", "maling", "verktøysett", "regnjakke", "gryte", "brannslukker"
+- VIKTIG: Maksimalt 1-2 ord, skal reflektere hva tingen er - IKKE liste mange ingredienser med komma!
 
 STEG 4 - Sett confidence:
 - 0.95: Helt sikker (produktet passer perfekt i kategorien)
@@ -181,16 +194,17 @@ Returner KUN JSON object, ingen annen tekst.`;
                 continue;
             }
             
-            // Validate categories
+            // Validate mainCategory - hvis ugyldig, hopp over helt
             if (!MAIN_CATEGORIES.includes(result.mainCategory)) {
                 console.warn(`Invalid mainCategory: ${result.mainCategory}`);
                 continue;
             }
             
+            // IKKE hopp over ved ugyldig subCategory - la categoryService.ts reparere til "Annet"
             const subCategories = CATEGORY_HIERARCHY[result.mainCategory as MainCategory];
             if (!subCategories.includes(result.subCategory as any)) {
-                console.warn(`Invalid subCategory ${result.subCategory} for ${result.mainCategory}`);
-                continue;
+                console.warn(`⚠️ AI foreslo ugyldig subCategory "${result.subCategory}" for "${result.mainCategory}" - vil bli reparert til "Annet"`);
+                // IKKE continue - returner resultatet slik at det kan repareres
             }
             
             resultMap.set(result.id, {
