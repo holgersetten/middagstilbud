@@ -1,6 +1,11 @@
 import { useState, useEffect } from 'react';
 import { offersApi } from '../services/api';
 import type { CategoryHierarchy } from '../types/offer';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
+import { Badge } from '@/components/ui/badge';
 
 function CategoryManager() {
   const [categories, setCategories] = useState<CategoryHierarchy>({});
@@ -160,19 +165,26 @@ function CategoryManager() {
   };
 
   if (loading) {
-    return <div className="max-w-7xl mx-auto p-8 text-center">Laster kategorier...</div>;
+    return (
+      <div className="max-w-7xl mx-auto p-8">
+        <Card>
+          <CardContent className="pt-6 text-center">Laster kategorier...</CardContent>
+        </Card>
+      </div>
+    );
   }
 
   if (error) {
     return (
-      <div className="max-w-7xl mx-auto p-8 text-center">
-        <p className="text-red-600 mb-4">{error}</p>
-        <button 
-          onClick={loadCategories}
-          className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
-        >
-          Prøv igjen
-        </button>
+      <div className="max-w-7xl mx-auto p-8">
+        <Card>
+          <CardContent className="pt-6 text-center">
+            <p className="text-red-600 mb-4">{error}</p>
+            <Button onClick={loadCategories}>
+              Prøv igjen
+            </Button>
+          </CardContent>
+        </Card>
       </div>
     );
   }
@@ -186,189 +198,213 @@ function CategoryManager() {
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* Venstre side: Legg til */}
-        <div className="bg-white rounded-lg shadow p-6">
-          {/* Legg til hovedkategori */}
-          <h2 className="text-xl font-semibold mb-4">➕ Legg til hovedkategori</h2>
-          <form onSubmit={handleAddMainCategory} className="mb-8">
-            <div className="mb-3">
-              <label className="block text-sm font-medium text-gray-700 mb-1">Ny hovedkategori</label>
-              <input
-                type="text"
-                value={newMainCategory}
-                onChange={(e) => setNewMainCategory(e.target.value)}
-                placeholder="f.eks. 'Fryste varer', 'Husholdning'"
+        <Card>
+          <CardHeader>
+            <CardTitle>➕ Legg til hovedkategori</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <form onSubmit={handleAddMainCategory} className="space-y-4 mb-8">
+              <div className="space-y-2">
+                <Label htmlFor="newMainCategory">Ny hovedkategori</Label>
+                <Input
+                  id="newMainCategory"
+                  type="text"
+                  value={newMainCategory}
+                  onChange={(e) => setNewMainCategory(e.target.value)}
+                  placeholder="f.eks. 'Fryste varer', 'Husholdning'"
+                  disabled={saving}
+                  required
+                />
+              </div>
+              <Button 
+                type="submit" 
                 disabled={saving}
-                required
-                className="w-full px-3 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-blue-500 disabled:bg-gray-100"
-              />
-            </div>
-            <button 
-              type="submit" 
-              disabled={saving}
-              className="w-full px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700 disabled:bg-gray-400"
-            >
-              {saving ? 'Lagrer...' : '✅ Legg til hovedkategori'}
-            </button>
-          </form>
-            </button>
-          </form>
-
-          <hr style={{ margin: '2rem 0', border: '1px solid #ddd' }} />
-
-          {/* Legg til underkategori */}
-          <h2>➕ Legg til underkategori</h2>
-          <form onSubmit={handleAddSubCategory}>
-            <div className="form-group">
-              <label>Hovedkategori</label>
-              <select
-                value={selectedMain}
-                onChange={(e) => setSelectedMain(e.target.value)}
-                disabled={saving}
-                required
+                className="w-full"
               >
-                <option value="">Velg kategori...</option>
-                {Object.keys(categories).map(cat => (
-                  <option key={cat} value={cat}>{cat}</option>
-                ))}
-              </select>
-            </div>
+                {saving ? 'Lagrer...' : '✅ Legg til hovedkategori'}
+              </Button>
+            </form>
 
-            <div className="form-group">
-              <label>Ny underkategori</label>
-              <input
-                type="text"
-                value={newSubCategory}
-                onChange={(e) => setNewSubCategory(e.target.value)}
-                placeholder="f.eks. 'Laks', 'Supper', 'Proteinbarer'"
-                disabled={saving}
-                required
-              />
-            </div>
+          <hr className="my-8 border-border" />
 
-            <button type="submit" disabled={saving || !selectedMain}>
-              {saving ? 'Lagrer...' : '✅ Legg til underkategori'}
-            </button>
-          </form>
+          <div className="space-y-4">
+            <h3 className="text-xl font-semibold">➕ Legg til underkategori</h3>
+            <form onSubmit={handleAddSubCategory} className="space-y-4">
+              <div className="space-y-2">
+                <Label htmlFor="selectedMain">Hovedkategori</Label>
+                <select
+                  id="selectedMain"
+                  value={selectedMain}
+                  onChange={(e) => setSelectedMain(e.target.value)}
+                  disabled={saving}
+                  required
+                  className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                >
+                  <option value="">Velg kategori...</option>
+                  {Object.keys(categories).map(cat => (
+                    <option key={cat} value={cat}>{cat}</option>
+                  ))}
+                </select>
+              </div>
 
-          <div className="warning">
-            <strong>⚠️ Viktig:</strong> Backend må restartes etter endringer
+              <div className="space-y-2">
+                <Label htmlFor="newSubCategory">Ny underkategori</Label>
+                <Input
+                  id="newSubCategory"
+                  type="text"
+                  value={newSubCategory}
+                  onChange={(e) => setNewSubCategory(e.target.value)}
+                  placeholder="f.eks. 'Laks', 'Supper', 'Proteinbarer'"
+                  disabled={saving}
+                  required
+                />
+              </div>
+
+              <Button 
+                type="submit" 
+                disabled={saving || !selectedMain}
+                className="w-full"
+              >
+                {saving ? 'Lagrer...' : '✅ Legg til underkategori'}
+              </Button>
+            </form>
+
+            <Badge variant="outline" className="w-full justify-start p-3 text-sm">
+              <strong className="mr-2">⚠️ Viktig:</strong> Backend må restartes etter endringer
+            </Badge>
           </div>
-        </div>
+          </CardContent>
+        </Card>
 
         {/* Høyre side: Eksisterende kategorier */}
-        <div className="categories-list card">
-          <h2>📋 Nåværende struktur</h2>
+        <Card>
+          <CardHeader>
+            <CardTitle>📋 Nåværende struktur</CardTitle>
+          </CardHeader>
+          <CardContent>
           
           {Object.entries(categories).map(([mainCat, subCats]) => (
-            <div key={mainCat} className="category-group">
+            <div key={mainCat} className="mb-6 border-b border-gray-200 pb-4">
               {renameMainMode === mainCat ? (
-                <div className="rename-form" style={{ marginBottom: '0.5rem' }}>
-                  <input
+                <div className="flex gap-2 mb-2">
+                  <Input
                     type="text"
                     value={newMainName}
                     onChange={(e) => setNewMainName(e.target.value)}
                     placeholder={mainCat}
                     autoFocus
+                    className="flex-1"
                   />
-                  <button
+                  <Button
+                    size="sm"
                     onClick={() => handleRenameMainCategory(mainCat)}
                     disabled={saving}
-                    className="btn-save"
                   >
                     ✓
-                  </button>
-                  <button
+                  </Button>
+                  <Button
+                    size="sm"
+                    variant="secondary"
                     onClick={() => {
                       setRenameMainMode(null);
                       setNewMainName('');
                     }}
                     disabled={saving}
-                    className="btn-cancel"
                   >
                     ✕
-                  </button>
+                  </Button>
                 </div>
               ) : (
-                <h3 style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <h3 className="flex justify-between items-center font-semibold text-lg mb-2">
                   <span>{mainCat}</span>
-                  <div className="subcategory-actions">
-                    <button
+                  <div className="flex gap-2">
+                    <Button
+                      size="sm"
+                      variant="outline"
                       onClick={() => {
                         setRenameMainMode(mainCat);
                         setNewMainName(mainCat);
                       }}
                       disabled={saving}
-                      className="btn-edit"
                       title="Omdøp hovedkategori"
                     >
                       ✏️
-                    </button>
-                    <button
+                    </Button>
+                    <Button
+                      size="sm"
+                      variant="destructive"
                       onClick={() => handleRemoveMainCategory(mainCat)}
                       disabled={saving}
-                      className="btn-delete"
                       title="Fjern hovedkategori"
                     >
                       🗑️
-                    </button>
+                    </Button>
                   </div>
                 </h3>
               )}
-              <ul>
+              <ul className="space-y-1 ml-4">
                 {subCats.map((subCat) => (
-                  <li key={subCat} className="subcategory-item">
+                  <li key={subCat} className="flex justify-between items-center py-1">
                     {renameMode === `${mainCat}/${subCat}` ? (
-                      <div className="rename-form">
-                        <input
+                      <div className="flex gap-2 flex-1">
+                        <Input
                           type="text"
                           value={newName}
                           onChange={(e) => setNewName(e.target.value)}
                           placeholder={subCat}
                           autoFocus
+                          className="flex-1 h-8 text-sm"
                         />
-                        <button
+                        <Button
+                          size="sm"
                           onClick={() => handleRenameSubCategory(mainCat, subCat)}
                           disabled={saving}
-                          className="btn-save"
+                          className="h-8"
                         >
                           ✓
-                        </button>
-                        <button
+                        </Button>
+                        <Button
+                          size="sm"
+                          variant="secondary"
                           onClick={() => {
                             setRenameMode(null);
                             setNewName('');
                           }}
                           disabled={saving}
-                          className="btn-cancel"
+                          className="h-8"
                         >
                           ✕
-                        </button>
+                        </Button>
                       </div>
                     ) : (
                       <>
-                        <span className="subcategory-name">{subCat}</span>
-                        <div className="subcategory-actions">
+                        <span className="text-muted-foreground">• {subCat}</span>
+                        <div className="flex gap-2">
                           {subCat !== 'Annet' && (
                             <>
-                              <button
+                              <Button
+                                size="sm"
+                                variant="outline"
                                 onClick={() => {
                                   setRenameMode(`${mainCat}/${subCat}`);
                                   setNewName(subCat);
                                 }}
                                 disabled={saving}
-                                className="btn-edit"
                                 title="Omdøp"
+                                className="h-7 px-2 text-xs"
                               >
                                 ✏️
-                              </button>
-                              <button
+                              </Button>
+                              <Button
+                                size="sm"
+                                variant="destructive"
                                 onClick={() => handleRemoveSubCategory(mainCat, subCat)}
                                 disabled={saving}
-                                className="btn-delete"
                                 title="Fjern"
+                                className="h-7 px-2 text-xs"
                               >
                                 🗑️
-                              </button>
+                              </Button>
                             </>
                           )}
                         </div>
@@ -379,7 +415,8 @@ function CategoryManager() {
               </ul>
             </div>
           ))}
-        </div>
+          </CardContent>
+        </Card>
       </div>
     </div>
   );

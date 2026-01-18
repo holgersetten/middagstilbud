@@ -1,6 +1,11 @@
 import { useState, useEffect } from 'react';
 import { offersApi } from '../services/api';
 import type { Offer, CategoryHierarchy } from '../types/offer';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
+import { Badge } from '@/components/ui/badge';
 
 function AdminReview() {
   const [offers, setOffers] = useState<Offer[]>([]);
@@ -95,7 +100,11 @@ function AdminReview() {
   if (loading) {
     return (
       <div className="max-w-7xl mx-auto p-8">
-        <div className="text-center py-12 text-lg">Laster produkter som trenger review...</div>
+        <Card>
+          <CardContent className="pt-6">
+            <div className="text-center py-12 text-lg">Laster produkter som trenger review...</div>
+          </CardContent>
+        </Card>
       </div>
     );
   }
@@ -103,13 +112,16 @@ function AdminReview() {
   if (error) {
     return (
       <div className="max-w-7xl mx-auto p-8">
-        <div className="text-center py-12 text-red-600">{error}</div>
-        <button 
-          onClick={loadData}
-          className="mt-4 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
-        >
-          Prøv igjen
-        </button>
+        <Card>
+          <CardContent className="pt-6">
+            <div className="text-center py-12 text-red-600">{error}</div>
+            <div className="text-center">
+              <Button onClick={loadData} className="mt-4">
+                Prøv igjen
+              </Button>
+            </div>
+          </CardContent>
+        </Card>
       </div>
     );
   }
@@ -124,12 +136,12 @@ function AdminReview() {
         
         {/* Søkefelt for å finne feil-kategoriseringer */}
         <div className="mt-4 mb-4">
-          <input
+          <Input
             type="text"
             placeholder="🔍 Søk etter produkt for å rette kategorisering (f.eks. 'vepsebol')..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full px-3 py-3 text-base border-2 border-blue-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
+            className="text-base"
           />
         </div>
       </div>
@@ -215,8 +227,8 @@ function OfferReviewCard({ offer, categories, onCategorize, saving, imageCache }
   };
 
   return (
-    <div className="bg-white rounded-lg shadow p-6 hover:shadow-lg transition-shadow">
-      <div className="mb-4">
+    <Card className="hover:shadow-lg transition-shadow">
+      <CardHeader className="pb-3">
         {offer.imageUrl && (
           <img 
             src={offer.imageUrl} 
@@ -224,22 +236,24 @@ function OfferReviewCard({ offer, categories, onCategorize, saving, imageCache }
             className="w-full h-48 object-cover rounded mb-3" 
           />
         )}
-        <div>
-          <h3 className="text-lg font-semibold mb-1">{offer.title}</h3>
-          <p className="text-sm text-gray-600">{offer.store}</p>
-          <p className="text-lg font-bold text-green-600 mt-2">{offer.price} {offer.currency}</p>
-          {offer.categoryConfidence !== undefined && (
-            <p className="text-xs text-gray-500 mt-1">
-              AI Confidence: {(offer.categoryConfidence * 100).toFixed(0)}%
-            </p>
-          )}
+        <CardTitle className="text-lg">{offer.title}</CardTitle>
+        <div className="flex items-center justify-between mt-2">
+          <p className="text-sm text-muted-foreground">{offer.store}</p>
+          <Badge variant="secondary" className="text-base font-bold">{offer.price} {offer.currency}</Badge>
         </div>
-      </div>
+        {offer.categoryConfidence !== undefined && (
+          <Badge variant="outline" className="mt-2 text-xs">
+            AI: {(offer.categoryConfidence * 100).toFixed(0)}%
+          </Badge>
+        )}
+      </CardHeader>
+      <CardContent>
 
-      <form onSubmit={handleSubmit} className="space-y-3">
-        <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">Hovedkategori</label>
+      <form onSubmit={handleSubmit} className="space-y-4">
+        <div className="space-y-2">
+          <Label htmlFor="mainCategory">Hovedkategori</Label>
           <select 
+            id="mainCategory"
             value={mainCategory} 
             onChange={(e) => {
               setMainCategory(e.target.value);
@@ -247,7 +261,7 @@ function OfferReviewCard({ offer, categories, onCategorize, saving, imageCache }
             }}
             disabled={saving}
             required
-            className="w-full px-3 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-blue-500 focus:border-blue-500 disabled:bg-gray-100"
+            className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
           >
             <option value="">Velg kategori...</option>
             {Object.keys(categories).map(cat => (
@@ -256,14 +270,15 @@ function OfferReviewCard({ offer, categories, onCategorize, saving, imageCache }
           </select>
         </div>
 
-        <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">Underkategori</label>
+        <div className="space-y-2">
+          <Label htmlFor="subCategory">Underkategori</Label>
           <select 
+            id="subCategory"
             value={subCategory} 
             onChange={(e) => setSubCategory(e.target.value)}
             disabled={!mainCategory || saving}
             required
-            className="w-full px-3 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-blue-500 focus:border-blue-500 disabled:bg-gray-100"
+            className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
           >
             <option value="">Velg underkategori...</option>
             {subCategories.map(sub => (
@@ -272,29 +287,30 @@ function OfferReviewCard({ offer, categories, onCategorize, saving, imageCache }
           </select>
         </div>
 
-        <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">Ingrediens-nøkkel</label>
-          <input
+        <div className="space-y-2">
+          <Label htmlFor="ingredientKey">Ingrediens-nøkkel</Label>
+          <Input
+            id="ingredientKey"
             type="text"
             value={ingredientKey}
             onChange={(e) => setIngredientKey(e.target.value)}
             placeholder="f.eks. 'melk', 'agurk', 'pasta'"
             disabled={saving}
             required
-            className="w-full px-3 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-blue-500 focus:border-blue-500 disabled:bg-gray-100"
           />
-          <small className="text-xs text-gray-500">Brukes til middagsplanlegging</small>
+          <small className="text-xs text-muted-foreground">Brukes til middagsplanlegging</small>
         </div>
 
-        <button 
+        <Button 
           type="submit" 
-          className="w-full px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700 disabled:bg-gray-400 disabled:cursor-not-allowed transition-colors"
+          className="w-full"
           disabled={saving || !mainCategory || !subCategory || !ingredientKey.trim()}
         >
           {saving ? 'Lagrer...' : '✅ Lagre kategorisering'}
-        </button>
+        </Button>
       </form>
-    </div>
+      </CardContent>
+    </Card>
   );
 }
 
