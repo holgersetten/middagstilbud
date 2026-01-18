@@ -8112,16 +8112,16 @@
     "timestamp": "2026-01-18T13:32:04.938Z"
   },
   "wok mix|rema 1000": {
-    "mainCategory": "Frukt & grønt",
-    "subCategory": "Annet",
+    "mainCategory": "Middag",
+    "subCategory": "Wok",
     "ingredientKey": "wok mix",
-    "source": "ai",
+    "source": "manual",
     "confidence": {
-      "main": 0.9,
-      "sub": 0.9,
-      "ingredientKey": 0.9
+      "main": 1,
+      "sub": 1,
+      "ingredientKey": 1
     },
-    "timestamp": "2026-01-18T13:17:43.951Z"
+    "timestamp": "2026-01-18T14:08:53.598Z"
   },
   "boil in bag jasmin|rema 1000": {
     "mainCategory": "Middag",
@@ -8172,16 +8172,16 @@
     "timestamp": "2026-01-18T13:34:52.792Z"
   },
   "oliven|meny": {
-    "mainCategory": "Frukt & grønt",
-    "subCategory": "Annet",
+    "mainCategory": "Tilbehør",
+    "subCategory": "Oliven",
     "ingredientKey": "oliven",
-    "source": "ai",
+    "source": "manual",
     "confidence": {
-      "main": 0.95,
-      "sub": 0.95,
-      "ingredientKey": 0.95
+      "main": 1,
+      "sub": 1,
+      "ingredientKey": 1
     },
-    "timestamp": "2026-01-18T13:17:43.966Z"
+    "timestamp": "2026-01-18T14:09:14.018Z"
   },
   "hvitløksbrød|meny": {
     "mainCategory": "Brød",
@@ -8328,40 +8328,40 @@
     "timestamp": "2026-01-18T13:37:16.456Z"
   },
   "fish crisp|meny": {
-    "mainCategory": "Snacks, godteri & sjokolade",
-    "subCategory": "Annet",
+    "mainCategory": "Fisk & skalldyr",
+    "subCategory": "Fisk",
     "ingredientKey": "fish crisp",
-    "source": "ai",
+    "source": "manual",
     "confidence": {
-      "main": 0.9,
-      "sub": 0.9,
-      "ingredientKey": 0.9
+      "main": 1,
+      "sub": 1,
+      "ingredientKey": 1
     },
-    "timestamp": "2026-01-18T13:17:44.008Z"
+    "timestamp": "2026-01-18T14:09:25.396Z"
   },
   "pinsa|meny": {
-    "mainCategory": "Brød",
-    "subCategory": "Annet",
-    "ingredientKey": "pinsa",
-    "source": "ai",
+    "mainCategory": "Middag",
+    "subCategory": "Pizza",
+    "ingredientKey": "pinsa, pizzabunn",
+    "source": "manual",
     "confidence": {
-      "main": 0.9,
-      "sub": 0.9,
-      "ingredientKey": 0.9
+      "main": 1,
+      "sub": 1,
+      "ingredientKey": 1
     },
-    "timestamp": "2026-01-18T13:17:44.011Z"
+    "timestamp": "2026-01-18T14:09:55.818Z"
   },
   "guacamole|meny": {
     "mainCategory": "Tilbehør",
-    "subCategory": "Annet",
+    "subCategory": "Dip",
     "ingredientKey": "guacamole",
-    "source": "ai",
+    "source": "manual",
     "confidence": {
-      "main": 0.9,
-      "sub": 0.9,
-      "ingredientKey": 0.9
+      "main": 1,
+      "sub": 1,
+      "ingredientKey": 1
     },
-    "timestamp": "2026-01-18T13:17:44.013Z"
+    "timestamp": "2026-01-18T14:10:00.667Z"
   },
   "gnist fløjl|meny": {
     "mainCategory": "Ost",
@@ -8388,28 +8388,28 @@
     "timestamp": "2026-01-18T13:40:43.181Z"
   },
   "torky|meny": {
-    "mainCategory": "Snacks, godteri & sjokolade",
-    "subCategory": "Annet",
-    "ingredientKey": "torky",
-    "source": "ai",
+    "mainCategory": "Hus & hjem",
+    "subCategory": "Dopapir og tørkerull",
+    "ingredientKey": "torky, tørkerull",
+    "source": "manual",
     "confidence": {
-      "main": 0.9,
-      "sub": 0.9,
-      "ingredientKey": 0.9
+      "main": 1,
+      "sub": 1,
+      "ingredientKey": 1
     },
-    "timestamp": "2026-01-18T13:17:44.022Z"
+    "timestamp": "2026-01-18T14:10:25.268Z"
   },
   "sommerhonning|meny": {
-    "mainCategory": "Frukt & grønt",
-    "subCategory": "Annet",
+    "mainCategory": "Pålegg & frokost",
+    "subCategory": "Syltetøy og honning",
     "ingredientKey": "honning",
-    "source": "ai",
+    "source": "manual",
     "confidence": {
-      "main": 0.95,
-      "sub": 0.95,
-      "ingredientKey": 0.95
+      "main": 1,
+      "sub": 1,
+      "ingredientKey": 1
     },
-    "timestamp": "2026-01-18T13:17:44.025Z"
+    "timestamp": "2026-01-18T14:10:32.597Z"
   },
   "poteter sticks nuggets|meny": {
     "mainCategory": "Middag",
@@ -8473,15 +8473,15 @@
   },
   "tomatmiks|spar": {
     "mainCategory": "Frukt & grønt",
-    "subCategory": "Annet",
-    "ingredientKey": "tomatmiks",
-    "source": "ai",
+    "subCategory": "Grønnsaker",
+    "ingredientKey": "tomatmiks, tomat",
+    "source": "manual",
     "confidence": {
-      "main": 0.9,
-      "sub": 0.85,
-      "ingredientKey": 0.9
+      "main": 1,
+      "sub": 1,
+      "ingredientKey": 1
     },
-    "timestamp": "2026-01-18T13:17:44.061Z"
+    "timestamp": "2026-01-18T14:10:51.886Z"
   },
   "salater|spar": {
     "mainCategory": "Frukt & grønt",
@@ -8496,16 +8496,16 @@
     "timestamp": "2026-01-18T13:45:05.157Z"
   },
   "fish crisp 2 pk|spar": {
-    "mainCategory": "Snacks, godteri & sjokolade",
-    "subCategory": "Annet",
-    "ingredientKey": "fiskesnacks",
-    "source": "ai",
+    "mainCategory": "Fisk & skalldyr",
+    "subCategory": "Fisk",
+    "ingredientKey": "frossen fisk, fish crisp",
+    "source": "manual",
     "confidence": {
-      "main": 0.9,
-      "sub": 0.85,
-      "ingredientKey": 0.9
+      "main": 1,
+      "sub": 1,
+      "ingredientKey": 1
     },
-    "timestamp": "2026-01-18T13:17:44.067Z"
+    "timestamp": "2026-01-18T14:11:06.452Z"
   },
   "flytende|spar": {
     "mainCategory": "Meieri & egg",
@@ -8545,15 +8545,15 @@
   },
   "aunt mabel s|spar": {
     "mainCategory": "Snacks, godteri & sjokolade",
-    "subCategory": "Kjeks",
-    "ingredientKey": "kjeks",
-    "source": "ai",
+    "subCategory": "Muffins",
+    "ingredientKey": "muffins",
+    "source": "manual",
     "confidence": {
-      "main": 0.9,
-      "sub": 0.85,
-      "ingredientKey": 0.9
+      "main": 1,
+      "sub": 1,
+      "ingredientKey": 1
     },
-    "timestamp": "2026-01-18T13:17:44.081Z"
+    "timestamp": "2026-01-18T14:11:12.187Z"
   },
   "kokosboller|spar": {
     "mainCategory": "Snacks, godteri & sjokolade",
@@ -8629,15 +8629,15 @@
   },
   "melange soft flora|spar": {
     "mainCategory": "Meieri & egg",
-    "subCategory": "Annet",
-    "ingredientKey": "margarin",
-    "source": "ai",
+    "subCategory": "Smør og margarin",
+    "ingredientKey": "margarin, smør",
+    "source": "manual",
     "confidence": {
-      "main": 0.95,
-      "sub": 0.5,
-      "ingredientKey": 0.95
+      "main": 1,
+      "sub": 1,
+      "ingredientKey": 1
     },
-    "timestamp": "2026-01-18T13:17:44.110Z"
+    "timestamp": "2026-01-18T14:11:23.293Z"
   },
   "fullkornsris|kiwi": {
     "mainCategory": "Middag",
@@ -8665,15 +8665,15 @@
   },
   "havredrikk|kiwi": {
     "mainCategory": "Meieri & egg",
-    "subCategory": "Annet",
+    "subCategory": "Melk",
     "ingredientKey": "havredrikk",
-    "source": "ai",
+    "source": "manual",
     "confidence": {
-      "main": 0.95,
-      "sub": 0.95,
-      "ingredientKey": 0.95
+      "main": 1,
+      "sub": 1,
+      "ingredientKey": 1
     },
-    "timestamp": "2026-01-18T13:17:44.121Z"
+    "timestamp": "2026-01-18T14:11:57.980Z"
   },
   "smoothie mix|kiwi": {
     "mainCategory": "Drikke",
