@@ -28,7 +28,8 @@ class CategoryConfigService {
       // Parse JSON-strukturen (må erstatte " med " for gyldig JSON)
       const jsonStr = match[1]
         .replace(/"/g, '"')
-        .replace(/"/g, '"');
+        .replace(/"/g, '"')
+        .replace(/,(\s*[}\]])/g, '$1'); // Fjern trailing commas
       
       return JSON.parse(jsonStr);
     } catch (error) {

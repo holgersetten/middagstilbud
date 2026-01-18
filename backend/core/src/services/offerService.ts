@@ -1,6 +1,7 @@
 import path from 'path';
 import tjekApiService from '../../../persistence/src/services/tjekApiService';
 import fileService from '../../../persistence/src/services/fileService';
+import imageService from '../../../persistence/src/services/imageService';
 import { getActiveStores, getStoreLogoUrl, Store } from '../../../rest/src/config/stores';
 import config from '../../../rest/src/config/index';
 import categoryService from './categoryService';
@@ -20,6 +21,7 @@ interface Offer {
     validFrom?: string | null;
     validTo?: string | null;
     imageUrl?: string | null;
+    offerId?: string | null;
     catalogId?: string;
     hotspotId?: string;
     store?: string;
@@ -42,16 +44,32 @@ class OfferService {
     }
 
     setupPeriodicUpdates(): void {
+        // Ukentlig automatisk oppdatering: Hver søndag kl 22:00
         setInterval(() => {
             const now = new Date();
-            const isWeekday = now.getDay() >= 1 && now.getDay() <= 5;
-            const isBusinessHours = now.getHours() >= 8 && now.getHours() <= 20;
+            const isSunday = now.getDay() === 0;
+            const isUpdateTime = now.getHours() === 22 && now.getMinutes() < 60;
             
-            if (isWeekday && isBusinessHours && !this.updateInProgress) {
-                console.log('⏰ Automatisk oppdatering av tilbud...');
-                this.updateAllStoreOffers();
+            if (isSunday && isUpdateTime && !this.updateInProgress) {
+                console.log('⏰ Automatisk ukentlig oppdatering startet...');
+                this.runWeeklyUpdate();
             }
-        }, 60 * 60 * 1000);
+        }, 60 * 60 * 1000); // Sjekk hver time
+    }
+
+    async runWeeklyUpdate(): Promise<void> {
+        console.log('🔄 Ukentlig oppdatering: Henter nye tilbud og kjører AI kategorisering');
+        
+        try {
+            // Hent nye tilbud
+            await this.updateAllStoreOffers();
+            
+            // Trigger AI kategorisering via REST endpoint
+            // (dette gjøres via endpoint for å følge samme flow som manuell oppdatering)
+            console.log('✅ Tilbud oppdatert. AI kategorisering vil starte automatisk ved neste server-restart med SKIP_AI=false');
+        } catch (error) {
+            console.error('❌ Feil under ukentlig oppdatering:', (error as Error).message);
+        }
     }
 
     async updateAllStoreOffers(): Promise<boolean> {
@@ -74,6 +92,28 @@ class OfferService {
             return false;
         } finally {
             this.updateInProgress = false;
+        }
+    }
+
+    async enrichAllOffersWithImages(): Promise<void> {
+        const stores = getActiveStores();
+        
+        for (const store of stores) {
+            const filename = `${store.name.toLowerCase().replace(/\s+/g, '_')}_offers.json`;
+            const filePath = path.join(config.offersDir, filename);
+            
+            try {
+                let offers = fileService.loadJSON<Offer[]>(filePath);
+                if (!Array.isArray(offers)) continue;
+
+                // Hent bilder
+                offers = await imageService.fetchImagesForOffers(offers);
+                
+                // Lagre tilbake
+                fileService.saveJSON(filePath, offers);
+            } catch (error) {
+                console.error(`❌ Feil ved bildhenting for ${store.name}:`, (error as Error).message);
+            }
         }
     }
 
@@ -127,7 +167,13 @@ class OfferService {
             }
         }
 
-        return await categoryService.categorizeOffers(allOffers);
+        // Bruk kun synkron kategorisering fra cache - kjør IKKE AI her
+        // Legg også til productKey for admin review
+        return allOffers.map(offer => ({
+            ...offer,
+            ...categoryService.categorizeOffer(offer),
+            productKey: `${offer.title}|${offer.size || 0}|${offer.pieces || 1}|${offer.store || 'unknown'}`
+        }));
     }
 
     async getOffersByStore(storeName: string) {
@@ -136,7 +182,11 @@ class OfferService {
         
         try {
             const offers = fileService.loadJSON<Offer[]>(filePath);
-            return Array.isArray(offers) ? await categoryService.categorizeOffers(offers) : [];
+            // Bruk kun synkron kategorisering fra cache - kjør IKKE AI her
+            return Array.isArray(offers) ? offers.map(offer => ({
+                ...offer,
+                ...categoryService.categorizeOffer(offer)
+            })) : [];
         } catch (error) {
             console.log(`⚠️ Kunne ikke laste tilbud for ${storeName}`);
             return [];
@@ -146,10 +196,18 @@ class OfferService {
     async getOffersNeedingReview() {
         const allOffers = await this.getAllOffers();
         
-        // Filtrer KUN produkter med cacheStatus: 'pending'
-        // Dette er produkter som HAR vært gjennom AI men fikk lav confidence eller subCategory='Annet'
-        // Vi ignorerer 'unknown' produkter (de som aldri har vært kategorisert)
-        return allOffers.filter((offer: Offer) => {
+        // Debug: Tell hvor mange som har cacheStatus
+        const withStatus = allOffers.filter((o: any) => o.cacheStatus !== undefined);
+        const pending = allOffers.filter((o: any) => o.cacheStatus === 'pending');
+        console.log(`📊 Review debug: ${allOffers.length} offers, ${withStatus.length} med cacheStatus, ${pending.length} pending`);
+        
+        // Legg til productKey og filtrer pending
+        const withProductKeys = allOffers.map(offer => ({
+            ...offer,
+            productKey: `${offer.title}|${offer.size || 0}|${offer.pieces || 1}|${offer.store || 'unknown'}`
+        }));
+        
+        return withProductKeys.filter((offer: any) => {
             return offer.cacheStatus === 'pending';
         });
     }

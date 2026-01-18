@@ -133,6 +133,16 @@ class CategoryService {
         return fileService.saveJSON(this.cacheFilePath, this.cache);
     }
 
+    private calculateCacheStatus(entry: CategoryCacheEntry): CacheStatus {
+        if (entry.subCategory === 'Annet') return 'pending';
+        if (entry.confidence.main >= 0.90 && 
+            entry.confidence.sub >= 0.88 && 
+            entry.confidence.ingredientKey >= 0.90) {
+            return 'trusted';
+        }
+        return 'pending';
+    }
+
     getCategoryForProduct(productKey: string): CategoryCacheEntry | null {
         const entry = this.cache[productKey];
         if (!entry) return null;
@@ -183,7 +193,12 @@ class CategoryService {
         this.saveCache();
     }
     
-    categorizeOffer(offer: OfferLike): { mainCategory: MainCategory; subCategory: SubCategory; ingredientKey: string } {
+    categorizeOffer(offer: OfferLike): { 
+        mainCategory: MainCategory; 
+        subCategory: SubCategory; 
+        ingredientKey: string;
+        cacheStatus?: CacheStatus;
+    } {
         // 0. Sjekk manuelle overrides først (høyeste prioritet)
         const categoryKey = buildCategoryKey(offer);
         const manualOverride = this.manualOverrides[categoryKey];
@@ -200,7 +215,8 @@ class CategoryService {
             return {
                 mainCategory: manualOverride.mainCategory,
                 subCategory: manualOverride.subCategory,
-                ingredientKey: manualOverride.ingredientKey
+                ingredientKey: manualOverride.ingredientKey,
+                cacheStatus: 'trusted' as CacheStatus
             };
         }
 
@@ -211,7 +227,8 @@ class CategoryService {
             return {
                 mainCategory: productEntry.mainCategory,
                 subCategory: productEntry.subCategory,
-                ingredientKey: productEntry.ingredientKey
+                ingredientKey: productEntry.ingredientKey,
+                cacheStatus: this.calculateCacheStatus(productEntry)
             };
         }
 
@@ -221,7 +238,8 @@ class CategoryService {
             return {
                 mainCategory: categoryEntry.mainCategory,
                 subCategory: categoryEntry.subCategory,
-                ingredientKey: categoryEntry.ingredientKey
+                ingredientKey: categoryEntry.ingredientKey,
+                cacheStatus: this.calculateCacheStatus(categoryEntry)
             };
         }
 
@@ -232,7 +250,8 @@ class CategoryService {
             return {
                 mainCategory: ruleMatch as MainCategory,
                 subCategory: DEFAULT_SUB_CATEGORY,
-                ingredientKey: 'produkt'
+                ingredientKey: 'produkt',
+                cacheStatus: undefined
             };
         }
 
@@ -241,7 +260,8 @@ class CategoryService {
         return {
             mainCategory: DEFAULT_MAIN_CATEGORY,
             subCategory: DEFAULT_SUB_CATEGORY,
-            ingredientKey: 'produkt'
+            ingredientKey: 'produkt',
+            cacheStatus: undefined
         };
     }
 
@@ -439,15 +459,60 @@ class CategoryService {
     
     // Hjelper-metode for å ekstrahere categoryKey fra productKey
     // productKey format: "title|size|pieces|store"
-    // categoryKey format: "title|store"
+    // categoryKey format: "title|store" (normalisert til lowercase)
     private extractCategoryKey(productKey: string): string {
         const parts = productKey.split('|');
         if (parts.length === 4) {
-            // Format: title|size|pieces|store → title|store
-            return `${parts[0]}|${parts[3]}`;
+            // Format: title|size|pieces|store → title|store (normalisert)
+            return buildCategoryKey({ title: parts[0], store: parts[3] });
         }
         // Allerede i categoryKey format eller ukjent format
         return productKey;
+    }
+
+    // Teller antall pending produkter i cache
+    getPendingCount(): number {
+        let count = 0;
+        for (const key in this.cache) {
+            const entry = this.cache[key];
+            const isPending = 
+                entry.subCategory === 'Annet' ||
+                entry.confidence.main < 0.90 ||
+                entry.confidence.sub < 0.88 ||
+                entry.confidence.ingredientKey < 0.90;
+            if (isPending) count++;
+        }
+        return count;
+    }
+
+    // Sletter alle pending entries fra cache (for re-kategorisering)
+    removePendingFromCache(): number {
+        let removed = 0;
+        const keysToRemove: string[] = [];
+        
+        for (const key in this.cache) {
+            const entry = this.cache[key];
+            const isPending = 
+                entry.subCategory === 'Annet' ||
+                entry.confidence.main < 0.90 ||
+                entry.confidence.sub < 0.88 ||
+                entry.confidence.ingredientKey < 0.90;
+            
+            if (isPending) {
+                keysToRemove.push(key);
+                removed++;
+            }
+        }
+        
+        // Slett alle pending entries
+        keysToRemove.forEach(key => delete this.cache[key]);
+        
+        if (removed > 0) {
+            this.saveCache();
+            console.log(`🧹 Slettet ${removed} pending produkter fra cache`);
+        }
+        
+        return removed;
     }
 }
 

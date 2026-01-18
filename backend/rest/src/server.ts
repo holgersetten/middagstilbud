@@ -67,16 +67,43 @@ app.use((err: Error, _req: Request, res: Response, _next: NextFunction) => {
 
 // Start server
 const PORT = config.port || 5000;
-const server = app.listen(PORT, () => {
+const server = app.listen(PORT, async () => {
     console.log('🚀 =================================');
     console.log('🚀 Middagstilbud API Server startet');
     console.log('🚀 =================================');
     console.log(`🚀 Port: ${PORT}`);
     console.log(`🚀 Environment: ${config.nodeEnv}`);
-    console.log('🚀 =================================');
+    console.log('🚀 =================================\n');
     
-    // Ikke oppdater automatisk ved oppstart - bruk POST /api/offers/update i stedet
-    // offerService.updateAllStoreOffers();
+    // Automatisk catalog-sjekk deaktivert (kjør manuelt: POST /api/offers/weekly-update)
+    // Kan aktiveres igjen når last_catalog_check.json fungerer korrekt
+    /*
+    // Sjekk om det er nye tilbudsaviser ved oppstart
+    try {
+        const hasNewCatalogs = await catalogService.hasNewCatalogs();
+        
+        if (hasNewCatalogs) {
+            console.log('✨ Nye tilbudsaviser - starter oppdatering...\n');
+            
+            // Trigger weekly-update endpoint
+            try {
+                const response = await axios.post(`http://localhost:${PORT}/api/offers/weekly-update`);
+                const { pendingCount } = response.data;
+                console.log(`✅ Oppdatering fullført - ${pendingCount} produkter krever review\n`);
+                
+                // Oppdater katalog-register
+                await catalogService.updateLastCheck();
+            } catch (error) {
+                console.error('❌ Feil ved automatisk oppdatering:', (error as Error).message);
+            }
+        } else {
+            console.log('📋 Ingen nye tilbudsaviser\n');
+        }
+    } catch (error) {
+        console.error('❌ Feil ved sjekk av kataloger:', (error as Error).message);
+        console.log('📋 Fortsetter med eksisterende data.\n');
+    }
+    */
 });
 
 // Graceful shutdown

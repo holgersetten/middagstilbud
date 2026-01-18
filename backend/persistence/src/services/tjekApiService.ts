@@ -70,10 +70,6 @@ class TjekApiService {
             const response = await axios.get<Catalog[]>(url, { headers: this.headers });
             const catalog = response.data?.[0] || null;
             
-            if (catalog) {
-                console.log(`📖 Dealer ${dealerId}: Hentet katalog ${catalog.id} (${catalog.label || 'ingen label'})`);
-            }
-            
             return catalog;
         } catch (error) {
             console.error(`❌ Feil ved henting av katalog for dealer ${dealerId}:`, (error as Error).message);
@@ -100,12 +96,8 @@ class TjekApiService {
                 return [];
             }
 
-            console.log(`📚 Henter hotspots fra katalog ${catalog.id}...`);
             const hotspots = await this.getCatalogHotspots(catalog.id);
             const offers = this.transformHotspotsToOffers(hotspots);
-            
-            const hotspotsWithOffers = hotspots.filter(h => h && h.offer).length;
-            console.log(`🔍 Dealer ${dealerId}: ${hotspots.length} hotspots, ${hotspotsWithOffers} med tilbud, ${offers.length} transformert`);
             
             return offers;
         } catch (error) {

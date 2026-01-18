@@ -13,9 +13,9 @@ export const CATEGORY_HIERARCHY = {
     "Krydderurter",
     "Poteter",
     "Sopp",
-    "Annet",
+    "Salat",
+    "Annet"
   ],
-
   "Fisk & skalldyr": [
     "Fisk",
     "Fiskeburger",
@@ -24,9 +24,8 @@ export const CATEGORY_HIERARCHY = {
     "Skjell",
     "Sushi",
     "Tørket fisk",
-    "Annet",
+    "Annet"
   ],
-
   "Brød": [
     "Boller og småkaker",
     "Brød",
@@ -39,12 +38,10 @@ export const CATEGORY_HIERARCHY = {
     "Pita og nan",
     "Pølsebrød",
     "Baguetter",
-    "Lefser",
     "Riskaker",
     "Rundstykker",
-    "Annet",
+    "Annet"
   ],
-
   "Middag": [
     "Ferdigretter",
     "Fiskeretter",
@@ -59,17 +56,15 @@ export const CATEGORY_HIERARCHY = {
     "Taco",
     "Vegetarretter",
     "Andre middagsretter",
-    "Annet",
+    "Annet"
   ],
-
   "Kylling og fjærkre": [
     "And",
     "Kalkun",
     "Kylling",
     "Rype",
-    "Annet",
+    "Annet"
   ],
-
   "Meieri & egg": [
     "Cottage cheese",
     "Creme fraiche",
@@ -82,9 +77,8 @@ export const CATEGORY_HIERARCHY = {
     "Rømme",
     "Yoghurt",
     "Drikkeyoghurt",
-    "Annet",
+    "Annet"
   ],
-
   "Pålegg & frokost": [
     "Bacon",
     "Fiskepålegg",
@@ -95,9 +89,8 @@ export const CATEGORY_HIERARCHY = {
     "Syltetøy og honning",
     "Vegansk pålegg",
     "Tubeost",
-    "Annet",
+    "Annet"
   ],
-
   "Kjøtt": [
     "Hamburger",
     "Kjøttdeig og farse",
@@ -107,9 +100,8 @@ export const CATEGORY_HIERARCHY = {
     "Storfekjøtt",
     "Svinekjøtt",
     "Viltkjøtt",
-    "Annet",
+    "Annet"
   ],
-
   "Tilbehør": [
     "Eddik",
     "Dip",
@@ -129,9 +121,8 @@ export const CATEGORY_HIERARCHY = {
     "Sauser og dressing",
     "Stuinger",
     "Sushitilbehør",
-    "Annet",
+    "Annet"
   ],
-
   "Drikke": [
     "Brus",
     "Drinkmikser",
@@ -149,9 +140,8 @@ export const CATEGORY_HIERARCHY = {
     "Toddy",
     "Vann",
     "Øl og cider",
-    "Annet",
+    "Annet"
   ],
-
   "Ost": [
     "Blåmuggost",
     "Brunost",
@@ -165,9 +155,8 @@ export const CATEGORY_HIERARCHY = {
     "Revet ost",
     "Smøreoster",
     "Øvrig ost",
-    "Annet",
+    "Annet"
   ],
-
   "Dessert og iskrem": [
     "Dessertpuddinger",
     "Dessertsaucer",
@@ -178,9 +167,8 @@ export const CATEGORY_HIERARCHY = {
     "Mousse",
     "Riskrem",
     "Tiramisu",
-    "Annet",
+    "Annet"
   ],
-
   "Baking": [
     "Bakemixer",
     "Melis",
@@ -191,9 +179,8 @@ export const CATEGORY_HIERARCHY = {
     "Sukker",
     "Sukkerbiter",
     "Tørket frukt og nøtter",
-    "Annet",
+    "Annet"
   ],
-
   "Snacks, godteri & sjokolade": [
     "Dip",
     "Godteri",
@@ -206,15 +193,13 @@ export const CATEGORY_HIERARCHY = {
     "Muffins",
     "Kjeks",
     "Potetgull",
-    "Annet",
+    "Annet"
   ],
-
   "Barneprodukter": [
     "Babyartikler",
     "Barnemat",
-    "Annet",
+    "Annet"
   ],
-
   "Personlige artikler": [
     "Barbering",
     "Bind og tamponger",
@@ -225,9 +210,8 @@ export const CATEGORY_HIERARCHY = {
     "Personlig hygiene",
     "Sminke",
     "Tannpleie",
-    "Annet",
+    "Annet"
   ],
-
   "Hus & hjem": [
     "Belysning",
     "Bilpleie",
@@ -246,24 +230,22 @@ export const CATEGORY_HIERARCHY = {
     "Fest",
     "Sport",
     "Verktøy",
-    "Annet",
+    "Annet"
   ],
-
   "Dyr": [
     "Dyreartikler",
     "Fuglemat",
     "Hundemat",
     "Kattemat",
-    "Annet",
+    "Annet"
   ],
-
   "Blomster og planter": [
     "Blomster",
     "Plantejord",
     "Plantenæring",
     "Potteplanter",
-    "Annet",
-  ],
+    "Annet"
+  ]
 } as const;
 
 export type MainCategory = keyof typeof CATEGORY_HIERARCHY;

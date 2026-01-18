@@ -3,7 +3,7 @@ chcp 65001
 echo.
 echo ========================================
 echo    Starter Middagstilbud Dev Server
-echo    UTEN AI-KATEGORISERING
+echo    MED AI-KATEGORISERING
 echo ========================================
 echo.
 
@@ -28,8 +28,8 @@ echo.
 echo ========================================
 echo.
 
-REM Start backend i nytt terminal-vindu (MED SKIP_AI)
-start "Middagstilbud Backend (AI OFF)" cmd /k "set SKIP_AI=true && cd /d %~dp0backend && npm run dev"
+REM Start backend i nytt terminal-vindu (MED AI)
+start "Middagstilbud Backend (AI ON)" cmd /k "set SKIP_AI=false && cd /d %~dp0backend && npm run dev"
 
 REM Vent litt slik at backend får starte først
 timeout /t 3 /nobreak > nul

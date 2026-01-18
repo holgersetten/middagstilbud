@@ -361,4 +361,67 @@ router.get('/offers/:hotspotId/image', async (req: Request, res: Response) => {
     }
 });
 
+// POST /api/offers/weekly-update - Komplett ukentlig oppdatering (tilbud + AI kategorisering)
+router.post('/offers/weekly-update', async (req: Request, res: Response) => {
+    try {
+        console.log('🔄 Ukentlig oppdatering startet:', new Date().toISOString());
+        
+        // STEG 1: Hent nye tilbud
+        console.log('📥 Henter nye tilbudsaviser...');
+        await offerService.updateAllStoreOffers();
+        
+        // STEG 2: Hent bilder for tilbudene
+        console.log('🖼️  Henter bilder...');
+        await offerService.enrichAllOffersWithImages();
+        
+        // STEG 3: Kjør AI kategorisering (3 iterasjoner)
+        console.log('🤖 AI kategorisering (3 iterasjoner)...');
+        
+        // Iterasjon 1
+        console.log('\n🔄 Iterasjon 1/3...');
+        let allOffers = await offerService.getAllOffers();
+        await categoryService.categorizeOffers(allOffers);
+        let pendingCount = categoryService.getPendingCount();
+        console.log(`   ➜ Resultat: ${pendingCount} pending produkter`);
+        
+        if (pendingCount > 0) {
+            // Iterasjon 2: Slett pending, hent fresh offers, og prøv igjen
+            console.log('\n🔄 Iterasjon 2/3...');
+            categoryService.removePendingFromCache();
+            allOffers = await offerService.getAllOffers(); // Fresh load
+            await categoryService.categorizeOffers(allOffers);
+            pendingCount = categoryService.getPendingCount();
+            console.log(`   ➜ Resultat: ${pendingCount} pending produkter`);
+        }
+        
+        if (pendingCount > 0) {
+            // Iterasjon 3: Slett pending, hent fresh offers, og siste forsøk
+            console.log('\n🔄 Iterasjon 3/3...');
+            categoryService.removePendingFromCache();
+            allOffers = await offerService.getAllOffers(); // Fresh load
+            await categoryService.categorizeOffers(allOffers);
+            pendingCount = categoryService.getPendingCount();
+            console.log(`   ➜ Resultat: ${pendingCount} pending produkter`);
+        }
+        
+        // Rapporter resultat
+        const result = {
+            success: true,
+            timestamp: new Date().toISOString(),
+            pendingCount,
+            message: pendingCount === 0 
+                ? 'Alle produkter kategorisert automatisk!' 
+                : `${pendingCount} produkter krever manuell review`
+        };
+        
+        res.json(result);
+    } catch (error) {
+        console.error('❌ Feil ved ukentlig oppdatering:', (error as Error).message);
+        res.status(500).json({
+            error: 'Ukentlig oppdatering feilet',
+            message: (error as Error).message
+        });
+    }
+});
+
 export default router;

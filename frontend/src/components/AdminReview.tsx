@@ -5,11 +5,13 @@ import './AdminReview.css';
 
 function AdminReview() {
   const [offers, setOffers] = useState<Offer[]>([]);
+  const [allOffers, setAllOffers] = useState<Offer[]>([]);
   const [categories, setCategories] = useState<CategoryHierarchy>({});
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [saving, setSaving] = useState<string | null>(null);
   const [imageCache, setImageCache] = useState<Map<string, string>>(new Map());
+  const [searchQuery, setSearchQuery] = useState('');
 
   useEffect(() => {
     loadData();
@@ -20,12 +22,14 @@ function AdminReview() {
       setLoading(true);
       setError(null);
       
-      const [reviewData, categoriesData] = await Promise.all([
+      const [reviewData, allData, categoriesData] = await Promise.all([
         offersApi.getOffersNeedingReview(),
+        offersApi.getAllOffers(),
         offersApi.getCategories()
       ]);
       
       setOffers(reviewData.offers || []);
+      setAllOffers(allData.offers || []);
       setCategories(categoriesData.categories);
 
       // Bildehenting deaktivert - Tjek API krever autentisering
@@ -113,27 +117,74 @@ function AdminReview() {
         <p className="subtitle">
           {offers.length} produkter trenger kategorisering
         </p>
+        
+        {/* Søkefelt for å finne feil-kategoriseringer */}
+        <div style={{ marginTop: '1rem', marginBottom: '1rem' }}>
+          <input
+            type="text"
+            placeholder="🔍 Søk etter produkt for å rette kategorisering (f.eks. 'vepsebol')..."
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            style={{
+              width: '100%',
+              padding: '0.75rem',
+              fontSize: '1rem',
+              border: '2px solid #3b82f6',
+              borderRadius: '8px'
+            }}
+          />
+        </div>
       </div>
 
-      {offers.length === 0 ? (
+      {searchQuery.length >= 2 && (
+        <div style={{ marginBottom: '2rem', padding: '1rem', background: '#f3f4f6', borderRadius: '8px' }}>
+          <h3 style={{ marginBottom: '1rem' }}>🔍 Søkeresultater ({
+            allOffers.filter(o => 
+              o.title?.toLowerCase().includes(searchQuery.toLowerCase())
+            ).length
+          })</h3>
+          <div className="offers-grid">
+            {allOffers
+              .filter(o => o.title?.toLowerCase().includes(searchQuery.toLowerCase()))
+              .map((offer) => (
+                <OfferReviewCard
+                  key={offer.productKey || offer.title}
+                  offer={offer}
+                  categories={categories}
+                  onCategorize={handleCategorize}
+                  saving={saving === offer.productKey}
+                  imageCache={imageCache}
+                />
+              ))}
+          </div>
+        </div>
+      )}
+
+      {offers.length === 0 && searchQuery.length < 2 ? (
         <div className="empty-state">
           <h2>🎉 Alt er kategorisert!</h2>
           <p>Ingen produkter trenger review for øyeblikket.</p>
+          <p style={{ marginTop: '1rem', color: '#6b7280' }}>
+            💡 Bruk søkefeltet ovenfor for å finne og rette feil-kategoriseringer
+          </p>
         </div>
-      ) : (
-        <div className="offers-grid">
-          {offers.map((offer) => (
-            <OfferReviewCard
-              key={offer.productKey || offer.title}
-              offer={offer}
-              categories={categories}
-              onCategorize={handleCategorize}
-              saving={saving === offer.productKey}
-              imageCache={imageCache}
-            />
-          ))}
-        </div>
-      )}
+      ) : offers.length > 0 && searchQuery.length < 2 ? (
+        <>
+          <h3 style={{ marginBottom: '1rem' }}>⚠️ Pending kategoriseringer</h3>
+          <div className="offers-grid">
+            {offers.map((offer) => (
+              <OfferReviewCard
+                key={offer.productKey || offer.title}
+                offer={offer}
+                categories={categories}
+                onCategorize={handleCategorize}
+                saving={saving === offer.productKey}
+                imageCache={imageCache}
+              />
+            ))}
+          </div>
+        </>
+      ) : null}
     </div>
   );
 }
