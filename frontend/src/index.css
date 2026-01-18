@@ -38,8 +38,36 @@
     -moz-osx-font-smoothing: grayscale;
   }
   
+  /* Hide scrollbar */
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
   @keyframes gradient {
     0%, 100% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
+  }
+  
+  .subcategory-container {
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-origin: top;
+  }
+  
+  .subcategory-collapsed {
+    max-height: 0;
+    opacity: 0;
+    transform: scaleY(0.8);
+  }
+  
+  .subcategory-expanded {
+    max-height: 800px;
+    opacity: 1;
+    transform: scaleY(1);
   }
 }

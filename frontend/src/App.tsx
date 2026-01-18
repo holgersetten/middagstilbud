@@ -1,11 +1,10 @@
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
 import { Input } from '@/components/ui/input';
-import { Breadcrumb, BreadcrumbList, BreadcrumbItem, BreadcrumbLink, BreadcrumbSeparator, BreadcrumbPage } from '@/components/ui/breadcrumb';
+import { Breadcrumb, BreadcrumbList, BreadcrumbItem, BreadcrumbSeparator, BreadcrumbPage } from '@/components/ui/breadcrumb';
 import { OfferGrid } from '@/components/grocery/offer-grid';
 import { Search, Settings, Tags, ArrowLeft, Loader2, AlertCircle, ChevronRight, Home, Lock } from 'lucide-react';
 import { offersApi } from './services/api';
@@ -21,11 +20,12 @@ function App() {
   const [error, setError] = useState<string | null>(null);
   const [viewMode, setViewMode] = useState<ViewMode>('offers');
   const [categories, setCategories] = useState<CategoryHierarchy | null>(null);
-  const [selectedMainCategory, setSelectedMainCategory] = useState<string>('all');
+  const [selectedMainCategory, setSelectedMainCategory] = useState<string>('');
   const [selectedSubCategory, setSelectedSubCategory] = useState<string>('all');
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [isAdminAuthenticated, setIsAdminAuthenticated] = useState(false);
   const [adminPassword, setAdminPassword] = useState('');
+  const [showAllCategories, setShowAllCategories] = useState(false);
 
   useEffect(() => {
     fetchOffers();
@@ -56,15 +56,7 @@ function App() {
   };
 
   const filteredOffers = offers.filter(offer => {
-    if (selectedMainCategory === 'all') {
-      if (searchQuery) {
-        const query = searchQuery.toLowerCase();
-        return offer.title.toLowerCase().includes(query) || 
-               offer.description?.toLowerCase().includes(query) ||
-               offer.store.toLowerCase().includes(query);
-      }
-      return true;
-    }
+    if (!selectedMainCategory) return false;
     if (offer.mainCategory !== selectedMainCategory) return false;
     if (selectedSubCategory === 'all' || offer.subCategory === selectedSubCategory) {
       if (searchQuery) {
@@ -79,8 +71,62 @@ function App() {
   });
 
   const handleMainCategoryChange = (category: string) => {
-    setSelectedMainCategory(category);
-    setSelectedSubCategory('all');
+    if (selectedMainCategory === category) {
+      // Toggle off hvis samme kategori klikkes
+      setSelectedMainCategory('');
+      setSelectedSubCategory('all');
+    } else {
+      setSelectedMainCategory(category);
+      setSelectedSubCategory('all');
+    }
+  };
+
+  // Sorter kategorier etter relevans
+  const getCategoriesSorted = () => {
+    if (!categories) return [];
+    
+    const categoryPriority = [
+      'Middag',
+      'Frukt & grønt',
+      'Kjøtt',
+      'Kylling og fjærkre',
+      'Fisk & skaldyr',
+      'Meieri & egg',
+      'Brød',
+      'Pålegg & frokost',
+      'Tilbehør',
+      'Drikke',
+      'Snacks, godteri & sjokolade',
+      'Ost',
+      'Dessert og iskrem',
+      'Baking',
+      'Barneprodukter',
+      'Dyr',
+      'Personlige artikler',
+      'Hus & hjem',
+      'Blomster og planter'
+    ];
+
+    const allCategories = Object.keys(categories);
+    
+    return allCategories.sort((a, b) => {
+      const indexA = categoryPriority.indexOf(a);
+      const indexB = categoryPriority.indexOf(b);
+      
+      // Hvis begge er i prioritetslisten, sorter etter prioritet
+      if (indexA !== -1 && indexB !== -1) {
+        return indexA - indexB;
+      }
+      
+      // Hvis bare A er i listen, plasser A først
+      if (indexA !== -1) return -1;
+      
+      // Hvis bare B er i listen, plasser B først
+      if (indexB !== -1) return 1;
+      
+      // Hvis ingen er i listen, sorter alfabetisk
+      return a.localeCompare(b, 'nb-NO');
+    });
   };
 
   if (viewMode === 'admin') {
@@ -224,8 +270,6 @@ function App() {
     );
   }
 
-  const subCategories = selectedMainCategory !== 'all' && categories?.[selectedMainCategory] || [];
-
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
@@ -233,7 +277,7 @@ function App() {
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <div>
-              <h1 className="text-3xl font-bold tracking-tight text-foreground">Mattilbud</h1>
+              <h1 className="text-3xl font-bold tracking-tight text-foreground">Ukeshandling.no</h1>
               <p className="text-sm text-muted-foreground mt-1">Finn de beste tilbudene</p>
             </div>
             <div className="flex items-center gap-2">
@@ -251,45 +295,37 @@ function App() {
           {/* Sidebar */}
           <aside className="w-64 flex-shrink-0">
             <Card className="sticky top-24">
-              <CardContent className="p-4 space-y-6">
+              <CardContent className="p-4 max-h-[calc(100vh-7rem)] overflow-y-auto scrollbar-hide">
                 <div>
                   <h3 className="text-sm font-semibold text-foreground mb-3">Kategorier</h3>
                   <div className="space-y-1">
-                    <button
-                      onClick={() => handleMainCategoryChange('all')}
-                      className={`w-full text-left px-3 py-2 text-sm rounded-md transition-colors ${
-                        selectedMainCategory === 'all'
-                          ? 'bg-foreground text-background font-medium'
-                          : 'text-foreground hover:bg-muted'
-                      }`}
-                    >
-                      Alle kategorier
-                    </button>
-                    {categories && Object.keys(categories).sort().map(cat => {
+                    {getCategoriesSorted().slice(0, showAllCategories ? undefined : 6).map(cat => {
                       const isMainSelected = selectedMainCategory === cat;
-                      const subCats = categories[cat] || [];
+                      const subCats = categories?.[cat] || [];
                       return (
                         <div key={cat}>
                           <button
                             onClick={() => handleMainCategoryChange(cat)}
-                            className={`w-full text-left px-3 py-2 text-sm rounded-md transition-colors ${
+                            className={`w-full text-left px-3 py-2 text-sm rounded-md transition-all duration-200 cursor-pointer ${
                               isMainSelected
-                                ? 'bg-foreground text-background font-medium'
-                                : 'text-foreground hover:bg-muted'
+                                ? 'bg-foreground text-background font-medium shadow-sm'
+                                : 'text-foreground hover:bg-muted hover:translate-x-0.5'
                             }`}
                           >
                             {cat}
                           </button>
-                          {isMainSelected && subCats.length > 0 && (
-                            <div className="ml-4 mt-1 space-y-1">
+                          {subCats.length > 0 && (
+                            <div className={`ml-4 mt-1 space-y-1 subcategory-container ${
+                              isMainSelected ? 'subcategory-expanded' : 'subcategory-collapsed'
+                            }`}>
                               {subCats.map(subCat => (
                                 <button
                                   key={subCat}
                                   onClick={() => setSelectedSubCategory(subCat)}
-                                  className={`w-full text-left px-3 py-1.5 text-sm rounded-md transition-colors ${
+                                  className={`w-full text-left px-3 py-1.5 text-sm rounded-md transition-all duration-200 cursor-pointer ${
                                     selectedSubCategory === subCat
                                       ? 'bg-muted text-foreground font-medium'
-                                      : 'text-muted-foreground hover:bg-muted hover:text-foreground'
+                                      : 'text-muted-foreground hover:bg-muted/50 hover:text-foreground hover:translate-x-0.5'
                                   }`}
                                 >
                                   {subCat}
@@ -300,6 +336,15 @@ function App() {
                         </div>
                       );
                     })}
+                    
+                    {getCategoriesSorted().length > 6 && (
+                      <button
+                        onClick={() => setShowAllCategories(!showAllCategories)}
+                        className="w-full text-left px-3 py-2 text-sm rounded-md text-muted-foreground hover:text-foreground hover:bg-muted transition-all duration-200 cursor-pointer mt-2 border-t border-border pt-3"
+                      >
+                        {showAllCategories ? '↑ Vis færre' : '↓ Vis flere...'}
+                      </button>
+                    )}
                   </div>
                 </div>
               </CardContent>
@@ -309,42 +354,28 @@ function App() {
           {/* Main Content */}
           <main className="flex-1 min-w-0">
             {/* Breadcrumbs */}
-            <Breadcrumb className="mb-4">
-              <BreadcrumbList>
-                <BreadcrumbItem>
-                  <BreadcrumbLink onClick={() => handleMainCategoryChange('all')} className="cursor-pointer flex items-center gap-1">
-                    <Home className="h-3.5 w-3.5" />
-                    Hjem
-                  </BreadcrumbLink>
-                </BreadcrumbItem>
-                {selectedMainCategory !== 'all' && (
-                  <>
-                    <BreadcrumbSeparator>
-                      <ChevronRight className="h-4 w-4" />
-                    </BreadcrumbSeparator>
-                    <BreadcrumbItem>
-                      {selectedSubCategory === 'all' ? (
-                        <BreadcrumbPage>{selectedMainCategory}</BreadcrumbPage>
-                      ) : (
-                        <BreadcrumbLink onClick={() => setSelectedSubCategory('all')} className="cursor-pointer">
-                          {selectedMainCategory}
-                        </BreadcrumbLink>
-                      )}
-                    </BreadcrumbItem>
-                  </>
-                )}
-                {selectedSubCategory !== 'all' && (
-                  <>
-                    <BreadcrumbSeparator>
-                      <ChevronRight className="h-4 w-4" />
-                    </BreadcrumbSeparator>
-                    <BreadcrumbItem>
-                      <BreadcrumbPage>{selectedSubCategory}</BreadcrumbPage>
-                    </BreadcrumbItem>
-                  </>
-                )}
-              </BreadcrumbList>
-            </Breadcrumb>
+            {selectedMainCategory && (
+              <Breadcrumb className="mb-4">
+                <BreadcrumbList>
+                  <BreadcrumbItem>
+                    <BreadcrumbPage className="flex items-center gap-1">
+                      <Home className="h-3.5 w-3.5" />
+                      {selectedMainCategory}
+                    </BreadcrumbPage>
+                  </BreadcrumbItem>
+                  {selectedSubCategory !== 'all' && (
+                    <>
+                      <BreadcrumbSeparator>
+                        <ChevronRight className="h-4 w-4" />
+                      </BreadcrumbSeparator>
+                      <BreadcrumbItem>
+                        <BreadcrumbPage>{selectedSubCategory}</BreadcrumbPage>
+                      </BreadcrumbItem>
+                    </>
+                  )}
+                </BreadcrumbList>
+              </Breadcrumb>
+            )}
 
             {/* Search */}
             <div className="relative max-w-xl mb-6">
@@ -376,7 +407,16 @@ function App() {
             <Separator className="my-6" />
 
             {/* Tilbudsgrid */}
-            <OfferGrid 
+            {!selectedMainCategory ? (
+              <div className="flex flex-col items-center justify-center py-16 text-center">
+                <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-lg bg-muted">
+                  <Search className="h-8 w-8 text-muted-foreground" />
+                </div>
+                <h3 className="text-lg font-semibold text-foreground">Velg en kategori</h3>
+                <p className="text-sm text-muted-foreground mt-1">Velg en kategori fra menyen til venstre for å se tilbud</p>
+              </div>
+            ) : (
+              <OfferGrid 
               offers={filteredOffers.map(offer => ({
                 id: offer.offerId || offer.productKey || '',
                 title: offer.title,
@@ -390,6 +430,7 @@ function App() {
                 description: offer.description
               }))} 
             />
+            )}
           </main>
         </div>
       </div>
