@@ -27,11 +27,63 @@ function App() {
   const [adminPassword, setAdminPassword] = useState('');
   const [showAllCategories, setShowAllCategories] = useState(false);
   const [showRecommendations, setShowRecommendations] = useState(true);
+  const [placeholderIndex, setPlaceholderIndex] = useState(0);
+  const [placeholderText, setPlaceholderText] = useState('');
+  const [isTyping, setIsTyping] = useState(true);
+
+  const placeholders = [
+    'laksefilet',
+    'kyllingkjøttdeig',
+    'melk',
+    'brød',
+    'ost',
+    'yoghurt',
+    'epler',
+    'banan',
+    'ketchup',
+    'pasta'
+  ];
 
   useEffect(() => {
     fetchOffers();
     fetchCategories();
   }, []);
+
+  // Typing animation for placeholder
+  useEffect(() => {
+    const currentWord = placeholders[placeholderIndex];
+    let currentCharIndex = 0;
+    
+    if (isTyping) {
+      // Type forward
+      const typeInterval = setInterval(() => {
+        if (currentCharIndex <= currentWord.length) {
+          setPlaceholderText(currentWord.slice(0, currentCharIndex));
+          currentCharIndex++;
+        } else {
+          clearInterval(typeInterval);
+          // Pause at full word
+          setTimeout(() => setIsTyping(false), 2000);
+        }
+      }, 150);
+      return () => clearInterval(typeInterval);
+    } else {
+      // Delete backwards
+      currentCharIndex = currentWord.length;
+      const deleteInterval = setInterval(() => {
+        if (currentCharIndex >= 0) {
+          setPlaceholderText(currentWord.slice(0, currentCharIndex));
+          currentCharIndex--;
+        } else {
+          clearInterval(deleteInterval);
+          // Move to next word
+          setPlaceholderIndex((prev) => (prev + 1) % placeholders.length);
+          setIsTyping(true);
+        }
+      }, 75);
+      return () => clearInterval(deleteInterval);
+    }
+  }, [placeholderIndex, isTyping]);
 
   // Finn de beste tilbudene basert på rabatt-prosent
   const getTopOffers = () => {
@@ -68,23 +120,53 @@ function App() {
     }
   };
 
-  const filteredOffers = offers.filter(offer => {
-    if (!selectedMainCategory) return false;
-    if (offer.mainCategory !== selectedMainCategory) return false;
-    if (selectedSubCategory === 'all' || offer.subCategory === selectedSubCategory) {
+  const filteredOffers = offers
+    .filter(offer => {
+      // Hvis søk er aktivt, søk på alle offers
       if (searchQuery) {
         const query = searchQuery.toLowerCase();
         return offer.title.toLowerCase().includes(query) || 
+               offer.ingredientKey?.toLowerCase().includes(query) ||
                offer.description?.toLowerCase().includes(query) ||
                offer.store.toLowerCase().includes(query);
       }
-      return true;
-    }
-    return false;
-  });
+      
+      // Hvis ingen søk, filtrer basert på kategori
+      if (!selectedMainCategory) return false;
+      if (offer.mainCategory !== selectedMainCategory) return false;
+      if (selectedSubCategory === 'all' || offer.subCategory === selectedSubCategory) {
+        return true;
+      }
+      return false;
+    })
+    .sort((a, b) => {
+      if (!searchQuery) return 0;
+      
+      const query = searchQuery.toLowerCase();
+      const aTitle = a.title.toLowerCase();
+      const bTitle = b.title.toLowerCase();
+      const aIngredientKey = a.ingredientKey?.toLowerCase() || '';
+      const bIngredientKey = b.ingredientKey?.toLowerCase() || '';
+      
+      const aTitleMatch = aTitle.includes(query);
+      const bTitleMatch = bTitle.includes(query);
+      const aIngredientMatch = aIngredientKey.includes(query);
+      const bIngredientMatch = bIngredientKey.includes(query);
+      
+      // Prioritet 1: Tittel match
+      if (aTitleMatch && !bTitleMatch) return -1;
+      if (!aTitleMatch && bTitleMatch) return 1;
+      
+      // Prioritet 2: IngredientKey match
+      if (aIngredientMatch && !bIngredientMatch) return -1;
+      if (!aIngredientMatch && bIngredientMatch) return 1;
+      
+      return 0;
+    });
 
   const handleMainCategoryChange = (category: string) => {
     setShowRecommendations(false);
+    setSearchQuery('');
     if (selectedMainCategory === category) {
       // Toggle off hvis samme kategori klikkes
       setSelectedMainCategory('');
@@ -419,10 +501,17 @@ function App() {
               <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
               <Input
                 type="search"
-                placeholder="Søk etter produkter..."
+                placeholder={placeholderText ? `Søk etter ${placeholderText}` : 'Søk etter'}
                 className="pl-10 h-11"
                 value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
+                onChange={(e) => {
+                  setSearchQuery(e.target.value);
+                  if (e.target.value) {
+                    setSelectedMainCategory('');
+                    setSelectedSubCategory('all');
+                    setShowRecommendations(false);
+                  }
+                }}
               />
             </div>
 
@@ -459,7 +548,22 @@ function App() {
                   description: offer.description
                 }))} 
               />
-            ) : !selectedMainCategory ? (
+            ) : searchQuery || selectedMainCategory ? (
+              <OfferGrid 
+                offers={filteredOffers.map(offer => ({
+                  id: offer.offerId || offer.productKey || '',
+                  title: offer.title,
+                  price: offer.price,
+                  originalPrice: offer.originalPrice,
+                  currency: offer.currency || 'kr',
+                  imageUrl: offer.imageUrl || '/placeholder.svg',
+                  store: offer.store,
+                  storeLogo: offer.storeLogo,
+                  validUntil: offer.validTo,
+                  description: offer.description
+                }))} 
+              />
+            ) : (
               <div className="flex flex-col items-center justify-center py-16 text-center">
                 <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-lg bg-muted">
                   <Search className="h-8 w-8 text-muted-foreground" />
@@ -467,21 +571,6 @@ function App() {
                 <h3 className="text-lg font-semibold text-foreground">Velg en kategori</h3>
                 <p className="text-sm text-muted-foreground mt-1">Velg en kategori fra menyen til venstre for å se tilbud</p>
               </div>
-            ) : (
-              <OfferGrid 
-              offers={filteredOffers.map(offer => ({
-                id: offer.offerId || offer.productKey || '',
-                title: offer.title,
-                price: offer.price,
-                originalPrice: offer.originalPrice,
-                currency: offer.currency || 'kr',
-                imageUrl: offer.imageUrl || '/placeholder.svg',
-                store: offer.store,
-                storeLogo: offer.storeLogo,
-                validUntil: offer.validTo,
-                description: offer.description
-              }))} 
-            />
             )}
           </main>
         </div>
