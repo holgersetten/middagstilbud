@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import { offersApi } from '../services/api';
 import type { CategoryHierarchy } from '../types/offer';
-import './CategoryManager.css';
 
 function CategoryManager() {
   const [categories, setCategories] = useState<CategoryHierarchy>({});
@@ -161,33 +160,38 @@ function CategoryManager() {
   };
 
   if (loading) {
-    return <div className="category-manager loading">Laster kategorier...</div>;
+    return <div className="max-w-7xl mx-auto p-8 text-center">Laster kategorier...</div>;
   }
 
   if (error) {
     return (
-      <div className="category-manager error">
-        <p>{error}</p>
-        <button onClick={loadCategories}>Prøv igjen</button>
+      <div className="max-w-7xl mx-auto p-8 text-center">
+        <p className="text-red-600 mb-4">{error}</p>
+        <button 
+          onClick={loadCategories}
+          className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
+        >
+          Prøv igjen
+        </button>
       </div>
     );
   }
 
   return (
-    <div className="category-manager">
-      <div className="header">
-        <h1>🏷️ Kategoristruktur</h1>
-        <p className="subtitle">Administrer hovedkategorier og underkategorier</p>
+    <div className="max-w-7xl mx-auto p-8">
+      <div className="mb-8 text-center">
+        <h1 className="text-3xl font-bold text-gray-800 mb-2">🏷️ Kategoristruktur</h1>
+        <p className="text-gray-600">Administrer hovedkategorier og underkategorier</p>
       </div>
 
-      <div className="content-grid">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* Venstre side: Legg til */}
-        <div className="add-section card">
+        <div className="bg-white rounded-lg shadow p-6">
           {/* Legg til hovedkategori */}
-          <h2>➕ Legg til hovedkategori</h2>
-          <form onSubmit={handleAddMainCategory} style={{ marginBottom: '2rem' }}>
-            <div className="form-group">
-              <label>Ny hovedkategori</label>
+          <h2 className="text-xl font-semibold mb-4">➕ Legg til hovedkategori</h2>
+          <form onSubmit={handleAddMainCategory} className="mb-8">
+            <div className="mb-3">
+              <label className="block text-sm font-medium text-gray-700 mb-1">Ny hovedkategori</label>
               <input
                 type="text"
                 value={newMainCategory}
@@ -195,10 +199,17 @@ function CategoryManager() {
                 placeholder="f.eks. 'Fryste varer', 'Husholdning'"
                 disabled={saving}
                 required
+                className="w-full px-3 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-blue-500 disabled:bg-gray-100"
               />
             </div>
-            <button type="submit" disabled={saving}>
+            <button 
+              type="submit" 
+              disabled={saving}
+              className="w-full px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700 disabled:bg-gray-400"
+            >
               {saving ? 'Lagrer...' : '✅ Legg til hovedkategori'}
+            </button>
+          </form>
             </button>
           </form>
 
