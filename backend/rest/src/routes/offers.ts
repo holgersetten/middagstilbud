@@ -4,6 +4,7 @@ import categoryService from '../../../core/src/services/categoryService';
 import categoryConfigService from '../../../core/src/services/categoryConfigService';
 import imageService from '../../../persistence/src/services/imageService';
 import { MainCategory, SubCategory, CATEGORY_HIERARCHY } from '../../../core/src/config/categories';
+import * as priceHistoryRepo from '../../../core/src/db/priceHistoryRepo';
 
 const router = express.Router();
 
@@ -419,6 +420,109 @@ router.post('/offers/weekly-update', async (req: Request, res: Response) => {
         console.error('❌ Feil ved ukentlig oppdatering:', (error as Error).message);
         res.status(500).json({
             error: 'Ukentlig oppdatering feilet',
+            message: (error as Error).message
+        });
+    }
+});
+
+// GET /api/price-history/:productKey - Hent prishistorikk for et produkt
+router.get('/price-history/:productKey', (req: Request, res: Response) => {
+    try {
+        const productKey = typeof req.params.productKey === 'string' ? req.params.productKey : req.params.productKey[0];
+        const { store, limit } = req.query;
+        
+        const history = priceHistoryRepo.getPriceHistory(
+            productKey,
+            typeof store === 'string' ? store : undefined,
+            typeof limit === 'string' ? parseInt(limit) : 30
+        );
+        
+        res.json({
+            productKey,
+            count: history.length,
+            history
+        });
+    } catch (error) {
+        console.error('❌ Feil ved henting av prishistorikk:', (error as Error).message);
+        res.status(500).json({
+            error: 'Kunne ikke hente prishistorikk',
+            message: (error as Error).message
+        });
+    }
+});
+
+// GET /api/price-history/:productKey/lowest - Finn laveste pris
+router.get('/price-history/:productKey/lowest', (req: Request, res: Response) => {
+    try {
+        const productKey = typeof req.params.productKey === 'string' ? req.params.productKey : req.params.productKey[0];
+        const { days } = req.query;
+        
+        const lowest = priceHistoryRepo.getLowestPrice(
+            productKey,
+            typeof days === 'string' ? parseInt(days) : 30
+        );
+        
+        if (!lowest) {
+            return res.status(404).json({ error: 'Ingen prishistorikk funnet' });
+        }
+        
+        return res.json({
+            productKey,
+            lowestPrice: lowest
+        });
+    } catch (error) {
+        console.error('❌ Feil ved henting av laveste pris:', (error as Error).message);
+        return res.status(500).json({
+            error: 'Kunne ikke hente laveste pris',
+            message: (error as Error).message
+        });
+    }
+});
+
+// GET /api/price-history/:productKey/trend - Hent prisutvikling
+router.get('/price-history/:productKey/trend', (req: Request, res: Response) => {
+    try {
+        const productKey = typeof req.params.productKey === 'string' ? req.params.productKey : req.params.productKey[0];
+        const { store, days } = req.query;
+        
+        const trend = priceHistoryRepo.getPriceTrend(
+            productKey,
+            typeof store === 'string' ? store : undefined,
+            typeof days === 'string' ? parseInt(days) : 30
+        );
+        
+        res.json({
+            productKey,
+            count: trend.length,
+            trend
+        });
+    } catch (error) {
+        console.error('❌ Feil ved henting av prisutvikling:', (error as Error).message);
+        res.status(500).json({
+            error: 'Kunne ikke hente prisutvikling',
+            message: (error as Error).message
+        });
+    }
+});
+
+// GET /api/price-changes - Finn produkter med prisendringer
+router.get('/price-changes', (req: Request, res: Response) => {
+    try {
+        const { days, limit } = req.query;
+        
+        const changes = priceHistoryRepo.getRecentPriceChanges(
+            typeof days === 'string' ? parseInt(days) : 7,
+            typeof limit === 'string' ? parseInt(limit) : 50
+        );
+        
+        res.json({
+            count: changes.length,
+            changes
+        });
+    } catch (error) {
+        console.error('❌ Feil ved henting av prisendringer:', (error as Error).message);
+        res.status(500).json({
+            error: 'Kunne ikke hente prisendringer',
             message: (error as Error).message
         });
     }

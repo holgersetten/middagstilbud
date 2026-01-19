@@ -25,7 +25,7 @@ export function getDb(): Database.Database {
         db.pragma('journal_mode = WAL'); // Write-Ahead Logging
         db.pragma('foreign_keys = ON');  // Håndhev foreign keys
         
-        console.log(`✅ SQLite database opened at: ${dbPath}`);
+        console.log(`✅ SQLite database opened`);
     }
     return db;
 }
@@ -74,6 +74,34 @@ export function initDb(): void {
             SET updated_at = CURRENT_TIMESTAMP 
             WHERE product_key = NEW.product_key;
         END;
+    `);
+
+    // Lag price_history tabell for å tracke prisendringer
+    database.exec(`
+        CREATE TABLE IF NOT EXISTS price_history (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            product_key TEXT NOT NULL,
+            store TEXT NOT NULL,
+            price REAL NOT NULL,
+            original_price REAL,
+            discount_percent INTEGER,
+            valid_from TEXT,
+            valid_to TEXT,
+            recorded_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+            UNIQUE(product_key, store, recorded_at)
+        );
+    `);
+
+    // Indeks for rask oppslag på product_key og store
+    database.exec(`
+        CREATE INDEX IF NOT EXISTS idx_price_history_product 
+        ON price_history(product_key);
+        
+        CREATE INDEX IF NOT EXISTS idx_price_history_store 
+        ON price_history(store);
+        
+        CREATE INDEX IF NOT EXISTS idx_price_history_recorded_at 
+        ON price_history(recorded_at DESC);
     `);
 
     console.log('✅ Database tables and triggers initialized');

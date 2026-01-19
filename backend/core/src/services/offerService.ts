@@ -6,6 +6,7 @@ import { getActiveStores, getStoreLogoUrl, Store } from '../../../rest/src/confi
 import config from '../../../rest/src/config/index';
 import categoryService from './categoryService';
 import { MainCategory, SubCategory } from '../config/categories';
+import * as priceHistoryRepo from '../db/priceHistoryRepo';
 
 interface Offer {
     title: string;
@@ -169,11 +170,16 @@ class OfferService {
 
         // Bruk kun synkron kategorisering fra cache - kjør IKKE AI her
         // Legg også til productKey for admin review
-        return allOffers.map(offer => ({
+        const enrichedOffers = allOffers.map(offer => ({
             ...offer,
             ...categoryService.categorizeOffer(offer),
             productKey: `${offer.title}|${offer.size || 0}|${offer.pieces || 1}|${offer.store || 'unknown'}`
         }));
+
+        // Lagre prishistorikk for alle tilbud
+        this.recordPriceHistory(enrichedOffers);
+
+        return enrichedOffers;
     }
 
     async getOffersByStore(storeName: string) {
@@ -243,6 +249,36 @@ class OfferService {
         console.log(`📊 Review: ${activeNeedingReview.length} aktive, ${inactiveUncategorized.length} inaktive (utløpte), totalt ${combined.length}`);
         
         return combined;
+    }
+
+    /**
+     * Lagrer prishistorikk for alle tilbud
+     */
+    private recordPriceHistory(offers: Offer[]): void {
+        let recorded = 0;
+        for (const offer of offers) {
+            if (!offer.productKey || !offer.price || !offer.store) continue;
+            
+            try {
+                priceHistoryRepo.recordPrice({
+                    productKey: offer.productKey,
+                    store: offer.store,
+                    price: offer.price,
+                    originalPrice: offer.originalPrice ?? undefined,
+                    discountPercent: offer.originalPrice 
+                        ? Math.round(((offer.originalPrice - offer.price) / offer.originalPrice) * 100)
+                        : undefined,
+                    validFrom: offer.validFrom ?? undefined,
+                    validTo: offer.validTo ?? undefined
+                });
+                recorded++;
+            } catch (err) {
+                // Ignorer duplikater (UNIQUE constraint)
+            }
+        }
+        if (recorded > 0) {
+            console.log(`💰 Lagret prishistorikk for ${recorded} tilbud`);
+        }
     }
 }
 

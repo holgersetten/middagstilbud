@@ -147,6 +147,7 @@ function App() {
         const query = searchQuery.toLowerCase();
         return offer.title.toLowerCase().includes(query) || 
                offer.ingredientKey?.toLowerCase().includes(query) ||
+               offer.subCategory?.toLowerCase().includes(query) ||
                offer.description?.toLowerCase().includes(query) ||
                offer.store.toLowerCase().includes(query);
       }
@@ -160,18 +161,22 @@ function App() {
       return false;
     })
     .sort((a, b) => {
-      // Søkesortering først
+      // Søkesortering: navn → ingredientKey → subCategory
       if (searchQuery) {
         const query = searchQuery.toLowerCase();
         const aTitle = a.title.toLowerCase();
         const bTitle = b.title.toLowerCase();
         const aIngredientKey = a.ingredientKey?.toLowerCase() || '';
         const bIngredientKey = b.ingredientKey?.toLowerCase() || '';
+        const aSubCategory = a.subCategory?.toLowerCase() || '';
+        const bSubCategory = b.subCategory?.toLowerCase() || '';
         
         const aTitleMatch = aTitle.includes(query);
         const bTitleMatch = bTitle.includes(query);
         const aIngredientMatch = aIngredientKey.includes(query);
         const bIngredientMatch = bIngredientKey.includes(query);
+        const aSubMatch = aSubCategory.includes(query);
+        const bSubMatch = bSubCategory.includes(query);
         
         // Prioritet 1: Tittel match
         if (aTitleMatch && !bTitleMatch) return -1;
@@ -180,6 +185,10 @@ function App() {
         // Prioritet 2: IngredientKey match
         if (aIngredientMatch && !bIngredientMatch) return -1;
         if (!aIngredientMatch && bIngredientMatch) return 1;
+        
+        // Prioritet 3: SubCategory match
+        if (aSubMatch && !bSubMatch) return -1;
+        if (!aSubMatch && bSubMatch) return 1;
       }
 
       // Deretter sorter etter pris hvis aktivert
