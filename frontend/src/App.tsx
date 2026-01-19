@@ -6,7 +6,7 @@ import { Separator } from '@/components/ui/separator';
 import { Input } from '@/components/ui/input';
 import { Breadcrumb, BreadcrumbList, BreadcrumbItem, BreadcrumbSeparator, BreadcrumbPage } from '@/components/ui/breadcrumb';
 import { OfferGrid } from '@/components/grocery/offer-grid';
-import { Search, Settings, Tags, ArrowLeft, Loader2, AlertCircle, ChevronRight, Home, Lock } from 'lucide-react';
+import { Search, Settings, Tags, ArrowLeft, Loader2, AlertCircle, ChevronRight, Home, Lock, ArrowUpDown, ArrowDown } from 'lucide-react';
 import { offersApi } from './services/api';
 import type { Offer, CategoryHierarchy } from './types/offer';
 import AdminReview from './components/AdminReview';
@@ -30,6 +30,10 @@ function App() {
   const [placeholderIndex, setPlaceholderIndex] = useState(0);
   const [placeholderText, setPlaceholderText] = useState('');
   const [isTyping, setIsTyping] = useState(true);
+  const [sortByPrice, setSortByPrice] = useState(false);
+  const [filterStore, setFilterStore] = useState<string>('');
+
+  const stores = Array.from(new Set(offers.map(o => o.store))).sort();
 
   const placeholders = [
     'laksefilet',
@@ -87,14 +91,27 @@ function App() {
 
   // Finn de beste tilbudene basert på rabatt-prosent
   const getTopOffers = () => {
-    return offers
+    let topOffers = offers
       .filter(offer => offer.originalPrice && offer.price)
       .map(offer => ({
         ...offer,
         discountPercent: Math.round(((offer.originalPrice! - offer.price) / offer.originalPrice!) * 100)
-      }))
-      .sort((a, b) => b.discountPercent - a.discountPercent)
-      .slice(0, 10);
+      }));
+
+    // Filtrer etter butikk hvis valgt
+    if (filterStore) {
+      topOffers = topOffers.filter(offer => offer.store === filterStore);
+    }
+
+    // Sorter etter rabatt-prosent (standard)
+    topOffers = topOffers.sort((a, b) => b.discountPercent - a.discountPercent);
+
+    // Hvis pris-sortering er aktivert, sorter etter pris i stedet
+    if (sortByPrice) {
+      topOffers = topOffers.sort((a, b) => a.price - b.price);
+    }
+
+    return topOffers.slice(0, 10);
   };
 
   const fetchOffers = async () => {
@@ -122,6 +139,9 @@ function App() {
 
   const filteredOffers = offers
     .filter(offer => {
+      // Filtrer etter butikk først
+      if (filterStore && offer.store !== filterStore) return false;
+
       // Hvis søk er aktivt, søk på alle offers
       if (searchQuery) {
         const query = searchQuery.toLowerCase();
@@ -140,26 +160,32 @@ function App() {
       return false;
     })
     .sort((a, b) => {
-      if (!searchQuery) return 0;
-      
-      const query = searchQuery.toLowerCase();
-      const aTitle = a.title.toLowerCase();
-      const bTitle = b.title.toLowerCase();
-      const aIngredientKey = a.ingredientKey?.toLowerCase() || '';
-      const bIngredientKey = b.ingredientKey?.toLowerCase() || '';
-      
-      const aTitleMatch = aTitle.includes(query);
-      const bTitleMatch = bTitle.includes(query);
-      const aIngredientMatch = aIngredientKey.includes(query);
-      const bIngredientMatch = bIngredientKey.includes(query);
-      
-      // Prioritet 1: Tittel match
-      if (aTitleMatch && !bTitleMatch) return -1;
-      if (!aTitleMatch && bTitleMatch) return 1;
-      
-      // Prioritet 2: IngredientKey match
-      if (aIngredientMatch && !bIngredientMatch) return -1;
-      if (!aIngredientMatch && bIngredientMatch) return 1;
+      // Søkesortering først
+      if (searchQuery) {
+        const query = searchQuery.toLowerCase();
+        const aTitle = a.title.toLowerCase();
+        const bTitle = b.title.toLowerCase();
+        const aIngredientKey = a.ingredientKey?.toLowerCase() || '';
+        const bIngredientKey = b.ingredientKey?.toLowerCase() || '';
+        
+        const aTitleMatch = aTitle.includes(query);
+        const bTitleMatch = bTitle.includes(query);
+        const aIngredientMatch = aIngredientKey.includes(query);
+        const bIngredientMatch = bIngredientKey.includes(query);
+        
+        // Prioritet 1: Tittel match
+        if (aTitleMatch && !bTitleMatch) return -1;
+        if (!aTitleMatch && bTitleMatch) return 1;
+        
+        // Prioritet 2: IngredientKey match
+        if (aIngredientMatch && !bIngredientMatch) return -1;
+        if (!aIngredientMatch && bIngredientMatch) return 1;
+      }
+
+      // Deretter sorter etter pris hvis aktivert
+      if (sortByPrice) {
+        return a.price - b.price;
+      }
       
       return 0;
     });
@@ -409,7 +435,22 @@ function App() {
                         : 'text-foreground hover:bg-muted hover:translate-x-0.5'
                     }`}
                   >
-                    De beste tilbudene
+                    Beste tilbud
+                  </button>
+                  <button
+                    onClick={() => {
+                      setSelectedMainCategory('Middag');
+                      setSelectedSubCategory('all');
+                      setSearchQuery('');
+                      setShowRecommendations(false);
+                    }}
+                    className={`w-full text-left px-3 py-2 text-sm rounded-md transition-all duration-200 cursor-pointer mt-1 ${
+                      selectedMainCategory === 'Middag' && !showRecommendations
+                        ? 'bg-foreground text-background font-medium shadow-sm'
+                        : 'text-foreground hover:bg-muted hover:translate-x-0.5'
+                    }`}
+                  >
+                    Middagsforslag
                   </button>
                 </div>
 
@@ -516,19 +557,50 @@ function App() {
               />
             </div>
 
-            {/* Stats */}
-            <div className="flex items-center gap-3 mb-6">
-              <Badge variant="secondary" className="text-xs font-medium px-3 py-1.5">
-                {filteredOffers.length} tilbud
-              </Badge>
-              {searchQuery && (
-                <>
-                  <span className="text-muted-foreground text-sm">•</span>
-                  <span className="text-sm text-muted-foreground">
-                    Søker etter: "{searchQuery}"
-                  </span>
-                </>
-              )}
+            {/* Stats and Sorting */}
+            <div className="flex items-center justify-between gap-3 mb-6">
+              <div className="flex items-center gap-3">
+                <Badge variant="secondary" className="text-xs font-medium px-3 py-1.5">
+                  {filteredOffers.length} tilbud
+                </Badge>
+                {searchQuery && (
+                  <>
+                    <span className="text-muted-foreground text-sm">•</span>
+                    <span className="text-sm text-muted-foreground">
+                      Søker etter: "{searchQuery}"
+                    </span>
+                  </>
+                )}
+              </div>
+              
+              {/* Sortering og filter */}
+              <div className="flex items-center gap-2">
+                {/* Pris-toggle */}
+                <Button
+                  variant={sortByPrice ? "default" : "outline"}
+                  size="sm"
+                  onClick={() => setSortByPrice(!sortByPrice)}
+                  className="gap-2"
+                >
+                  <ArrowDown className="h-4 w-4" />
+                  Lavest pris
+                </Button>
+
+                {/* Butikk-dropdown */}
+                <div className="relative">
+                  <select
+                    value={filterStore}
+                    onChange={(e) => setFilterStore(e.target.value)}
+                    className="h-9 rounded-md border border-input bg-background px-3 py-1 text-sm ring-offset-background focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 cursor-pointer appearance-none pr-8"
+                  >
+                    <option value="">Alle butikker</option>
+                    {stores.map(store => (
+                      <option key={store} value={store}>{store}</option>
+                    ))}
+                  </select>
+                  <ChevronRight className="absolute right-2 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground pointer-events-none rotate-90" />
+                </div>
+              </div>
             </div>
 
             <Separator className="my-6" />

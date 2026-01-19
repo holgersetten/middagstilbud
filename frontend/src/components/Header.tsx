@@ -6,7 +6,7 @@ function Header() {
           middag på tilbud
         </h1>
         <p className="mt-2 text-base sm:text-lg text-white/80">
-          Finn de beste tilbudene på ingredienser
+          Finn ukens beste tilbud
         </p>
       </div>
     </header>
