@@ -23,6 +23,7 @@ export interface Offer {
   categorySource?: 'manual' | 'rule' | 'ai' | 'unknown';
   categoryConfidence?: number;
   productKey?: string;
+  isActive?: boolean; // false = gammelt/utgått tilbud
 }
 
 export interface CategoryHierarchy {

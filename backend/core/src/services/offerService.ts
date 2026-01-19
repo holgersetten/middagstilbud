@@ -196,20 +196,53 @@ class OfferService {
     async getOffersNeedingReview() {
         const allOffers = await this.getAllOffers();
         
-        // Debug: Tell hvor mange som har cacheStatus
-        const withStatus = allOffers.filter((o: any) => o.cacheStatus !== undefined);
-        const pending = allOffers.filter((o: any) => o.cacheStatus === 'pending');
-        console.log(`📊 Review debug: ${allOffers.length} offers, ${withStatus.length} med cacheStatus, ${pending.length} pending`);
-        
-        // Legg til productKey og filtrer pending
+        // Legg til productKey på alle aktive tilbud
         const withProductKeys = allOffers.map(offer => ({
             ...offer,
-            productKey: `${offer.title}|${offer.size || 0}|${offer.pieces || 1}|${offer.store || 'unknown'}`
+            productKey: `${offer.title}|${offer.size || 0}|${offer.pieces || 1}|${offer.store || 'unknown'}`,
+            isActive: true
         }));
         
-        return withProductKeys.filter((offer: any) => {
-            return offer.cacheStatus === 'pending';
+        // Filtrer aktive tilbud som trenger review
+        const activeNeedingReview = withProductKeys.filter((offer: any) => {
+            return offer.cacheStatus === 'pending' || offer.mainCategory === 'Ukategorisert';
         });
+        
+        // Hent ALLE ukategoriserte fra cache (inkluderer også gamle/utgåtte tilbud)
+        const uncategorizedFromCache = categoryService.getAllUncategorizedFromCache();
+        
+        // Konverter cache entries til offer-format og merk som inactive
+        const inactiveUncategorized = uncategorizedFromCache
+            .filter(({ productKey }) => {
+                // Ikke inkluder hvis allerede i aktive tilbud
+                return !withProductKeys.some(o => o.productKey === productKey);
+            })
+            .map(({ productKey, entry }) => {
+                // Parse productKey: title|store ELLER title|size|pieces|store
+                const parts = productKey.split('|');
+                const isOldFormat = parts.length === 2;
+                
+                return {
+                    title: parts[0] || 'Ukjent',
+                    size: isOldFormat ? 0 : (parseInt(parts[1]) || 0),
+                    pieces: isOldFormat ? 1 : (parseInt(parts[2]) || 1),
+                    store: isOldFormat ? parts[1] : (parts[3] || 'Ukjent'),
+                    price: 0,
+                    currency: 'kr',
+                    quantity: '',
+                    mainCategory: entry.mainCategory,
+                    subCategory: entry.subCategory,
+                    ingredientKey: entry.ingredientKey,
+                    cacheStatus: entry.cacheStatus,
+                    productKey,
+                    isActive: false // Markerer som inaktivt/gammelt tilbud
+                };
+            });
+        
+        const combined = [...activeNeedingReview, ...inactiveUncategorized];
+        console.log(`📊 Review: ${activeNeedingReview.length} aktive, ${inactiveUncategorized.length} inaktive (utløpte), totalt ${combined.length}`);
+        
+        return combined;
     }
 }
 

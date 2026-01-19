@@ -1,5 +1,6 @@
 import fs from 'fs';
 import path from 'path';
+import categoryService from './categoryService';
 
 export interface CategoryHierarchyData {
   [mainCategory: string]: string[];
@@ -44,13 +45,10 @@ class CategoryConfigService {
    */
   updateHierarchy(newHierarchy: CategoryHierarchyData): boolean {
     try {
-      // Valider at alle hovedkategorier har minst "Annet"
+      // Valider at alle hovedkategorier har minst én underkategori
       for (const [mainCat, subCats] of Object.entries(newHierarchy)) {
         if (!Array.isArray(subCats) || subCats.length === 0) {
           throw new Error(`Hovedkategori "${mainCat}" må ha minst én underkategori`);
-        }
-        if (!subCats.includes('Annet')) {
-          throw new Error(`Hovedkategori "${mainCat}" må ha "Annet" som underkategori`);
         }
       }
 
@@ -93,13 +91,8 @@ class CategoryConfigService {
       throw new Error(`Underkategori "${newSubCategory}" finnes allerede under "${mainCategory}"`);
     }
 
-    // Legg til før "Annet" hvis mulig
-    const annetIndex = hierarchy[mainCategory].indexOf('Annet');
-    if (annetIndex > -1) {
-      hierarchy[mainCategory].splice(annetIndex, 0, newSubCategory);
-    } else {
-      hierarchy[mainCategory].push(newSubCategory);
-    }
+    // Legg til på slutten
+    hierarchy[mainCategory].push(newSubCategory);
 
     return this.updateHierarchy(hierarchy);
   }
@@ -114,8 +107,8 @@ class CategoryConfigService {
       throw new Error(`Hovedkategori "${newMainCategory}" finnes allerede`);
     }
 
-    // Ny hovedkategori må ha minst "Annet" som underkategori
-    hierarchy[newMainCategory] = ['Annet'];
+    // Ny hovedkategori starter med tom array - brukeren må legge til underkategorier
+    hierarchy[newMainCategory] = [];
     return this.updateHierarchy(hierarchy);
   }
 
@@ -130,7 +123,15 @@ class CategoryConfigService {
     }
 
     delete hierarchy[mainCategory];
-    return this.updateHierarchy(hierarchy);
+    const success = this.updateHierarchy(hierarchy);
+    
+    // Flytt alle produkter med denne kategorien til Ukategorisert
+    if (success) {
+      console.log(`🔄 Flytter produkter fra "${mainCategory}" til Ukategorisert`);
+      categoryService.moveCategoryToUncategorized(mainCategory, null);
+    }
+    
+    return success;
   }
 
   /**
@@ -151,17 +152,21 @@ class CategoryConfigService {
     hierarchy[newName] = hierarchy[oldName];
     delete hierarchy[oldName];
     
-    return this.updateHierarchy(hierarchy);
+    const success = this.updateHierarchy(hierarchy);
+    
+    // Oppdater alle cached produkter med den gamle kategorien
+    if (success) {
+      console.log(`🔄 Oppdaterer cache: ${oldName} → ${newName}`);
+      categoryService.updateCachedMainCategory(oldName, newName);
+    }
+    
+    return success;
   }
 
   /**
-   * Fjerner en underkategori (unntatt "Annet")
+   * Fjerner en underkategori
    */
   removeSubCategory(mainCategory: string, subCategory: string): boolean {
-    if (subCategory === 'Annet') {
-      throw new Error('Kan ikke fjerne "Annet" kategorien');
-    }
-
     const hierarchy = this.getCurrentHierarchy();
     
     if (!hierarchy[mainCategory]) {
@@ -174,17 +179,21 @@ class CategoryConfigService {
     }
 
     hierarchy[mainCategory].splice(index, 1);
-    return this.updateHierarchy(hierarchy);
+    const success = this.updateHierarchy(hierarchy);
+    
+    // Flytt alle produkter med denne underkategorien til Ukategorisert
+    if (success) {
+      console.log(`🔄 Flytter produkter fra "${mainCategory} > ${subCategory}" til Ukategorisert`);
+      categoryService.moveCategoryToUncategorized(mainCategory, subCategory);
+    }
+    
+    return success;
   }
 
   /**
    * Omdøper en underkategori
    */
   renameSubCategory(mainCategory: string, oldName: string, newName: string): boolean {
-    if (oldName === 'Annet') {
-      throw new Error('Kan ikke omdøpe "Annet" kategorien');
-    }
-
     const hierarchy = this.getCurrentHierarchy();
     
     if (!hierarchy[mainCategory]) {
@@ -201,7 +210,15 @@ class CategoryConfigService {
     }
 
     hierarchy[mainCategory][index] = newName;
-    return this.updateHierarchy(hierarchy);
+    const success = this.updateHierarchy(hierarchy);
+    
+    // Oppdater alle cached produkter med den gamle kategorien
+    if (success) {
+      console.log(`🔄 Oppdaterer cache: ${mainCategory} > ${oldName} → ${newName}`);
+      categoryService.updateCachedSubCategory(mainCategory, oldName, newName);
+    }
+    
+    return success;
   }
 }
 

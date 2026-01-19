@@ -13,8 +13,7 @@ export const CATEGORY_HIERARCHY = {
     "Krydderurter",
     "Poteter",
     "Sopp",
-    "Salat",
-    "Annet"
+    "Salat"
   ],
   "Fisk & skalldyr": [
     "Fisk",
@@ -23,8 +22,7 @@ export const CATEGORY_HIERARCHY = {
     "Skalldyr",
     "Skjell",
     "Sushi",
-    "Tørket fisk",
-    "Annet"
+    "Tørket fisk"
   ],
   "Brød": [
     "Boller og småkaker",
@@ -39,8 +37,7 @@ export const CATEGORY_HIERARCHY = {
     "Pølsebrød",
     "Baguetter",
     "Riskaker",
-    "Rundstykker",
-    "Annet"
+    "Rundstykker"
   ],
   "Middag": [
     "Ferdigretter",
@@ -54,16 +51,13 @@ export const CATEGORY_HIERARCHY = {
     "Pizza",
     "Supper",
     "Taco",
-    "Vegetarretter",
-    "Andre middagsretter",
-    "Annet"
+    "Vegetarretter"
   ],
   "Kylling og fjærkre": [
     "And",
     "Kalkun",
     "Kylling",
-    "Rype",
-    "Annet"
+    "Rype"
   ],
   "Meieri & egg": [
     "Cottage cheese",
@@ -76,8 +70,7 @@ export const CATEGORY_HIERARCHY = {
     "Proteinpudding",
     "Rømme",
     "Yoghurt",
-    "Drikkeyoghurt",
-    "Annet"
+    "Drikkeyoghurt"
   ],
   "Pålegg & frokost": [
     "Bacon",
@@ -88,30 +81,27 @@ export const CATEGORY_HIERARCHY = {
     "Påleggsalat",
     "Syltetøy og honning",
     "Vegansk pålegg",
-    "Tubeost",
-    "Annet"
+    "Tubeost"
   ],
   "Kjøtt": [
     "Hamburger",
     "Kjøttdeig og farse",
-    "Andre kjøttretter",
     "Lammekjøtt",
     "Pølser",
     "Storfekjøtt",
     "Svinekjøtt",
     "Viltkjøtt",
-    "Annet"
+    "Kjøttkaker og kjøttboller"
   ],
   "Tilbehør": [
     "Eddik",
     "Dip",
     "Hermetisk grønt",
-    "Tomatsaus",
     "Ketchup og sennep",
     "Kokosmelk",
     "Kraft og buljong",
     "Krydder",
-    "Linser og frø",
+    "Linser og bønner",
     "Marinader og BBQ-saus",
     "Matoljer",
     "Middagssalat",
@@ -121,7 +111,7 @@ export const CATEGORY_HIERARCHY = {
     "Sauser og dressing",
     "Stuinger",
     "Sushitilbehør",
-    "Annet"
+    "Fries"
   ],
   "Drikke": [
     "Brus",
@@ -139,8 +129,7 @@ export const CATEGORY_HIERARCHY = {
     "Te",
     "Toddy",
     "Vann",
-    "Øl og cider",
-    "Annet"
+    "Øl og cider"
   ],
   "Ost": [
     "Blåmuggost",
@@ -154,8 +143,7 @@ export const CATEGORY_HIERARCHY = {
     "Plantebasert ost",
     "Revet ost",
     "Smøreoster",
-    "Øvrig ost",
-    "Annet"
+    "Øvrig ost"
   ],
   "Dessert og iskrem": [
     "Dessertpuddinger",
@@ -166,8 +154,7 @@ export const CATEGORY_HIERARCHY = {
     "Is",
     "Mousse",
     "Riskrem",
-    "Tiramisu",
-    "Annet"
+    "Tiramisu"
   ],
   "Baking": [
     "Bakemixer",
@@ -178,8 +165,7 @@ export const CATEGORY_HIERARCHY = {
     "Havregryn",
     "Sukker",
     "Sukkerbiter",
-    "Tørket frukt og nøtter",
-    "Annet"
+    "Tørket frukt og nøtter"
   ],
   "Snacks, godteri & sjokolade": [
     "Dip",
@@ -192,13 +178,11 @@ export const CATEGORY_HIERARCHY = {
     "Mellommåltid",
     "Muffins",
     "Kjeks",
-    "Potetgull",
-    "Annet"
+    "Potetgull"
   ],
   "Barneprodukter": [
     "Babyartikler",
-    "Barnemat",
-    "Annet"
+    "Barnemat"
   ],
   "Personlige artikler": [
     "Barbering",
@@ -209,8 +193,7 @@ export const CATEGORY_HIERARCHY = {
     "Klær",
     "Personlig hygiene",
     "Sminke",
-    "Tannpleie",
-    "Annet"
+    "Tannpleie"
   ],
   "Hus & hjem": [
     "Belysning",
@@ -230,21 +213,22 @@ export const CATEGORY_HIERARCHY = {
     "Fest",
     "Sport",
     "Verktøy",
-    "Annet"
+    "Leker"
   ],
   "Dyr": [
     "Dyreartikler",
     "Fuglemat",
     "Hundemat",
-    "Kattemat",
-    "Annet"
+    "Kattemat"
   ],
   "Blomster og planter": [
     "Blomster",
     "Plantejord",
     "Plantenæring",
-    "Potteplanter",
-    "Annet"
+    "Potteplanter"
+  ],
+  "Ukategorisert": [
+    "Ukategorisert"
   ]
 } as const;
 
@@ -253,19 +237,20 @@ export type SubCategory = typeof CATEGORY_HIERARCHY[MainCategory][number];
 
 export const MAIN_CATEGORIES = Object.keys(CATEGORY_HIERARCHY) as MainCategory[];
 
-export const DEFAULT_MAIN_CATEGORY: MainCategory = "Frukt & grønt";
-export const DEFAULT_SUB_CATEGORY: SubCategory = "Annet";
+export const DEFAULT_MAIN_CATEGORY: MainCategory = "Ukategorisert";
+export const DEFAULT_SUB_CATEGORY: SubCategory = "Ukategorisert";
 
 export function isValidMainCategory(cat: string): cat is MainCategory {
   return MAIN_CATEGORIES.includes(cat as MainCategory);
 }
 
 export function getSubCategories(mainCat: MainCategory): readonly SubCategory[] {
-  return CATEGORY_HIERARCHY[mainCat];
+  return CATEGORY_HIERARCHY[mainCat] as readonly SubCategory[];
 }
 
 export function isValidSubCategory(mainCat: MainCategory, subCat: string): boolean {
-  return CATEGORY_HIERARCHY[mainCat].includes(subCat as any);
+  const subCategories = CATEGORY_HIERARCHY[mainCat] as readonly SubCategory[];
+  return subCategories.includes(subCat as SubCategory);
 }
 
 // Legacy support - deprecated

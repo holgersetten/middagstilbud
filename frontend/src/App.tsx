@@ -200,7 +200,8 @@ function App() {
       'Dyr',
       'Personlige artikler',
       'Hus & hjem',
-      'Blomster og planter'
+      'Blomster og planter',
+      'Ukategorisert'
     ];
 
     const allCategories = Object.keys(categories);

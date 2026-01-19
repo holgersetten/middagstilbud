@@ -134,7 +134,7 @@ class CategoryService {
     }
 
     private calculateCacheStatus(entry: CategoryCacheEntry): CacheStatus {
-        if (entry.subCategory === 'Annet') return 'pending';
+        if (entry.mainCategory === 'Ukategorisert') return 'pending';
         if (entry.confidence.main >= 0.90 && 
             entry.confidence.sub >= 0.88 && 
             entry.confidence.ingredientKey >= 0.90) {
@@ -150,7 +150,7 @@ class CategoryService {
         // Rekalkluler cacheStatus basert på gjeldende regler
         // Dette sikrer at nye regler påvirker eksisterende cache-entries
         const recalculatedStatus: CacheStatus = 
-            (entry.subCategory === 'Annet')
+            (entry.mainCategory === 'Ukategorisert')
                 ? 'pending'
                 : (entry.confidence.main >= 0.90 && entry.confidence.sub >= 0.88 && entry.confidence.ingredientKey >= 0.90)
                     ? 'trusted'
@@ -164,6 +164,19 @@ class CategoryService {
         };
     }
 
+    // Hent alle ukategoriserte produkter fra cache (selv om de ikke finnes i dagens tilbud)
+    getAllUncategorizedFromCache(): Array<{ productKey: string; entry: CategoryCacheEntry }> {
+        return Object.entries(this.cache)
+            .filter(([_, entry]) => entry.mainCategory === 'Ukategorisert')
+            .map(([productKey, entry]) => ({ 
+                productKey, 
+                entry: {
+                    ...entry,
+                    cacheStatus: this.calculateCacheStatus(entry)
+                }
+            }));
+    }
+
     setCategoryForProduct(
         productKey: string,
         mainCategory: MainCategory,
@@ -173,11 +186,13 @@ class CategoryService {
         confidence: { main: number; sub: number; ingredientKey: number }
     ): void {
         // Valider at subCategory tilhører mainCategory
-        const validSubs = CATEGORY_HIERARCHY[mainCategory];
-        if (!validSubs.includes(subCategory as any)) {
-            console.warn(`⚠️ Ugyldig subCategory "${subCategory}" for "${mainCategory}", setter til "Annet"`);
-            subCategory = 'Annet' as SubCategory;
-            confidence.sub = 0.5; // Redusert confidence for reparert kategori
+        const validSubs = CATEGORY_HIERARCHY[mainCategory] as readonly SubCategory[];
+        if (!validSubs.includes(subCategory)) {
+            console.warn(`⚠️ Ugyldig subCategory "${subCategory}" for "${mainCategory}", flytter til "Ukategorisert"`);
+            mainCategory = 'Ukategorisert' as MainCategory;
+            subCategory = 'Ukategorisert' as SubCategory;
+            confidence.main = 0.3; // Lav confidence for ukategorisert
+            confidence.sub = 0.3;
         }
 
         // cacheStatus beregnes dynamisk i getCategoryForProduct()
@@ -476,7 +491,7 @@ class CategoryService {
         for (const key in this.cache) {
             const entry = this.cache[key];
             const isPending = 
-                entry.subCategory === 'Annet' ||
+                entry.mainCategory === 'Ukategorisert' ||
                 entry.confidence.main < 0.90 ||
                 entry.confidence.sub < 0.88 ||
                 entry.confidence.ingredientKey < 0.90;
@@ -493,7 +508,7 @@ class CategoryService {
         for (const key in this.cache) {
             const entry = this.cache[key];
             const isPending = 
-                entry.subCategory === 'Annet' ||
+                entry.mainCategory === 'Ukategorisert' ||
                 entry.confidence.main < 0.90 ||
                 entry.confidence.sub < 0.88 ||
                 entry.confidence.ingredientKey < 0.90;
@@ -513,6 +528,79 @@ class CategoryService {
         }
         
         return removed;
+    }
+
+    // Oppdater alle cached produkter med gammel hovedkategori til ny hovedkategori
+    updateCachedMainCategory(oldMainCategory: string, newMainCategory: string): number {
+        let updated = 0;
+        
+        for (const key in this.cache) {
+            const entry = this.cache[key];
+            if (entry.mainCategory === oldMainCategory) {
+                entry.mainCategory = newMainCategory as any;
+                updated++;
+            }
+        }
+        
+        if (updated > 0) {
+            this.saveCache();
+            console.log(`✅ Oppdatert ${updated} produkter: ${oldMainCategory} → ${newMainCategory}`);
+        }
+        
+        return updated;
+    }
+
+    // Oppdater alle cached produkter med gammel subkategori til ny subkategori
+    updateCachedSubCategory(mainCategory: string, oldSubCategory: string, newSubCategory: string): number {
+        let updated = 0;
+        
+        for (const key in this.cache) {
+            const entry = this.cache[key];
+            if (entry.mainCategory === mainCategory && entry.subCategory === oldSubCategory) {
+                entry.subCategory = newSubCategory as any;
+                updated++;
+            }
+        }
+        
+        if (updated > 0) {
+            this.saveCache();
+            console.log(`✅ Oppdatert ${updated} produkter: ${mainCategory} > ${oldSubCategory} → ${newSubCategory}`);
+        }
+        
+        return updated;
+    }
+
+    // Flytt alle produkter med en kategori til Ukategorisert (for når kategori slettes)
+    moveCategoryToUncategorized(mainCategory: string, subCategory: string | null): number {
+        let moved = 0;
+        
+        for (const key in this.cache) {
+            const entry = this.cache[key];
+            
+            // Hvis subCategory er null, flytt alle med denne hovedkategorien
+            if (subCategory === null && entry.mainCategory === mainCategory) {
+                entry.mainCategory = 'Ukategorisert' as any;
+                entry.subCategory = 'Ukategorisert' as any;
+                entry.confidence.main = 0.3;
+                entry.confidence.sub = 0.3;
+                moved++;
+            }
+            // Hvis subCategory er spesifisert, flytt bare de med denne kombinasjonen
+            else if (subCategory !== null && entry.mainCategory === mainCategory && entry.subCategory === subCategory) {
+                entry.mainCategory = 'Ukategorisert' as any;
+                entry.subCategory = 'Ukategorisert' as any;
+                entry.confidence.main = 0.3;
+                entry.confidence.sub = 0.3;
+                moved++;
+            }
+        }
+        
+        if (moved > 0) {
+            this.saveCache();
+            console.log(`✅ Flyttet ${moved} produkter til Ukategorisert`);
+        }
+        
+        return moved;
     }
 }
 

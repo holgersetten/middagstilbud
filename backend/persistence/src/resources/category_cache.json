@@ -457,7 +457,7 @@
   },
   "eldorado linser bønner og kikerter|bunnpris": {
     "mainCategory": "Tilbehør",
-    "subCategory": "Linser og frø",
+    "subCategory": "Linser og bønner",
     "ingredientKey": "linser",
     "source": "ai",
     "confidence": {
@@ -505,7 +505,7 @@
   },
   "tomater hakkede chili hvitløk urter naturell og passata|bunnpris": {
     "mainCategory": "Tilbehør",
-    "subCategory": "Tomatsaus",
+    "subCategory": "Sauser og dressing",
     "ingredientKey": "tomatsaus",
     "source": "ai",
     "confidence": {
@@ -1945,7 +1945,7 @@
   },
   "røde linser|rema 1000": {
     "mainCategory": "Tilbehør",
-    "subCategory": "Linser og frø",
+    "subCategory": "Linser og bønner",
     "ingredientKey": "linser",
     "source": "ai",
     "confidence": {
@@ -1957,7 +1957,7 @@
   },
   "kidneybønner|rema 1000": {
     "mainCategory": "Tilbehør",
-    "subCategory": "Linser og frø",
+    "subCategory": "Linser og bønner",
     "ingredientKey": "bønner",
     "source": "ai",
     "confidence": {
@@ -1969,7 +1969,7 @@
   },
   "kikerter|rema 1000": {
     "mainCategory": "Tilbehør",
-    "subCategory": "Linser og frø",
+    "subCategory": "Linser og bønner",
     "ingredientKey": "kikerter",
     "source": "ai",
     "confidence": {
@@ -1981,7 +1981,7 @@
   },
   "sorte bønner|rema 1000": {
     "mainCategory": "Tilbehør",
-    "subCategory": "Linser og frø",
+    "subCategory": "Linser og bønner",
     "ingredientKey": "bønner",
     "source": "ai",
     "confidence": {
@@ -1993,7 +1993,7 @@
   },
   "bønnemiks|rema 1000": {
     "mainCategory": "Tilbehør",
-    "subCategory": "Linser og frø",
+    "subCategory": "Linser og bønner",
     "ingredientKey": "bønner",
     "source": "ai",
     "confidence": {
@@ -2005,7 +2005,7 @@
   },
   "hvite bønner|rema 1000": {
     "mainCategory": "Tilbehør",
-    "subCategory": "Linser og frø",
+    "subCategory": "Linser og bønner",
     "ingredientKey": "bønner",
     "source": "ai",
     "confidence": {
@@ -3433,7 +3433,7 @@
   },
   "pastasaus|meny": {
     "mainCategory": "Tilbehør",
-    "subCategory": "Tomatsaus",
+    "subCategory": "Sauser og dressing",
     "ingredientKey": "pastasaus",
     "source": "ai",
     "confidence": {
@@ -4717,15 +4717,15 @@
   },
   "tomater passata|kiwi": {
     "mainCategory": "Tilbehør",
-    "subCategory": "Tomatsaus",
-    "ingredientKey": "passata",
-    "source": "ai",
+    "subCategory": "Sauser og dressing",
+    "ingredientKey": "passata, tomatsaus",
+    "source": "manual",
     "confidence": {
-      "main": 0.95,
-      "sub": 0.95,
-      "ingredientKey": 0.95
+      "main": 1,
+      "sub": 1,
+      "ingredientKey": 1
     },
-    "timestamp": "2026-01-18T12:22:39.284Z"
+    "timestamp": "2026-01-19T13:47:24.415Z"
   },
   "fusilli fullkorn|kiwi": {
     "mainCategory": "Middag",
@@ -6756,16 +6756,16 @@
     "timestamp": "2026-01-18T12:29:47.398Z"
   },
   "kjøttkaker|rema 1000": {
-    "mainCategory": "Middag",
-    "subCategory": "Andre middagsretter",
+    "mainCategory": "Kjøtt",
+    "subCategory": "Kjøttkaker og kjøttboller",
     "ingredientKey": "kjøttkaker",
-    "source": "ai",
+    "source": "manual",
     "confidence": {
-      "main": 0.95,
-      "sub": 0.95,
-      "ingredientKey": 0.95
+      "main": 1,
+      "sub": 1,
+      "ingredientKey": 1
     },
-    "timestamp": "2026-01-18T12:29:47.402Z"
+    "timestamp": "2026-01-19T14:07:26.036Z"
   },
   "gifflar|spar": {
     "mainCategory": "Snacks, godteri & sjokolade",
@@ -8028,16 +8028,16 @@
     "timestamp": "2026-01-18T17:30:20.111Z"
   },
   "coop pommes family|obs": {
-    "mainCategory": "Middag",
-    "subCategory": "Andre middagsretter",
-    "ingredientKey": "pommes frites",
-    "source": "ai",
+    "mainCategory": "Tilbehør",
+    "subCategory": "Fries",
+    "ingredientKey": "pommes frites, fries",
+    "source": "manual",
     "confidence": {
-      "main": 0.95,
-      "sub": 0.95,
-      "ingredientKey": 0.95
+      "main": 1,
+      "sub": 1,
+      "ingredientKey": 1
     },
-    "timestamp": "2026-01-18T13:07:09.511Z"
+    "timestamp": "2026-01-19T14:09:38.569Z"
   },
   "coop ostelandgang|obs": {
     "mainCategory": "Ost",
@@ -8412,16 +8412,16 @@
     "timestamp": "2026-01-18T14:10:32.597Z"
   },
   "poteter sticks nuggets|meny": {
-    "mainCategory": "Middag",
-    "subCategory": "Andre middagsretter",
-    "ingredientKey": "potetsticks",
+    "mainCategory": "Tilbehør",
+    "subCategory": "Fries",
+    "ingredientKey": "potetsticks, nuggets, fries, sticks",
     "source": "manual",
     "confidence": {
       "main": 1,
       "sub": 1,
       "ingredientKey": 1
     },
-    "timestamp": "2026-01-18T13:44:41.583Z"
+    "timestamp": "2026-01-19T14:09:50.316Z"
   },
   "plantebasert burger|meny": {
     "mainCategory": "Kjøtt",
@@ -8821,15 +8821,15 @@
   },
   "havregrøt frø kardemomme|bunnpris": {
     "mainCategory": "Middag",
-    "subCategory": "Andre middagsretter",
-    "ingredientKey": "havregrøt",
-    "source": "ai",
+    "subCategory": "Grøt",
+    "ingredientKey": "havregrøt, grøt",
+    "source": "manual",
     "confidence": {
-      "main": 0.95,
-      "sub": 0.93,
-      "ingredientKey": 0.94
+      "main": 1,
+      "sub": 1,
+      "ingredientKey": 1
     },
-    "timestamp": "2026-01-18T14:50:28.263Z"
+    "timestamp": "2026-01-19T13:35:48.981Z"
   },
   "prior kylling nuggets|bunnpris": {
     "mainCategory": "Kylling og fjærkre",
@@ -9372,16 +9372,16 @@
     "timestamp": "2026-01-18T14:50:28.393Z"
   },
   "kjøttboller karbonader|rema 1000": {
-    "mainCategory": "Middag",
-    "subCategory": "Andre middagsretter",
-    "ingredientKey": "kjøttboller",
-    "source": "ai",
+    "mainCategory": "Kjøtt",
+    "subCategory": "Kjøttkaker og kjøttboller",
+    "ingredientKey": "kjøttboller, karbonader",
+    "source": "manual",
     "confidence": {
-      "main": 0.95,
-      "sub": 0.95,
-      "ingredientKey": 0.95
+      "main": 1,
+      "sub": 1,
+      "ingredientKey": 1
     },
-    "timestamp": "2026-01-18T14:50:28.395Z"
+    "timestamp": "2026-01-19T13:40:12.210Z"
   },
   "familiens fiskegrateng|rema 1000": {
     "mainCategory": "Middag",
@@ -9492,16 +9492,16 @@
     "timestamp": "2026-01-18T14:50:28.413Z"
   },
   "crispy wings hot wings|rema 1000": {
-    "mainCategory": "Middag",
-    "subCategory": "Andre middagsretter",
-    "ingredientKey": "hot wings",
-    "source": "ai",
+    "mainCategory": "Kylling og fjærkre",
+    "subCategory": "Kylling",
+    "ingredientKey": "hot wings, kyllingvinger",
+    "source": "manual",
     "confidence": {
-      "main": 0.95,
-      "sub": 0.95,
-      "ingredientKey": 0.95
+      "main": 1,
+      "sub": 1,
+      "ingredientKey": 1
     },
-    "timestamp": "2026-01-18T14:50:28.415Z"
+    "timestamp": "2026-01-19T13:37:10.094Z"
   },
   "mango modnet|rema 1000": {
     "mainCategory": "Frukt & grønt",
@@ -10080,16 +10080,16 @@
     "timestamp": "2026-01-18T14:50:28.513Z"
   },
   "kjøttkaker|spar": {
-    "mainCategory": "Middag",
-    "subCategory": "Andre middagsretter",
+    "mainCategory": "Kjøtt",
+    "subCategory": "Kjøttkaker og kjøttboller",
     "ingredientKey": "kjøttkaker",
-    "source": "ai",
+    "source": "manual",
     "confidence": {
-      "main": 0.95,
-      "sub": 0.95,
-      "ingredientKey": 0.95
+      "main": 1,
+      "sub": 1,
+      "ingredientKey": 1
     },
-    "timestamp": "2026-01-18T14:50:28.515Z"
+    "timestamp": "2026-01-19T13:40:22.209Z"
   },
   "vårrull|spar": {
     "mainCategory": "Middag",
@@ -10464,16 +10464,16 @@
     "timestamp": "2026-01-18T14:50:28.605Z"
   },
   "smak crispy duck kit|obs": {
-    "mainCategory": "Middag",
-    "subCategory": "Andre middagsretter",
+    "mainCategory": "Kylling og fjærkre",
+    "subCategory": "And",
     "ingredientKey": "crispy duck",
-    "source": "ai",
+    "source": "manual",
     "confidence": {
-      "main": 0.9,
-      "sub": 0.9,
-      "ingredientKey": 0.9
+      "main": 1,
+      "sub": 1,
+      "ingredientKey": 1
     },
-    "timestamp": "2026-01-18T14:50:28.607Z"
+    "timestamp": "2026-01-19T13:37:20.685Z"
   },
   "f c vårruller 8 pk|obs": {
     "mainCategory": "Middag",
@@ -10512,16 +10512,16 @@
     "timestamp": "2026-01-18T14:50:28.613Z"
   },
   "street kitchen kit|obs": {
-    "mainCategory": "Middag",
-    "subCategory": "Andre middagsretter",
-    "ingredientKey": "kitchen kit",
-    "source": "ai",
+    "mainCategory": "Kylling og fjærkre",
+    "subCategory": "Kylling",
+    "ingredientKey": "kitchen kit, kylling",
+    "source": "manual",
     "confidence": {
-      "main": 0.9,
-      "sub": 0.9,
-      "ingredientKey": 0.9
+      "main": 1,
+      "sub": 1,
+      "ingredientKey": 1
     },
-    "timestamp": "2026-01-18T14:50:28.616Z"
+    "timestamp": "2026-01-19T13:37:49.149Z"
   },
   "coop scampi hvitløk urter|obs": {
     "mainCategory": "Fisk & skalldyr",
@@ -10573,15 +10573,15 @@
   },
   "smak wonton money bag|obs": {
     "mainCategory": "Middag",
-    "subCategory": "Andre middagsretter",
-    "ingredientKey": "wonton",
-    "source": "ai",
+    "subCategory": "Ferdigretter",
+    "ingredientKey": "wonton, moneybag",
+    "source": "manual",
     "confidence": {
-      "main": 0.9,
-      "sub": 0.9,
-      "ingredientKey": 0.9
+      "main": 1,
+      "sub": 1,
+      "ingredientKey": 1
     },
-    "timestamp": "2026-01-18T14:50:28.625Z"
+    "timestamp": "2026-01-19T13:38:17.531Z"
   },
   "berthas klenning|obs": {
     "mainCategory": "Snacks, godteri & sjokolade",
@@ -11425,15 +11425,15 @@
   },
   "vårruller|coop mega": {
     "mainCategory": "Middag",
-    "subCategory": "Andre middagsretter",
+    "subCategory": "Ferdigretter",
     "ingredientKey": "vårruller",
-    "source": "ai",
+    "source": "manual",
     "confidence": {
-      "main": 0.95,
-      "sub": 0.95,
-      "ingredientKey": 0.95
+      "main": 1,
+      "sub": 1,
+      "ingredientKey": 1
     },
-    "timestamp": "2026-01-18T14:50:28.798Z"
+    "timestamp": "2026-01-19T13:38:25.201Z"
   },
   "et utvalg brus fra coca cola|coop mega": {
     "mainCategory": "Drikke",
@@ -11761,15 +11761,15 @@
   },
   "waldemar vårruller 12 pk|coop mega": {
     "mainCategory": "Middag",
-    "subCategory": "Andre middagsretter",
+    "subCategory": "Ferdigretter",
     "ingredientKey": "vårruller",
-    "source": "ai",
+    "source": "manual",
     "confidence": {
-      "main": 0.9,
-      "sub": 0.9,
-      "ingredientKey": 0.9
+      "main": 1,
+      "sub": 1,
+      "ingredientKey": 1
     },
-    "timestamp": "2026-01-18T14:50:28.892Z"
+    "timestamp": "2026-01-19T13:38:44.061Z"
   },
   "de cecco extra virgin olivenolje|coop mega": {
     "mainCategory": "Tilbehør",
@@ -14218,5 +14218,65 @@
       "ingredientKey": 1
     },
     "timestamp": "2026-01-18T17:26:05.238Z"
+  },
+  "coop bulgur couscous|obs": {
+    "mainCategory": "Middag",
+    "subCategory": "Ris",
+    "ingredientKey": "bulgur, couscous",
+    "source": "manual",
+    "confidence": {
+      "main": 1,
+      "sub": 1,
+      "ingredientKey": 1
+    },
+    "timestamp": "2026-01-19T13:25:02.086Z"
+  },
+  "farris frus eple kiwi 6 pk|coop extra": {
+    "mainCategory": "Drikke",
+    "subCategory": "Brus",
+    "ingredientKey": "frus, farris",
+    "source": "manual",
+    "confidence": {
+      "main": 1,
+      "sub": 1,
+      "ingredientKey": 1
+    },
+    "timestamp": "2026-01-19T13:25:34.787Z"
+  },
+  "lofoten matpakkekaker|coop mega": {
+    "mainCategory": "Middag",
+    "subCategory": "Fiskeretter",
+    "ingredientKey": "fiskekaker, matpakkekaker",
+    "source": "manual",
+    "confidence": {
+      "main": 1,
+      "sub": 1,
+      "ingredientKey": 1
+    },
+    "timestamp": "2026-01-19T13:25:58.366Z"
+  },
+  "dave and jon s dadler|coop mega": {
+    "mainCategory": "Snacks, godteri & sjokolade",
+    "subCategory": "Godteri",
+    "ingredientKey": "dadler",
+    "source": "manual",
+    "confidence": {
+      "main": 1,
+      "sub": 1,
+      "ingredientKey": 1
+    },
+    "timestamp": "2026-01-19T13:26:05.921Z"
+  },
+  "lego blomster|obs": {
+    "mainCategory": "Hus & hjem",
+    "subCategory": "Leker",
+    "ingredientKey": "lego",
+    "source": "manual",
+    "confidence": {
+      "main": 1,
+      "sub": 1,
+      "ingredientKey": 1
+    },
+    "timestamp": "2026-01-19T13:27:12.167Z"
   }
 }

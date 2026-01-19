@@ -164,6 +164,7 @@ function AdminReview() {
                   onCategorize={handleCategorize}
                   saving={saving === offer.productKey}
                   imageCache={imageCache}
+                  allowUpdate={true}
                 />
               ))}
           </div>
@@ -190,6 +191,7 @@ function AdminReview() {
                 onCategorize={handleCategorize}
                 saving={saving === offer.productKey}
                 imageCache={imageCache}
+                allowUpdate={false}
               />
             ))}
           </div>
@@ -205,15 +207,17 @@ interface OfferReviewCardProps {
   onCategorize: (offer: Offer, main: string, sub: string, key: string) => void;
   saving: boolean;
   imageCache: Map<string, string>;
+  allowUpdate: boolean;
 }
 
-function OfferReviewCard({ offer, categories, onCategorize, saving, imageCache }: OfferReviewCardProps) {
+function OfferReviewCard({ offer, categories, onCategorize, saving, imageCache, allowUpdate }: OfferReviewCardProps) {
   // Pre-fyll med AI-forslag hvis de finnes
   const [mainCategory, setMainCategory] = useState(offer.mainCategory || '');
   const [subCategory, setSubCategory] = useState(offer.subCategory || '');
   const [ingredientKey, setIngredientKey] = useState(offer.ingredientKey || '');
 
   const subCategories = mainCategory ? categories[mainCategory] || [] : [];
+  const [isEditing, setIsEditing] = useState(!allowUpdate);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -224,6 +228,7 @@ function OfferReviewCard({ offer, categories, onCategorize, saving, imageCache }
     }
 
     onCategorize(offer, mainCategory, subCategory, ingredientKey.toLowerCase().trim());
+    setIsEditing(false);
   };
 
   return (
@@ -236,79 +241,131 @@ function OfferReviewCard({ offer, categories, onCategorize, saving, imageCache }
             className="w-full h-48 object-cover rounded mb-3" 
           />
         )}
-        <CardTitle className="text-lg">{offer.title}</CardTitle>
+        <div className="flex items-center gap-2 mb-2">
+          <CardTitle className="text-lg flex-1">{offer.title}</CardTitle>
+          {offer.isActive === false && (
+            <Badge variant="destructive" className="text-xs">
+              Utgått tilbud
+            </Badge>
+          )}
+        </div>
         <div className="flex items-center justify-between mt-2">
           <p className="text-sm text-muted-foreground">{offer.store}</p>
-          <Badge variant="secondary" className="text-base font-bold">{offer.price} {offer.currency}</Badge>
+          {offer.price > 0 ? (
+            <Badge variant="secondary" className="text-base font-bold">{offer.price} {offer.currency}</Badge>
+          ) : (
+            <Badge variant="outline" className="text-xs">Pris ikke tilgjengelig</Badge>
+          )}
         </div>
         {offer.categoryConfidence !== undefined && (
           <Badge variant="outline" className="mt-2 text-xs">
             AI: {(offer.categoryConfidence * 100).toFixed(0)}%
           </Badge>
         )}
+        {allowUpdate && offer.mainCategory && offer.subCategory && (
+          <div className="mt-2 space-y-1">
+            <Badge variant="default" className="text-xs">
+              {offer.mainCategory} → {offer.subCategory}
+            </Badge>
+            {offer.ingredientKey && (
+              <Badge variant="outline" className="text-xs ml-2">
+                🔑 {offer.ingredientKey}
+              </Badge>
+            )}
+          </div>
+        )}
       </CardHeader>
       <CardContent>
 
-      <form onSubmit={handleSubmit} className="space-y-4">
+      {!isEditing && allowUpdate ? (
         <div className="space-y-2">
-          <Label htmlFor="mainCategory">Hovedkategori</Label>
-          <select 
-            id="mainCategory"
-            value={mainCategory} 
-            onChange={(e) => {
-              setMainCategory(e.target.value);
-              setSubCategory(''); // Reset subCategory når main endres
-            }}
-            disabled={saving}
-            required
-            className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+          <Button 
+            onClick={() => setIsEditing(true)} 
+            className="w-full"
+            variant="outline"
           >
-            <option value="">Velg kategori...</option>
-            {Object.keys(categories).map(cat => (
-              <option key={cat} value={cat}>{cat}</option>
-            ))}
-          </select>
+            ✏️ Endre kategorisering
+          </Button>
         </div>
+      ) : (
+        <form onSubmit={handleSubmit} className="space-y-4">
+          <div className="space-y-2">
+            <Label htmlFor={`mainCategory-${offer.productKey}`}>Hovedkategori</Label>
+            <select 
+              id={`mainCategory-${offer.productKey}`}
+              value={mainCategory} 
+              onChange={(e) => {
+                setMainCategory(e.target.value);
+                setSubCategory(''); // Reset subCategory når main endres
+              }}
+              disabled={saving}
+              required
+              className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+            >
+              <option value="">Velg kategori...</option>
+              {Object.keys(categories).map(cat => (
+                <option key={cat} value={cat}>{cat}</option>
+              ))}
+            </select>
+          </div>
 
-        <div className="space-y-2">
-          <Label htmlFor="subCategory">Underkategori</Label>
-          <select 
-            id="subCategory"
-            value={subCategory} 
-            onChange={(e) => setSubCategory(e.target.value)}
-            disabled={!mainCategory || saving}
-            required
-            className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-          >
-            <option value="">Velg underkategori...</option>
-            {subCategories.map(sub => (
-              <option key={sub} value={sub}>{sub}</option>
-            ))}
-          </select>
-        </div>
+          <div className="space-y-2">
+            <Label htmlFor={`subCategory-${offer.productKey}`}>Underkategori</Label>
+            <select 
+              id={`subCategory-${offer.productKey}`}
+              value={subCategory} 
+              onChange={(e) => setSubCategory(e.target.value)}
+              disabled={!mainCategory || saving}
+              required
+              className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+            >
+              <option value="">Velg underkategori...</option>
+              {subCategories.map(sub => (
+                <option key={sub} value={sub}>{sub}</option>
+              ))}
+            </select>
+          </div>
 
-        <div className="space-y-2">
-          <Label htmlFor="ingredientKey">Ingrediens-nøkkel</Label>
-          <Input
-            id="ingredientKey"
-            type="text"
-            value={ingredientKey}
-            onChange={(e) => setIngredientKey(e.target.value)}
-            placeholder="f.eks. 'melk', 'agurk', 'pasta'"
-            disabled={saving}
-            required
-          />
-          <small className="text-xs text-muted-foreground">Brukes til middagsplanlegging</small>
-        </div>
+          <div className="space-y-2">
+            <Label htmlFor={`ingredientKey-${offer.productKey}`}>Ingrediens-nøkkel</Label>
+            <Input
+              id={`ingredientKey-${offer.productKey}`}
+              type="text"
+              value={ingredientKey}
+              onChange={(e) => setIngredientKey(e.target.value)}
+              placeholder="f.eks. 'melk', 'agurk', 'pasta'"
+              disabled={saving}
+              required
+            />
+            <small className="text-xs text-muted-foreground">Brukes til middagsplanlegging</small>
+          </div>
 
-        <Button 
-          type="submit" 
-          className="w-full"
-          disabled={saving || !mainCategory || !subCategory || !ingredientKey.trim()}
-        >
-          {saving ? 'Lagrer...' : '✅ Lagre kategorisering'}
-        </Button>
-      </form>
+          <div className="flex gap-2">
+            <Button 
+              type="submit" 
+              className="flex-1"
+              disabled={saving || !mainCategory || !subCategory || !ingredientKey.trim()}
+            >
+              {saving ? 'Lagrer...' : '✅ Lagre'}
+            </Button>
+            {allowUpdate && (
+              <Button 
+                type="button"
+                variant="outline"
+                onClick={() => {
+                  setMainCategory(offer.mainCategory || '');
+                  setSubCategory(offer.subCategory || '');
+                  setIngredientKey(offer.ingredientKey || '');
+                  setIsEditing(false);
+                }}
+                disabled={saving}
+              >
+                Avbryt
+              </Button>
+            )}
+          </div>
+        </form>
+      )}
       </CardContent>
     </Card>
   );

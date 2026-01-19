@@ -136,7 +136,7 @@ STEG 2 - Velg subCategory:
   * "Verktøysett" → "Hus & hjem > Verktøy"
   * "Regnjakke" → "Hus & hjem > Klær og sko"
   * "Gryte" → "Hus & hjem > Kjøkken"
-- Bruk "Annet" KUN hvis produktet virkelig ikke passer i noen av de spesifikke subkategoriene
+- Velg ALLTID en spesifikk subkategori - ikke bruk generiske fallbacks
 
 STEG 3 - Velg ingredientKey:
 - 1-2 nært beslektede søkeord som beskriver hovedingrediensen eller produkttypen
@@ -200,10 +200,10 @@ Returner KUN JSON object, ingen annen tekst.`;
                 continue;
             }
             
-            // IKKE hopp over ved ugyldig subCategory - la categoryService.ts reparere til "Annet"
-            const subCategories = CATEGORY_HIERARCHY[result.mainCategory as MainCategory];
-            if (!subCategories.includes(result.subCategory as any)) {
-                console.warn(`⚠️ AI foreslo ugyldig subCategory "${result.subCategory}" for "${result.mainCategory}" - vil bli reparert til "Annet"`);
+            // IKKE hopp over ved ugyldig subCategory - la categoryService.ts flytte til "Ukategorisert"
+            const subCategories = CATEGORY_HIERARCHY[result.mainCategory as MainCategory] as readonly SubCategory[];
+            if (!subCategories.includes(result.subCategory as SubCategory)) {
+                console.warn(`⚠️ AI foreslo ugyldig subCategory "${result.subCategory}" for "${result.mainCategory}" - vil bli flyttet til "Ukategorisert"`);
                 // IKKE continue - returner resultatet slik at det kan repareres
             }
             
