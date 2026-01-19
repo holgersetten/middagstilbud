@@ -135,12 +135,16 @@ class OfferService {
             const enrichedOffers = offers.map((offer: Offer) => ({
                 ...offer,
                 store: store.name,
-                storeLogo: getStoreLogoUrl(store.name)
+                storeLogo: getStoreLogoUrl(store.name),
+                productKey: `${offer.title}|${offer.size || 0}|${offer.pieces || 1}|${store.name}`
             }));
 
-            const filename = `${store.name.toLowerCase().replace(/\s+/g, '_')}_offers.json`;
+            const filename = `${store.name.toLowerCase().replace(/\/s+/g, '_')}_offers.json`;
             const filePath = path.join(config.offersDir, filename);
             fileService.saveJSON(filePath, enrichedOffers);
+
+            // Lagre prishistorikk kun når tilbud oppdateres
+            this.recordPriceHistory(enrichedOffers);
 
             return enrichedOffers;
         } catch (error) {
@@ -175,9 +179,6 @@ class OfferService {
             ...categoryService.categorizeOffer(offer),
             productKey: `${offer.title}|${offer.size || 0}|${offer.pieces || 1}|${offer.store || 'unknown'}`
         }));
-
-        // Lagre prishistorikk for alle tilbud
-        this.recordPriceHistory(enrichedOffers);
 
         return enrichedOffers;
     }

@@ -33,7 +33,7 @@ export function OfferCard({ offer, onClick, className }: OfferCardProps) {
   return (
     <Card
       className={cn(
-        "cursor-pointer overflow-hidden rounded-xl border border-zinc-200 bg-white p-0 transition-shadow hover:shadow-md",
+        "cursor-pointer overflow-hidden rounded-xl border border-zinc-200 bg-white p-0 transition-all hover:shadow-md hover:scale-105",
         className
       )}
       onClick={() => onClick?.(offer)}
