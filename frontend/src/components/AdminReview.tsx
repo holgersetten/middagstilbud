@@ -14,7 +14,6 @@ function AdminReview() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [saving, setSaving] = useState<string | null>(null);
-  const [imageCache, setImageCache] = useState<Map<string, string>>(new Map());
   const [searchQuery, setSearchQuery] = useState('');
 
   useEffect(() => {
@@ -44,25 +43,6 @@ function AdminReview() {
     } finally {
       setLoading(false);
     }
-  };
-
-  const fetchMissingImages = async (offersWithoutImages: Offer[]) => {
-    const newCache = new Map(imageCache);
-    
-    for (const offer of offersWithoutImages) {
-      if (!offer.hotspotId) continue;
-      
-      try {
-        const imageData = await offersApi.getOfferImage(offer.hotspotId);
-        if (imageData.bestImage) {
-          newCache.set(offer.hotspotId, imageData.bestImage);
-        }
-      } catch (err) {
-        console.error(`Failed to fetch image for ${offer.hotspotId}:`, err);
-      }
-    }
-    
-    setImageCache(newCache);
   };
 
   const handleCategorize = async (
@@ -163,7 +143,7 @@ function AdminReview() {
                   categories={categories}
                   onCategorize={handleCategorize}
                   saving={saving === offer.productKey}
-                  imageCache={imageCache}
+
                   allowUpdate={true}
                 />
               ))}
@@ -190,7 +170,7 @@ function AdminReview() {
                 categories={categories}
                 onCategorize={handleCategorize}
                 saving={saving === offer.productKey}
-                imageCache={imageCache}
+
                 allowUpdate={false}
               />
             ))}
@@ -206,11 +186,10 @@ interface OfferReviewCardProps {
   categories: CategoryHierarchy;
   onCategorize: (offer: Offer, main: string, sub: string, key: string) => void;
   saving: boolean;
-  imageCache: Map<string, string>;
   allowUpdate: boolean;
 }
 
-function OfferReviewCard({ offer, categories, onCategorize, saving, imageCache, allowUpdate }: OfferReviewCardProps) {
+function OfferReviewCard({ offer, categories, onCategorize, saving, allowUpdate }: OfferReviewCardProps) {
   // Pre-fyll med AI-forslag hvis de finnes
   const [mainCategory, setMainCategory] = useState(offer.mainCategory || '');
   const [subCategory, setSubCategory] = useState(offer.subCategory || '');

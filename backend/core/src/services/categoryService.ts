@@ -1,10 +1,8 @@
-import path from 'path';
-import fileService from '../../../persistence/src/services/fileService';
-import config from '../../../rest/src/config';
 import { MainCategory, SubCategory, DEFAULT_MAIN_CATEGORY, DEFAULT_SUB_CATEGORY, CATEGORY_HIERARCHY } from '../config/categories';
 import { buildProductKey, buildCategoryKey } from '../utils/productKey';
 import { matchCategoryByRules } from './categoryRules';
 import { batchCategorizeWithAI } from './aiCategorization';
+import * as categoryCacheRepo from '../db/categoryCacheRepo';
 
 type CategorySource = 'manual' | 'rule' | 'ai' | 'unknown';
 type CacheStatus = 'trusted' | 'pending';
@@ -23,8 +21,6 @@ interface CategoryCacheEntry {
     timestamp?: string;
 }
 
-type CategoryCache = Record<string, CategoryCacheEntry>;
-
 interface OfferLike {
     title: string;
     store?: string | null;
@@ -35,103 +31,18 @@ interface OfferLike {
 }
 
 class CategoryService {
-    private cache: CategoryCache = {}
-    private cacheFilePath: string;
     private manualOverrides: Record<string, {
         mainCategory: MainCategory;
         subCategory: SubCategory;
         ingredientKey: string;
         reason?: string;
     }> = {};
-    private manualOverridesPath: string;
     private ongoingCategorization: Promise<any> | null = null;
 
     constructor() {
-        this.cacheFilePath = path.join(config.offersDir, '../category_cache.json');
-        this.manualOverridesPath = path.join(config.offersDir, '../manual_overrides.json');
-        this.loadCache();
-        this.loadManualOverrides();
-        this.cleanupObsoletePendingEntries();
-    }
-    
-    // Rydder opp i gamle pending categoryKey entries når det finnes nyere trusted productKey entries
-    private cleanupObsoletePendingEntries(): void {
-        let cleanedCount = 0;
-        const keysToDelete: string[] = [];
-        
-        for (const key in this.cache) {
-            const entry = this.cache[key];
-            
-            // Hopp over hvis ikke pending
-            if (entry.cacheStatus !== 'pending') continue;
-            
-            // Sjekk om dette er en categoryKey (format: title|store)
-            const parts = key.split('|');
-            if (parts.length !== 2) continue;
-            
-            // Sjekk om det finnes noen trusted productKey entries som matcher denne categoryKey
-            // productKey format: title|size|pieces|store
-            const matchingTrustedKeys = Object.keys(this.cache).filter(k => {
-                const kParts = k.split('|');
-                if (kParts.length !== 4) return false;
-                
-                const titleMatches = kParts[0] === parts[0];
-                const storeMatches = kParts[3] === parts[1];
-                const isTrusted = this.cache[k].cacheStatus === 'trusted';
-                
-                return titleMatches && storeMatches && isTrusted;
-            });
-            
-            if (matchingTrustedKeys.length > 0) {
-                console.log(`🧹 Sletter obsolete pending entry "${key}" (finnes trusted version: ${matchingTrustedKeys[0]})`);
-                keysToDelete.push(key);
-                cleanedCount++;
-            }
-        }
-        
-        // Slett alle identifiserte keys
-        keysToDelete.forEach(key => delete this.cache[key]);
-        
-        if (cleanedCount > 0) {
-            this.saveCache();
-            console.log(`✅ Cleaned up ${cleanedCount} obsolete pending entries`);
-        }
+        // Cache er nå i SQLite, ingen in-memory loading nødvendig
     }
 
-    private loadCache(): void {
-        try {
-            this.cache = fileService.loadJSON<CategoryCache>(this.cacheFilePath);
-        }
-        catch {
-            console.log("!!! Ingen category cache funnet, starter med tom cache");
-            this.cache = {};
-        }
-    }
-
-    private loadManualOverrides(): void {
-        try {
-            const data = fileService.loadJSON<any>(this.manualOverridesPath);
-            // Filter ut _info og _example
-            this.manualOverrides = Object.keys(data)
-                .filter(key => !key.startsWith('_'))
-                .reduce((acc, key) => {
-                    acc[key] = data[key];
-                    return acc;
-                }, {} as typeof this.manualOverrides);
-            
-            if (Object.keys(this.manualOverrides).length > 0) {
-                console.log(`📝 Lastet ${Object.keys(this.manualOverrides).length} manuelle overrides`);
-            }
-        }
-        catch {
-            console.log("📝 Ingen manual_overrides.json funnet");
-            this.manualOverrides = {};
-        }
-    }
-
-    private saveCache(): boolean {
-        return fileService.saveJSON(this.cacheFilePath, this.cache);
-    }
 
     private calculateCacheStatus(entry: CategoryCacheEntry): CacheStatus {
         if (entry.mainCategory === 'Ukategorisert') return 'pending';
@@ -144,19 +55,21 @@ class CategoryService {
     }
 
     getCategoryForProduct(productKey: string): CategoryCacheEntry | null {
-        const entry = this.cache[productKey];
-        if (!entry) return null;
+        const data = categoryCacheRepo.get(productKey);
+        if (!data) return null;
+        
+        // Konverter fra repo format til CategoryCacheEntry
+        const entry: CategoryCacheEntry = {
+            mainCategory: data.mainCategory as MainCategory,
+            subCategory: data.subCategory as SubCategory,
+            ingredientKey: data.ingredientKey,
+            source: data.source as CategorySource,
+            confidence: data.confidence,
+            timestamp: data.timestamp
+        };
         
         // Rekalkluler cacheStatus basert på gjeldende regler
-        // Dette sikrer at nye regler påvirker eksisterende cache-entries
-        const recalculatedStatus: CacheStatus = 
-            (entry.mainCategory === 'Ukategorisert')
-                ? 'pending'
-                : (entry.confidence.main >= 0.90 && entry.confidence.sub >= 0.88 && entry.confidence.ingredientKey >= 0.90)
-                    ? 'trusted'
-                    : 'pending';
-        
-        // cacheStatus beregnes alltid dynamisk basert på gjeldende regler
+        const recalculatedStatus: CacheStatus = this.calculateCacheStatus(entry);
         
         return {
             ...entry,
@@ -166,15 +79,26 @@ class CategoryService {
 
     // Hent alle ukategoriserte produkter fra cache (selv om de ikke finnes i dagens tilbud)
     getAllUncategorizedFromCache(): Array<{ productKey: string; entry: CategoryCacheEntry }> {
-        return Object.entries(this.cache)
-            .filter(([_, entry]) => entry.mainCategory === 'Ukategorisert')
-            .map(([productKey, entry]) => ({ 
-                productKey, 
-                entry: {
-                    ...entry,
-                    cacheStatus: this.calculateCacheStatus(entry)
-                }
-            }));
+        const allData = categoryCacheRepo.getAll();
+        return Object.entries(allData)
+            .filter(([_, data]) => data.mainCategory === 'Ukategorisert')
+            .map(([productKey, data]) => {
+                const entry: CategoryCacheEntry = {
+                    mainCategory: data.mainCategory as MainCategory,
+                    subCategory: data.subCategory as SubCategory,
+                    ingredientKey: data.ingredientKey,
+                    source: data.source as CategorySource,
+                    confidence: data.confidence,
+                    timestamp: data.timestamp
+                };
+                return {
+                    productKey,
+                    entry: {
+                        ...entry,
+                        cacheStatus: this.calculateCacheStatus(entry)
+                    }
+                };
+            });
     }
 
     setCategoryForProduct(
@@ -196,8 +120,8 @@ class CategoryService {
         }
 
         // cacheStatus beregnes dynamisk i getCategoryForProduct()
-        // og lagres IKKE i filen for å unngå inkonsistens ved threshold-endringer
-        this.cache[productKey] = {
+        // og lagres IKKE for å unngå inkonsistens ved threshold-endringer
+        const data: categoryCacheRepo.CategoryCacheData = {
             mainCategory,
             subCategory,
             ingredientKey,
@@ -205,7 +129,7 @@ class CategoryService {
             confidence,
             timestamp: new Date().toISOString()
         };
-        this.saveCache();
+        categoryCacheRepo.upsert(productKey, data);
     }
     
     categorizeOffer(offer: OfferLike): { 
@@ -488,13 +412,14 @@ class CategoryService {
     // Teller antall pending produkter i cache
     getPendingCount(): number {
         let count = 0;
-        for (const key in this.cache) {
-            const entry = this.cache[key];
+        const allData = categoryCacheRepo.getAll();
+        for (const key in allData) {
+            const data = allData[key];
             const isPending = 
-                entry.mainCategory === 'Ukategorisert' ||
-                entry.confidence.main < 0.90 ||
-                entry.confidence.sub < 0.88 ||
-                entry.confidence.ingredientKey < 0.90;
+                data.mainCategory === 'Ukategorisert' ||
+                data.confidence.main < 0.90 ||
+                data.confidence.sub < 0.88 ||
+                data.confidence.ingredientKey < 0.90;
             if (isPending) count++;
         }
         return count;
@@ -503,27 +428,23 @@ class CategoryService {
     // Sletter alle pending entries fra cache (for re-kategorisering)
     removePendingFromCache(): number {
         let removed = 0;
-        const keysToRemove: string[] = [];
+        const allData = categoryCacheRepo.getAll();
         
-        for (const key in this.cache) {
-            const entry = this.cache[key];
+        for (const key in allData) {
+            const data = allData[key];
             const isPending = 
-                entry.mainCategory === 'Ukategorisert' ||
-                entry.confidence.main < 0.90 ||
-                entry.confidence.sub < 0.88 ||
-                entry.confidence.ingredientKey < 0.90;
+                data.mainCategory === 'Ukategorisert' ||
+                data.confidence.main < 0.90 ||
+                data.confidence.sub < 0.88 ||
+                data.confidence.ingredientKey < 0.90;
             
             if (isPending) {
-                keysToRemove.push(key);
+                categoryCacheRepo.remove(key);
                 removed++;
             }
         }
         
-        // Slett alle pending entries
-        keysToRemove.forEach(key => delete this.cache[key]);
-        
         if (removed > 0) {
-            this.saveCache();
             console.log(`🧹 Slettet ${removed} pending produkter fra cache`);
         }
         
@@ -533,17 +454,18 @@ class CategoryService {
     // Oppdater alle cached produkter med gammel hovedkategori til ny hovedkategori
     updateCachedMainCategory(oldMainCategory: string, newMainCategory: string): number {
         let updated = 0;
+        const allData = categoryCacheRepo.getAll();
         
-        for (const key in this.cache) {
-            const entry = this.cache[key];
-            if (entry.mainCategory === oldMainCategory) {
-                entry.mainCategory = newMainCategory as any;
+        for (const key in allData) {
+            const data = allData[key];
+            if (data.mainCategory === oldMainCategory) {
+                data.mainCategory = newMainCategory;
+                categoryCacheRepo.upsert(key, data);
                 updated++;
             }
         }
         
         if (updated > 0) {
-            this.saveCache();
             console.log(`✅ Oppdatert ${updated} produkter: ${oldMainCategory} → ${newMainCategory}`);
         }
         
@@ -553,17 +475,18 @@ class CategoryService {
     // Oppdater alle cached produkter med gammel subkategori til ny subkategori
     updateCachedSubCategory(mainCategory: string, oldSubCategory: string, newSubCategory: string): number {
         let updated = 0;
+        const allData = categoryCacheRepo.getAll();
         
-        for (const key in this.cache) {
-            const entry = this.cache[key];
-            if (entry.mainCategory === mainCategory && entry.subCategory === oldSubCategory) {
-                entry.subCategory = newSubCategory as any;
+        for (const key in allData) {
+            const data = allData[key];
+            if (data.mainCategory === mainCategory && data.subCategory === oldSubCategory) {
+                data.subCategory = newSubCategory;
+                categoryCacheRepo.upsert(key, data);
                 updated++;
             }
         }
         
         if (updated > 0) {
-            this.saveCache();
             console.log(`✅ Oppdatert ${updated} produkter: ${mainCategory} > ${oldSubCategory} → ${newSubCategory}`);
         }
         
@@ -573,30 +496,32 @@ class CategoryService {
     // Flytt alle produkter med en kategori til Ukategorisert (for når kategori slettes)
     moveCategoryToUncategorized(mainCategory: string, subCategory: string | null): number {
         let moved = 0;
+        const allData = categoryCacheRepo.getAll();
         
-        for (const key in this.cache) {
-            const entry = this.cache[key];
+        for (const key in allData) {
+            const data = allData[key];
             
             // Hvis subCategory er null, flytt alle med denne hovedkategorien
-            if (subCategory === null && entry.mainCategory === mainCategory) {
-                entry.mainCategory = 'Ukategorisert' as any;
-                entry.subCategory = 'Ukategorisert' as any;
-                entry.confidence.main = 0.3;
-                entry.confidence.sub = 0.3;
+            if (subCategory === null && data.mainCategory === mainCategory) {
+                data.mainCategory = 'Ukategorisert';
+                data.subCategory = 'Ukategorisert';
+                data.confidence.main = 0.3;
+                data.confidence.sub = 0.3;
+                categoryCacheRepo.upsert(key, data);
                 moved++;
             }
             // Hvis subCategory er spesifisert, flytt bare de med denne kombinasjonen
-            else if (subCategory !== null && entry.mainCategory === mainCategory && entry.subCategory === subCategory) {
-                entry.mainCategory = 'Ukategorisert' as any;
-                entry.subCategory = 'Ukategorisert' as any;
-                entry.confidence.main = 0.3;
-                entry.confidence.sub = 0.3;
+            else if (subCategory !== null && data.mainCategory === mainCategory && data.subCategory === subCategory) {
+                data.mainCategory = 'Ukategorisert';
+                data.subCategory = 'Ukategorisert';
+                data.confidence.main = 0.3;
+                data.confidence.sub = 0.3;
+                categoryCacheRepo.upsert(key, data);
                 moved++;
             }
         }
         
         if (moved > 0) {
-            this.saveCache();
             console.log(`✅ Flyttet ${moved} produkter til Ukategorisert`);
         }
         

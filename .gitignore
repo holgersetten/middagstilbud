@@ -4,6 +4,15 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
+# Database
+backend/persistence/data/
+*.db
+*.db-shm
+*.db-wal
+
+# Archive (old JSON cache)
+backend/persistence/src/resources/archive/
+
 # Environment variables
 .env
 .env.local

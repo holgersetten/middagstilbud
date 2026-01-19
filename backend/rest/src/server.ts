@@ -6,6 +6,10 @@ dotenv.config();
 
 import config from './config';
 import offersRouter from './routes/offers';
+import { initDb } from '../../core/src/db/db';
+
+// Initialiser database ved oppstart
+initDb();
 
 const app = express();
 

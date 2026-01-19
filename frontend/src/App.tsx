@@ -6,7 +6,7 @@ import { Separator } from '@/components/ui/separator';
 import { Input } from '@/components/ui/input';
 import { Breadcrumb, BreadcrumbList, BreadcrumbItem, BreadcrumbSeparator, BreadcrumbPage } from '@/components/ui/breadcrumb';
 import { OfferGrid } from '@/components/grocery/offer-grid';
-import { Search, Settings, Tags, ArrowLeft, Loader2, AlertCircle, ChevronRight, Home, Lock, ArrowUpDown, ArrowDown } from 'lucide-react';
+import { Search, Settings, Tags, ArrowLeft, Loader2, AlertCircle, ChevronRight, Home, Lock, ArrowDown } from 'lucide-react';
 import { offersApi } from './services/api';
 import type { Offer, CategoryHierarchy } from './types/offer';
 import AdminReview from './components/AdminReview';
