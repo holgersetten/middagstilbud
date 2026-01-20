@@ -96,6 +96,49 @@ class OfferService {
         }
     }
 
+    async updateAllStoreOffersWithTracking(): Promise<{ errors: Record<string, string> }> {
+        if (this.updateInProgress) {
+            console.log('🔄 Oppdatering pågår allerede...');
+            return { errors: {} };
+        }
+
+        this.updateInProgress = true;
+        const errors: Record<string, string> = {};
+
+        try {
+            const stores = getActiveStores();
+            const results = await Promise.allSettled(
+                stores.map(store => this.updateStoreOffers(store))
+            );
+            
+            // Track errors per store
+            results.forEach((result, index) => {
+                if (result.status === 'rejected') {
+                    const storeName = stores[index].name;
+                    errors[storeName] = result.reason?.message || 'Unknown error';
+                }
+            });
+            
+            console.log('✅ Oppdatering av alle butikker fullført');
+            return { errors };
+        } catch (error) {
+            console.error('❌ Feil under oppdatering av tilbud:', (error as Error).message);
+            return { errors: { global: (error as Error).message } };
+        } finally {
+            this.updateInProgress = false;
+        }
+    }
+
+    getOffersPerStore(offers: any[]): Record<string, number> {
+        const counts: Record<string, number> = {};
+        offers.forEach(offer => {
+            if (offer.store) {
+                counts[offer.store] = (counts[offer.store] || 0) + 1;
+            }
+        });
+        return counts;
+    }
+
     async enrichAllOffersWithImages(): Promise<void> {
         const stores = getActiveStores();
         

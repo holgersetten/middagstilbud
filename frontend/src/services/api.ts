@@ -41,6 +41,16 @@ export const offersApi = {
     return response.data;
   },
 
+  getHealthMetrics: async (): Promise<any> => {
+    const response = await axios.get(`${API_BASE_URL}/admin/health`);
+    return response.data;
+  },
+
+  runWeeklyUpdate: async (): Promise<any> => {
+    const response = await axios.post(`${API_BASE_URL}/offers/weekly-update`);
+    return response.data;
+  },
+
   // Category management
   addSubCategory: async (mainCategory: string, subCategory: string): Promise<{ success: boolean; message: string; note: string }> => {
     const response = await axios.post(`${API_BASE_URL}/categories/subcategory/add`, {

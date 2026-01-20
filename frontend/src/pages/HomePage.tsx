@@ -1,9 +1,31 @@
 import { Link } from 'react-router-dom';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { ShoppingCart, ChefHat } from 'lucide-react';
+import { ShoppingCart, ChefHat, Utensils } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { offersApi } from '@/services/api';
 
 export default function HomePage() {
+  const [totalOffers, setTotalOffers] = useState<number | null>(null);
+  const [storeCount, setStoreCount] = useState<number | null>(null);
+
+  useEffect(() => {
+    const fetchStats = async () => {
+      try {
+        const response = await offersApi.getAllOffers();
+        const offers = response.offers || [];
+        setTotalOffers(offers.length);
+        
+        // Count unique stores
+        const uniqueStores = new Set(offers.map((offer) => offer.store));
+        setStoreCount(uniqueStores.size);
+      } catch (error) {
+        console.error('Failed to fetch stats:', error);
+      }
+    };
+    fetchStats();
+  }, []);
+
   return (
     <div className="container mx-auto px-4 py-16">
       <div className="max-w-4xl mx-auto">
@@ -67,16 +89,18 @@ export default function HomePage() {
           <h2 className="text-2xl font-semibold mb-4">Hvorfor Ukeshandel.no?</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div>
-              <div className="text-3xl font-bold text-primary mb-2">8+</div>
+              <div className="text-3xl font-bold text-primary mb-2">{totalOffers ?? '...'}</div>
+              <div className="text-sm text-muted-foreground">Tilbud denne uka</div>
+            </div>
+            <div>
+              <div className="text-3xl font-bold text-primary mb-2">{storeCount ?? '...'}</div>
               <div className="text-sm text-muted-foreground">Butikkjeder</div>
             </div>
             <div>
-              <div className="text-3xl font-bold text-primary mb-2">1000+</div>
-              <div className="text-sm text-muted-foreground">Tilbud hver uke</div>
-            </div>
-            <div>
-              <div className="text-3xl font-bold text-primary mb-2">24/7</div>
-              <div className="text-sm text-muted-foreground">Alltid oppdatert</div>
+              <div className="flex items-center justify-center mb-2">
+                <Utensils className="h-8 w-8 text-primary" />
+              </div>
+              <div className="text-sm text-muted-foreground">Ukentlig menyforslag</div>
             </div>
           </div>
         </div>

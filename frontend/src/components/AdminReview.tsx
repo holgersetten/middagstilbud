@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { offersApi } from '../services/api';
 import type { Offer, CategoryHierarchy } from '../types/offer';
 import { Button } from '@/components/ui/button';
@@ -6,6 +7,28 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Badge } from '@/components/ui/badge';
+import { Separator } from '@/components/ui/separator';
+import { FolderTree, RefreshCw, Play } from 'lucide-react';
+
+interface HealthMetrics {
+  lastUpdate: {
+    timestamp: string;
+    duration: number;
+    durationFormatted: string;
+    success: boolean;
+  } | null;
+  currentState: {
+    totalOffers: number;
+    offersPerStore: Record<string, number>;
+    cacheHitRate: number;
+    pendingRate: number;
+    totalCached: number;
+    trustedCount: number;
+    pendingCount: number;
+  };
+  errors: Record<string, string>;
+  history: any[];
+}
 
 function AdminReview() {
   const [offers, setOffers] = useState<Offer[]>([]);
@@ -17,9 +40,12 @@ function AdminReview() {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedStores, setSelectedStores] = useState<string[]>([]);
   const [showAllOffers, setShowAllOffers] = useState(false);
+  const [healthMetrics, setHealthMetrics] = useState<HealthMetrics | null>(null);
+  const [updatingWeekly, setUpdatingWeekly] = useState(false);
 
   useEffect(() => {
     loadData();
+    loadHealthMetrics();
   }, []);
 
   const loadData = async () => {
@@ -49,6 +75,33 @@ function AdminReview() {
       console.error('Error loading admin data:', err);
     } finally {
       setLoading(false);
+    }
+  };
+
+  const loadHealthMetrics = async () => {
+    try {
+      const metrics = await offersApi.getHealthMetrics();
+      setHealthMetrics(metrics);
+    } catch (err) {
+      console.error('Error loading health metrics:', err);
+    }
+  };
+
+  const handleWeeklyUpdate = async () => {
+    if (!confirm('Dette vil hente nye tilbud og kjøre AI-kategorisering. Kan ta flere minutter. Fortsette?')) {
+      return;
+    }
+    
+    try {
+      setUpdatingWeekly(true);
+      await offersApi.runWeeklyUpdate();
+      alert('Ukentlig oppdatering fullført!');
+      await loadData();
+      await loadHealthMetrics();
+    } catch (err) {
+      alert('Feil ved ukentlig oppdatering: ' + (err as Error).message);
+    } finally {
+      setUpdatingWeekly(false);
     }
   };
 
@@ -86,10 +139,10 @@ function AdminReview() {
 
   if (loading) {
     return (
-      <div className="max-w-7xl mx-auto p-8">
+      <div className="max-w-7xl mx-auto p-4">
         <Card>
-          <CardContent className="pt-6">
-            <div className="text-center py-12 text-lg">Laster produkter som trenger review...</div>
+          <CardContent className="pt-4">
+            <div className="text-center py-8 text-base">Laster produkter som trenger review...</div>
           </CardContent>
         </Card>
       </div>
@@ -98,12 +151,12 @@ function AdminReview() {
 
   if (error) {
     return (
-      <div className="max-w-7xl mx-auto p-8">
+      <div className="max-w-7xl mx-auto p-4">
         <Card>
-          <CardContent className="pt-6">
-            <div className="text-center py-12 text-red-600">{error}</div>
+          <CardContent className="pt-4">
+            <div className="text-center py-8 text-red-600 text-sm">{error}</div>
             <div className="text-center">
-              <Button onClick={loadData} className="mt-4">
+              <Button onClick={loadData} className="mt-3" size="sm">
                 Prøv igjen
               </Button>
             </div>
@@ -114,171 +167,321 @@ function AdminReview() {
   }
 
   return (
-    <div className="max-w-7xl mx-auto p-8">
-      <div className="mb-8 text-center">
-        <h1 className="text-3xl font-bold text-gray-800 mb-2">📝 Admin Review</h1>
-        <p className="text-gray-600">
-          {offers.length} produkter trenger kategorisering
-        </p>
-        
-        {/* Søkefelt for å finne feil-kategoriseringer */}
-        <div className="mt-4 mb-4 flex gap-2">
-          <Input
-            type="text"
-            placeholder="🔍 Søk etter produkt for å rette kategorisering (f.eks. 'vepsebol')..."
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-            className="text-base flex-1"
-          />
-          <Button
-            onClick={() => setShowAllOffers(!showAllOffers)}
-            variant={showAllOffers ? "default" : "outline"}
-          >
-            {showAllOffers ? "Skjul alle tilbud" : "Vis alle tilbud"}
-          </Button>
-        </div>
-
-        {/* Butikkfilter */}
-        <div className="mt-4 mb-4">
-          <Label className="block text-sm font-medium text-gray-700 mb-2">Filtrer på butikk:</Label>
-          <div className="flex flex-nowrap gap-2 overflow-x-auto pb-2">
-            {Array.from(new Set(allOffers.map(o => o.store).filter(Boolean))).sort().map(store => {
-              const isSelected = selectedStores.includes(store);
-              const storeLogos: Record<string, string> = {
-                'Bunnpris': 'http://localhost:5000/store_logos/bunnpris_logo.png',
-                'Rema 1000': 'http://localhost:5000/store_logos/rema_kompakt_logo.svg',
-                'Meny': 'http://localhost:5000/store_logos/meny_kompakt_logo.png',
-                'Spar': 'http://localhost:5000/store_logos/spar_kompakt_logo.png',
-                'Kiwi': 'http://localhost:5000/store_logos/kiwi_kompakt_logo.png',
-                'Obs': 'http://localhost:5000/store_logos/circular/coop_obs_circular_logo.png',
-                'Coop Extra': 'http://localhost:5000/store_logos/circular/coop_extra_circular_logo.png',
-                'Coop Mega': 'http://localhost:5000/store_logos/circular/coop_mega_circular_logo.png',
-                'Coop Prix': 'http://localhost:5000/store_logos/circular/coop_prix_circular_logo.png',
-                'Coop Marked': 'http://localhost:5000/store_logos/circular/coop_marked_circular_logo.png',
-                'Joker': 'http://localhost:5000/store_logos/joker_logo.png',
-                'Matkroken': 'http://localhost:5000/store_logos/circular/matkroken_circular_logo.png',
-              };
-              return (
-                <button
-                  key={store}
-                  onClick={() => {
-                    setSelectedStores(prev => 
-                      isSelected 
-                        ? prev.filter(s => s !== store)
-                        : [...prev, store]
-                    );
-                  }}
-                  className={`flex-shrink-0 p-1 rounded-lg transition-all ${
-                    isSelected 
-                      ? 'ring-2 ring-blue-500 bg-blue-50' 
-                      : 'hover:ring-2 hover:ring-gray-300'
-                  }`}
-                  title={store}
-                >
-                  <img 
-                    src={storeLogos[store]} 
-                    alt={store}
-                    className="h-8 w-auto object-contain"
-                    onError={(e) => {
-                      e.currentTarget.style.display = 'none';
-                      e.currentTarget.parentElement!.textContent = store;
-                    }}
-                  />
-                </button>
-              );
-            })}
-            {selectedStores.length > 0 && (
-              <button
-                onClick={() => setSelectedStores([])}
-                className="flex-shrink-0 px-3 py-1 rounded-full text-sm font-medium bg-red-100 text-red-700 hover:bg-red-200"
-              >
-                ✕ Fjern
-              </button>
-            )}
-          </div>
-        </div>
+    <div className="max-w-[1600px] mx-auto p-4">
+      {/* Dashboard Header */}
+      <div className="mb-4">
+        <h1 className="text-2xl font-bold mb-1">Admin Dashboard</h1>
+        <p className="text-sm text-muted-foreground">System oversikt og produktkategorisering</p>
       </div>
 
-      {/* Vis alle tilbud */}
-      {showAllOffers && (
-        <div className="mb-8 p-4 bg-blue-50 rounded-lg">
-          <h3 className="mb-4 text-lg font-semibold">📦 Alle tilbud ({
-            allOffers.filter(o => selectedStores.length === 0 || selectedStores.includes(o.store)).length
-          })</h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {allOffers
-              .filter(o => selectedStores.length === 0 || selectedStores.includes(o.store))
-              .map((offer, idx) => (
-                <OfferReviewCard
-                  key={`${offer.offerId || offer.hotspotId || offer.productKey}-${idx}`}
-                  offer={offer}
-                  categories={categories}
-                  onCategorize={handleCategorize}
-                  saving={saving === offer.productKey}
-                  allowUpdate={true}
-                />
-              ))}
-          </div>
+      {/* Health Metrics Dashboard */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 mb-4">
+        {healthMetrics ? (
+          <>
+            {/* Last Update Card */}
+            <Card>
+              <CardHeader className="pb-2">
+                <CardTitle className="text-xs font-medium text-muted-foreground">Sist Oppdatert</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="text-2xl font-bold">
+                  {healthMetrics.lastUpdate 
+                    ? new Date(healthMetrics.lastUpdate.timestamp).toLocaleTimeString('no-NO', { hour: '2-digit', minute: '2-digit' })
+                    : '-'}
+                </div>
+                <p className="text-xs text-muted-foreground mt-1">
+                  {healthMetrics.lastUpdate?.durationFormatted || '-'}
+                  {healthMetrics.lastUpdate?.success ? ' ✓' : ' ✗'}
+                </p>
+              </CardContent>
+            </Card>
+
+            {/* Total Offers Card */}
+            <Card>
+              <CardHeader className="pb-2">
+                <CardTitle className="text-xs font-medium text-muted-foreground">Tilbud Denne Uka</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="text-2xl font-bold">{healthMetrics.currentState.totalOffers}</div>
+                <p className="text-xs text-muted-foreground mt-1">
+                  {healthMetrics.currentState.totalProductKeys || 0} unike produkter
+                </p>
+              </CardContent>
+            </Card>
+
+            {/* Cache Hit Rate Card */}
+            <Card>
+              <CardHeader className="pb-2">
+                <CardTitle className="text-xs font-medium text-muted-foreground">Cache Hit Rate</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="text-2xl font-bold">{healthMetrics.currentState.cacheHitRate.toFixed(1)}%</div>
+                <p className="text-xs text-muted-foreground mt-1">
+                  {healthMetrics.currentState.trustedCount} trusted
+                </p>
+              </CardContent>
+            </Card>
+
+            {/* Pending Rate Card */}
+            <Card>
+              <CardHeader className="pb-2">
+                <CardTitle className="text-xs font-medium text-muted-foreground">Pending Rate</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="text-2xl font-bold">{healthMetrics.currentState.pendingRate.toFixed(1)}%</div>
+                <p className="text-xs text-muted-foreground mt-1">
+                  {healthMetrics.currentState.pendingCount} produkter
+                </p>
+              </CardContent>
+            </Card>
+          </>
+        ) : (
+          <div className="col-span-full text-center py-8 text-sm text-muted-foreground">Laster metrics...</div>
+        )}
+      </div>
+
+      {/* Store Overview & Actions */}
+      {healthMetrics && (
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-3 mb-4">
+          {/* Store Breakdown */}
+          <Card className="lg:col-span-2">
+            <CardHeader className="pb-2">
+              <CardTitle className="text-sm font-semibold">Tilbud per Butikk</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-2">
+                {Object.entries(healthMetrics.currentState.offersPerStore)
+                  .sort(([, a], [, b]) => b - a)
+                  .map(([store, count]) => (
+                    <div key={store} className="text-center p-2 border rounded-md">
+                      <div className="text-xs text-muted-foreground truncate">{store}</div>
+                      <div className="text-lg font-bold">{count}</div>
+                    </div>
+                  ))}
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Actions & Errors */}
+          <Card>
+            <CardHeader className="pb-2">
+              <CardTitle className="text-sm font-semibold">Actions</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-2">
+              <Button 
+                onClick={handleWeeklyUpdate} 
+                disabled={updatingWeekly}
+                variant="outline"
+                className="w-full justify-start"
+                size="sm"
+              >
+                <Play className="h-4 w-4 mr-2" />
+                {updatingWeekly ? 'Oppdaterer...' : 'Kjør Weekly Update'}
+              </Button>
+              <Button 
+                onClick={loadHealthMetrics} 
+                variant="outline"
+                className="w-full justify-start"
+                size="sm"
+              >
+                <RefreshCw className="h-4 w-4 mr-2" />
+                Oppdater Metrics
+              </Button>
+              
+              <Separator className="my-2" />
+              
+              <Link to="/kategorier" className="block">
+                <Button 
+                  variant="outline"
+                  className="w-full justify-start"
+                  size="sm"
+                >
+                  <FolderTree className="h-4 w-4 mr-2" />
+                  Rediger Kategorier
+                </Button>
+              </Link>
+              
+              {Object.keys(healthMetrics.errors).length > 0 && (
+                <div className="mt-3 pt-3 border-t">
+                  <h4 className="text-xs font-medium text-destructive mb-2">Feil</h4>
+                  <div className="space-y-1 text-xs text-muted-foreground">
+                    {Object.entries(healthMetrics.errors).map(([store, error]) => (
+                      <div key={store}>
+                        <span className="font-medium">{store}:</span> {error}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </CardContent>
+          </Card>
         </div>
       )}
 
-      {searchQuery.length >= 2 && (
-        <div className="mb-8 p-4 bg-gray-100 rounded-lg">
-          <h3 className="mb-4 text-lg font-semibold">🔍 Søkeresultater ({
-            allOffers
-              .filter(o => o.title?.toLowerCase().includes(searchQuery.toLowerCase()))
-              .filter(o => selectedStores.length === 0 || selectedStores.includes(o.store))
-              .length
-          })</h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {allOffers
-              .filter(o => o.title?.toLowerCase().includes(searchQuery.toLowerCase()))
-              .filter(o => selectedStores.length === 0 || selectedStores.includes(o.store))
-              .map((offer, idx) => (
-                <OfferReviewCard
-                  key={`${offer.offerId || offer.hotspotId || offer.productKey}-${idx}`}
-                  offer={offer}
-                  categories={categories}
-                  onCategorize={handleCategorize}
-                  saving={saving === offer.productKey}
+      <Separator className="my-4" />
 
-                  allowUpdate={true}
-                />
-              ))}
+      {/* Admin Review Section */}
+      <Card>
+        <CardHeader className="pb-3">
+          <div className="flex items-center justify-between">
+            <div>
+              <CardTitle className="text-lg font-semibold">Produktkategorisering</CardTitle>
+              <p className="text-sm text-muted-foreground mt-1">{offers.length} produkter trenger review</p>
+            </div>
           </div>
-        </div>
-      )}
-
-      {offers.length === 0 && searchQuery.length < 2 ? (
-        <div className="text-center py-12">
-          <h2 className="text-2xl font-bold mb-4">🎉 Alt er kategorisert!</h2>
-          <p className="text-gray-700">Ingen produkter trenger review for øyeblikket.</p>
-          <p className="mt-4 text-gray-500">
-            💡 Bruk søkefeltet ovenfor for å finne og rette feil-kategoriseringer
-          </p>
-        </div>
-      ) : offers.length > 0 && searchQuery.length < 2 && !showAllOffers ? (
-        <>
-          <h3 className="mb-4 text-lg font-semibold">⚠️ Pending kategoriseringer ({
-            offers.filter(o => selectedStores.length === 0 || selectedStores.includes(o.store)).length
-          })</h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {offers
-              .filter(o => selectedStores.length === 0 || selectedStores.includes(o.store))
-              .map((offer, idx) => (
-              <OfferReviewCard
-                key={`${offer.offerId || offer.hotspotId || offer.productKey}-${idx}`}
-                offer={offer}
-                categories={categories}
-                onCategorize={handleCategorize}
-                saving={saving === offer.productKey}
-
-                allowUpdate={false}
+        </CardHeader>
+        <CardContent>
+          {/* Search and Filters */}
+          <div className="space-y-3 mb-4">
+            <div className="flex gap-2">
+              <Input
+                type="text"
+                placeholder="Søk etter produkt..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className="flex-1"
               />
-            ))}
+              <Button
+                onClick={() => setShowAllOffers(!showAllOffers)}
+                variant={showAllOffers ? "default" : "outline"}
+              >
+                {showAllOffers ? "Vis pending" : "Vis alle"}
+              </Button>
+            </div>
+
+            {/* Store Filter */}
+            <div>
+              <Label className="text-xs mb-2 block">Filtrer på butikk</Label>
+              <div className="flex flex-wrap gap-1.5">
+                {Array.from(new Set(allOffers.map(o => o.store).filter(Boolean))).sort().map(store => {
+                  const isSelected = selectedStores.includes(store);
+                  const storeLogos: Record<string, string> = {
+                    'Bunnpris': 'http://localhost:5000/store_logos/bunnpris_logo.png',
+                    'Rema 1000': 'http://localhost:5000/store_logos/rema_kompakt_logo.svg',
+                    'Meny': 'http://localhost:5000/store_logos/meny_kompakt_logo.png',
+                    'Spar': 'http://localhost:5000/store_logos/spar_kompakt_logo.png',
+                    'Kiwi': 'http://localhost:5000/store_logos/kiwi_kompakt_logo.png',
+                    'Obs': 'http://localhost:5000/store_logos/circular/coop_obs_circular_logo.png',
+                    'Coop Extra': 'http://localhost:5000/store_logos/circular/coop_extra_circular_logo.png',
+                    'Coop Mega': 'http://localhost:5000/store_logos/circular/coop_mega_circular_logo.png',
+                    'Coop Prix': 'http://localhost:5000/store_logos/circular/coop_prix_circular_logo.png',
+                    'Coop Marked': 'http://localhost:5000/store_logos/circular/coop_marked_circular_logo.png',
+                    'Joker': 'http://localhost:5000/store_logos/joker_logo.png',
+                    'Matkroken': 'http://localhost:5000/store_logos/circular/matkroken_circular_logo.png',
+                  };
+                  return (
+                    <button
+                      key={store}
+                      onClick={() => handleStoreToggle(store)}
+                      className={`h-8 w-8 rounded border-2 transition-all p-0.5 ${
+                        isSelected
+                          ? 'border-primary ring-2 ring-primary/20'
+                          : 'border-border hover:border-muted-foreground'
+                      }`}
+                      title={store}
+                    >
+                      <img
+                        src={storeLogos[store]}
+                        alt={store}
+                        className="w-full h-full object-contain"
+                      />
+                    </button>
+                  );
+                })}
+                {selectedStores.length > 0 && (
+                  <Button
+                    onClick={() => setSelectedStores([])}
+                    variant="ghost"
+                    size="sm"
+                  >
+                    Fjern filter
+                  </Button>
+                )}
+              </div>
+            </div>
           </div>
-        </>
-      ) : null}
+
+          {/* Offers Display */}
+          <div>
+            {showAllOffers && (
+              <div className="mb-4">
+                <h3 className="text-sm font-medium mb-3">
+                  Alle tilbud ({allOffers.filter(o => selectedStores.length === 0 || selectedStores.includes(o.store)).length})
+                </h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3">
+                  {allOffers
+                    .filter(o => selectedStores.length === 0 || selectedStores.includes(o.store))
+                    .map((offer, idx) => (
+                      <OfferReviewCard
+                        key={`${offer.offerId || offer.hotspotId || offer.productKey}-${idx}`}
+                        offer={offer}
+                        categories={categories}
+                        onCategorize={handleCategorize}
+                        saving={saving === offer.productKey}
+                        allowUpdate={true}
+                      />
+                    ))}
+                </div>
+              </div>
+            )}
+
+            {searchQuery.length >= 2 && (
+              <div className="mb-4">
+                <h3 className="text-sm font-medium mb-3">
+                  Søkeresultater ({
+                    allOffers
+                      .filter(o => o.title?.toLowerCase().includes(searchQuery.toLowerCase()))
+                      .filter(o => selectedStores.length === 0 || selectedStores.includes(o.store))
+                      .length
+                  })
+                </h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3">
+                  {allOffers
+                    .filter(o => o.title?.toLowerCase().includes(searchQuery.toLowerCase()))
+                    .filter(o => selectedStores.length === 0 || selectedStores.includes(o.store))
+                    .map((offer, idx) => (
+                      <OfferReviewCard
+                        key={`${offer.offerId || offer.hotspotId || offer.productKey}-${idx}`}
+                        offer={offer}
+                        categories={categories}
+                        onCategorize={handleCategorize}
+                        saving={saving === offer.productKey}
+                        allowUpdate={true}
+                      />
+                    ))}
+                </div>
+              </div>
+            )}
+
+            {offers.length === 0 && searchQuery.length < 2 ? (
+              <div className="text-center py-12">
+                <p className="text-lg font-medium mb-2">Alt er kategorisert! 🎉</p>
+                <p className="text-sm text-muted-foreground">Bruk søk for å rette feil-kategoriseringer</p>
+              </div>
+            ) : offers.length > 0 && searchQuery.length < 2 && !showAllOffers ? (
+              <>
+                <h3 className="text-sm font-medium mb-3">
+                  Pending kategoriseringer ({offers.filter(o => selectedStores.length === 0 || selectedStores.includes(o.store)).length})
+                </h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3">
+                  {offers
+                    .filter(o => selectedStores.length === 0 || selectedStores.includes(o.store))
+                    .map((offer, idx) => (
+                      <OfferReviewCard
+                        key={`${offer.offerId || offer.hotspotId || offer.productKey}-${idx}`}
+                        offer={offer}
+                        categories={categories}
+                        onCategorize={handleCategorize}
+                        saving={saving === offer.productKey}
+                        allowUpdate={false}
+                      />
+                    ))}
+                </div>
+              </>
+            ) : null}
+          </div>
+        </CardContent>
+      </Card>
     </div>
   );
 }

@@ -425,6 +425,30 @@ class CategoryService {
         return count;
     }
 
+    // Statistikk for health monitoring
+    getCacheStatistics() {
+        const allData = categoryCacheRepo.getAll();
+        const entries = Object.values(allData);
+        const totalCached = entries.length;
+        
+        const trustedCount = entries.filter(data => 
+            data.mainCategory !== 'Ukategorisert' &&
+            data.confidence.main >= 0.90 &&
+            data.confidence.sub >= 0.88 &&
+            data.confidence.ingredientKey >= 0.90
+        ).length;
+        
+        const pendingCount = totalCached - trustedCount;
+        
+        return {
+            totalCached,
+            trustedCount,
+            pendingCount,
+            cacheHitRate: totalCached > 0 ? (trustedCount / totalCached) * 100 : 0,
+            pendingRate: totalCached > 0 ? (pendingCount / totalCached) * 100 : 0
+        };
+    }
+
     // Sletter alle pending entries fra cache (for re-kategorisering)
     removePendingFromCache(): number {
         let removed = 0;

@@ -364,18 +364,27 @@ router.get('/offers/:hotspotId/image', async (req: Request, res: Response) => {
 
 // POST /api/offers/weekly-update - Komplett ukentlig oppdatering (tilbud + AI kategorisering)
 router.post('/offers/weekly-update', async (req: Request, res: Response) => {
+    const startTime = Date.now();
+    const timestamp = new Date().toISOString();
+    const errors: Record<string, string> = {};
+
     try {
-        console.log('🔄 Ukentlig oppdatering startet:', new Date().toISOString());
+        console.log('🔄 Ukentlig oppdatering startet:', timestamp);
+        
+        // Track existing productKeys before update
+        const existingOffers = await offerService.getAllOffers();
+        const existingProductKeys = new Set(existingOffers.map(o => o.productKey).filter(Boolean));
         
         // STEG 1: Hent nye tilbud
         console.log('📥 Henter nye tilbudsaviser...');
-        await offerService.updateAllStoreOffers();
+        const updateResult = await offerService.updateAllStoreOffersWithTracking();
+        Object.assign(errors, updateResult.errors);
         
         // STEG 2: Hent bilder for tilbudene
         console.log('🖼️  Henter bilder...');
         await offerService.enrichAllOffersWithImages();
         
-        // STEG 3: Kjør AI kategorisering (2 iterasjoner for bedre kvalitetskontroll)
+        // STEG 3: Kjør AI kategorisering (2 iterasjoner)
         console.log('🤖 AI kategorisering (2 iterasjoner)...');
         
         // Iterasjon 1: Første kategoriseringsforsøk
@@ -389,17 +398,43 @@ router.post('/offers/weekly-update', async (req: Request, res: Response) => {
             // Iterasjon 2: Retry pending med fresh context
             console.log('\n🔄 Iterasjon 2/2...');
             categoryService.removePendingFromCache();
-            allOffers = await offerService.getAllOffers(); // Fresh load
+            allOffers = await offerService.getAllOffers();
             await categoryService.categorizeOffers(allOffers);
             pendingCount = categoryService.getPendingCount();
             console.log(`   ➜ Resultat: ${pendingCount} pending produkter`);
         }
         
+        // Calculate metrics
+        const duration = Date.now() - startTime;
+        const finalOffers = await offerService.getAllOffers();
+        const offersPerStore = offerService.getOffersPerStore(finalOffers);
+        const newProductKeys = finalOffers.filter(o => o.productKey && !existingProductKeys.has(o.productKey)).length;
+        const totalProductKeys = new Set(finalOffers.map(o => o.productKey).filter(Boolean)).size;
+        const stats = categoryService.getCacheStatistics();
+        
+        // Save metrics to database
+        const healthMetrics = await import('../../../core/src/db/healthMetricsRepo');
+        healthMetrics.saveWeeklyUpdateMetrics({
+            timestamp,
+            duration,
+            totalOffers: finalOffers.length,
+            totalProductKeys,
+            offersPerStore,
+            newProductKeys,
+            cacheHitRate: stats.cacheHitRate,
+            pendingRate: stats.pendingRate,
+            errors,
+            success: Object.keys(errors).length === 0
+        });
+        
         // Rapporter resultat
         const result = {
             success: true,
-            timestamp: new Date().toISOString(),
+            timestamp,
+            duration,
             pendingCount,
+            totalOffers: finalOffers.length,
+            newProductKeys,
             message: pendingCount === 0 
                 ? 'Alle produkter kategorisert automatisk!' 
                 : `${pendingCount} produkter krever manuell review`
@@ -407,9 +442,69 @@ router.post('/offers/weekly-update', async (req: Request, res: Response) => {
         
         res.json(result);
     } catch (error) {
+        const duration = Date.now() - startTime;
         console.error('❌ Feil ved ukentlig oppdatering:', (error as Error).message);
+        
+        // Save failed metrics
+        try {
+            const healthMetrics = await import('../../../core/src/db/healthMetricsRepo');
+            healthMetrics.saveWeeklyUpdateMetrics({
+                timestamp,
+                duration,
+                totalOffers: 0,
+                totalProductKeys: 0,
+                offersPerStore: {},
+                newProductKeys: 0,
+                cacheHitRate: 0,
+                pendingRate: 0,
+                errors: { ...errors, global: (error as Error).message },
+                success: false
+            });
+        } catch (e) {
+            console.error('Failed to save error metrics:', e);
+        }
+        
         res.status(500).json({
             error: 'Ukentlig oppdatering feilet',
+            message: (error as Error).message
+        });
+    }
+});
+
+// GET /admin/health - System health metrics
+router.get('/admin/health', async (req: Request, res: Response) => {
+    try {
+        const healthMetrics = await import('../../../core/src/db/healthMetricsRepo');
+        const latestUpdate = healthMetrics.getLatestWeeklyUpdateMetrics();
+        const allOffers = await offerService.getAllOffers();
+        const offersPerStore = offerService.getOffersPerStore(allOffers);
+        const totalProductKeys = new Set(allOffers.map(o => o.productKey).filter(Boolean)).size;
+        const stats = categoryService.getCacheStatistics();
+        
+        res.json({
+            lastUpdate: latestUpdate ? {
+                timestamp: latestUpdate.timestamp,
+                duration: latestUpdate.duration,
+                success: latestUpdate.success,
+                durationFormatted: `${(latestUpdate.duration / 1000 / 60).toFixed(1)} min`
+            } : null,
+            currentState: {
+                totalOffers: allOffers.length,
+                totalProductKeys,
+                offersPerStore,
+                cacheHitRate: stats.cacheHitRate,
+                pendingRate: stats.pendingRate,
+                totalCached: stats.totalCached,
+                trustedCount: stats.trustedCount,
+                pendingCount: stats.pendingCount
+            },
+            errors: latestUpdate?.errors || {},
+            history: healthMetrics.getAllWeeklyUpdateMetrics(5)
+        });
+    } catch (error) {
+        console.error('❌ Feil ved henting av health metrics:', (error as Error).message);
+        res.status(500).json({
+            error: 'Kunne ikke hente health metrics',
             message: (error as Error).message
         });
     }
