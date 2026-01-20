@@ -15,6 +15,8 @@ function AdminReview() {
   const [error, setError] = useState<string | null>(null);
   const [saving, setSaving] = useState<string | null>(null);
   const [searchQuery, setSearchQuery] = useState('');
+  const [selectedStores, setSelectedStores] = useState<string[]>([]);
+  const [showAllOffers, setShowAllOffers] = useState(false);
 
   useEffect(() => {
     loadData();
@@ -34,6 +36,11 @@ function AdminReview() {
       setOffers(reviewData.offers || []);
       setAllOffers(allData.offers || []);
       setCategories(categoriesData.categories);
+
+      // Debug: Log butikknavn
+      const uniqueStores = Array.from(new Set(allData.offers?.map(o => o.store).filter(Boolean)));
+      console.log('📊 Unike butikker lastet:', uniqueStores);
+      console.log('📊 Totalt antall tilbud:', allData.offers?.length);
 
       // Bildehenting deaktivert - Tjek API krever autentisering
       // De fleste tilbud har ikke tilgjengelige bilder via public API
@@ -115,30 +122,121 @@ function AdminReview() {
         </p>
         
         {/* Søkefelt for å finne feil-kategoriseringer */}
-        <div className="mt-4 mb-4">
+        <div className="mt-4 mb-4 flex gap-2">
           <Input
             type="text"
             placeholder="🔍 Søk etter produkt for å rette kategorisering (f.eks. 'vepsebol')..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="text-base"
+            className="text-base flex-1"
           />
+          <Button
+            onClick={() => setShowAllOffers(!showAllOffers)}
+            variant={showAllOffers ? "default" : "outline"}
+          >
+            {showAllOffers ? "Skjul alle tilbud" : "Vis alle tilbud"}
+          </Button>
+        </div>
+
+        {/* Butikkfilter */}
+        <div className="mt-4 mb-4">
+          <Label className="block text-sm font-medium text-gray-700 mb-2">Filtrer på butikk:</Label>
+          <div className="flex flex-nowrap gap-2 overflow-x-auto pb-2">
+            {Array.from(new Set(allOffers.map(o => o.store).filter(Boolean))).sort().map(store => {
+              const isSelected = selectedStores.includes(store);
+              const storeLogos: Record<string, string> = {
+                'Bunnpris': 'http://localhost:5000/store_logos/bunnpris_logo.png',
+                'Rema 1000': 'http://localhost:5000/store_logos/rema_kompakt_logo.svg',
+                'Meny': 'http://localhost:5000/store_logos/meny_kompakt_logo.png',
+                'Spar': 'http://localhost:5000/store_logos/spar_kompakt_logo.png',
+                'Kiwi': 'http://localhost:5000/store_logos/kiwi_kompakt_logo.png',
+                'Obs': 'http://localhost:5000/store_logos/circular/coop_obs_circular_logo.png',
+                'Coop Extra': 'http://localhost:5000/store_logos/circular/coop_extra_circular_logo.png',
+                'Coop Mega': 'http://localhost:5000/store_logos/circular/coop_mega_circular_logo.png',
+                'Coop Prix': 'http://localhost:5000/store_logos/circular/coop_prix_circular_logo.png',
+                'Coop Marked': 'http://localhost:5000/store_logos/circular/coop_marked_circular_logo.png',
+                'Joker': 'http://localhost:5000/store_logos/joker_logo.png',
+                'Matkroken': 'http://localhost:5000/store_logos/circular/matkroken_circular_logo.png',
+              };
+              return (
+                <button
+                  key={store}
+                  onClick={() => {
+                    setSelectedStores(prev => 
+                      isSelected 
+                        ? prev.filter(s => s !== store)
+                        : [...prev, store]
+                    );
+                  }}
+                  className={`flex-shrink-0 p-1 rounded-lg transition-all ${
+                    isSelected 
+                      ? 'ring-2 ring-blue-500 bg-blue-50' 
+                      : 'hover:ring-2 hover:ring-gray-300'
+                  }`}
+                  title={store}
+                >
+                  <img 
+                    src={storeLogos[store]} 
+                    alt={store}
+                    className="h-8 w-auto object-contain"
+                    onError={(e) => {
+                      e.currentTarget.style.display = 'none';
+                      e.currentTarget.parentElement!.textContent = store;
+                    }}
+                  />
+                </button>
+              );
+            })}
+            {selectedStores.length > 0 && (
+              <button
+                onClick={() => setSelectedStores([])}
+                className="flex-shrink-0 px-3 py-1 rounded-full text-sm font-medium bg-red-100 text-red-700 hover:bg-red-200"
+              >
+                ✕ Fjern
+              </button>
+            )}
+          </div>
         </div>
       </div>
+
+      {/* Vis alle tilbud */}
+      {showAllOffers && (
+        <div className="mb-8 p-4 bg-blue-50 rounded-lg">
+          <h3 className="mb-4 text-lg font-semibold">📦 Alle tilbud ({
+            allOffers.filter(o => selectedStores.length === 0 || selectedStores.includes(o.store)).length
+          })</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {allOffers
+              .filter(o => selectedStores.length === 0 || selectedStores.includes(o.store))
+              .map((offer, idx) => (
+                <OfferReviewCard
+                  key={`${offer.offerId || offer.hotspotId || offer.productKey}-${idx}`}
+                  offer={offer}
+                  categories={categories}
+                  onCategorize={handleCategorize}
+                  saving={saving === offer.productKey}
+                  allowUpdate={true}
+                />
+              ))}
+          </div>
+        </div>
+      )}
 
       {searchQuery.length >= 2 && (
         <div className="mb-8 p-4 bg-gray-100 rounded-lg">
           <h3 className="mb-4 text-lg font-semibold">🔍 Søkeresultater ({
-            allOffers.filter(o => 
-              o.title?.toLowerCase().includes(searchQuery.toLowerCase())
-            ).length
+            allOffers
+              .filter(o => o.title?.toLowerCase().includes(searchQuery.toLowerCase()))
+              .filter(o => selectedStores.length === 0 || selectedStores.includes(o.store))
+              .length
           })</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {allOffers
               .filter(o => o.title?.toLowerCase().includes(searchQuery.toLowerCase()))
-              .map((offer) => (
+              .filter(o => selectedStores.length === 0 || selectedStores.includes(o.store))
+              .map((offer, idx) => (
                 <OfferReviewCard
-                  key={offer.productKey || offer.title}
+                  key={`${offer.offerId || offer.hotspotId || offer.productKey}-${idx}`}
                   offer={offer}
                   categories={categories}
                   onCategorize={handleCategorize}
@@ -159,13 +257,17 @@ function AdminReview() {
             💡 Bruk søkefeltet ovenfor for å finne og rette feil-kategoriseringer
           </p>
         </div>
-      ) : offers.length > 0 && searchQuery.length < 2 ? (
+      ) : offers.length > 0 && searchQuery.length < 2 && !showAllOffers ? (
         <>
-          <h3 className="mb-4 text-lg font-semibold">⚠️ Pending kategoriseringer</h3>
+          <h3 className="mb-4 text-lg font-semibold">⚠️ Pending kategoriseringer ({
+            offers.filter(o => selectedStores.length === 0 || selectedStores.includes(o.store)).length
+          })</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {offers.map((offer) => (
+            {offers
+              .filter(o => selectedStores.length === 0 || selectedStores.includes(o.store))
+              .map((offer, idx) => (
               <OfferReviewCard
-                key={offer.productKey || offer.title}
+                key={`${offer.offerId || offer.hotspotId || offer.productKey}-${idx}`}
                 offer={offer}
                 categories={categories}
                 onCategorize={handleCategorize}

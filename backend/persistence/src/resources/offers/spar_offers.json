@@ -16,7 +16,8 @@
     "offerId": "dyd3E-8UQxas4ywQy0NqD",
     "hotspotId": "dyd3E-8UQxas4ywQy0NqD",
     "store": "Spar",
-    "storeLogo": "http://localhost:5000/store_logos/spar_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/spar_logo.png",
+    "productKey": "Grønn & Frisk salater|100|1|Spar"
   },
   {
     "title": "Små tomater",
@@ -35,7 +36,8 @@
     "offerId": "YjgToRDmmW-eF_0--4Iz0",
     "hotspotId": "YjgToRDmmW-eF_0--4Iz0",
     "store": "Spar",
-    "storeLogo": "http://localhost:5000/store_logos/spar_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/spar_logo.png",
+    "productKey": "Små tomater|500|1|Spar"
   },
   {
     "title": "Spisspaprika/middagspaprika",
@@ -54,7 +56,8 @@
     "offerId": "b6AaJeONHJavG_rGQ1BXV",
     "hotspotId": "b6AaJeONHJavG_rGQ1BXV",
     "store": "Spar",
-    "storeLogo": "http://localhost:5000/store_logos/spar_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/spar_logo.png",
+    "productKey": "Spisspaprika/middagspaprika|300|1|Spar"
   },
   {
     "title": "Norvegia",
@@ -73,7 +76,8 @@
     "offerId": "z3E0y2TyhHCgO-URAvkiu",
     "hotspotId": "z3E0y2TyhHCgO-URAvkiu",
     "store": "Spar",
-    "storeLogo": "http://localhost:5000/store_logos/spar_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/spar_logo.png",
+    "productKey": "Norvegia|830|1|Spar"
   },
   {
     "title": "Sukkermeloner",
@@ -92,7 +96,8 @@
     "offerId": "JoWGjyUeecIJHMMvB1_xG",
     "hotspotId": "JoWGjyUeecIJHMMvB1_xG",
     "store": "Spar",
-    "storeLogo": "http://localhost:5000/store_logos/spar_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/spar_logo.png",
+    "productKey": "Sukkermeloner|1|1|Spar"
   },
   {
     "title": "Blåbær/bringebær",
@@ -111,7 +116,8 @@
     "offerId": "DxUDdzIftTyAT_lsEvp9j",
     "hotspotId": "DxUDdzIftTyAT_lsEvp9j",
     "store": "Spar",
-    "storeLogo": "http://localhost:5000/store_logos/spar_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/spar_logo.png",
+    "productKey": "Blåbær/bringebær|300|1|Spar"
   },
   {
     "title": "Mango 2-pk.",
@@ -130,7 +136,8 @@
     "offerId": "qHnO59yPHa25PnE6M4Ojg",
     "hotspotId": "qHnO59yPHa25PnE6M4Ojg",
     "store": "Spar",
-    "storeLogo": "http://localhost:5000/store_logos/spar_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/spar_logo.png",
+    "productKey": "Mango 2-pk.|2|1|Spar"
   },
   {
     "title": "Røde appelsiner",
@@ -149,7 +156,8 @@
     "offerId": "UoFMiC3tq49eW23AUphX1",
     "hotspotId": "UoFMiC3tq49eW23AUphX1",
     "store": "Spar",
-    "storeLogo": "http://localhost:5000/store_logos/spar_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/spar_logo.png",
+    "productKey": "Røde appelsiner|1|1|Spar"
   },
   {
     "title": "Cherry plum",
@@ -168,7 +176,8 @@
     "offerId": "zO5SSSdlVixP2uGOuPIRY",
     "hotspotId": "zO5SSSdlVixP2uGOuPIRY",
     "store": "Spar",
-    "storeLogo": "http://localhost:5000/store_logos/spar_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/spar_logo.png",
+    "productKey": "Cherry plum|300|1|Spar"
   },
   {
     "title": "Laks",
@@ -187,7 +196,8 @@
     "offerId": "TxC8nMZskL2UlEBMoBrAr",
     "hotspotId": "TxC8nMZskL2UlEBMoBrAr",
     "store": "Spar",
-    "storeLogo": "http://localhost:5000/store_logos/spar_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/spar_logo.png",
+    "productKey": "Laks|1|1|Spar"
   },
   {
     "title": "Kjøttkaker",
@@ -206,7 +216,8 @@
     "offerId": "DxaSU9YSV92E7B69-RcVq",
     "hotspotId": "DxaSU9YSV92E7B69-RcVq",
     "store": "Spar",
-    "storeLogo": "http://localhost:5000/store_logos/spar_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/spar_logo.png",
+    "productKey": "Kjøttkaker|800|1|Spar"
   },
   {
     "title": "Vårrull",
@@ -225,7 +236,8 @@
     "offerId": "IJRbHAgEbfaTdylhi5-Ej",
     "hotspotId": "IJRbHAgEbfaTdylhi5-Ej",
     "store": "Spar",
-    "storeLogo": "http://localhost:5000/store_logos/spar_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/spar_logo.png",
+    "productKey": "Vårrull|80|1|Spar"
   },
   {
     "title": "Biffburger/kyllingburger",
@@ -244,7 +256,8 @@
     "offerId": "qNszZoZIA7qdysm54fPY0",
     "hotspotId": "qNszZoZIA7qdysm54fPY0",
     "store": "Spar",
-    "storeLogo": "http://localhost:5000/store_logos/spar_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/spar_logo.png",
+    "productKey": "Biffburger/kyllingburger|100|1|Spar"
   },
   {
     "title": "Brus fra Coca-Cola/ Farris/Frus/Bris/ Imsdal naturell",
@@ -263,7 +276,8 @@
     "offerId": "kaR0YvpCi2-c8Cy8VLh8u",
     "hotspotId": "kaR0YvpCi2-c8Cy8VLh8u",
     "store": "Spar",
-    "storeLogo": "http://localhost:5000/store_logos/spar_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/spar_logo.png",
+    "productKey": "Brus fra Coca-Cola/ Farris/Frus/Bris/ Imsdal naturell|0.5|1|Spar"
   },
   {
     "title": "Monster",
@@ -282,7 +296,8 @@
     "offerId": "_6WOhJISMmuXJGNCO1_27",
     "hotspotId": "_6WOhJISMmuXJGNCO1_27",
     "store": "Spar",
-    "storeLogo": "http://localhost:5000/store_logos/spar_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/spar_logo.png",
+    "productKey": "Monster|0.5|1|Spar"
   },
   {
     "title": "Biola",
@@ -301,7 +316,8 @@
     "offerId": "Wx_nIDe7hDAl01NXgNCev",
     "hotspotId": "Wx_nIDe7hDAl01NXgNCev",
     "store": "Spar",
-    "storeLogo": "http://localhost:5000/store_logos/spar_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/spar_logo.png",
+    "productKey": "Biola|1|1|Spar"
   },
   {
     "title": "Donut",
@@ -320,7 +336,8 @@
     "offerId": "aDt7aam8WdwHy6Gir71S9",
     "hotspotId": "aDt7aam8WdwHy6Gir71S9",
     "store": "Spar",
-    "storeLogo": "http://localhost:5000/store_logos/spar_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/spar_logo.png",
+    "productKey": "Donut|50|1|Spar"
   },
   {
     "title": "Makrell",
@@ -339,7 +356,8 @@
     "offerId": "_3CQvb34lQm53jeArkV1p",
     "hotspotId": "_3CQvb34lQm53jeArkV1p",
     "store": "Spar",
-    "storeLogo": "http://localhost:5000/store_logos/spar_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/spar_logo.png",
+    "productKey": "Makrell|110|1|Spar"
   },
   {
     "title": "MellomBar",
@@ -358,7 +376,8 @@
     "offerId": "LijozJ40H_yX7nW243Cxj",
     "hotspotId": "LijozJ40H_yX7nW243Cxj",
     "store": "Spar",
-    "storeLogo": "http://localhost:5000/store_logos/spar_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/spar_logo.png",
+    "productKey": "MellomBar|126|1|Spar"
   },
   {
     "title": "Dadlar",
@@ -377,7 +396,8 @@
     "offerId": "4X4NLcQnyBbBXiVjSkZnI",
     "hotspotId": "4X4NLcQnyBbBXiVjSkZnI",
     "store": "Spar",
-    "storeLogo": "http://localhost:5000/store_logos/spar_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/spar_logo.png",
+    "productKey": "Dadlar|125|1|Spar"
   },
   {
     "title": "Oreo",
@@ -396,7 +416,8 @@
     "offerId": "AwGQz-reT2fdVLX72W6eR",
     "hotspotId": "AwGQz-reT2fdVLX72W6eR",
     "store": "Spar",
-    "storeLogo": "http://localhost:5000/store_logos/spar_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/spar_logo.png",
+    "productKey": "Oreo|154|1|Spar"
   },
   {
     "title": "Primula",
@@ -415,7 +436,8 @@
     "offerId": "dcCjOzSZA_3bTeGjWkPrt",
     "hotspotId": "dcCjOzSZA_3bTeGjWkPrt",
     "store": "Spar",
-    "storeLogo": "http://localhost:5000/store_logos/spar_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/spar_logo.png",
+    "productKey": "Primula|1|1|Spar"
   },
   {
     "title": "Norsk Fjellbrød",
@@ -434,7 +456,8 @@
     "offerId": "QvfzKaRUfynUbfZdDkUHG",
     "hotspotId": "QvfzKaRUfynUbfZdDkUHG",
     "store": "Spar",
-    "storeLogo": "http://localhost:5000/store_logos/spar_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/spar_logo.png",
+    "productKey": "Norsk Fjellbrød|750|1|Spar"
   },
   {
     "title": "Norsk Bondebrød",
@@ -453,7 +476,8 @@
     "offerId": "tENUWWVxrM19yv-FgMRGJ",
     "hotspotId": "tENUWWVxrM19yv-FgMRGJ",
     "store": "Spar",
-    "storeLogo": "http://localhost:5000/store_logos/spar_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/spar_logo.png",
+    "productKey": "Norsk Bondebrød|750|1|Spar"
   },
   {
     "title": "Norsk Fjellbrød",
@@ -472,6 +496,7 @@
     "offerId": "YtKo9ljkvTpV7LdrlwnC3",
     "hotspotId": "YtKo9ljkvTpV7LdrlwnC3",
     "store": "Spar",
-    "storeLogo": "http://localhost:5000/store_logos/spar_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/spar_logo.png",
+    "productKey": "Norsk Fjellbrød|750|1|Spar"
   }
 ]

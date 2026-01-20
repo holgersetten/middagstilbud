@@ -1,100 +1,5 @@
 [
   {
-    "title": "MAT I FARTA",
-    "description": "",
-    "price": 10,
-    "originalPrice": null,
-    "discount": null,
-    "currency": "NOK",
-    "quantity": "150g",
-    "unit": "g",
-    "pieces": 1,
-    "size": 150,
-    "validFrom": "2026-01-18T23:00:00+0000",
-    "validTo": "2026-01-25T22:59:59+0000",
-    "imageUrl": "https://image-transformer-api.tjek.com/?u=s3%3A%2F%2Fsgn-prd-assets%2Fuploads%2FTVDPvB31%2Fp-1.webp&w=600&x1r=0.0577&x2r=0.9963&y1r=0.6128&y2r=0.9652&s=87ce99cc9978dc773320705795909c54",
-    "offerId": "n-PQ6jUAE1XDPEB3TMEBm",
-    "hotspotId": "n-PQ6jUAE1XDPEB3TMEBm",
-    "store": "Coop Prix",
-    "storeLogo": "http://localhost:5000/store_logos/coop_prix_logo.png"
-  },
-  {
-    "title": "NIDAR SMÅSJOKOLADER",
-    "description": "",
-    "price": 50,
-    "originalPrice": null,
-    "discount": null,
-    "currency": "NOK",
-    "quantity": "3 × 37g",
-    "unit": "g",
-    "pieces": 3,
-    "size": 37,
-    "validFrom": "2026-01-18T23:00:00+0000",
-    "validTo": "2026-01-25T22:59:59+0000",
-    "imageUrl": "https://image-transformer-api.tjek.com/?u=s3%3A%2F%2Fsgn-prd-assets%2Fuploads%2FTVDPvB31%2Fp-2.webp&w=600&x1r=0.5325&x2r=0.9804&y1r=0.1543&y2r=0.485&s=96ff571378b427ce10e0bac7cbfbf225",
-    "offerId": "_41L_JDZ1rBNVV6o-s6Nr",
-    "hotspotId": "_41L_JDZ1rBNVV6o-s6Nr",
-    "store": "Coop Prix",
-    "storeLogo": "http://localhost:5000/store_logos/coop_prix_logo.png"
-  },
-  {
-    "title": "GILDE KJØTTPØLSE",
-    "description": "",
-    "price": 30,
-    "originalPrice": null,
-    "discount": null,
-    "currency": "NOK",
-    "quantity": "450g",
-    "unit": "g",
-    "pieces": 1,
-    "size": 450,
-    "validFrom": "2026-01-18T23:00:00+0000",
-    "validTo": "2026-01-25T22:59:59+0000",
-    "imageUrl": "https://image-transformer-api.tjek.com/?u=s3%3A%2F%2Fsgn-prd-assets%2Fuploads%2FTVDPvB31%2Fp-2.webp&w=600&x1r=0.0309&x2r=0.5369&y1r=0.1685&y2r=0.4748&s=b1e139b76f9bb7f05125eafd9104bf6c",
-    "offerId": "Wej1TrKkBRK0HKLlFqE-F",
-    "hotspotId": "Wej1TrKkBRK0HKLlFqE-F",
-    "store": "Coop Prix",
-    "storeLogo": "http://localhost:5000/store_logos/coop_prix_logo.png"
-  },
-  {
-    "title": "COOP GRØNNE/RØDE STEINFRIE DRUER",
-    "description": "",
-    "price": 35,
-    "originalPrice": null,
-    "discount": null,
-    "currency": "NOK",
-    "quantity": "500g",
-    "unit": "g",
-    "pieces": 1,
-    "size": 500,
-    "validFrom": "2026-01-18T23:00:00+0000",
-    "validTo": "2026-01-25T22:59:59+0000",
-    "imageUrl": "https://image-transformer-api.tjek.com/?u=s3%3A%2F%2Fsgn-prd-assets%2Fuploads%2FTVDPvB31%2Fp-2.webp&w=600&x1r=0.5868&x2r=0.9715&y1r=0.4728&y2r=0.9779&s=1926857c012a833721dda12fad4db191",
-    "offerId": "YYk5vAT5QbA9pGT10wrvx",
-    "hotspotId": "YYk5vAT5QbA9pGT10wrvx",
-    "store": "Coop Prix",
-    "storeLogo": "http://localhost:5000/store_logos/coop_prix_logo.png"
-  },
-  {
-    "title": "DIPLOM-IS MULTIPK",
-    "description": "",
-    "price": 50,
-    "originalPrice": null,
-    "discount": null,
-    "currency": "NOK",
-    "quantity": "302ml",
-    "unit": "ml",
-    "pieces": 1,
-    "size": 302,
-    "validFrom": "2026-01-18T23:00:00+0000",
-    "validTo": "2026-01-25T22:59:59+0000",
-    "imageUrl": "https://image-transformer-api.tjek.com/?u=s3%3A%2F%2Fsgn-prd-assets%2Fuploads%2FTVDPvB31%2Fp-2.webp&w=600&x1r=0.0157&x2r=0.6208&y1r=0.4742&y2r=0.974&s=aa6874063d200b01222d7595122a2e06",
-    "offerId": "7yFL1VwJPDcPmk3NzXqSv",
-    "hotspotId": "7yFL1VwJPDcPmk3NzXqSv",
-    "store": "Coop Prix",
-    "storeLogo": "http://localhost:5000/store_logos/coop_prix_logo.png"
-  },
-  {
     "title": "COOP POPPET POPCORN",
     "description": "",
     "price": 10,
@@ -111,7 +16,8 @@
     "offerId": "6GZZWwgqxvziwz0jWDxTC",
     "hotspotId": "6GZZWwgqxvziwz0jWDxTC",
     "store": "Coop Prix",
-    "storeLogo": "http://localhost:5000/store_logos/coop_prix_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_prix_logo.png",
+    "productKey": "COOP POPPET POPCORN|100|1|Coop Prix"
   },
   {
     "title": "KIMS CHIPS/OLW CHEEZ DOODLES",
@@ -130,7 +36,8 @@
     "offerId": "7hRsh8aHOdsi1S5M7HuCf",
     "hotspotId": "7hRsh8aHOdsi1S5M7HuCf",
     "store": "Coop Prix",
-    "storeLogo": "http://localhost:5000/store_logos/coop_prix_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_prix_logo.png",
+    "productKey": "KIMS CHIPS/OLW CHEEZ DOODLES|80|1|Coop Prix"
   },
   {
     "title": "MYNTHON/KICK",
@@ -149,7 +56,8 @@
     "offerId": "03WckO88dbvvSAzcR5dKG",
     "hotspotId": "03WckO88dbvvSAzcR5dKG",
     "store": "Coop Prix",
-    "storeLogo": "http://localhost:5000/store_logos/coop_prix_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_prix_logo.png",
+    "productKey": "MYNTHON/KICK|19|1|Coop Prix"
   },
   {
     "title": "COOP OSTELANDGANG",
@@ -168,7 +76,8 @@
     "offerId": "_yxY5BG65OJ4iOnnT_sYq",
     "hotspotId": "_yxY5BG65OJ4iOnnT_sYq",
     "store": "Coop Prix",
-    "storeLogo": "http://localhost:5000/store_logos/coop_prix_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_prix_logo.png",
+    "productKey": "COOP OSTELANDGANG|120|1|Coop Prix"
   },
   {
     "title": "VEPSEBOL",
@@ -187,7 +96,8 @@
     "offerId": "_covwuHEF0wABoNPzTvRo",
     "hotspotId": "_covwuHEF0wABoNPzTvRo",
     "store": "Coop Prix",
-    "storeLogo": "http://localhost:5000/store_logos/coop_prix_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_prix_logo.png",
+    "productKey": "VEPSEBOL|42|1|Coop Prix"
   },
   {
     "title": "COOP BLÅBÆRKNUTE",
@@ -206,7 +116,8 @@
     "offerId": "ZRXcRoUjpMx6WkYG8OpNU",
     "hotspotId": "ZRXcRoUjpMx6WkYG8OpNU",
     "store": "Coop Prix",
-    "storeLogo": "http://localhost:5000/store_logos/coop_prix_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_prix_logo.png",
+    "productKey": "COOP BLÅBÆRKNUTE|100|1|Coop Prix"
   },
   {
     "title": "TINE REVET OST",
@@ -225,7 +136,8 @@
     "offerId": "_PUSISK__qsZK8i3AKT5t",
     "hotspotId": "_PUSISK__qsZK8i3AKT5t",
     "store": "Coop Prix",
-    "storeLogo": "http://localhost:5000/store_logos/coop_prix_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_prix_logo.png",
+    "productKey": "TINE REVET OST|250|1|Coop Prix"
   },
   {
     "title": "COOP FROKOSTEGG 12 PK",
@@ -244,7 +156,8 @@
     "offerId": "mBhoDgigdRoBDBn8-D3ec",
     "hotspotId": "mBhoDgigdRoBDBn8-D3ec",
     "store": "Coop Prix",
-    "storeLogo": "http://localhost:5000/store_logos/coop_prix_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_prix_logo.png",
+    "productKey": "COOP FROKOSTEGG 12 PK|12|1|Coop Prix"
   },
   {
     "title": "COOP SPRUDLE",
@@ -263,7 +176,8 @@
     "offerId": "nPrU8azQwDetxATns-N7O",
     "hotspotId": "nPrU8azQwDetxATns-N7O",
     "store": "Coop Prix",
-    "storeLogo": "http://localhost:5000/store_logos/coop_prix_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_prix_logo.png",
+    "productKey": "COOP SPRUDLE|1.5|1|Coop Prix"
   },
   {
     "title": "POWERADE",
@@ -282,7 +196,8 @@
     "offerId": "-Cu32xkVS2c3BrXoSFVls",
     "hotspotId": "-Cu32xkVS2c3BrXoSFVls",
     "store": "Coop Prix",
-    "storeLogo": "http://localhost:5000/store_logos/coop_prix_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_prix_logo.png",
+    "productKey": "POWERADE|0.5|1|Coop Prix"
   },
   {
     "title": "BILLYS ORIGINAL PAN PIZZA/GORBYS",
@@ -301,7 +216,8 @@
     "offerId": "L6qQBaegClJ_NYUDikgw-",
     "hotspotId": "L6qQBaegClJ_NYUDikgw-",
     "store": "Coop Prix",
-    "storeLogo": "http://localhost:5000/store_logos/coop_prix_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_prix_logo.png",
+    "productKey": "BILLYS ORIGINAL PAN PIZZA/GORBYS|140|1|Coop Prix"
   },
   {
     "title": "COOP SMOOTHIE",
@@ -320,7 +236,8 @@
     "offerId": "uVg0Qo6ntxWfsum_63ONV",
     "hotspotId": "uVg0Qo6ntxWfsum_63ONV",
     "store": "Coop Prix",
-    "storeLogo": "http://localhost:5000/store_logos/coop_prix_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_prix_logo.png",
+    "productKey": "COOP SMOOTHIE|250|1|Coop Prix"
   },
   {
     "title": "PALMOLIVE ROLL-ON",
@@ -339,7 +256,8 @@
     "offerId": "alKPUS5azCDsCeUghtBos",
     "hotspotId": "alKPUS5azCDsCeUghtBos",
     "store": "Coop Prix",
-    "storeLogo": "http://localhost:5000/store_logos/coop_prix_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_prix_logo.png",
+    "productKey": "PALMOLIVE ROLL-ON|50|1|Coop Prix"
   },
   {
     "title": "VESTLANDSLEFSA LEFSEGODT",
@@ -358,7 +276,8 @@
     "offerId": "B8Nx6a4To2J91NxOOFUk6",
     "hotspotId": "B8Nx6a4To2J91NxOOFUk6",
     "store": "Coop Prix",
-    "storeLogo": "http://localhost:5000/store_logos/coop_prix_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_prix_logo.png",
+    "productKey": "VESTLANDSLEFSA LEFSEGODT|230|1|Coop Prix"
   },
   {
     "title": "COOP KJØTTDEIG",
@@ -377,7 +296,8 @@
     "offerId": "KSa2k-0y-m523JE-gGZf3",
     "hotspotId": "KSa2k-0y-m523JE-gGZf3",
     "store": "Coop Prix",
-    "storeLogo": "http://localhost:5000/store_logos/coop_prix_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_prix_logo.png",
+    "productKey": "COOP KJØTTDEIG|400|2|Coop Prix"
   },
   {
     "title": "COOP KJØTTDEIG AV KYLLING",
@@ -396,7 +316,8 @@
     "offerId": "eDUG0q5v3hBSDvGKtgb8m",
     "hotspotId": "eDUG0q5v3hBSDvGKtgb8m",
     "store": "Coop Prix",
-    "storeLogo": "http://localhost:5000/store_logos/coop_prix_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_prix_logo.png",
+    "productKey": "COOP KJØTTDEIG AV KYLLING|400|1|Coop Prix"
   },
   {
     "title": "COOP BROKKOLIBLANDING",
@@ -415,7 +336,8 @@
     "offerId": "cMG9shozHdGqGXyotFnR5",
     "hotspotId": "cMG9shozHdGqGXyotFnR5",
     "store": "Coop Prix",
-    "storeLogo": "http://localhost:5000/store_logos/coop_prix_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_prix_logo.png",
+    "productKey": "COOP BROKKOLIBLANDING|500|1|Coop Prix"
   },
   {
     "title": "TINE REVET ORIGINAL/4 OSTER",
@@ -434,7 +356,8 @@
     "offerId": "dvF1FIKNN-QCXrjJaUsJJ",
     "hotspotId": "dvF1FIKNN-QCXrjJaUsJJ",
     "store": "Coop Prix",
-    "storeLogo": "http://localhost:5000/store_logos/coop_prix_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_prix_logo.png",
+    "productKey": "TINE REVET ORIGINAL/4 OSTER|250|1|Coop Prix"
   },
   {
     "title": "COOP KYLLINGFILET",
@@ -453,7 +376,8 @@
     "offerId": "fw8Cnx4qLFNwiBUjyzQtg",
     "hotspotId": "fw8Cnx4qLFNwiBUjyzQtg",
     "store": "Coop Prix",
-    "storeLogo": "http://localhost:5000/store_logos/coop_prix_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_prix_logo.png",
+    "productKey": "COOP KYLLINGFILET|690|1|Coop Prix"
   },
   {
     "title": "KAVLI TUBEOST",
@@ -472,7 +396,8 @@
     "offerId": "cYuCuz3rpc0q_kVYQrQeV",
     "hotspotId": "cYuCuz3rpc0q_kVYQrQeV",
     "store": "Coop Prix",
-    "storeLogo": "http://localhost:5000/store_logos/coop_prix_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_prix_logo.png",
+    "productKey": "KAVLI TUBEOST|175|1|Coop Prix"
   },
   {
     "title": "COOP KJØTTDEIG AV KYLLING",
@@ -491,7 +416,8 @@
     "offerId": "eC5mV_bXbG8jVcAjoVgKZ",
     "hotspotId": "eC5mV_bXbG8jVcAjoVgKZ",
     "store": "Coop Prix",
-    "storeLogo": "http://localhost:5000/store_logos/coop_prix_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_prix_logo.png",
+    "productKey": "COOP KJØTTDEIG AV KYLLING|400|1|Coop Prix"
   },
   {
     "title": "OLIVERO/SOFT FLORA",
@@ -510,7 +436,8 @@
     "offerId": "2eqz2qeYKb6fo_234jFvy",
     "hotspotId": "2eqz2qeYKb6fo_234jFvy",
     "store": "Coop Prix",
-    "storeLogo": "http://localhost:5000/store_logos/coop_prix_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_prix_logo.png",
+    "productKey": "OLIVERO/SOFT FLORA|400|1|Coop Prix"
   },
   {
     "title": "JORDAN OPPVASKBØRSTE TREND",
@@ -529,7 +456,8 @@
     "offerId": "1vP2VuxHczEBIAHBVQ5h3",
     "hotspotId": "1vP2VuxHczEBIAHBVQ5h3",
     "store": "Coop Prix",
-    "storeLogo": "http://localhost:5000/store_logos/coop_prix_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_prix_logo.png",
+    "productKey": "JORDAN OPPVASKBØRSTE TREND|1|1|Coop Prix"
   },
   {
     "title": "WHISKAS KATTEMAT",
@@ -548,7 +476,8 @@
     "offerId": "XWKVojKV9FwGDUUB9I6J1",
     "hotspotId": "XWKVojKV9FwGDUUB9I6J1",
     "store": "Coop Prix",
-    "storeLogo": "http://localhost:5000/store_logos/coop_prix_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_prix_logo.png",
+    "productKey": "WHISKAS KATTEMAT|1020|1|Coop Prix"
   },
   {
     "title": "STABBURET LØVSTEK",
@@ -567,7 +496,8 @@
     "offerId": "96rMMmZYfLB7Qyo5eQopK",
     "hotspotId": "96rMMmZYfLB7Qyo5eQopK",
     "store": "Coop Prix",
-    "storeLogo": "http://localhost:5000/store_logos/coop_prix_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_prix_logo.png",
+    "productKey": "STABBURET LØVSTEK|240|1|Coop Prix"
   },
   {
     "title": "TINE SKIVET OST",
@@ -586,7 +516,8 @@
     "offerId": "qVHSEzwiGcZhy8svyISn5",
     "hotspotId": "qVHSEzwiGcZhy8svyISn5",
     "store": "Coop Prix",
-    "storeLogo": "http://localhost:5000/store_logos/coop_prix_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_prix_logo.png",
+    "productKey": "TINE SKIVET OST|150|1|Coop Prix"
   },
   {
     "title": "HARIBO",
@@ -605,7 +536,8 @@
     "offerId": "eKDDXHHX_WjyE31xWdlLF",
     "hotspotId": "eKDDXHHX_WjyE31xWdlLF",
     "store": "Coop Prix",
-    "storeLogo": "http://localhost:5000/store_logos/coop_prix_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_prix_logo.png",
+    "productKey": "HARIBO|110|1|Coop Prix"
   },
   {
     "title": "FUN LIGHT",
@@ -624,7 +556,8 @@
     "offerId": "vmwPRrdjqmkDEqvC9e09Z",
     "hotspotId": "vmwPRrdjqmkDEqvC9e09Z",
     "store": "Coop Prix",
-    "storeLogo": "http://localhost:5000/store_logos/coop_prix_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_prix_logo.png",
+    "productKey": "FUN LIGHT|0.8|1|Coop Prix"
   },
   {
     "title": "COOP JUICE, NEKTAR OG ISTE",
@@ -643,7 +576,8 @@
     "offerId": "cNyZwh3QuPICj6VP_nNjF",
     "hotspotId": "cNyZwh3QuPICj6VP_nNjF",
     "store": "Coop Prix",
-    "storeLogo": "http://localhost:5000/store_logos/coop_prix_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_prix_logo.png",
+    "productKey": "COOP JUICE, NEKTAR OG ISTE|1.5|1|Coop Prix"
   },
   {
     "title": "MAARUD POTETSKRUER/ GOLDFISH",
@@ -662,7 +596,8 @@
     "offerId": "gK1_XI7KpVdVWq-oMXEV-",
     "hotspotId": "gK1_XI7KpVdVWq-oMXEV-",
     "store": "Coop Prix",
-    "storeLogo": "http://localhost:5000/store_logos/coop_prix_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_prix_logo.png",
+    "productKey": "MAARUD POTETSKRUER/ GOLDFISH|80|1|Coop Prix"
   },
   {
     "title": "TRONDHJEMS MIDDAGSHERMETIKK",
@@ -681,7 +616,8 @@
     "offerId": "tw60mawLImZcu8xUhNi21",
     "hotspotId": "tw60mawLImZcu8xUhNi21",
     "store": "Coop Prix",
-    "storeLogo": "http://localhost:5000/store_logos/coop_prix_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_prix_logo.png",
+    "productKey": "TRONDHJEMS MIDDAGSHERMETIKK|800|1|Coop Prix"
   },
   {
     "title": "COOP FRØKNEKKEBRØD",
@@ -700,7 +636,8 @@
     "offerId": "XQBfOqM52j9SEY5366Epn",
     "hotspotId": "XQBfOqM52j9SEY5366Epn",
     "store": "Coop Prix",
-    "storeLogo": "http://localhost:5000/store_logos/coop_prix_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_prix_logo.png",
+    "productKey": "COOP FRØKNEKKEBRØD|200|1|Coop Prix"
   },
   {
     "title": "COOP PIZZABOLLE MED TOMATSAUS",
@@ -719,7 +656,8 @@
     "offerId": "KSPavVUk8-VwXFeEnZYTo",
     "hotspotId": "KSPavVUk8-VwXFeEnZYTo",
     "store": "Coop Prix",
-    "storeLogo": "http://localhost:5000/store_logos/coop_prix_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_prix_logo.png",
+    "productKey": "COOP PIZZABOLLE MED TOMATSAUS|100|1|Coop Prix"
   },
   {
     "title": "COOP BROKKOLIBLANDING",
@@ -738,7 +676,8 @@
     "offerId": "Rzw3YLDy5Q5Druk3iU4vg",
     "hotspotId": "Rzw3YLDy5Q5Druk3iU4vg",
     "store": "Coop Prix",
-    "storeLogo": "http://localhost:5000/store_logos/coop_prix_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_prix_logo.png",
+    "productKey": "COOP BROKKOLIBLANDING|500|1|Coop Prix"
   },
   {
     "title": "PHILADELPHIA",
@@ -757,7 +696,8 @@
     "offerId": "A3pCuJEIaQHhCJ7rrhWqc",
     "hotspotId": "A3pCuJEIaQHhCJ7rrhWqc",
     "store": "Coop Prix",
-    "storeLogo": "http://localhost:5000/store_logos/coop_prix_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_prix_logo.png",
+    "productKey": "PHILADELPHIA|200|1|Coop Prix"
   },
   {
     "title": "COOP KJØTTDEIG",
@@ -776,7 +716,8 @@
     "offerId": "Nppfhk46dZZ8f-xDG8osy",
     "hotspotId": "Nppfhk46dZZ8f-xDG8osy",
     "store": "Coop Prix",
-    "storeLogo": "http://localhost:5000/store_logos/coop_prix_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_prix_logo.png",
+    "productKey": "COOP KJØTTDEIG|400|2|Coop Prix"
   },
   {
     "title": "COOP TOALETTPAPIR NICE & SOFT 16 PK",
@@ -795,7 +736,8 @@
     "offerId": "b3oXN1Al-Fb6vuSd-1pmT",
     "hotspotId": "b3oXN1Al-Fb6vuSd-1pmT",
     "store": "Coop Prix",
-    "storeLogo": "http://localhost:5000/store_logos/coop_prix_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_prix_logo.png",
+    "productKey": "COOP TOALETTPAPIR NICE & SOFT 16 PK|1|1|Coop Prix"
   },
   {
     "title": "COOP KYLLINGFILET",
@@ -814,7 +756,8 @@
     "offerId": "ElHuEtUd3gicHMVDKu3_W",
     "hotspotId": "ElHuEtUd3gicHMVDKu3_W",
     "store": "Coop Prix",
-    "storeLogo": "http://localhost:5000/store_logos/coop_prix_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_prix_logo.png",
+    "productKey": "COOP KYLLINGFILET|690|1|Coop Prix"
   },
   {
     "title": "NIDAR SMÅSJOKOLADER",
@@ -833,7 +776,8 @@
     "offerId": "2_j957qSq0P4Reu4jjZwr",
     "hotspotId": "2_j957qSq0P4Reu4jjZwr",
     "store": "Coop Prix",
-    "storeLogo": "http://localhost:5000/store_logos/coop_prix_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_prix_logo.png",
+    "productKey": "NIDAR SMÅSJOKOLADER|37|3|Coop Prix"
   },
   {
     "title": "COOP HJERTEKAKER",
@@ -852,7 +796,8 @@
     "offerId": "uKpzH1yj6xP3EbKgQkLHc",
     "hotspotId": "uKpzH1yj6xP3EbKgQkLHc",
     "store": "Coop Prix",
-    "storeLogo": "http://localhost:5000/store_logos/coop_prix_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_prix_logo.png",
+    "productKey": "COOP HJERTEKAKER|540|1|Coop Prix"
   },
   {
     "title": "MELANGE",
@@ -871,7 +816,8 @@
     "offerId": "jNAzvMxE_9udEIlCpwAGw",
     "hotspotId": "jNAzvMxE_9udEIlCpwAGw",
     "store": "Coop Prix",
-    "storeLogo": "http://localhost:5000/store_logos/coop_prix_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_prix_logo.png",
+    "productKey": "MELANGE|500|1|Coop Prix"
   },
   {
     "title": "FJORDLAND PASTA OST&SKINKESAUS",
@@ -890,7 +836,8 @@
     "offerId": "H80O_rQcb2hORhCUZSxUK",
     "hotspotId": "H80O_rQcb2hORhCUZSxUK",
     "store": "Coop Prix",
-    "storeLogo": "http://localhost:5000/store_logos/coop_prix_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_prix_logo.png",
+    "productKey": "FJORDLAND PASTA OST&SKINKESAUS|350|1|Coop Prix"
   },
   {
     "title": "COOP GRØNNE/RØDE STEINFRIE DRUER",
@@ -909,7 +856,8 @@
     "offerId": "QLOCDubWIMfdCzUKSLZq_",
     "hotspotId": "QLOCDubWIMfdCzUKSLZq_",
     "store": "Coop Prix",
-    "storeLogo": "http://localhost:5000/store_logos/coop_prix_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_prix_logo.png",
+    "productKey": "COOP GRØNNE/RØDE STEINFRIE DRUER|500|1|Coop Prix"
   },
   {
     "title": "PERLETOMATER",
@@ -928,7 +876,8 @@
     "offerId": "mThWhfLoLZbLMBUOU05lO",
     "hotspotId": "mThWhfLoLZbLMBUOU05lO",
     "store": "Coop Prix",
-    "storeLogo": "http://localhost:5000/store_logos/coop_prix_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_prix_logo.png",
+    "productKey": "PERLETOMATER|175|1|Coop Prix"
   },
   {
     "title": "NORSK CRISPISALAT",
@@ -947,7 +896,8 @@
     "offerId": "MHyrvp5I6rqaEmVlsbvCq",
     "hotspotId": "MHyrvp5I6rqaEmVlsbvCq",
     "store": "Coop Prix",
-    "storeLogo": "http://localhost:5000/store_logos/coop_prix_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_prix_logo.png",
+    "productKey": "NORSK CRISPISALAT|150|1|Coop Prix"
   },
   {
     "title": "NORSKE POTETER",
@@ -966,7 +916,8 @@
     "offerId": "zik55M1orqWPcoCul26qC",
     "hotspotId": "zik55M1orqWPcoCul26qC",
     "store": "Coop Prix",
-    "storeLogo": "http://localhost:5000/store_logos/coop_prix_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_prix_logo.png",
+    "productKey": "NORSKE POTETER|1|1|Coop Prix"
   },
   {
     "title": "ROSER 14 STK",
@@ -985,7 +936,128 @@
     "offerId": "3Ig8icYVXnxZJwj7JLx-e",
     "hotspotId": "3Ig8icYVXnxZJwj7JLx-e",
     "store": "Coop Prix",
-    "storeLogo": "http://localhost:5000/store_logos/coop_prix_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_prix_logo.png",
+    "productKey": "ROSER 14 STK|1|1|Coop Prix"
+  },
+  {
+    "title": "Norvegia",
+    "description": "",
+    "price": 109,
+    "originalPrice": null,
+    "discount": null,
+    "currency": "NOK",
+    "quantity": "1kg",
+    "unit": "kg",
+    "pieces": 1,
+    "size": 1,
+    "validFrom": "2026-01-04T23:00:00+0000",
+    "validTo": "2026-01-25T22:59:59+0000",
+    "imageUrl": "https://image-transformer-api.tjek.com/?u=s3%3A%2F%2Fsgn-prd-assets%2Fuploads%2FZlB4mRHV%2Fp-17.webp&w=600&x1r=0.0173&x2r=0.9891&y1r=0.1842&y2r=0.8847&s=3a9f5542775c207bf1cd60adb6edc14d",
+    "offerId": "qYMu8lVVPLrvp-ucgscG3",
+    "hotspotId": "qYMu8lVVPLrvp-ucgscG3",
+    "store": "Coop Prix",
+    "storeLogo": "http://localhost:5000/store_logos/coop_prix_logo.png",
+    "productKey": "Norvegia|1|1|Coop Prix"
+  },
+  {
+    "title": "MAT I FARTA",
+    "description": "",
+    "price": 10,
+    "originalPrice": null,
+    "discount": null,
+    "currency": "NOK",
+    "quantity": "150g",
+    "unit": "g",
+    "pieces": 1,
+    "size": 150,
+    "validFrom": "2026-01-18T23:00:00+0000",
+    "validTo": "2026-01-25T22:59:59+0000",
+    "imageUrl": "https://image-transformer-api.tjek.com/?u=s3%3A%2F%2Fsgn-prd-assets%2Fuploads%2FTVDPvB31%2Fp-1.webp&w=600&x1r=0.0773&x2r=0.9839&y1r=0.6079&y2r=0.9765&s=89a18e5586b6da4393d6c31fa4fe35e5",
+    "offerId": "uK9t-7EOShdyF1iDHHAMv",
+    "hotspotId": "uK9t-7EOShdyF1iDHHAMv",
+    "store": "Coop Prix",
+    "storeLogo": "http://localhost:5000/store_logos/coop_prix_logo.png",
+    "productKey": "MAT I FARTA|150|1|Coop Prix"
+  },
+  {
+    "title": "NIDAR SMÅSJOKOLADER",
+    "description": "",
+    "price": 50,
+    "originalPrice": null,
+    "discount": null,
+    "currency": "NOK",
+    "quantity": "3 × 37g",
+    "unit": "g",
+    "pieces": 3,
+    "size": 37,
+    "validFrom": "2026-01-18T23:00:00+0000",
+    "validTo": "2026-01-25T22:59:59+0000",
+    "imageUrl": "https://image-transformer-api.tjek.com/?u=s3%3A%2F%2Fsgn-prd-assets%2Fuploads%2FTVDPvB31%2Fp-2.webp&w=600&x1r=0.5325&x2r=0.9804&y1r=0.1543&y2r=0.485&s=96ff571378b427ce10e0bac7cbfbf225",
+    "offerId": "VNokZ12qIIBUvQkWaHxyV",
+    "hotspotId": "VNokZ12qIIBUvQkWaHxyV",
+    "store": "Coop Prix",
+    "storeLogo": "http://localhost:5000/store_logos/coop_prix_logo.png",
+    "productKey": "NIDAR SMÅSJOKOLADER|37|3|Coop Prix"
+  },
+  {
+    "title": "GILDE KJØTTPØLSE",
+    "description": "",
+    "price": 30,
+    "originalPrice": null,
+    "discount": null,
+    "currency": "NOK",
+    "quantity": "450g",
+    "unit": "g",
+    "pieces": 1,
+    "size": 450,
+    "validFrom": "2026-01-18T23:00:00+0000",
+    "validTo": "2026-01-25T22:59:59+0000",
+    "imageUrl": "https://image-transformer-api.tjek.com/?u=s3%3A%2F%2Fsgn-prd-assets%2Fuploads%2FTVDPvB31%2Fp-2.webp&w=600&x1r=0.0309&x2r=0.5369&y1r=0.1685&y2r=0.4748&s=b1e139b76f9bb7f05125eafd9104bf6c",
+    "offerId": "8Z45c1_5BzT4kDnrWwRjz",
+    "hotspotId": "8Z45c1_5BzT4kDnrWwRjz",
+    "store": "Coop Prix",
+    "storeLogo": "http://localhost:5000/store_logos/coop_prix_logo.png",
+    "productKey": "GILDE KJØTTPØLSE|450|1|Coop Prix"
+  },
+  {
+    "title": "COOP GRØNNE/RØDE STEINFRIE DRUER",
+    "description": "",
+    "price": 35,
+    "originalPrice": null,
+    "discount": null,
+    "currency": "NOK",
+    "quantity": "500g",
+    "unit": "g",
+    "pieces": 1,
+    "size": 500,
+    "validFrom": "2026-01-18T23:00:00+0000",
+    "validTo": "2026-01-25T22:59:59+0000",
+    "imageUrl": "https://image-transformer-api.tjek.com/?u=s3%3A%2F%2Fsgn-prd-assets%2Fuploads%2FTVDPvB31%2Fp-2.webp&w=600&x1r=0.5868&x2r=0.9715&y1r=0.4728&y2r=0.9779&s=1926857c012a833721dda12fad4db191",
+    "offerId": "qqZOOqA65PKV8CDQdTqrn",
+    "hotspotId": "qqZOOqA65PKV8CDQdTqrn",
+    "store": "Coop Prix",
+    "storeLogo": "http://localhost:5000/store_logos/coop_prix_logo.png",
+    "productKey": "COOP GRØNNE/RØDE STEINFRIE DRUER|500|1|Coop Prix"
+  },
+  {
+    "title": "DIPLOM-IS MULTIPK",
+    "description": "",
+    "price": 50,
+    "originalPrice": null,
+    "discount": null,
+    "currency": "NOK",
+    "quantity": "302ml",
+    "unit": "ml",
+    "pieces": 1,
+    "size": 302,
+    "validFrom": "2026-01-18T23:00:00+0000",
+    "validTo": "2026-01-25T22:59:59+0000",
+    "imageUrl": "https://image-transformer-api.tjek.com/?u=s3%3A%2F%2Fsgn-prd-assets%2Fuploads%2FTVDPvB31%2Fp-2.webp&w=600&x1r=0.0157&x2r=0.6208&y1r=0.4742&y2r=0.974&s=aa6874063d200b01222d7595122a2e06",
+    "offerId": "F9g1CNRGg31MVjH5OTUpz",
+    "hotspotId": "F9g1CNRGg31MVjH5OTUpz",
+    "store": "Coop Prix",
+    "storeLogo": "http://localhost:5000/store_logos/coop_prix_logo.png",
+    "productKey": "DIPLOM-IS MULTIPK|302|1|Coop Prix"
   },
   {
     "title": "FINDUS KYSTENS FISKEGRATENG",
@@ -1000,11 +1072,12 @@
     "size": 390,
     "validFrom": "2026-01-18T23:00:00+0000",
     "validTo": "2026-01-25T22:59:59+0000",
-    "imageUrl": "https://image-transformer-api.tjek.com/?u=s3%3A%2F%2Fsgn-prd-assets%2Fuploads%2FTVDPvB31%2Fp-4.webp&w=600&x1r=0.0523&x2r=1&y1r=0.0809&y2r=0.4017&s=ed5d4b54af42dfe00ad81c6b1f0271e4",
-    "offerId": "AhLap9x0a0TLunKwr-_7R",
-    "hotspotId": "AhLap9x0a0TLunKwr-_7R",
+    "imageUrl": "https://image-transformer-api.tjek.com/?u=s3%3A%2F%2Fsgn-prd-assets%2Fuploads%2FTVDPvB31%2Fp-4.webp&w=600&x1r=0.0448&x2r=0.9738&y1r=0.0835&y2r=0.4053&s=9fd24b7d89937cf465fb3331375db141",
+    "offerId": "Xj6R41-177hb4xvTIr0iF",
+    "hotspotId": "Xj6R41-177hb4xvTIr0iF",
     "store": "Coop Prix",
-    "storeLogo": "http://localhost:5000/store_logos/coop_prix_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_prix_logo.png",
+    "productKey": "FINDUS KYSTENS FISKEGRATENG|390|2|Coop Prix"
   },
   {
     "title": "COOP HJERTEKAKER",
@@ -1019,11 +1092,12 @@
     "size": 540,
     "validFrom": "2026-01-18T23:00:00+0000",
     "validTo": "2026-01-25T22:59:59+0000",
-    "imageUrl": "https://image-transformer-api.tjek.com/?u=s3%3A%2F%2Fsgn-prd-assets%2Fuploads%2FTVDPvB31%2Fp-4.webp&w=600&x1r=0.5196&x2r=0.9848&y1r=0.3849&y2r=0.6815&s=be133e06ff0e76a5647718e81d62e1a4",
-    "offerId": "YOShlnHLnO8oLG5KQBkq4",
-    "hotspotId": "YOShlnHLnO8oLG5KQBkq4",
+    "imageUrl": "https://image-transformer-api.tjek.com/?u=s3%3A%2F%2Fsgn-prd-assets%2Fuploads%2FTVDPvB31%2Fp-4.webp&w=600&x1r=0.5029&x2r=0.9995&y1r=0.3819&y2r=0.684&s=fbcef6ae1b315496a25ea82f5132520e",
+    "offerId": "hQcmc9mqou3MiVAy2r2i3",
+    "hotspotId": "hQcmc9mqou3MiVAy2r2i3",
     "store": "Coop Prix",
-    "storeLogo": "http://localhost:5000/store_logos/coop_prix_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_prix_logo.png",
+    "productKey": "COOP HJERTEKAKER|540|1|Coop Prix"
   },
   {
     "title": "STABBURET LØVSTEK",
@@ -1038,11 +1112,12 @@
     "size": 240,
     "validFrom": "2026-01-18T23:00:00+0000",
     "validTo": "2026-01-25T22:59:59+0000",
-    "imageUrl": "https://image-transformer-api.tjek.com/?u=s3%3A%2F%2Fsgn-prd-assets%2Fuploads%2FTVDPvB31%2Fp-4.webp&w=600&x1r=0.0424&x2r=0.527&y1r=0.4187&y2r=0.6858&s=db1d5d54aedbfc6b58035f92ee55d71c",
-    "offerId": "AXxEUxnAY_Q5lh7V4RBpc",
-    "hotspotId": "AXxEUxnAY_Q5lh7V4RBpc",
+    "imageUrl": "https://image-transformer-api.tjek.com/?u=s3%3A%2F%2Fsgn-prd-assets%2Fuploads%2FTVDPvB31%2Fp-4.webp&w=600&x1r=0.0336&x2r=0.5206&y1r=0.404&y2r=0.6791&s=53a6e60ec2b7b4348e737cdcb8f27361",
+    "offerId": "ty65kr6eE2wVIeNDMoRZw",
+    "hotspotId": "ty65kr6eE2wVIeNDMoRZw",
     "store": "Coop Prix",
-    "storeLogo": "http://localhost:5000/store_logos/coop_prix_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_prix_logo.png",
+    "productKey": "STABBURET LØVSTEK|240|1|Coop Prix"
   },
   {
     "title": "FJORDLAND PASTA OST&SKINKESAUS",
@@ -1057,30 +1132,12 @@
     "size": 350,
     "validFrom": "2026-01-18T23:00:00+0000",
     "validTo": "2026-01-25T22:59:59+0000",
-    "imageUrl": "https://image-transformer-api.tjek.com/?u=s3%3A%2F%2Fsgn-prd-assets%2Fuploads%2FTVDPvB31%2Fp-4.webp&w=600&x1r=0.6989&x2r=0.9953&y1r=0.6602&y2r=0.9782&s=51ab51deccc53f2f57c455e86d0236a5",
-    "offerId": "eIfAXbHmJTrYJizdjRsAT",
-    "hotspotId": "eIfAXbHmJTrYJizdjRsAT",
+    "imageUrl": "https://image-transformer-api.tjek.com/?u=s3%3A%2F%2Fsgn-prd-assets%2Fuploads%2FTVDPvB31%2Fp-4.webp&w=600&x1r=0.7032&x2r=1&y1r=0.6539&y2r=0.98&s=b10084e58d4bc84a206f78cda65f7c32",
+    "offerId": "V2aRwnkXzyCERObCyYSMc",
+    "hotspotId": "V2aRwnkXzyCERObCyYSMc",
     "store": "Coop Prix",
-    "storeLogo": "http://localhost:5000/store_logos/coop_prix_logo.png"
-  },
-  {
-    "title": "BILLYS ORIGINAL PAN PIZZA/GORBYS",
-    "description": "",
-    "price": 15,
-    "originalPrice": null,
-    "discount": null,
-    "currency": "NOK",
-    "quantity": "140g",
-    "unit": "g",
-    "pieces": 1,
-    "size": 140,
-    "validFrom": "2026-01-18T23:00:00+0000",
-    "validTo": "2026-01-25T22:59:59+0000",
-    "imageUrl": "https://image-transformer-api.tjek.com/?u=s3%3A%2F%2Fsgn-prd-assets%2Fuploads%2FTVDPvB31%2Fp-4.webp&w=600&x1r=0.3692&x2r=0.7217&y1r=0.6765&y2r=0.9789&s=7bd422056d4edec2861dbb1559f7a102",
-    "offerId": "dMpo_cZxs5Os6Jb6jyfLa",
-    "hotspotId": "dMpo_cZxs5Os6Jb6jyfLa",
-    "store": "Coop Prix",
-    "storeLogo": "http://localhost:5000/store_logos/coop_prix_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_prix_logo.png",
+    "productKey": "FJORDLAND PASTA OST&SKINKESAUS|350|1|Coop Prix"
   },
   {
     "title": "TRONDHJEMS",
@@ -1095,11 +1152,132 @@
     "size": 800,
     "validFrom": "2026-01-18T23:00:00+0000",
     "validTo": "2026-01-25T22:59:59+0000",
-    "imageUrl": "https://image-transformer-api.tjek.com/?u=s3%3A%2F%2Fsgn-prd-assets%2Fuploads%2FTVDPvB31%2Fp-4.webp&w=600&x1r=0.0175&x2r=0.3849&y1r=0.6878&y2r=0.9775&s=c66246c6775bfffbf25283c7eb5e3ccd",
-    "offerId": "pBFAcV_QaWmkztNjnvREM",
-    "hotspotId": "pBFAcV_QaWmkztNjnvREM",
+    "imageUrl": "https://image-transformer-api.tjek.com/?u=s3%3A%2F%2Fsgn-prd-assets%2Fuploads%2FTVDPvB31%2Fp-4.webp&w=600&x1r=0.0096&x2r=0.3828&y1r=0.6779&y2r=0.9812&s=563997b85e4a628ab916f41bcd015074",
+    "offerId": "5v4xGcWemaKDuH0bt-aZH",
+    "hotspotId": "5v4xGcWemaKDuH0bt-aZH",
     "store": "Coop Prix",
-    "storeLogo": "http://localhost:5000/store_logos/coop_prix_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_prix_logo.png",
+    "productKey": "TRONDHJEMS|800|1|Coop Prix"
+  },
+  {
+    "title": "BILLYS ORIGINAL PAN PIZZA/GORBYS",
+    "description": "",
+    "price": 15,
+    "originalPrice": null,
+    "discount": null,
+    "currency": "NOK",
+    "quantity": "140g",
+    "unit": "g",
+    "pieces": 1,
+    "size": 140,
+    "validFrom": "2026-01-18T23:00:00+0000",
+    "validTo": "2026-01-25T22:59:59+0000",
+    "imageUrl": "https://image-transformer-api.tjek.com/?u=s3%3A%2F%2Fsgn-prd-assets%2Fuploads%2FTVDPvB31%2Fp-4.webp&w=600&x1r=0.3636&x2r=0.732&y1r=0.6711&y2r=0.9726&s=797b6f19d01eb237759a5b50069fb787",
+    "offerId": "ztmESbkeqYnFwf3j462W4",
+    "hotspotId": "ztmESbkeqYnFwf3j462W4",
+    "store": "Coop Prix",
+    "storeLogo": "http://localhost:5000/store_logos/coop_prix_logo.png",
+    "productKey": "BILLYS ORIGINAL PAN PIZZA/GORBYS|140|1|Coop Prix"
+  },
+  {
+    "title": "BATTERY/GATORADE",
+    "description": "",
+    "price": 40,
+    "originalPrice": null,
+    "discount": null,
+    "currency": "NOK",
+    "quantity": "2 × 0.5l",
+    "unit": "l",
+    "pieces": 2,
+    "size": 0.5,
+    "validFrom": "2026-01-18T23:00:00+0000",
+    "validTo": "2026-01-25T22:59:59+0000",
+    "imageUrl": "https://image-transformer-api.tjek.com/?u=s3%3A%2F%2Fsgn-prd-assets%2Fuploads%2FNCdd-V5h%2Fp-14.webp&w=600&x1r=0.0657&x2r=0.9514&y1r=0.0111&y2r=0.436&s=38b643117f84b2a298a37a2b54220db1",
+    "offerId": "vSVmuboJOo3fsySu8khaU",
+    "hotspotId": "vSVmuboJOo3fsySu8khaU",
+    "store": "Coop Prix",
+    "storeLogo": "http://localhost:5000/store_logos/coop_prix_logo.png",
+    "productKey": "BATTERY/GATORADE|0.5|2|Coop Prix"
+  },
+  {
+    "title": "FREIA KVIKK LUNSJ 3 PK",
+    "description": "",
+    "price": 100,
+    "originalPrice": null,
+    "discount": null,
+    "currency": "NOK",
+    "quantity": "2 × 141g",
+    "unit": "g",
+    "pieces": 2,
+    "size": 141,
+    "validFrom": "2026-01-18T23:00:00+0000",
+    "validTo": "2026-02-01T22:59:59+0000",
+    "imageUrl": "https://image-transformer-api.tjek.com/?u=s3%3A%2F%2Fsgn-prd-assets%2Fuploads%2FNCdd-V5h%2Fp-14.webp&w=600&x1r=0.0176&x2r=0.5029&y1r=0.4384&y2r=0.7123&s=8c79c29dc70364c432acc13314c5d65b",
+    "offerId": "scBVwdeX75EOYzskUhE1t",
+    "hotspotId": "scBVwdeX75EOYzskUhE1t",
+    "store": "Coop Prix",
+    "storeLogo": "http://localhost:5000/store_logos/coop_prix_logo.png",
+    "productKey": "FREIA KVIKK LUNSJ 3 PK|141|2|Coop Prix"
+  },
+  {
+    "title": "COOP HAKKEDE TOMATER",
+    "description": "",
+    "price": 25,
+    "originalPrice": null,
+    "discount": null,
+    "currency": "NOK",
+    "quantity": "2 × 390g",
+    "unit": "g",
+    "pieces": 2,
+    "size": 390,
+    "validFrom": "2026-01-18T23:00:00+0000",
+    "validTo": "2026-02-01T22:59:59+0000",
+    "imageUrl": "https://image-transformer-api.tjek.com/?u=s3%3A%2F%2Fsgn-prd-assets%2Fuploads%2FNCdd-V5h%2Fp-14.webp&w=600&x1r=0.4885&x2r=0.9594&y1r=0.4274&y2r=0.7074&s=f645586794c41d292aea6a4ce133303b",
+    "offerId": "lYgc28xk31IDhcaIE7j2W",
+    "hotspotId": "lYgc28xk31IDhcaIE7j2W",
+    "store": "Coop Prix",
+    "storeLogo": "http://localhost:5000/store_logos/coop_prix_logo.png",
+    "productKey": "COOP HAKKEDE TOMATER|390|2|Coop Prix"
+  },
+  {
+    "title": "TINE COTTAGE CHEESE",
+    "description": "",
+    "price": 70,
+    "originalPrice": null,
+    "discount": null,
+    "currency": "NOK",
+    "quantity": "2 × 400g",
+    "unit": "g",
+    "pieces": 2,
+    "size": 400,
+    "validFrom": "2026-01-18T23:00:00+0000",
+    "validTo": "2026-02-01T22:59:59+0000",
+    "imageUrl": "https://image-transformer-api.tjek.com/?u=s3%3A%2F%2Fsgn-prd-assets%2Fuploads%2FNCdd-V5h%2Fp-14.webp&w=600&x1r=0.0272&x2r=0.5398&y1r=0.7098&y2r=0.9898&s=d4a4ec5266e245635c8109fd692d5a62",
+    "offerId": "jQbIi3BAvXBitTbhQ9N47",
+    "hotspotId": "jQbIi3BAvXBitTbhQ9N47",
+    "store": "Coop Prix",
+    "storeLogo": "http://localhost:5000/store_logos/coop_prix_logo.png",
+    "productKey": "TINE COTTAGE CHEESE|400|2|Coop Prix"
+  },
+  {
+    "title": "LITAGO",
+    "description": "",
+    "price": 40,
+    "originalPrice": null,
+    "discount": null,
+    "currency": "NOK",
+    "quantity": "2 × 0.5l",
+    "unit": "l",
+    "pieces": 2,
+    "size": 0.5,
+    "validFrom": "2026-01-18T23:00:00+0000",
+    "validTo": "2026-02-01T22:59:59+0000",
+    "imageUrl": "https://image-transformer-api.tjek.com/?u=s3%3A%2F%2Fsgn-prd-assets%2Fuploads%2FNCdd-V5h%2Fp-14.webp&w=600&x1r=0.4917&x2r=0.9659&y1r=0.7061&y2r=0.9874&s=11fa46b7a97b53d048f07f1a635fcf69",
+    "offerId": "Kj4oB7ue-59rKlYQ6djiC",
+    "hotspotId": "Kj4oB7ue-59rKlYQ6djiC",
+    "store": "Coop Prix",
+    "storeLogo": "http://localhost:5000/store_logos/coop_prix_logo.png",
+    "productKey": "LITAGO|0.5|2|Coop Prix"
   },
   {
     "title": "KIMS SNACKS",
@@ -1115,29 +1293,11 @@
     "validFrom": "2026-01-18T23:00:00+0000",
     "validTo": "2026-02-01T22:59:59+0000",
     "imageUrl": "https://image-transformer-api.tjek.com/?u=s3%3A%2F%2Fsgn-prd-assets%2Fuploads%2FTVDPvB31%2Fp-12.webp&w=600&x1r=0.0129&x2r=0.5113&y1r=0.0062&y2r=0.3827&s=4b0cf71b8f509743abdaf314e0237d18",
-    "offerId": "sjvobXsrzrTqH7tLMoKV2",
-    "hotspotId": "sjvobXsrzrTqH7tLMoKV2",
+    "offerId": "J_rdIkHoCDqLKSQ6BRGLk",
+    "hotspotId": "J_rdIkHoCDqLKSQ6BRGLk",
     "store": "Coop Prix",
-    "storeLogo": "http://localhost:5000/store_logos/coop_prix_logo.png"
-  },
-  {
-    "title": "BATTERY/GATORADE",
-    "description": "",
-    "price": 40,
-    "originalPrice": null,
-    "discount": null,
-    "currency": "NOK",
-    "quantity": "2 × 0.5l",
-    "unit": "l",
-    "pieces": 2,
-    "size": 0.5,
-    "validFrom": "2026-01-18T23:00:00+0000",
-    "validTo": "2026-02-01T22:59:59+0000",
-    "imageUrl": "https://image-transformer-api.tjek.com/?u=s3%3A%2F%2Fsgn-prd-assets%2Fuploads%2FTVDPvB31%2Fp-14.webp&w=600&x1r=0.0688&x2r=0.9647&y1r=0.0193&y2r=0.4295&s=3ba4096ebdf42107d00fff237eb46a25",
-    "offerId": "NV3H9BQy4nrp8F5N2awgS",
-    "hotspotId": "NV3H9BQy4nrp8F5N2awgS",
-    "store": "Coop Prix",
-    "storeLogo": "http://localhost:5000/store_logos/coop_prix_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_prix_logo.png",
+    "productKey": "KIMS SNACKS|90|2|Coop Prix"
   },
   {
     "title": "MILLS TUBER",
@@ -1153,48 +1313,11 @@
     "validFrom": "2026-01-18T23:00:00+0000",
     "validTo": "2026-02-01T22:59:59+0000",
     "imageUrl": "https://image-transformer-api.tjek.com/?u=s3%3A%2F%2Fsgn-prd-assets%2Fuploads%2FTVDPvB31%2Fp-12.webp&w=600&x1r=0.5082&x2r=0.9794&y1r=0.0225&y2r=0.3877&s=0cb15d2003c28b9c875f86cde0b27531",
-    "offerId": "kQQg-NITPLDQngsXy0abc",
-    "hotspotId": "kQQg-NITPLDQngsXy0abc",
+    "offerId": "s5S1UpHf1e377d9qB3qK6",
+    "hotspotId": "s5S1UpHf1e377d9qB3qK6",
     "store": "Coop Prix",
-    "storeLogo": "http://localhost:5000/store_logos/coop_prix_logo.png"
-  },
-  {
-    "title": "COOP HAKKEDE TOMATER",
-    "description": "",
-    "price": 25,
-    "originalPrice": null,
-    "discount": null,
-    "currency": "NOK",
-    "quantity": "2 × 390g",
-    "unit": "g",
-    "pieces": 2,
-    "size": 390,
-    "validFrom": "2026-01-18T23:00:00+0000",
-    "validTo": "2026-02-01T22:59:59+0000",
-    "imageUrl": "https://image-transformer-api.tjek.com/?u=s3%3A%2F%2Fsgn-prd-assets%2Fuploads%2FTVDPvB31%2Fp-14.webp&w=600&x1r=0.4785&x2r=0.9683&y1r=0.4237&y2r=0.7099&s=b57cd7d9e0bfeb0806674df411d41fa1",
-    "offerId": "z6m-4JYmniJWT-_ivPlNe",
-    "hotspotId": "z6m-4JYmniJWT-_ivPlNe",
-    "store": "Coop Prix",
-    "storeLogo": "http://localhost:5000/store_logos/coop_prix_logo.png"
-  },
-  {
-    "title": "FREIA KVIKK LUNSJ 3 PK",
-    "description": "",
-    "price": 100,
-    "originalPrice": null,
-    "discount": null,
-    "currency": "NOK",
-    "quantity": "2 × 141g",
-    "unit": "g",
-    "pieces": 2,
-    "size": 141,
-    "validFrom": "2026-01-18T23:00:00+0000",
-    "validTo": "2026-02-01T22:59:59+0000",
-    "imageUrl": "https://image-transformer-api.tjek.com/?u=s3%3A%2F%2Fsgn-prd-assets%2Fuploads%2FTVDPvB31%2Fp-14.webp&w=600&x1r=0.0276&x2r=0.4973&y1r=0.4396&y2r=0.7162&s=bc667fa7a4dcdacc003e7e687cd597fc",
-    "offerId": "_igiO2D70IlfRoeEkPWIi",
-    "hotspotId": "_igiO2D70IlfRoeEkPWIi",
-    "store": "Coop Prix",
-    "storeLogo": "http://localhost:5000/store_logos/coop_prix_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_prix_logo.png",
+    "productKey": "MILLS TUBER|70|2|Coop Prix"
   },
   {
     "title": "CLOETTA POPS ORIGINAL",
@@ -1209,49 +1332,12 @@
     "size": 210,
     "validFrom": "2026-01-18T23:00:00+0000",
     "validTo": "2026-02-01T22:59:59+0000",
-    "imageUrl": "https://image-transformer-api.tjek.com/?u=s3%3A%2F%2Fsgn-prd-assets%2Fuploads%2FTVDPvB31%2Fp-12.webp&w=600&x1r=0.4353&x2r=0.9689&y1r=0.3788&y2r=0.6903&s=7a615976a8d1c82cf40bc650132e6dd8",
-    "offerId": "zlZ6Py9H3WFsEs2oLVrrD",
-    "hotspotId": "zlZ6Py9H3WFsEs2oLVrrD",
+    "imageUrl": "https://image-transformer-api.tjek.com/?u=s3%3A%2F%2Fsgn-prd-assets%2Fuploads%2FTVDPvB31%2Fp-12.webp&w=600&x1r=0.4193&x2r=0.9689&y1r=0.3788&y2r=0.6903&s=b3add35084b701166faa9423ebb2f900",
+    "offerId": "-_Ra3PbpUpVatbSjY_Le6",
+    "hotspotId": "-_Ra3PbpUpVatbSjY_Le6",
     "store": "Coop Prix",
-    "storeLogo": "http://localhost:5000/store_logos/coop_prix_logo.png"
-  },
-  {
-    "title": "LITAGO",
-    "description": "",
-    "price": 40,
-    "originalPrice": null,
-    "discount": null,
-    "currency": "NOK",
-    "quantity": "2 × 1pcs",
-    "unit": "pcs",
-    "pieces": 2,
-    "size": 1,
-    "validFrom": "2026-01-18T23:00:00+0000",
-    "validTo": "2026-02-01T22:59:59+0000",
-    "imageUrl": "https://image-transformer-api.tjek.com/?u=s3%3A%2F%2Fsgn-prd-assets%2Fuploads%2FTVDPvB31%2Fp-14.webp&w=600&x1r=0.5026&x2r=0.975&y1r=0.7038&y2r=0.9789&s=b3d1018c5ae1fb6f9829d9fef6791aac",
-    "offerId": "AJnFPg-JXFbfU_Un4GywJ",
-    "hotspotId": "AJnFPg-JXFbfU_Un4GywJ",
-    "store": "Coop Prix",
-    "storeLogo": "http://localhost:5000/store_logos/coop_prix_logo.png"
-  },
-  {
-    "title": "TINE COTTAGE CHEESE",
-    "description": "",
-    "price": 70,
-    "originalPrice": null,
-    "discount": null,
-    "currency": "NOK",
-    "quantity": "2 × 1pcs",
-    "unit": "pcs",
-    "pieces": 2,
-    "size": 1,
-    "validFrom": "2026-01-18T23:00:00+0000",
-    "validTo": "2026-02-01T22:59:59+0000",
-    "imageUrl": "https://image-transformer-api.tjek.com/?u=s3%3A%2F%2Fsgn-prd-assets%2Fuploads%2FTVDPvB31%2Fp-14.webp&w=600&x1r=0.0399&x2r=0.5102&y1r=0.7095&y2r=0.9534&s=4d90e5bd76d0977d7571746e58ab60f0",
-    "offerId": "CzaiEypVinqytdN2SeIPq",
-    "hotspotId": "CzaiEypVinqytdN2SeIPq",
-    "store": "Coop Prix",
-    "storeLogo": "http://localhost:5000/store_logos/coop_prix_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_prix_logo.png",
+    "productKey": "CLOETTA POPS ORIGINAL|210|2|Coop Prix"
   },
   {
     "title": "FRIGGS MAISKAKER CHIA & HAVSALT",
@@ -1267,10 +1353,11 @@
     "validFrom": "2026-01-18T23:00:00+0000",
     "validTo": "2026-01-25T22:59:59+0000",
     "imageUrl": "https://image-transformer-api.tjek.com/?u=s3%3A%2F%2Fsgn-prd-assets%2Fuploads%2FTVDPvB31%2Fp-12.webp&w=600&x1r=0.0629&x2r=0.5048&y1r=0.3827&y2r=0.6869&s=e60bcddb800951a3f8fe9e61f5a85949",
-    "offerId": "U8-WdxgywNuw-Dw2cWrE0",
-    "hotspotId": "U8-WdxgywNuw-Dw2cWrE0",
+    "offerId": "jS5M636YBtcL50SLCZ2Xn",
+    "hotspotId": "jS5M636YBtcL50SLCZ2Xn",
     "store": "Coop Prix",
-    "storeLogo": "http://localhost:5000/store_logos/coop_prix_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_prix_logo.png",
+    "productKey": "FRIGGS MAISKAKER CHIA & HAVSALT|130|2|Coop Prix"
   },
   {
     "title": "SUNSILK",
@@ -1286,10 +1373,11 @@
     "validFrom": "2026-01-18T23:00:00+0000",
     "validTo": "2026-01-25T22:59:59+0000",
     "imageUrl": "https://image-transformer-api.tjek.com/?u=s3%3A%2F%2Fsgn-prd-assets%2Fuploads%2FTVDPvB31%2Fp-12.webp&w=600&x1r=0.0864&x2r=0.4874&y1r=0.6908&y2r=0.9719&s=12262eda044e64ec046f99bf3dc93b0c",
-    "offerId": "0J6zm9Hq95CnuHbO1E9-p",
-    "hotspotId": "0J6zm9Hq95CnuHbO1E9-p",
+    "offerId": "uQOjahYzZPpDXDJCHCHaM",
+    "hotspotId": "uQOjahYzZPpDXDJCHCHaM",
     "store": "Coop Prix",
-    "storeLogo": "http://localhost:5000/store_logos/coop_prix_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_prix_logo.png",
+    "productKey": "SUNSILK|250|2|Coop Prix"
   },
   {
     "title": "FINDUS KYSTENS FISKEGRATENG",
@@ -1305,10 +1393,11 @@
     "validFrom": "2026-01-18T23:00:00+0000",
     "validTo": "2026-01-25T22:59:59+0000",
     "imageUrl": "https://image-transformer-api.tjek.com/?u=s3%3A%2F%2Fsgn-prd-assets%2Fuploads%2FTVDPvB31%2Fp-12.webp&w=600&x1r=0.4819&x2r=0.9644&y1r=0.6909&y2r=0.9714&s=55aa5a98cc470709f319bb3a530d81b3",
-    "offerId": "QJH_mcbKo19Md4d_wcvQR",
-    "hotspotId": "QJH_mcbKo19Md4d_wcvQR",
+    "offerId": "LnJbB2Mu7e_KFx9_tGUzN",
+    "hotspotId": "LnJbB2Mu7e_KFx9_tGUzN",
     "store": "Coop Prix",
-    "storeLogo": "http://localhost:5000/store_logos/coop_prix_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_prix_logo.png",
+    "productKey": "FINDUS KYSTENS FISKEGRATENG|390|2|Coop Prix"
   },
   {
     "title": "Nidar smågodt i løsvekt",
@@ -1321,16 +1410,17 @@
     "unit": "g",
     "pieces": 1,
     "size": 100,
-    "validFrom": "2026-01-22T23:00:00+0000",
-    "validTo": "2026-01-23T22:59:59+0000",
-    "imageUrl": "https://image-transformer-api.tjek.com/?u=s3%3A%2F%2Fsgn-prd-assets%2Fuploads%2FTVDPvB31%2Fp-16.webp&w=600&x1r=0.5446&x2r=0.9658&y1r=0.3033&y2r=0.9567&s=8f7a02d34325366f9f4b04abdd7afffd",
-    "offerId": "-02tI0525wBoHGDHIX0sB",
-    "hotspotId": "-02tI0525wBoHGDHIX0sB",
+    "validFrom": "2026-01-01T23:00:00+0000",
+    "validTo": "2026-04-03T21:59:59+0000",
+    "imageUrl": "https://image-transformer-api.tjek.com/?u=s3%3A%2F%2Fsgn-prd-assets%2Fuploads%2FTVDPvB31%2Fp-16.webp&w=600&x1r=0.5329&x2r=0.9789&y1r=0.3011&y2r=0.9434&s=9669caac1774b309e4b2235de11163c5",
+    "offerId": "Kl_cTzY3G-t75EwI9o8HV",
+    "hotspotId": "Kl_cTzY3G-t75EwI9o8HV",
     "store": "Coop Prix",
-    "storeLogo": "http://localhost:5000/store_logos/coop_prix_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_prix_logo.png",
+    "productKey": "Nidar smågodt i løsvekt|100|1|Coop Prix"
   },
   {
-    "title": "Big One classic pizza 570 g pr stk",
+    "title": "Big One classic pizza 570 g pr stk.",
     "description": "",
     "price": 40,
     "originalPrice": null,
@@ -1340,12 +1430,13 @@
     "unit": "g",
     "pieces": 1,
     "size": 570,
-    "validFrom": "2026-01-21T23:00:00+0000",
-    "validTo": "2026-01-22T22:59:59+0000",
-    "imageUrl": "https://image-transformer-api.tjek.com/?u=s3%3A%2F%2Fsgn-prd-assets%2Fuploads%2FTVDPvB31%2Fp-16.webp&w=600&x1r=0.0224&x2r=0.567&y1r=0.3512&y2r=0.9407&s=ebfa298d3588a1de643a35dd17f890e5",
-    "offerId": "QJToxjcP4prDJCszmRRGa",
-    "hotspotId": "QJToxjcP4prDJCszmRRGa",
+    "validFrom": "2026-01-07T23:00:00+0000",
+    "validTo": "2026-01-29T22:59:59+0000",
+    "imageUrl": "https://image-transformer-api.tjek.com/?u=s3%3A%2F%2Fsgn-prd-assets%2Fuploads%2FTVDPvB31%2Fp-16.webp&w=600&x1r=0.0292&x2r=0.5639&y1r=0.346&y2r=0.9382&s=08086e70b41c8210cb0e7c80f642f8d7",
+    "offerId": "9FQZQeJeZofH3Wono-FtI",
+    "hotspotId": "9FQZQeJeZofH3Wono-FtI",
     "store": "Coop Prix",
-    "storeLogo": "http://localhost:5000/store_logos/coop_prix_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_prix_logo.png",
+    "productKey": "Big One classic pizza 570 g pr stk.|570|1|Coop Prix"
   }
 ]

@@ -16,7 +16,8 @@
     "offerId": "HeKj11SrbS7vS2GqXTMZ-",
     "hotspotId": "HeKj11SrbS7vS2GqXTMZ-",
     "store": "Meny",
-    "storeLogo": "http://localhost:5000/store_logos/meny_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/meny_logo.png",
+    "productKey": "Svinenakke|1|1|Meny"
   },
   {
     "title": "Trønderfår/Jubel-/Gullsalami",
@@ -35,7 +36,8 @@
     "offerId": "kFTkV-uX_6_Q4qZg0-l2w",
     "hotspotId": "kFTkV-uX_6_Q4qZg0-l2w",
     "store": "Meny",
-    "storeLogo": "http://localhost:5000/store_logos/meny_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/meny_logo.png",
+    "productKey": "Trønderfår/Jubel-/Gullsalami|150|1|Meny"
   },
   {
     "title": "Nidelven blå",
@@ -54,7 +56,8 @@
     "offerId": "VeH5lY5G1ZBURNF1ewQ5K",
     "hotspotId": "VeH5lY5G1ZBURNF1ewQ5K",
     "store": "Meny",
-    "storeLogo": "http://localhost:5000/store_logos/meny_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/meny_logo.png",
+    "productKey": "Nidelven blå|100|1|Meny"
   },
   {
     "title": "Snøfrisk",
@@ -73,7 +76,8 @@
     "offerId": "jivOll5qgHGh2jHkRpHF7",
     "hotspotId": "jivOll5qgHGh2jHkRpHF7",
     "store": "Meny",
-    "storeLogo": "http://localhost:5000/store_logos/meny_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/meny_logo.png",
+    "productKey": "Snøfrisk|125|1|Meny"
   },
   {
     "title": "Woksaus",
@@ -92,7 +96,8 @@
     "offerId": "WN3KYvWLDuhe7Py_lzUBY",
     "hotspotId": "WN3KYvWLDuhe7Py_lzUBY",
     "store": "Meny",
-    "storeLogo": "http://localhost:5000/store_logos/meny_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/meny_logo.png",
+    "productKey": "Woksaus|120|1|Meny"
   },
   {
     "title": "Vitaminer",
@@ -111,7 +116,8 @@
     "offerId": "P2TvL4l-KPChZBHsThU-e",
     "hotspotId": "P2TvL4l-KPChZBHsThU-e",
     "store": "Meny",
-    "storeLogo": "http://localhost:5000/store_logos/meny_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/meny_logo.png",
+    "productKey": "Vitaminer|1|1|Meny"
   },
   {
     "title": "Sleggeburger",
@@ -130,7 +136,8 @@
     "offerId": "cVBSG_l1CKU3A84N0hlT5",
     "hotspotId": "cVBSG_l1CKU3A84N0hlT5",
     "store": "Meny",
-    "storeLogo": "http://localhost:5000/store_logos/meny_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/meny_logo.png",
+    "productKey": "Sleggeburger|120|1|Meny"
   },
   {
     "title": "Omo flytende",
@@ -149,7 +156,8 @@
     "offerId": "0W-RSs2OREo-2eJLQRRmJ",
     "hotspotId": "0W-RSs2OREo-2eJLQRRmJ",
     "store": "Meny",
-    "storeLogo": "http://localhost:5000/store_logos/meny_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/meny_logo.png",
+    "productKey": "Omo flytende|750|1|Meny"
   },
   {
     "title": "Comfort tøymykner",
@@ -168,7 +176,8 @@
     "offerId": "nE9YhnvYMv7zv7FHbsUTD",
     "hotspotId": "nE9YhnvYMv7zv7FHbsUTD",
     "store": "Meny",
-    "storeLogo": "http://localhost:5000/store_logos/meny_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/meny_logo.png",
+    "productKey": "Comfort tøymykner|750|1|Meny"
   },
   {
     "title": "Håndbundet blomstermiks",
@@ -187,7 +196,8 @@
     "offerId": "lK9p0GLkJqIRao-Bm9otc",
     "hotspotId": "lK9p0GLkJqIRao-Bm9otc",
     "store": "Meny",
-    "storeLogo": "http://localhost:5000/store_logos/meny_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/meny_logo.png",
+    "productKey": "Håndbundet blomstermiks|1|1|Meny"
   },
   {
     "title": "Alpefiol",
@@ -206,7 +216,8 @@
     "offerId": "irnFCHCSmSR2mg0v8IPwv",
     "hotspotId": "irnFCHCSmSR2mg0v8IPwv",
     "store": "Meny",
-    "storeLogo": "http://localhost:5000/store_logos/meny_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/meny_logo.png",
+    "productKey": "Alpefiol|1|1|Meny"
   },
   {
     "title": "FERSK KJØTTDEIG",
@@ -225,7 +236,8 @@
     "offerId": "AzshVo3GwiMHPX35Oj4bq",
     "hotspotId": "AzshVo3GwiMHPX35Oj4bq",
     "store": "Meny",
-    "storeLogo": "http://localhost:5000/store_logos/meny_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/meny_logo.png",
+    "productKey": "FERSK KJØTTDEIG|400|1|Meny"
   },
   {
     "title": "NYSTEKT NORSK GROVBRØD",
@@ -244,7 +256,8 @@
     "offerId": "VujuygNmhPSmrWe5UzGkc",
     "hotspotId": "VujuygNmhPSmrWe5UzGkc",
     "store": "Meny",
-    "storeLogo": "http://localhost:5000/store_logos/meny_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/meny_logo.png",
+    "productKey": "NYSTEKT NORSK GROVBRØD|650|1|Meny"
   },
   {
     "title": "Chili-/peanøtter",
@@ -263,7 +276,8 @@
     "offerId": "lpWXixLLtsZH5ET2FT1Cn",
     "hotspotId": "lpWXixLLtsZH5ET2FT1Cn",
     "store": "Meny",
-    "storeLogo": "http://localhost:5000/store_logos/meny_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/meny_logo.png",
+    "productKey": "Chili-/peanøtter|160|1|Meny"
   },
   {
     "title": "PIZZADEIG ITALIENSK TYPE",
@@ -282,7 +296,8 @@
     "offerId": "id44tmmn0V6Q7QSZuSQuP",
     "hotspotId": "id44tmmn0V6Q7QSZuSQuP",
     "store": "Meny",
-    "storeLogo": "http://localhost:5000/store_logos/meny_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/meny_logo.png",
+    "productKey": "PIZZADEIG ITALIENSK TYPE|230|1|Meny"
   },
   {
     "title": "LAKS HELSIDE",
@@ -301,7 +316,8 @@
     "offerId": "EnE5trC7tZfF2r2y2rpHz",
     "hotspotId": "EnE5trC7tZfF2r2y2rpHz",
     "store": "Meny",
-    "storeLogo": "http://localhost:5000/store_logos/meny_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/meny_logo.png",
+    "productKey": "LAKS HELSIDE|1|1|Meny"
   },
   {
     "title": "TORO SAUSER",
@@ -320,7 +336,8 @@
     "offerId": "YL5RpUToK7wFmFOprQ-03",
     "hotspotId": "YL5RpUToK7wFmFOprQ-03",
     "store": "Meny",
-    "storeLogo": "http://localhost:5000/store_logos/meny_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/meny_logo.png",
+    "productKey": "TORO SAUSER|26|1|Meny"
   },
   {
     "title": "Egg frittgående",
@@ -339,7 +356,8 @@
     "offerId": "UY3l0vKzYrS0HGxzamAqn",
     "hotspotId": "UY3l0vKzYrS0HGxzamAqn",
     "store": "Meny",
-    "storeLogo": "http://localhost:5000/store_logos/meny_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/meny_logo.png",
+    "productKey": "Egg frittgående|15|1|Meny"
   },
   {
     "title": "OMO COLOR/HVITT",
@@ -358,7 +376,8 @@
     "offerId": "j1jDMGLGNbF0xZT3F-hKK",
     "hotspotId": "j1jDMGLGNbF0xZT3F-hKK",
     "store": "Meny",
-    "storeLogo": "http://localhost:5000/store_logos/meny_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/meny_logo.png",
+    "productKey": "OMO COLOR/HVITT|1|2|Meny"
   },
   {
     "title": "TYNNSKÅRET SPEKESKINKE",
@@ -377,7 +396,8 @@
     "offerId": "cfAHfNCCCADke72-gNx63",
     "hotspotId": "cfAHfNCCCADke72-gNx63",
     "store": "Meny",
-    "storeLogo": "http://localhost:5000/store_logos/meny_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/meny_logo.png",
+    "productKey": "TYNNSKÅRET SPEKESKINKE|40|1|Meny"
   },
   {
     "title": "TØRKERULLER",
@@ -396,7 +416,8 @@
     "offerId": "OUCf53DOcp-DanQ7yHF53",
     "hotspotId": "OUCf53DOcp-DanQ7yHF53",
     "store": "Meny",
-    "storeLogo": "http://localhost:5000/store_logos/meny_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/meny_logo.png",
+    "productKey": "TØRKERULLER|1|1|Meny"
   },
   {
     "title": "TOALETTPAPIR",
@@ -415,7 +436,8 @@
     "offerId": "TKAC1vJkEQX2I3v99biXK",
     "hotspotId": "TKAC1vJkEQX2I3v99biXK",
     "store": "Meny",
-    "storeLogo": "http://localhost:5000/store_logos/meny_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/meny_logo.png",
+    "productKey": "TOALETTPAPIR|1|1|Meny"
   },
   {
     "title": "Cevita druer",
@@ -434,7 +456,8 @@
     "offerId": "NIEUbCK6H_cNI6B8gbQ1t",
     "hotspotId": "NIEUbCK6H_cNI6B8gbQ1t",
     "store": "Meny",
-    "storeLogo": "http://localhost:5000/store_logos/meny_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/meny_logo.png",
+    "productKey": "Cevita druer|500|1|Meny"
   },
   {
     "title": "Cevita bringebær",
@@ -453,7 +476,8 @@
     "offerId": "oS4JijHMOx4_ovZnKJGI-",
     "hotspotId": "oS4JijHMOx4_ovZnKJGI-",
     "store": "Meny",
-    "storeLogo": "http://localhost:5000/store_logos/meny_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/meny_logo.png",
+    "productKey": "Cevita bringebær|300|1|Meny"
   },
   {
     "title": "Avokado",
@@ -472,7 +496,8 @@
     "offerId": "BPdbyu_8TnGAUhcbv1qa4",
     "hotspotId": "BPdbyu_8TnGAUhcbv1qa4",
     "store": "Meny",
-    "storeLogo": "http://localhost:5000/store_logos/meny_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/meny_logo.png",
+    "productKey": "Avokado|2|1|Meny"
   },
   {
     "title": "SMÅGODT I LØSVEKT",
@@ -491,6 +516,7 @@
     "offerId": "5sO3iX48A3ZbQKm1crBfl",
     "hotspotId": "5sO3iX48A3ZbQKm1crBfl",
     "store": "Meny",
-    "storeLogo": "http://localhost:5000/store_logos/meny_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/meny_logo.png",
+    "productKey": "SMÅGODT I LØSVEKT|100|1|Meny"
   }
 ]

@@ -16,7 +16,8 @@
     "offerId": "_-0sc1jb0KPumT8_cbHlQ",
     "hotspotId": "_-0sc1jb0KPumT8_cbHlQ",
     "store": "Obs",
-    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png",
+    "productKey": "LAMBI TOALETT-/TØRKEPAPIR|1|1|Obs"
   },
   {
     "title": "COOP KJØTTDEIG",
@@ -35,7 +36,8 @@
     "offerId": "Vx55wL7SRpKiTGLMLdqcu",
     "hotspotId": "Vx55wL7SRpKiTGLMLdqcu",
     "store": "Obs",
-    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png",
+    "productKey": "COOP KJØTTDEIG|400|2|Obs"
   },
   {
     "title": "KIMS POTETCHIPS",
@@ -54,7 +56,8 @@
     "offerId": "wTLatUpgtYWmDyWFU2PC7",
     "hotspotId": "wTLatUpgtYWmDyWFU2PC7",
     "store": "Obs",
-    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png",
+    "productKey": "KIMS POTETCHIPS|180|3|Obs"
   },
   {
     "title": "YTTERØY KYLLINGFILET NATURELL",
@@ -73,7 +76,8 @@
     "offerId": "OFzp3rMoDhiQstYZ0Evrj",
     "hotspotId": "OFzp3rMoDhiQstYZ0Evrj",
     "store": "Obs",
-    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png",
+    "productKey": "YTTERØY KYLLINGFILET NATURELL|4|1|Obs"
   },
   {
     "title": "COOP KJØTTDEIG",
@@ -92,7 +96,8 @@
     "offerId": "0XDo_5O5GZ-UHODRz2fxH",
     "hotspotId": "0XDo_5O5GZ-UHODRz2fxH",
     "store": "Obs",
-    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png",
+    "productKey": "COOP KJØTTDEIG|400|2|Obs"
   },
   {
     "title": "LAMBI TOALETT-/TØRKEPAPIR",
@@ -111,7 +116,8 @@
     "offerId": "WNusEMIPMekm3eXzVXtj6",
     "hotspotId": "WNusEMIPMekm3eXzVXtj6",
     "store": "Obs",
-    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png",
+    "productKey": "LAMBI TOALETT-/TØRKEPAPIR|1|1|Obs"
   },
   {
     "title": "BREAD OF THE WORLD BAGELS",
@@ -130,7 +136,8 @@
     "offerId": "nxLC6txFOfG4HEL2LM2jF",
     "hotspotId": "nxLC6txFOfG4HEL2LM2jF",
     "store": "Obs",
-    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png",
+    "productKey": "BREAD OF THE WORLD BAGELS|340|1|Obs"
   },
   {
     "title": "COOP GROVT BRØD",
@@ -149,7 +156,8 @@
     "offerId": "p97pJVWSQDRXMZPR37uzL",
     "hotspotId": "p97pJVWSQDRXMZPR37uzL",
     "store": "Obs",
-    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png",
+    "productKey": "COOP GROVT BRØD|750|1|Obs"
   },
   {
     "title": "COOP BRØD",
@@ -168,7 +176,8 @@
     "offerId": "H3XxIQ3jkhIC34PABrqsx",
     "hotspotId": "H3XxIQ3jkhIC34PABrqsx",
     "store": "Obs",
-    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png",
+    "productKey": "COOP BRØD|650|2|Obs"
   },
   {
     "title": "GRILSTAD HELPØLSER",
@@ -187,7 +196,8 @@
     "offerId": "AUM3octhvEdXrU6Zem0Ja",
     "hotspotId": "AUM3octhvEdXrU6Zem0Ja",
     "store": "Obs",
-    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png",
+    "productKey": "GRILSTAD HELPØLSER|220|1|Obs"
   },
   {
     "title": "NUGGATI",
@@ -206,7 +216,8 @@
     "offerId": "jxGiW3W5u92iTjgmQT70d",
     "hotspotId": "jxGiW3W5u92iTjgmQT70d",
     "store": "Obs",
-    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png",
+    "productKey": "NUGGATI|250|1|Obs"
   },
   {
     "title": "COOP SKÅRET BRØD",
@@ -225,7 +236,8 @@
     "offerId": "QBBhHg5mem4qiOnRNw_74",
     "hotspotId": "QBBhHg5mem4qiOnRNw_74",
     "store": "Obs",
-    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png",
+    "productKey": "COOP SKÅRET BRØD|650|2|Obs"
   },
   {
     "title": "FINSBRÅTEN BACON",
@@ -244,7 +256,8 @@
     "offerId": "M8wM7J3hN25vCf8LRxEOu",
     "hotspotId": "M8wM7J3hN25vCf8LRxEOu",
     "store": "Obs",
-    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png",
+    "productKey": "FINSBRÅTEN BACON|120|1|Obs"
   },
   {
     "title": "ÄNGLAMARK JORDBÆR",
@@ -263,7 +276,8 @@
     "offerId": "DIgvII4OkxpCKrw6NCFMV",
     "hotspotId": "DIgvII4OkxpCKrw6NCFMV",
     "store": "Obs",
-    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png",
+    "productKey": "ÄNGLAMARK JORDBÆR|225|1|Obs"
   },
   {
     "title": "COOP SMAK* BRØD.",
@@ -282,7 +296,8 @@
     "offerId": "IDR7NMlYbvIUyelvPNePZ",
     "hotspotId": "IDR7NMlYbvIUyelvPNePZ",
     "store": "Obs",
-    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png",
+    "productKey": "COOP SMAK* BRØD.|600|1|Obs"
   },
   {
     "title": "COOP NEKTAR",
@@ -301,7 +316,8 @@
     "offerId": "axDo5nZNAokwaZvmTjiA1",
     "hotspotId": "axDo5nZNAokwaZvmTjiA1",
     "store": "Obs",
-    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png",
+    "productKey": "COOP NEKTAR|1.5|4|Obs"
   },
   {
     "title": "AXA STORE HAVREGRYN",
@@ -320,7 +336,8 @@
     "offerId": "GOsNr6DtVWKRkZ9mqS7ul",
     "hotspotId": "GOsNr6DtVWKRkZ9mqS7ul",
     "store": "Obs",
-    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png",
+    "productKey": "AXA STORE HAVREGRYN|1.1|1|Obs"
   },
   {
     "title": "COOP FRØ- OG KORNKNEKKEBRØD",
@@ -339,7 +356,8 @@
     "offerId": "PH6X1-2Jkj5ubs83vZL7z",
     "hotspotId": "PH6X1-2Jkj5ubs83vZL7z",
     "store": "Obs",
-    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png",
+    "productKey": "COOP FRØ- OG KORNKNEKKEBRØD|320|1|Obs"
   },
   {
     "title": "TINE KULTURMELK",
@@ -358,7 +376,8 @@
     "offerId": "1QU5UaZ9L7V1vj2hZSpxS",
     "hotspotId": "1QU5UaZ9L7V1vj2hZSpxS",
     "store": "Obs",
-    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png",
+    "productKey": "TINE KULTURMELK|1|1|Obs"
   },
   {
     "title": "STARBUCKS",
@@ -377,7 +396,8 @@
     "offerId": "CF-bxkVg9Qnm3QyGER9-l",
     "hotspotId": "CF-bxkVg9Qnm3QyGER9-l",
     "store": "Obs",
-    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png",
+    "productKey": "STARBUCKS|220|1|Obs"
   },
   {
     "title": "SYNNØVE GRANOLA",
@@ -396,7 +416,8 @@
     "offerId": "KSHf9RrjIt2t8Vop-iSbl",
     "hotspotId": "KSHf9RrjIt2t8Vop-iSbl",
     "store": "Obs",
-    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png",
+    "productKey": "SYNNØVE GRANOLA|350|1|Obs"
   },
   {
     "title": "COOP NAKKEKOTELETTER",
@@ -415,7 +436,8 @@
     "offerId": "4kGmnWZKIIN1f2yfFefSh",
     "hotspotId": "4kGmnWZKIIN1f2yfFefSh",
     "store": "Obs",
-    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png",
+    "productKey": "COOP NAKKEKOTELETTER|1|1|Obs"
   },
   {
     "title": "COOP KJØTTDEIG",
@@ -434,7 +456,8 @@
     "offerId": "Bn5FPQfWheK5OVt-U6bIo",
     "hotspotId": "Bn5FPQfWheK5OVt-U6bIo",
     "store": "Obs",
-    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png",
+    "productKey": "COOP KJØTTDEIG|400|2|Obs"
   },
   {
     "title": "LOFOTEN LOFOTBURGER 86 %",
@@ -453,7 +476,8 @@
     "offerId": "7SXCyfekxPc_RFjAki8P2",
     "hotspotId": "7SXCyfekxPc_RFjAki8P2",
     "store": "Obs",
-    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png",
+    "productKey": "LOFOTEN LOFOTBURGER 86 %|500|1|Obs"
   },
   {
     "title": "YTTERØY KYLLINGFILET NATURELL",
@@ -472,7 +496,8 @@
     "offerId": "QG3aUX9BZPsLjfIqWPjvm",
     "hotspotId": "QG3aUX9BZPsLjfIqWPjvm",
     "store": "Obs",
-    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png",
+    "productKey": "YTTERØY KYLLINGFILET NATURELL|1.4|1|Obs"
   },
   {
     "title": "COOP SVINEKNOKE",
@@ -491,7 +516,8 @@
     "offerId": "NXjZX05NArMxN1cDE4PoT",
     "hotspotId": "NXjZX05NArMxN1cDE4PoT",
     "store": "Obs",
-    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png",
+    "productKey": "COOP SVINEKNOKE|1|1|Obs"
   },
   {
     "title": "COOP BANKEKJØTT",
@@ -510,7 +536,8 @@
     "offerId": "PvaKkCeTlF9XmEbmAkqUc",
     "hotspotId": "PvaKkCeTlF9XmEbmAkqUc",
     "store": "Obs",
-    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png",
+    "productKey": "COOP BANKEKJØTT|1|1|Obs"
   },
   {
     "title": "COOP GRYTEKJØTT",
@@ -529,7 +556,8 @@
     "offerId": "Sq5wKJQG9xlWJFFje2w7i",
     "hotspotId": "Sq5wKJQG9xlWJFFje2w7i",
     "store": "Obs",
-    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png",
+    "productKey": "COOP GRYTEKJØTT|1|1|Obs"
   },
   {
     "title": "COOP HØYRYGG",
@@ -548,7 +576,8 @@
     "offerId": "NxI4f8KtueN1xJqDw5-dC",
     "hotspotId": "NxI4f8KtueN1xJqDw5-dC",
     "store": "Obs",
-    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png",
+    "productKey": "COOP HØYRYGG|1|1|Obs"
   },
   {
     "title": "COOP HØYRYGG",
@@ -567,7 +596,8 @@
     "offerId": "uC5PlOUg2j8R8aJ8XbZ6O",
     "hotspotId": "uC5PlOUg2j8R8aJ8XbZ6O",
     "store": "Obs",
-    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png",
+    "productKey": "COOP HØYRYGG|1|1|Obs"
   },
   {
     "title": "COOP NAKKEKOTELETTER",
@@ -586,7 +616,8 @@
     "offerId": "2CaMpUe8Yt5DGh3XHzn1q",
     "hotspotId": "2CaMpUe8Yt5DGh3XHzn1q",
     "store": "Obs",
-    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png",
+    "productKey": "COOP NAKKEKOTELETTER|1|1|Obs"
   },
   {
     "title": "COOP BLOMKÅL- OG BROKKOLITOPPER",
@@ -605,7 +636,8 @@
     "offerId": "nDnYOYVeZAlmYUXbjPUdZ",
     "hotspotId": "nDnYOYVeZAlmYUXbjPUdZ",
     "store": "Obs",
-    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png",
+    "productKey": "COOP BLOMKÅL- OG BROKKOLITOPPER|500|1|Obs"
   },
   {
     "title": "COOP LAKSEFILET NATURELL",
@@ -624,7 +656,8 @@
     "offerId": "C483pbJ-xtecIZlWI5s6y",
     "hotspotId": "C483pbJ-xtecIZlWI5s6y",
     "store": "Obs",
-    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png",
+    "productKey": "COOP LAKSEFILET NATURELL|650|1|Obs"
   },
   {
     "title": "COOP LETTSALTET TORSKEFILET",
@@ -643,7 +676,8 @@
     "offerId": "qiqCXNUYpfHDNxzONskn-",
     "hotspotId": "qiqCXNUYpfHDNxzONskn-",
     "store": "Obs",
-    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png",
+    "productKey": "COOP LETTSALTET TORSKEFILET|400|1|Obs"
   },
   {
     "title": "COOP SEIFILET",
@@ -662,7 +696,8 @@
     "offerId": "X01C50V97VNb45DoSlhyF",
     "hotspotId": "X01C50V97VNb45DoSlhyF",
     "store": "Obs",
-    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png",
+    "productKey": "COOP SEIFILET|400|1|Obs"
   },
   {
     "title": "BILLYS/GORBYS",
@@ -681,7 +716,8 @@
     "offerId": "Qn01XyJZLzTg67GiIvu7U",
     "hotspotId": "Qn01XyJZLzTg67GiIvu7U",
     "store": "Obs",
-    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png",
+    "productKey": "BILLYS/GORBYS|140|4|Obs"
   },
   {
     "title": "APPELSINER",
@@ -700,7 +736,8 @@
     "offerId": "MDF4babm4ap6I0cUQMPvu",
     "hotspotId": "MDF4babm4ap6I0cUQMPvu",
     "store": "Obs",
-    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png",
+    "productKey": "APPELSINER|1|1|Obs"
   },
   {
     "title": "COOP NAKKEKOTELETTER",
@@ -719,7 +756,8 @@
     "offerId": "lZkpJ-V6va6HdwrCOHxnv",
     "hotspotId": "lZkpJ-V6va6HdwrCOHxnv",
     "store": "Obs",
-    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png",
+    "productKey": "COOP NAKKEKOTELETTER|1|1|Obs"
   },
   {
     "title": "COOP KJØTTDEIG",
@@ -738,7 +776,8 @@
     "offerId": "KoAXwg9HHwo3XqCGGhACK",
     "hotspotId": "KoAXwg9HHwo3XqCGGhACK",
     "store": "Obs",
-    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png",
+    "productKey": "COOP KJØTTDEIG|400|2|Obs"
   },
   {
     "title": "LOFOTEN LOFOTBURGER 86 %",
@@ -757,7 +796,8 @@
     "offerId": "D53sMdeTZ6MMoziI8xaMr",
     "hotspotId": "D53sMdeTZ6MMoziI8xaMr",
     "store": "Obs",
-    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png",
+    "productKey": "LOFOTEN LOFOTBURGER 86 %|500|1|Obs"
   },
   {
     "title": "YTTERØY KYLLINGFILET NATURELL",
@@ -776,7 +816,8 @@
     "offerId": "n3oUT9BWE5riOCLtm6WhS",
     "hotspotId": "n3oUT9BWE5riOCLtm6WhS",
     "store": "Obs",
-    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png",
+    "productKey": "YTTERØY KYLLINGFILET NATURELL|1.4|1|Obs"
   },
   {
     "title": "SMAK* CRISPY DUCK KIT",
@@ -795,7 +836,8 @@
     "offerId": "fs3LOi4j69Le-9t3lLiIc",
     "hotspotId": "fs3LOi4j69Le-9t3lLiIc",
     "store": "Obs",
-    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png",
+    "productKey": "SMAK* CRISPY DUCK KIT|510|1|Obs"
   },
   {
     "title": "F.C. VÅRRULLER 8 PK",
@@ -814,7 +856,8 @@
     "offerId": "vGjWINEN7tkQlr16MWtPk",
     "hotspotId": "vGjWINEN7tkQlr16MWtPk",
     "store": "Obs",
-    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png",
+    "productKey": "F.C. VÅRRULLER 8 PK|600|1|Obs"
   },
   {
     "title": "FINDUS WOK",
@@ -833,7 +876,8 @@
     "offerId": "2G-D9bWWkglXY0gMIce30",
     "hotspotId": "2G-D9bWWkglXY0gMIce30",
     "store": "Obs",
-    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png",
+    "productKey": "FINDUS WOK|400|2|Obs"
   },
   {
     "title": "BREAD OF THE WORLD BAO BUNS",
@@ -852,7 +896,8 @@
     "offerId": "QB3dSgMJuXDPu2oLLauae",
     "hotspotId": "QB3dSgMJuXDPu2oLLauae",
     "store": "Obs",
-    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png",
+    "productKey": "BREAD OF THE WORLD BAO BUNS|270|1|Obs"
   },
   {
     "title": "STREET KITCHEN KIT",
@@ -871,7 +916,8 @@
     "offerId": "2y2rX9uzlFXzsPPPJh6mD",
     "hotspotId": "2y2rX9uzlFXzsPPPJh6mD",
     "store": "Obs",
-    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png",
+    "productKey": "STREET KITCHEN KIT|255|1|Obs"
   },
   {
     "title": "COOP SCAMPI HVITLØK & URTER",
@@ -890,7 +936,8 @@
     "offerId": "cZKfEupJYdC49xo8UIXUb",
     "hotspotId": "cZKfEupJYdC49xo8UIXUb",
     "store": "Obs",
-    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png",
+    "productKey": "COOP SCAMPI HVITLØK & URTER|170|1|Obs"
   },
   {
     "title": "TORO BOIL-IN-BAG RIS",
@@ -909,7 +956,8 @@
     "offerId": "hoO0HPiHHbN3KEsYPli3Z",
     "hotspotId": "hoO0HPiHHbN3KEsYPli3Z",
     "store": "Obs",
-    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png",
+    "productKey": "TORO BOIL-IN-BAG RIS|960|1|Obs"
   },
   {
     "title": "COOP SCAMPI NATURELL",
@@ -928,7 +976,8 @@
     "offerId": "zbYKTRVZalQ4n1Ym8LBsS",
     "hotspotId": "zbYKTRVZalQ4n1Ym8LBsS",
     "store": "Obs",
-    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png",
+    "productKey": "COOP SCAMPI NATURELL|270|1|Obs"
   },
   {
     "title": "SMAK* BAO BUNS",
@@ -947,7 +996,8 @@
     "offerId": "X8l0QZX1rbkd-xkSRX_-o",
     "hotspotId": "X8l0QZX1rbkd-xkSRX_-o",
     "store": "Obs",
-    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png",
+    "productKey": "SMAK* BAO BUNS|240|1|Obs"
   },
   {
     "title": "SMAK* WONTON/MONEY BAG",
@@ -966,7 +1016,8 @@
     "offerId": "lm9loes-tshRWkEpKlEEV",
     "hotspotId": "lm9loes-tshRWkEpKlEEV",
     "store": "Obs",
-    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png",
+    "productKey": "SMAK* WONTON/MONEY BAG|185|1|Obs"
   },
   {
     "title": "COOP BULGUR/COUSCOUS",
@@ -985,7 +1036,8 @@
     "offerId": "5jUcozFUUjpt3wF_0SzJt",
     "hotspotId": "5jUcozFUUjpt3wF_0SzJt",
     "store": "Obs",
-    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png",
+    "productKey": "COOP BULGUR/COUSCOUS|500|1|Obs"
   },
   {
     "title": "YTTERØY KYLLINGFILET NATURELL",
@@ -1004,7 +1056,8 @@
     "offerId": "Eigze_g9XL6DLWmWEbzFe",
     "hotspotId": "Eigze_g9XL6DLWmWEbzFe",
     "store": "Obs",
-    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png",
+    "productKey": "YTTERØY KYLLINGFILET NATURELL|1.4|1|Obs"
   },
   {
     "title": "FOOD COURT MOCHI",
@@ -1023,7 +1076,8 @@
     "offerId": "HsHBkbYI6yIkGeTLvVJJ5",
     "hotspotId": "HsHBkbYI6yIkGeTLvVJJ5",
     "store": "Obs",
-    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png",
+    "productKey": "FOOD COURT MOCHI|210|1|Obs"
   },
   {
     "title": "KIMS POTETCHIPS",
@@ -1042,7 +1096,8 @@
     "offerId": "WcyFmw2C19tIt8bvmMSky",
     "hotspotId": "WcyFmw2C19tIt8bvmMSky",
     "store": "Obs",
-    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png",
+    "productKey": "KIMS POTETCHIPS|180|3|Obs"
   },
   {
     "title": "BERTHAS KLENNING",
@@ -1061,7 +1116,8 @@
     "offerId": "3sGW3dM9fvJ65hFMmIrsm",
     "hotspotId": "3sGW3dM9fvJ65hFMmIrsm",
     "store": "Obs",
-    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png",
+    "productKey": "BERTHAS KLENNING|260|1|Obs"
   },
   {
     "title": "RED BULL",
@@ -1080,7 +1136,8 @@
     "offerId": "B8t9jLaOiHOXKY7Oz_wze",
     "hotspotId": "B8t9jLaOiHOXKY7Oz_wze",
     "store": "Obs",
-    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png",
+    "productKey": "RED BULL|250|4|Obs"
   },
   {
     "title": "DIPLOM SNICKERS",
@@ -1099,7 +1156,8 @@
     "offerId": "xHqwvgvDsTC6ujnIZC8-S",
     "hotspotId": "xHqwvgvDsTC6ujnIZC8-S",
     "store": "Obs",
-    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png",
+    "productKey": "DIPLOM SNICKERS|12|1|Obs"
   },
   {
     "title": "AHLGRENS BILER",
@@ -1118,7 +1176,8 @@
     "offerId": "OHj21vz1kxuhTYrnshDzN",
     "hotspotId": "OHj21vz1kxuhTYrnshDzN",
     "store": "Obs",
-    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png",
+    "productKey": "AHLGRENS BILER|160|2|Obs"
   },
   {
     "title": "Roser 14 stk",
@@ -1137,7 +1196,8 @@
     "offerId": "NHhZ5aXz3Cf1f5E41ugcg",
     "hotspotId": "NHhZ5aXz3Cf1f5E41ugcg",
     "store": "Obs",
-    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png",
+    "productKey": "Roser 14 stk|1|1|Obs"
   },
   {
     "title": "FLAMINGO ANTHURIUM",
@@ -1156,7 +1216,8 @@
     "offerId": "Pau2ipqFykf4xWrmu2a-i",
     "hotspotId": "Pau2ipqFykf4xWrmu2a-i",
     "store": "Obs",
-    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png",
+    "productKey": "FLAMINGO ANTHURIUM|1|1|Obs"
   },
   {
     "title": "TULIPANER MIKS 12 PK",
@@ -1175,7 +1236,8 @@
     "offerId": "hrEOSS4CBrUPATIo1etfD",
     "hotspotId": "hrEOSS4CBrUPATIo1etfD",
     "store": "Obs",
-    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png",
+    "productKey": "TULIPANER MIKS 12 PK|1|1|Obs"
   },
   {
     "title": "TRAMONTINA MATOPPBEVARINGSBOKSER SETT",
@@ -1194,7 +1256,8 @@
     "offerId": "4wgq-MozkNhlUWSKWTYKo",
     "hotspotId": "4wgq-MozkNhlUWSKWTYKo",
     "store": "Obs",
-    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png",
+    "productKey": "TRAMONTINA MATOPPBEVARINGSBOKSER SETT|1|1|Obs"
   },
   {
     "title": "WILFA PERFORMANCE CM7T-125 KAFFETRAKTER",
@@ -1213,7 +1276,8 @@
     "offerId": "EXCpvwHOgFZgSNldVpL88",
     "hotspotId": "EXCpvwHOgFZgSNldVpL88",
     "store": "Obs",
-    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png",
+    "productKey": "WILFA PERFORMANCE CM7T-125 KAFFETRAKTER|1|1|Obs"
   },
   {
     "title": "KENWOOD CHEF XL KVL4100W KJØKKENMASKIN",
@@ -1232,7 +1296,8 @@
     "offerId": "z4gBVIZmQhFSwnKxLIAHQ",
     "hotspotId": "z4gBVIZmQhFSwnKxLIAHQ",
     "store": "Obs",
-    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png",
+    "productKey": "KENWOOD CHEF XL KVL4100W KJØKKENMASKIN|1|1|Obs"
   },
   {
     "title": "MJUK SVANE HODEPUTE",
@@ -1251,7 +1316,8 @@
     "offerId": "4AiGSALtkbN1kN-kMiaAG",
     "hotspotId": "4AiGSALtkbN1kN-kMiaAG",
     "store": "Obs",
-    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png",
+    "productKey": "MJUK SVANE HODEPUTE|1|1|Obs"
   },
   {
     "title": "MODA KUBBELYS",
@@ -1270,7 +1336,8 @@
     "offerId": "NP1DlZYe1N9AD1SJnrYQd",
     "hotspotId": "NP1DlZYe1N9AD1SJnrYQd",
     "store": "Obs",
-    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png",
+    "productKey": "MODA KUBBELYS|1|1|Obs"
   },
   {
     "title": "MODA SERVIETTER",
@@ -1289,7 +1356,8 @@
     "offerId": "mJkoHEzMnKU7rMwR42bEi",
     "hotspotId": "mJkoHEzMnKU7rMwR42bEi",
     "store": "Obs",
-    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png",
+    "productKey": "MODA SERVIETTER|1|1|Obs"
   },
   {
     "title": "LEGO BLOMSTER",
@@ -1308,7 +1376,8 @@
     "offerId": "LnzKvotN_tY-w_5lorWk8",
     "hotspotId": "LnzKvotN_tY-w_5lorWk8",
     "store": "Obs",
-    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png",
+    "productKey": "LEGO BLOMSTER|1|1|Obs"
   },
   {
     "title": "MADSHUS ULTRASONIC PRO SKIN FELLSKI VOKSEN 25",
@@ -1327,7 +1396,8 @@
     "offerId": "Gvw9O8iLBYqPTp84Xv9_k",
     "hotspotId": "Gvw9O8iLBYqPTp84Xv9_k",
     "store": "Obs",
-    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png",
+    "productKey": "MADSHUS ULTRASONIC PRO SKIN FELLSKI VOKSEN 25|1|1|Obs"
   },
   {
     "title": "MADSHUS ACTIVE U SKISKO VOKSEN",
@@ -1346,7 +1416,8 @@
     "offerId": "bM2RFiC7qT-dx-AIWrDoO",
     "hotspotId": "bM2RFiC7qT-dx-AIWrDoO",
     "store": "Obs",
-    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png",
+    "productKey": "MADSHUS ACTIVE U SKISKO VOKSEN|1|1|Obs"
   },
   {
     "title": "ELAN ELEMENT 74 ALPINSKI",
@@ -1365,7 +1436,8 @@
     "offerId": "ApYgpjmohmgIyeELYe3fB",
     "hotspotId": "ApYgpjmohmgIyeELYe3fB",
     "store": "Obs",
-    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png",
+    "productKey": "ELAN ELEMENT 74 ALPINSKI|1|1|Obs"
   },
   {
     "title": "K2 BFC 80 OG BFC 75W ALPINSTØVLER 25",
@@ -1384,7 +1456,8 @@
     "offerId": "G4u2k-zQYUnP3lSCElf8I",
     "hotspotId": "G4u2k-zQYUnP3lSCElf8I",
     "store": "Obs",
-    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png",
+    "productKey": "K2 BFC 80 OG BFC 75W ALPINSTØVLER 25|1|1|Obs"
   },
   {
     "title": "DOCK BOOT ALLVÆRSSTØVLER JUNIOR",
@@ -1403,7 +1476,8 @@
     "offerId": "8XM2zfECovQHGUTbrppwo",
     "hotspotId": "8XM2zfECovQHGUTbrppwo",
     "store": "Obs",
-    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png",
+    "productKey": "DOCK BOOT ALLVÆRSSTØVLER JUNIOR|1|1|Obs"
   },
   {
     "title": "SOFTER DAYS JOGGEBUKSER BARN",
@@ -1422,7 +1496,8 @@
     "offerId": "WznueX0lXGIA5WiVrrHOz",
     "hotspotId": "WznueX0lXGIA5WiVrrHOz",
     "store": "Obs",
-    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png",
+    "productKey": "SOFTER DAYS JOGGEBUKSER BARN|1|2|Obs"
   },
   {
     "title": "COLOR KIDS 2-DELT SKISETT BARN",
@@ -1441,7 +1516,8 @@
     "offerId": "SIJJJUHruCj1Xqa7FxCRK",
     "hotspotId": "SIJJJUHruCj1Xqa7FxCRK",
     "store": "Obs",
-    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png",
+    "productKey": "COLOR KIDS 2-DELT SKISETT BARN|1|1|Obs"
   },
   {
     "title": "JANUS 2-DELT ULLSETT DAME OG HERRE",
@@ -1460,7 +1536,8 @@
     "offerId": "YOHEL-T9-_uT3ajhQugSi",
     "hotspotId": "YOHEL-T9-_uT3ajhQugSi",
     "store": "Obs",
-    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png",
+    "productKey": "JANUS 2-DELT ULLSETT DAME OG HERRE|1|1|Obs"
   },
   {
     "title": "DOCK BOOT ALLVÆRSSTØVLER UNISEX",
@@ -1479,7 +1556,8 @@
     "offerId": "tk6VXAIKoSp0FwS-EmQEZ",
     "hotspotId": "tk6VXAIKoSp0FwS-EmQEZ",
     "store": "Obs",
-    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png",
+    "productKey": "DOCK BOOT ALLVÆRSSTØVLER UNISEX|1|1|Obs"
   },
   {
     "title": "APPELSINER",
@@ -1498,7 +1576,8 @@
     "offerId": "mm7knrhrtPCM_BXCNObnm",
     "hotspotId": "mm7knrhrtPCM_BXCNObnm",
     "store": "Obs",
-    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png",
+    "productKey": "APPELSINER|1|1|Obs"
   },
   {
     "title": "SMAK* PICCOLOTOMATER",
@@ -1517,7 +1596,8 @@
     "offerId": "jEh3TOAel5LLxfyL6JWb-",
     "hotspotId": "jEh3TOAel5LLxfyL6JWb-",
     "store": "Obs",
-    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png",
+    "productKey": "SMAK* PICCOLOTOMATER|300|1|Obs"
   },
   {
     "title": "COOP BLÅBÆR",
@@ -1536,7 +1616,8 @@
     "offerId": "9RgStsnwLRa6XGzbV5xSU",
     "hotspotId": "9RgStsnwLRa6XGzbV5xSU",
     "store": "Obs",
-    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png",
+    "productKey": "COOP BLÅBÆR|400|1|Obs"
   },
   {
     "title": "AVOKADO I NETT",
@@ -1555,7 +1636,8 @@
     "offerId": "a6wym1ep0-v_68oN9QFdW",
     "hotspotId": "a6wym1ep0-v_68oN9QFdW",
     "store": "Obs",
-    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png",
+    "productKey": "AVOKADO I NETT|800|1|Obs"
   },
   {
     "title": "COOP GUL LØK 2 STK",
@@ -1574,7 +1656,8 @@
     "offerId": "0slSjVBAaTDI7WOsALeB8",
     "hotspotId": "0slSjVBAaTDI7WOsALeB8",
     "store": "Obs",
-    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png",
+    "productKey": "COOP GUL LØK 2 STK|450|1|Obs"
   },
   {
     "title": "COOP SALATER",
@@ -1593,6 +1676,7 @@
     "offerId": "65BV0fmdpby6fJIG29uIh",
     "hotspotId": "65BV0fmdpby6fJIG29uIh",
     "store": "Obs",
-    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_obs_logo.png",
+    "productKey": "COOP SALATER|125|2|Obs"
   }
 ]

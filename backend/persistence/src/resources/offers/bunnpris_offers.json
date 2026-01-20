@@ -16,7 +16,8 @@
     "offerId": "GdL3KiCrLDudHbTG3AUpk",
     "hotspotId": "GdL3KiCrLDudHbTG3AUpk",
     "store": "Bunnpris",
-    "storeLogo": "http://localhost:5000/store_logos/bunnpris_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/bunnpris_logo.png",
+    "productKey": "BANANER|1|1|Bunnpris"
   },
   {
     "title": "HAVREGRØT FRØ & KARDEMOMME",
@@ -35,7 +36,8 @@
     "offerId": "_BxyPyYj8a4ONfKdmlcBE",
     "hotspotId": "_BxyPyYj8a4ONfKdmlcBE",
     "store": "Bunnpris",
-    "storeLogo": "http://localhost:5000/store_logos/bunnpris_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/bunnpris_logo.png",
+    "productKey": "HAVREGRØT FRØ & KARDEMOMME|65|1|Bunnpris"
   },
   {
     "title": "HAVREGRANOLA JORDBÆR OG BRINGEBÆR",
@@ -54,7 +56,8 @@
     "offerId": "_68liT2ddIHzMc151a25Y",
     "hotspotId": "_68liT2ddIHzMc151a25Y",
     "store": "Bunnpris",
-    "storeLogo": "http://localhost:5000/store_logos/bunnpris_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/bunnpris_logo.png",
+    "productKey": "HAVREGRANOLA JORDBÆR OG BRINGEBÆR|400|1|Bunnpris"
   },
   {
     "title": "UTVALGTE PIANO-VARIANTER",
@@ -73,7 +76,8 @@
     "offerId": "t8tF-hGtsz3icMzrvsWWF",
     "hotspotId": "t8tF-hGtsz3icMzrvsWWF",
     "store": "Bunnpris",
-    "storeLogo": "http://localhost:5000/store_logos/bunnpris_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/bunnpris_logo.png",
+    "productKey": "UTVALGTE PIANO-VARIANTER|0.5|1|Bunnpris"
   },
   {
     "title": "NESQUIK FROKOSTBLANDING",
@@ -92,7 +96,8 @@
     "offerId": "CoupUkf6va3VkiVMO0q7S",
     "hotspotId": "CoupUkf6va3VkiVMO0q7S",
     "store": "Bunnpris",
-    "storeLogo": "http://localhost:5000/store_logos/bunnpris_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/bunnpris_logo.png",
+    "productKey": "NESQUIK FROKOSTBLANDING|375|1|Bunnpris"
   },
   {
     "title": "PRIOR KYLLING NUGGETS",
@@ -111,7 +116,8 @@
     "offerId": "FpRJUPlZrSmaS0WYGsWd-",
     "hotspotId": "FpRJUPlZrSmaS0WYGsWd-",
     "store": "Bunnpris",
-    "storeLogo": "http://localhost:5000/store_logos/bunnpris_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/bunnpris_logo.png",
+    "productKey": "PRIOR KYLLING NUGGETS|290|1|Bunnpris"
   },
   {
     "title": "PRIOR OSTEPANETTER",
@@ -130,7 +136,8 @@
     "offerId": "bchpwlmYN7LPUFKrxjKkQ",
     "hotspotId": "bchpwlmYN7LPUFKrxjKkQ",
     "store": "Bunnpris",
-    "storeLogo": "http://localhost:5000/store_logos/bunnpris_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/bunnpris_logo.png",
+    "productKey": "PRIOR OSTEPANETTER|480|1|Bunnpris"
   },
   {
     "title": "KYLLING-, FISK- OG GRØNNSAKSBULJONG",
@@ -149,7 +156,8 @@
     "offerId": "wQYBuGs8S8dbximS-E1Nh",
     "hotspotId": "wQYBuGs8S8dbximS-E1Nh",
     "store": "Bunnpris",
-    "storeLogo": "http://localhost:5000/store_logos/bunnpris_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/bunnpris_logo.png",
+    "productKey": "KYLLING-, FISK- OG GRØNNSAKSBULJONG|1|1|Bunnpris"
   },
   {
     "title": "KLAR KJØTTBULJONG",
@@ -168,7 +176,8 @@
     "offerId": "TIPvp5GF0tWOr7f5RWj0o",
     "hotspotId": "TIPvp5GF0tWOr7f5RWj0o",
     "store": "Bunnpris",
-    "storeLogo": "http://localhost:5000/store_logos/bunnpris_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/bunnpris_logo.png",
+    "productKey": "KLAR KJØTTBULJONG|150|1|Bunnpris"
   },
   {
     "title": "WIENERPØLSER KYLLING/KALKUN",
@@ -187,7 +196,8 @@
     "offerId": "miS1yrxEyYHAq2mkjnZ3T",
     "hotspotId": "miS1yrxEyYHAq2mkjnZ3T",
     "store": "Bunnpris",
-    "storeLogo": "http://localhost:5000/store_logos/bunnpris_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/bunnpris_logo.png",
+    "productKey": "WIENERPØLSER KYLLING/KALKUN|520|1|Bunnpris"
   },
   {
     "title": "ET UTVALG GILDE OG PRIORPRODUKTER",
@@ -206,7 +216,8 @@
     "offerId": "_knv6qmwk7QQ7ittZtSiz",
     "hotspotId": "_knv6qmwk7QQ7ittZtSiz",
     "store": "Bunnpris",
-    "storeLogo": "http://localhost:5000/store_logos/bunnpris_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/bunnpris_logo.png",
+    "productKey": "ET UTVALG GILDE OG PRIORPRODUKTER|260|1|Bunnpris"
   },
   {
     "title": "KALKUNFILET",
@@ -225,7 +236,8 @@
     "offerId": "fJIUM1RTMXqKjHxakvQKl",
     "hotspotId": "fJIUM1RTMXqKjHxakvQKl",
     "store": "Bunnpris",
-    "storeLogo": "http://localhost:5000/store_logos/bunnpris_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/bunnpris_logo.png",
+    "productKey": "KALKUNFILET|750|1|Bunnpris"
   },
   {
     "title": "PAPRIKA RØD SPISS SØT",
@@ -244,7 +256,8 @@
     "offerId": "dPezlWQvxzJ4M98-U2Lme",
     "hotspotId": "dPezlWQvxzJ4M98-U2Lme",
     "store": "Bunnpris",
-    "storeLogo": "http://localhost:5000/store_logos/bunnpris_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/bunnpris_logo.png",
+    "productKey": "PAPRIKA RØD SPISS SØT|300|1|Bunnpris"
   },
   {
     "title": "ISBERGSALAT",
@@ -263,7 +276,8 @@
     "offerId": "o4trcgKulClikFuvZjdw8",
     "hotspotId": "o4trcgKulClikFuvZjdw8",
     "store": "Bunnpris",
-    "storeLogo": "http://localhost:5000/store_logos/bunnpris_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/bunnpris_logo.png",
+    "productKey": "ISBERGSALAT|1|1|Bunnpris"
   },
   {
     "title": "LAKS PORSJONER M/SKINN",
@@ -282,7 +296,8 @@
     "offerId": "-MVILxPiEbVL0drfMwLEt",
     "hotspotId": "-MVILxPiEbVL0drfMwLEt",
     "store": "Bunnpris",
-    "storeLogo": "http://localhost:5000/store_logos/bunnpris_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/bunnpris_logo.png",
+    "productKey": "LAKS PORSJONER M/SKINN|125|2|Bunnpris"
   },
   {
     "title": "UTVALGTE KAVLI TUBEOST",
@@ -301,7 +316,8 @@
     "offerId": "7WXfAEzBfRt0d8douXyj0",
     "hotspotId": "7WXfAEzBfRt0d8douXyj0",
     "store": "Bunnpris",
-    "storeLogo": "http://localhost:5000/store_logos/bunnpris_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/bunnpris_logo.png",
+    "productKey": "UTVALGTE KAVLI TUBEOST|175|1|Bunnpris"
   },
   {
     "title": "TINE GUDBRANDSDALSOST OG FLØTEMYSOST",
@@ -320,7 +336,8 @@
     "offerId": "edLZTOhetWhwqizasyqVF",
     "hotspotId": "edLZTOhetWhwqizasyqVF",
     "store": "Bunnpris",
-    "storeLogo": "http://localhost:5000/store_logos/bunnpris_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/bunnpris_logo.png",
+    "productKey": "TINE GUDBRANDSDALSOST OG FLØTEMYSOST|1|1|Bunnpris"
   },
   {
     "title": "ELDORADO GRANA PADANO",
@@ -339,7 +356,8 @@
     "offerId": "wJOELr8Xktwgt84WTYUN1",
     "hotspotId": "wJOELr8Xktwgt84WTYUN1",
     "store": "Bunnpris",
-    "storeLogo": "http://localhost:5000/store_logos/bunnpris_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/bunnpris_logo.png",
+    "productKey": "ELDORADO GRANA PADANO|200|1|Bunnpris"
   },
   {
     "title": "BRIE FRANSK",
@@ -358,7 +376,8 @@
     "offerId": "kndSDReK4heoOoclHa5e0",
     "hotspotId": "kndSDReK4heoOoclHa5e0",
     "store": "Bunnpris",
-    "storeLogo": "http://localhost:5000/store_logos/bunnpris_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/bunnpris_logo.png",
+    "productKey": "BRIE FRANSK|180|1|Bunnpris"
   },
   {
     "title": "GILDE SOGNEMORR",
@@ -377,7 +396,8 @@
     "offerId": "1s0pojFxSPga-mssml35B",
     "hotspotId": "1s0pojFxSPga-mssml35B",
     "store": "Bunnpris",
-    "storeLogo": "http://localhost:5000/store_logos/bunnpris_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/bunnpris_logo.png",
+    "productKey": "GILDE SOGNEMORR|130|1|Bunnpris"
   },
   {
     "title": "GILDE SMÅRETTSKINKE",
@@ -396,7 +416,8 @@
     "offerId": "G1WxSLWyV27mwl1_ijxHX",
     "hotspotId": "G1WxSLWyV27mwl1_ijxHX",
     "store": "Bunnpris",
-    "storeLogo": "http://localhost:5000/store_logos/bunnpris_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/bunnpris_logo.png",
+    "productKey": "GILDE SMÅRETTSKINKE|200|1|Bunnpris"
   },
   {
     "title": "Grilstad Spekemat",
@@ -415,7 +436,8 @@
     "offerId": "03OGAlXSzym72nZ1SOgP_",
     "hotspotId": "03OGAlXSzym72nZ1SOgP_",
     "store": "Bunnpris",
-    "storeLogo": "http://localhost:5000/store_logos/bunnpris_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/bunnpris_logo.png",
+    "productKey": "Grilstad Spekemat|100|3|Bunnpris"
   },
   {
     "title": "LETTMELK VANILJE OG SJOKOLADE",
@@ -434,7 +456,8 @@
     "offerId": "KpYRYwRMUJ53DemOHQO0M",
     "hotspotId": "KpYRYwRMUJ53DemOHQO0M",
     "store": "Bunnpris",
-    "storeLogo": "http://localhost:5000/store_logos/bunnpris_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/bunnpris_logo.png",
+    "productKey": "LETTMELK VANILJE OG SJOKOLADE|1|1|Bunnpris"
   },
   {
     "title": "RÅ EPLEJUICE, APPELSINJUICE MED OG UTEN FRUKTKJØTT",
@@ -453,7 +476,8 @@
     "offerId": "7QCM9UesmPfj5SL0uK_5v",
     "hotspotId": "7QCM9UesmPfj5SL0uK_5v",
     "store": "Bunnpris",
-    "storeLogo": "http://localhost:5000/store_logos/bunnpris_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/bunnpris_logo.png",
+    "productKey": "RÅ EPLEJUICE, APPELSINJUICE MED OG UTEN FRUKTKJØTT|1|1|Bunnpris"
   },
   {
     "title": "HAVREDRIKK 15% FETT, BARISTA OG ØKOLOGISK",
@@ -472,7 +496,8 @@
     "offerId": "ELnSn70ATZO4ZUqhgaaZp",
     "hotspotId": "ELnSn70ATZO4ZUqhgaaZp",
     "store": "Bunnpris",
-    "storeLogo": "http://localhost:5000/store_logos/bunnpris_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/bunnpris_logo.png",
+    "productKey": "HAVREDRIKK 15% FETT, BARISTA OG ØKOLOGISK|1|1|Bunnpris"
   },
   {
     "title": "SNÅL JUICE",
@@ -491,10 +516,11 @@
     "offerId": "lSK756_nqD9KTGfM8OTuZ",
     "hotspotId": "lSK756_nqD9KTGfM8OTuZ",
     "store": "Bunnpris",
-    "storeLogo": "http://localhost:5000/store_logos/bunnpris_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/bunnpris_logo.png",
+    "productKey": "SNÅL JUICE|3|1|Bunnpris"
   },
   {
-    "title": "ET STORT UTVALGFUN LIGHT",
+    "title": "ET STORT UTVALG FUN LIGHT",
     "description": "",
     "price": 30,
     "originalPrice": null,
@@ -510,7 +536,8 @@
     "offerId": "FhezK4O_xxA033DP1-x6q",
     "hotspotId": "FhezK4O_xxA033DP1-x6q",
     "store": "Bunnpris",
-    "storeLogo": "http://localhost:5000/store_logos/bunnpris_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/bunnpris_logo.png",
+    "productKey": "ET STORT UTVALG FUN LIGHT|0.8|1|Bunnpris"
   },
   {
     "title": "RED BULL",
@@ -529,7 +556,8 @@
     "offerId": "0utuyfaNtqI_Xj_TDNPyg",
     "hotspotId": "0utuyfaNtqI_Xj_TDNPyg",
     "store": "Bunnpris",
-    "storeLogo": "http://localhost:5000/store_logos/bunnpris_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/bunnpris_logo.png",
+    "productKey": "RED BULL|250|2|Bunnpris"
   },
   {
     "title": "GIFFLAR KANEL",
@@ -548,7 +576,8 @@
     "offerId": "basjhYiQBgYZqEEqyCHoe",
     "hotspotId": "basjhYiQBgYZqEEqyCHoe",
     "store": "Bunnpris",
-    "storeLogo": "http://localhost:5000/store_logos/bunnpris_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/bunnpris_logo.png",
+    "productKey": "GIFFLAR KANEL|300|1|Bunnpris"
   },
   {
     "title": "OREO RULL ORIGINAL OG OREO DOBBEL",
@@ -567,7 +596,8 @@
     "offerId": "27Vizs07SuNohnmepHWzP",
     "hotspotId": "27Vizs07SuNohnmepHWzP",
     "store": "Bunnpris",
-    "storeLogo": "http://localhost:5000/store_logos/bunnpris_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/bunnpris_logo.png",
+    "productKey": "OREO RULL ORIGINAL OG OREO DOBBEL|154|1|Bunnpris"
   },
   {
     "title": "UTVALGTE KJEKS FRA SÆTRE",
@@ -586,7 +616,8 @@
     "offerId": "W9O8PuUmh3gGqJr1E6G23",
     "hotspotId": "W9O8PuUmh3gGqJr1E6G23",
     "store": "Bunnpris",
-    "storeLogo": "http://localhost:5000/store_logos/bunnpris_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/bunnpris_logo.png",
+    "productKey": "UTVALGTE KJEKS FRA SÆTRE|150|1|Bunnpris"
   },
   {
     "title": "MUFFIN DOUBLE CHOCOLATE OG MUFFIN MILK CHOCOLATE",
@@ -605,7 +636,8 @@
     "offerId": "ZNi8eVL8ryZ6OuACELt2j",
     "hotspotId": "ZNi8eVL8ryZ6OuACELt2j",
     "store": "Bunnpris",
-    "storeLogo": "http://localhost:5000/store_logos/bunnpris_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/bunnpris_logo.png",
+    "productKey": "MUFFIN DOUBLE CHOCOLATE OG MUFFIN MILK CHOCOLATE|95|1|Bunnpris"
   },
   {
     "title": "100% GROVBRØD",
@@ -624,7 +656,8 @@
     "offerId": "NJCADLx8otCEw180OEAgi",
     "hotspotId": "NJCADLx8otCEw180OEAgi",
     "store": "Bunnpris",
-    "storeLogo": "http://localhost:5000/store_logos/bunnpris_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/bunnpris_logo.png",
+    "productKey": "100% GROVBRØD|750|1|Bunnpris"
   },
   {
     "title": "MAXIM PROTEINBARER",
@@ -643,7 +676,8 @@
     "offerId": "O3mLh7BmnNGLeTMOZWbSw",
     "hotspotId": "O3mLh7BmnNGLeTMOZWbSw",
     "store": "Bunnpris",
-    "storeLogo": "http://localhost:5000/store_logos/bunnpris_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/bunnpris_logo.png",
+    "productKey": "MAXIM PROTEINBARER|55|1|Bunnpris"
   },
   {
     "title": "KLØVER GROVT BRØD",
@@ -662,7 +696,8 @@
     "offerId": "iOqcozD_MQ35bs-infCCO",
     "hotspotId": "iOqcozD_MQ35bs-infCCO",
     "store": "Bunnpris",
-    "storeLogo": "http://localhost:5000/store_logos/bunnpris_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/bunnpris_logo.png",
+    "productKey": "KLØVER GROVT BRØD|750|1|Bunnpris"
   },
   {
     "title": "RYVITA RUG KNEKKEBRØD",
@@ -681,7 +716,8 @@
     "offerId": "cMCEXKm7N14tnyaLjCSLD",
     "hotspotId": "cMCEXKm7N14tnyaLjCSLD",
     "store": "Bunnpris",
-    "storeLogo": "http://localhost:5000/store_logos/bunnpris_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/bunnpris_logo.png",
+    "productKey": "RYVITA RUG KNEKKEBRØD|400|1|Bunnpris"
   },
   {
     "title": "HAVREBRØD GLUTENFRI",
@@ -700,7 +736,8 @@
     "offerId": "A9Sv1TNmc6qhr7VZEOGkv",
     "hotspotId": "A9Sv1TNmc6qhr7VZEOGkv",
     "store": "Bunnpris",
-    "storeLogo": "http://localhost:5000/store_logos/bunnpris_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/bunnpris_logo.png",
+    "productKey": "HAVREBRØD GLUTENFRI|500|1|Bunnpris"
   },
   {
     "title": "100% GROVBRØD",
@@ -719,7 +756,8 @@
     "offerId": "YVGszV536EZBYx3W50uG-",
     "hotspotId": "YVGszV536EZBYx3W50uG-",
     "store": "Bunnpris",
-    "storeLogo": "http://localhost:5000/store_logos/bunnpris_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/bunnpris_logo.png",
+    "productKey": "100% GROVBRØD|750|1|Bunnpris"
   },
   {
     "title": "UTVALGTE LANO SÅPEPRODUKTER OG LYPSYL",
@@ -738,7 +776,8 @@
     "offerId": "ZaxjTVnknLcNoE4ZL9XOg",
     "hotspotId": "ZaxjTVnknLcNoE4ZL9XOg",
     "store": "Bunnpris",
-    "storeLogo": "http://localhost:5000/store_logos/bunnpris_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/bunnpris_logo.png",
+    "productKey": "UTVALGTE LANO SÅPEPRODUKTER OG LYPSYL|250|1|Bunnpris"
   },
   {
     "title": "UTVALGTE LIBRESSE TRUSEINNLEGG",
@@ -757,7 +796,8 @@
     "offerId": "q0zUrIXymAg4DbNpXlZV_",
     "hotspotId": "q0zUrIXymAg4DbNpXlZV_",
     "store": "Bunnpris",
-    "storeLogo": "http://localhost:5000/store_logos/bunnpris_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/bunnpris_logo.png",
+    "productKey": "UTVALGTE LIBRESSE TRUSEINNLEGG|1|1|Bunnpris"
   },
   {
     "title": "LIBRESSE TRUSEINNLEGG",
@@ -776,7 +816,8 @@
     "offerId": "Y2fjpzV7fTlesr70k_WlF",
     "hotspotId": "Y2fjpzV7fTlesr70k_WlF",
     "store": "Bunnpris",
-    "storeLogo": "http://localhost:5000/store_logos/bunnpris_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/bunnpris_logo.png",
+    "productKey": "LIBRESSE TRUSEINNLEGG|1|1|Bunnpris"
   },
   {
     "title": "TØRKERULL",
@@ -795,7 +836,8 @@
     "offerId": "kNfAa_0FFmFYtksaMf-pl",
     "hotspotId": "kNfAa_0FFmFYtksaMf-pl",
     "store": "Bunnpris",
-    "storeLogo": "http://localhost:5000/store_logos/bunnpris_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/bunnpris_logo.png",
+    "productKey": "TØRKERULL|1|1|Bunnpris"
   },
   {
     "title": "VITAMIN C SITRON",
@@ -814,7 +856,8 @@
     "offerId": "iWMMYG0v1yvAtoXN2-Rzt",
     "hotspotId": "iWMMYG0v1yvAtoXN2-Rzt",
     "store": "Bunnpris",
-    "storeLogo": "http://localhost:5000/store_logos/bunnpris_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/bunnpris_logo.png",
+    "productKey": "VITAMIN C SITRON|1|1|Bunnpris"
   },
   {
     "title": "VITAMIN D JORDBÆR",
@@ -833,7 +876,8 @@
     "offerId": "r3pneM5I94KvLxmiru4Ek",
     "hotspotId": "r3pneM5I94KvLxmiru4Ek",
     "store": "Bunnpris",
-    "storeLogo": "http://localhost:5000/store_logos/bunnpris_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/bunnpris_logo.png",
+    "productKey": "VITAMIN D JORDBÆR|1|1|Bunnpris"
   },
   {
     "title": "MULTIVITAMIN",
@@ -852,7 +896,8 @@
     "offerId": "w88J0StDNvv7WfNOKAnck",
     "hotspotId": "w88J0StDNvv7WfNOKAnck",
     "store": "Bunnpris",
-    "storeLogo": "http://localhost:5000/store_logos/bunnpris_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/bunnpris_logo.png",
+    "productKey": "MULTIVITAMIN|1|1|Bunnpris"
   },
   {
     "title": "KJØTTDEIG STORFE",
@@ -871,7 +916,8 @@
     "offerId": "R3N0MSgIs9a9S69rXvZtM",
     "hotspotId": "R3N0MSgIs9a9S69rXvZtM",
     "store": "Bunnpris",
-    "storeLogo": "http://localhost:5000/store_logos/bunnpris_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/bunnpris_logo.png",
+    "productKey": "KJØTTDEIG STORFE|400|1|Bunnpris"
   },
   {
     "title": "KJØTTDEIG SVIN",
@@ -890,7 +936,8 @@
     "offerId": "HyIq12AwyfELT_qXIlkpt",
     "hotspotId": "HyIq12AwyfELT_qXIlkpt",
     "store": "Bunnpris",
-    "storeLogo": "http://localhost:5000/store_logos/bunnpris_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/bunnpris_logo.png",
+    "productKey": "KJØTTDEIG SVIN|400|1|Bunnpris"
   },
   {
     "title": "KARBONADEDEIG",
@@ -909,7 +956,8 @@
     "offerId": "wlNIMSf6SRrn0EnrFYV9l",
     "hotspotId": "wlNIMSf6SRrn0EnrFYV9l",
     "store": "Bunnpris",
-    "storeLogo": "http://localhost:5000/store_logos/bunnpris_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/bunnpris_logo.png",
+    "productKey": "KARBONADEDEIG|400|1|Bunnpris"
   },
   {
     "title": "PAPRIKA RØD SPISS SØT",
@@ -928,7 +976,8 @@
     "offerId": "oB5N9PpgI7xaDMzJps8G1",
     "hotspotId": "oB5N9PpgI7xaDMzJps8G1",
     "store": "Bunnpris",
-    "storeLogo": "http://localhost:5000/store_logos/bunnpris_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/bunnpris_logo.png",
+    "productKey": "PAPRIKA RØD SPISS SØT|300|1|Bunnpris"
   },
   {
     "title": "RED BULL",
@@ -947,7 +996,8 @@
     "offerId": "TaYua1YlKyFQYcFcnWmys",
     "hotspotId": "TaYua1YlKyFQYcFcnWmys",
     "store": "Bunnpris",
-    "storeLogo": "http://localhost:5000/store_logos/bunnpris_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/bunnpris_logo.png",
+    "productKey": "RED BULL|250|2|Bunnpris"
   },
   {
     "title": "ISBERGSALAT",
@@ -966,7 +1016,8 @@
     "offerId": "ZS9yFH7raYfaiaku4eG7S",
     "hotspotId": "ZS9yFH7raYfaiaku4eG7S",
     "store": "Bunnpris",
-    "storeLogo": "http://localhost:5000/store_logos/bunnpris_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/bunnpris_logo.png",
+    "productKey": "ISBERGSALAT|1|1|Bunnpris"
   },
   {
     "title": "LAKS PORSJONER M/SKINN",
@@ -985,7 +1036,8 @@
     "offerId": "FmK711y6gbODfH1RUX29K",
     "hotspotId": "FmK711y6gbODfH1RUX29K",
     "store": "Bunnpris",
-    "storeLogo": "http://localhost:5000/store_logos/bunnpris_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/bunnpris_logo.png",
+    "productKey": "LAKS PORSJONER M/SKINN|125|2|Bunnpris"
   },
   {
     "title": "Et stort utvalg FUN LIGHT",
@@ -1004,7 +1056,8 @@
     "offerId": "eyw_oXZ8upUUiHoKHyddq",
     "hotspotId": "eyw_oXZ8upUUiHoKHyddq",
     "store": "Bunnpris",
-    "storeLogo": "http://localhost:5000/store_logos/bunnpris_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/bunnpris_logo.png",
+    "productKey": "Et stort utvalg FUN LIGHT|0.8|1|Bunnpris"
   },
   {
     "title": "COCA COLA, FANTA, URGE OG SPRITE",
@@ -1023,7 +1076,8 @@
     "offerId": "1fTg282V9E-opZBL-rPqo",
     "hotspotId": "1fTg282V9E-opZBL-rPqo",
     "store": "Bunnpris",
-    "storeLogo": "http://localhost:5000/store_logos/bunnpris_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/bunnpris_logo.png",
+    "productKey": "COCA COLA, FANTA, URGE OG SPRITE|1.5|1|Bunnpris"
   },
   {
     "title": "VITAMIN C SITRON",
@@ -1042,7 +1096,8 @@
     "offerId": "wNIjOtvU7TeNFyQyog3hv",
     "hotspotId": "wNIjOtvU7TeNFyQyog3hv",
     "store": "Bunnpris",
-    "storeLogo": "http://localhost:5000/store_logos/bunnpris_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/bunnpris_logo.png",
+    "productKey": "VITAMIN C SITRON|1|1|Bunnpris"
   },
   {
     "title": "VITAMIN D JORDBÆR",
@@ -1061,7 +1116,8 @@
     "offerId": "Nqqfcvqo_S5bwl4b4EBEG",
     "hotspotId": "Nqqfcvqo_S5bwl4b4EBEG",
     "store": "Bunnpris",
-    "storeLogo": "http://localhost:5000/store_logos/bunnpris_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/bunnpris_logo.png",
+    "productKey": "VITAMIN D JORDBÆR|1|1|Bunnpris"
   },
   {
     "title": "MULTIVITAMIN",
@@ -1080,7 +1136,8 @@
     "offerId": "JeosfRYls_Uo5Pzy1zkkR",
     "hotspotId": "JeosfRYls_Uo5Pzy1zkkR",
     "store": "Bunnpris",
-    "storeLogo": "http://localhost:5000/store_logos/bunnpris_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/bunnpris_logo.png",
+    "productKey": "MULTIVITAMIN|1|1|Bunnpris"
   },
   {
     "title": "RED BULL REGULAR",
@@ -1099,7 +1156,8 @@
     "offerId": "DKT_dELS82syZdqGQWLoR",
     "hotspotId": "DKT_dELS82syZdqGQWLoR",
     "store": "Bunnpris",
-    "storeLogo": "http://localhost:5000/store_logos/bunnpris_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/bunnpris_logo.png",
+    "productKey": "RED BULL REGULAR|250|4|Bunnpris"
   },
   {
     "title": "URGE, COCA-COLA M OG U/SUKKER OG FANTA U/SUKKER",
@@ -1118,7 +1176,8 @@
     "offerId": "INAfTUAO3-8gI1FOvi2SL",
     "hotspotId": "INAfTUAO3-8gI1FOvi2SL",
     "store": "Bunnpris",
-    "storeLogo": "http://localhost:5000/store_logos/bunnpris_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/bunnpris_logo.png",
+    "productKey": "URGE, COCA-COLA M OG U/SUKKER OG FANTA U/SUKKER|0.33|4|Bunnpris"
   },
   {
     "title": "PEPSI MAX OG SOLO SUPER",
@@ -1137,7 +1196,8 @@
     "offerId": "HHT5Awg7qemSWPFi-qrvJ",
     "hotspotId": "HHT5Awg7qemSWPFi-qrvJ",
     "store": "Bunnpris",
-    "storeLogo": "http://localhost:5000/store_logos/bunnpris_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/bunnpris_logo.png",
+    "productKey": "PEPSI MAX OG SOLO SUPER|0.33|10|Bunnpris"
   },
   {
     "title": "LAMBI TOALETTPAPIR",
@@ -1156,7 +1216,8 @@
     "offerId": "cCEnDf5MgR5trLX6x90Bv",
     "hotspotId": "cCEnDf5MgR5trLX6x90Bv",
     "store": "Bunnpris",
-    "storeLogo": "http://localhost:5000/store_logos/bunnpris_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/bunnpris_logo.png",
+    "productKey": "LAMBI TOALETTPAPIR|1|1|Bunnpris"
   },
   {
     "title": "LATZ MENYBOKSER TIL KATT",
@@ -1175,7 +1236,8 @@
     "offerId": "x7_9BK2c-kHnEsCWyXKWY",
     "hotspotId": "x7_9BK2c-kHnEsCWyXKWY",
     "store": "Bunnpris",
-    "storeLogo": "http://localhost:5000/store_logos/bunnpris_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/bunnpris_logo.png",
+    "productKey": "LATZ MENYBOKSER TIL KATT|960|1|Bunnpris"
   },
   {
     "title": "BANANER",
@@ -1194,7 +1256,8 @@
     "offerId": "L0yHng6NY_Rsz7zbuyEaE",
     "hotspotId": "L0yHng6NY_Rsz7zbuyEaE",
     "store": "Bunnpris",
-    "storeLogo": "http://localhost:5000/store_logos/bunnpris_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/bunnpris_logo.png",
+    "productKey": "BANANER|1|1|Bunnpris"
   },
   {
     "title": "GILDE OSTEPANETTER",
@@ -1213,7 +1276,8 @@
     "offerId": "WSPchp2S5bT3uybk6iNfK",
     "hotspotId": "WSPchp2S5bT3uybk6iNfK",
     "store": "Bunnpris",
-    "storeLogo": "http://localhost:5000/store_logos/bunnpris_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/bunnpris_logo.png",
+    "productKey": "GILDE OSTEPANETTER|400|1|Bunnpris"
   },
   {
     "title": "COCA-COLA U/SUKKER",
@@ -1232,7 +1296,8 @@
     "offerId": "tqB7zTnUjPILRViovWLHe",
     "hotspotId": "tqB7zTnUjPILRViovWLHe",
     "store": "Bunnpris",
-    "storeLogo": "http://localhost:5000/store_logos/bunnpris_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/bunnpris_logo.png",
+    "productKey": "COCA-COLA U/SUKKER|1.5|6|Bunnpris"
   },
   {
     "title": "GÅRDSEGG",
@@ -1251,7 +1316,8 @@
     "offerId": "AAXsyGRDZN2iHkmfC5vmu",
     "hotspotId": "AAXsyGRDZN2iHkmfC5vmu",
     "store": "Bunnpris",
-    "storeLogo": "http://localhost:5000/store_logos/bunnpris_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/bunnpris_logo.png",
+    "productKey": "GÅRDSEGG|18|1|Bunnpris"
   },
   {
     "title": "SMÅGODT",
@@ -1270,7 +1336,8 @@
     "offerId": "Bch-yxVKd0QM-bD_0Uv9G",
     "hotspotId": "Bch-yxVKd0QM-bD_0Uv9G",
     "store": "Bunnpris",
-    "storeLogo": "http://localhost:5000/store_logos/bunnpris_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/bunnpris_logo.png",
+    "productKey": "SMÅGODT|100|1|Bunnpris"
   },
   {
     "title": "AVOKADO SPISEMODEN",
@@ -1289,7 +1356,8 @@
     "offerId": "BHzNHPBrwRAj7zItusd4z",
     "hotspotId": "BHzNHPBrwRAj7zItusd4z",
     "store": "Bunnpris",
-    "storeLogo": "http://localhost:5000/store_logos/bunnpris_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/bunnpris_logo.png",
+    "productKey": "AVOKADO SPISEMODEN|2|1|Bunnpris"
   },
   {
     "title": "SØRLANDSCHIPS HAVSALT, SPANSK PAPRIKA OG CREME FRAICHE",
@@ -1308,7 +1376,8 @@
     "offerId": "tBHrkwBmL54vcEWxFNukf",
     "hotspotId": "tBHrkwBmL54vcEWxFNukf",
     "store": "Bunnpris",
-    "storeLogo": "http://localhost:5000/store_logos/bunnpris_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/bunnpris_logo.png",
+    "productKey": "SØRLANDSCHIPS HAVSALT, SPANSK PAPRIKA OG CREME FRAICHE|190|2|Bunnpris"
   },
   {
     "title": "SUPERMIX, SUPERCHIPS SALT OG PAPRIKA",
@@ -1327,7 +1396,8 @@
     "offerId": "VhMwgvlTkBNIC2oiCLn1i",
     "hotspotId": "VhMwgvlTkBNIC2oiCLn1i",
     "store": "Bunnpris",
-    "storeLogo": "http://localhost:5000/store_logos/bunnpris_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/bunnpris_logo.png",
+    "productKey": "SUPERMIX, SUPERCHIPS SALT OG PAPRIKA|130|1|Bunnpris"
   },
   {
     "title": "GATORADE COOL BLUE, LEMON OG SUGAR FRUIT PUNCH",
@@ -1346,6 +1416,7 @@
     "offerId": "ai4yTzvQp1IgWMJcKbnAX",
     "hotspotId": "ai4yTzvQp1IgWMJcKbnAX",
     "store": "Bunnpris",
-    "storeLogo": "http://localhost:5000/store_logos/bunnpris_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/bunnpris_logo.png",
+    "productKey": "GATORADE COOL BLUE, LEMON OG SUGAR FRUIT PUNCH|0.5|2|Bunnpris"
   }
 ]

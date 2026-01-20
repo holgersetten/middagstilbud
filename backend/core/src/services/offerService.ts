@@ -139,7 +139,7 @@ class OfferService {
                 productKey: `${offer.title}|${offer.size || 0}|${offer.pieces || 1}|${store.name}`
             }));
 
-            const filename = `${store.name.toLowerCase().replace(/\/s+/g, '_')}_offers.json`;
+            const filename = `${store.name.toLowerCase().replace(/\s+/g, '_')}_offers.json`;
             const filePath = path.join(config.offersDir, filename);
             fileService.saveJSON(filePath, enrichedOffers);
 

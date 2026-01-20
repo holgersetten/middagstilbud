@@ -16,7 +16,8 @@
     "offerId": "4zEBHDS9udMKh_Y_vSL-o",
     "hotspotId": "4zEBHDS9udMKh_Y_vSL-o",
     "store": "Rema 1000",
-    "storeLogo": "http://localhost:5000/store_logos/rema_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/rema_logo.png",
+    "productKey": "TOALETTPAPIR 24PK|1|1|Rema 1000"
   },
   {
     "title": "KYLLINGKJØTTBOLLER",
@@ -35,7 +36,8 @@
     "offerId": "hsbAgzfc6R1xvnO80_0jL",
     "hotspotId": "hsbAgzfc6R1xvnO80_0jL",
     "store": "Rema 1000",
-    "storeLogo": "http://localhost:5000/store_logos/rema_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/rema_logo.png",
+    "productKey": "KYLLINGKJØTTBOLLER|600|1|Rema 1000"
   },
   {
     "title": "STRIMLET SVINEKJØTT",
@@ -54,7 +56,8 @@
     "offerId": "SLis9cu4CDAonQthtc_1f",
     "hotspotId": "SLis9cu4CDAonQthtc_1f",
     "store": "Rema 1000",
-    "storeLogo": "http://localhost:5000/store_logos/rema_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/rema_logo.png",
+    "productKey": "STRIMLET SVINEKJØTT|400|1|Rema 1000"
   },
   {
     "title": "KJØTTBOLLER/KARBONADER",
@@ -73,7 +76,8 @@
     "offerId": "I8HamTaAhP4FxV1TT_fMI",
     "hotspotId": "I8HamTaAhP4FxV1TT_fMI",
     "store": "Rema 1000",
-    "storeLogo": "http://localhost:5000/store_logos/rema_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/rema_logo.png",
+    "productKey": "KJØTTBOLLER/KARBONADER|525|1|Rema 1000"
   },
   {
     "title": "FAMILIENS FISKEGRATENG",
@@ -92,7 +96,8 @@
     "offerId": "-SfgfDElYQ3pe0A28TTNh",
     "hotspotId": "-SfgfDElYQ3pe0A28TTNh",
     "store": "Rema 1000",
-    "storeLogo": "http://localhost:5000/store_logos/rema_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/rema_logo.png",
+    "productKey": "FAMILIENS FISKEGRATENG|1000|1|Rema 1000"
   },
   {
     "title": "SCAMPI MARINERT",
@@ -111,7 +116,8 @@
     "offerId": "hPLwcErWD__dmuGNMr0Gq",
     "hotspotId": "hPLwcErWD__dmuGNMr0Gq",
     "store": "Rema 1000",
-    "storeLogo": "http://localhost:5000/store_logos/rema_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/rema_logo.png",
+    "productKey": "SCAMPI MARINERT|170|1|Rema 1000"
   },
   {
     "title": "TYNNSKÅRET SVINEFILET",
@@ -130,7 +136,8 @@
     "offerId": "c1l6nNTT2gDP42QnGZRVb",
     "hotspotId": "c1l6nNTT2gDP42QnGZRVb",
     "store": "Rema 1000",
-    "storeLogo": "http://localhost:5000/store_logos/rema_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/rema_logo.png",
+    "productKey": "TYNNSKÅRET SVINEFILET|384|1|Rema 1000"
   },
   {
     "title": "KJØTTPØLSE",
@@ -149,7 +156,8 @@
     "offerId": "Y2aVbo0em09AZXCNutK97",
     "hotspotId": "Y2aVbo0em09AZXCNutK97",
     "store": "Rema 1000",
-    "storeLogo": "http://localhost:5000/store_logos/rema_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/rema_logo.png",
+    "productKey": "KJØTTPØLSE|600|1|Rema 1000"
   },
   {
     "title": "SVINEKJØTTDEIG 20%",
@@ -168,7 +176,8 @@
     "offerId": "jb1j1ko5TttUkPYk5EA_M",
     "hotspotId": "jb1j1ko5TttUkPYk5EA_M",
     "store": "Rema 1000",
-    "storeLogo": "http://localhost:5000/store_logos/rema_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/rema_logo.png",
+    "productKey": "SVINEKJØTTDEIG 20%|300|1|Rema 1000"
   },
   {
     "title": "NUDLER KOPP",
@@ -187,7 +196,8 @@
     "offerId": "JrlfFMJuMJzIAuVbO-Wef",
     "hotspotId": "JrlfFMJuMJzIAuVbO-Wef",
     "store": "Rema 1000",
-    "storeLogo": "http://localhost:5000/store_logos/rema_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/rema_logo.png",
+    "productKey": "NUDLER KOPP|65|1|Rema 1000"
   },
   {
     "title": "NUDLER POSE",
@@ -206,7 +216,8 @@
     "offerId": "bIsevPljNha48z3hH6Gvt",
     "hotspotId": "bIsevPljNha48z3hH6Gvt",
     "store": "Rema 1000",
-    "storeLogo": "http://localhost:5000/store_logos/rema_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/rema_logo.png",
+    "productKey": "NUDLER POSE|85|1|Rema 1000"
   },
   {
     "title": "LAKSEFILET M/SKINN",
@@ -225,7 +236,8 @@
     "offerId": "KnnqarxdxtX8gDbQouFVo",
     "hotspotId": "KnnqarxdxtX8gDbQouFVo",
     "store": "Rema 1000",
-    "storeLogo": "http://localhost:5000/store_logos/rema_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/rema_logo.png",
+    "productKey": "LAKSEFILET M/SKINN|400|1|Rema 1000"
   },
   {
     "title": "GRØNN PESTO",
@@ -244,7 +256,8 @@
     "offerId": "VrlEDlt_JkeR6VxuK98CQ",
     "hotspotId": "VrlEDlt_JkeR6VxuK98CQ",
     "store": "Rema 1000",
-    "storeLogo": "http://localhost:5000/store_logos/rema_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/rema_logo.png",
+    "productKey": "GRØNN PESTO|190|1|Rema 1000"
   },
   {
     "title": "MATFLØTE 18 %",
@@ -263,7 +276,8 @@
     "offerId": "ikiwDsDSGdHSHFm7Jvqzb",
     "hotspotId": "ikiwDsDSGdHSHFm7Jvqzb",
     "store": "Rema 1000",
-    "storeLogo": "http://localhost:5000/store_logos/rema_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/rema_logo.png",
+    "productKey": "MATFLØTE 18 %|0.3|1|Rema 1000"
   },
   {
     "title": "SPAGETTI",
@@ -282,7 +296,8 @@
     "offerId": "Zzvdc01KXD1uZPLP8ShDl",
     "hotspotId": "Zzvdc01KXD1uZPLP8ShDl",
     "store": "Rema 1000",
-    "storeLogo": "http://localhost:5000/store_logos/rema_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/rema_logo.png",
+    "productKey": "SPAGETTI|500|1|Rema 1000"
   },
   {
     "title": "SPINAT",
@@ -301,7 +316,8 @@
     "offerId": "bpjYITxdUvf23ibmU0ErQ",
     "hotspotId": "bpjYITxdUvf23ibmU0ErQ",
     "store": "Rema 1000",
-    "storeLogo": "http://localhost:5000/store_logos/rema_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/rema_logo.png",
+    "productKey": "SPINAT|200|1|Rema 1000"
   },
   {
     "title": "LAKSEFILET M/SKINN",
@@ -320,7 +336,8 @@
     "offerId": "l3kQwSbKfgbJxTpY5TyhS",
     "hotspotId": "l3kQwSbKfgbJxTpY5TyhS",
     "store": "Rema 1000",
-    "storeLogo": "http://localhost:5000/store_logos/rema_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/rema_logo.png",
+    "productKey": "LAKSEFILET M/SKINN|400|1|Rema 1000"
   },
   {
     "title": "BROKKOLINI",
@@ -339,7 +356,8 @@
     "offerId": "Up-EBXe7kI5qfadenLX2D",
     "hotspotId": "Up-EBXe7kI5qfadenLX2D",
     "store": "Rema 1000",
-    "storeLogo": "http://localhost:5000/store_logos/rema_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/rema_logo.png",
+    "productKey": "BROKKOLINI|200|1|Rema 1000"
   },
   {
     "title": "POTETSTAPPE",
@@ -358,7 +376,8 @@
     "offerId": "JdPql15ua7n7bgRNTvC47",
     "hotspotId": "JdPql15ua7n7bgRNTvC47",
     "store": "Rema 1000",
-    "storeLogo": "http://localhost:5000/store_logos/rema_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/rema_logo.png",
+    "productKey": "POTETSTAPPE|600|1|Rema 1000"
   },
   {
     "title": "GRØNN PESTO",
@@ -377,7 +396,8 @@
     "offerId": "Q20DQ1ca3tsrb93U2-rpr",
     "hotspotId": "Q20DQ1ca3tsrb93U2-rpr",
     "store": "Rema 1000",
-    "storeLogo": "http://localhost:5000/store_logos/rema_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/rema_logo.png",
+    "productKey": "GRØNN PESTO|190|1|Rema 1000"
   },
   {
     "title": "SKIVET KYLLINGFILET",
@@ -396,7 +416,8 @@
     "offerId": "1HqsmIWUq_Sabbm4UjKI_",
     "hotspotId": "1HqsmIWUq_Sabbm4UjKI_",
     "store": "Rema 1000",
-    "storeLogo": "http://localhost:5000/store_logos/rema_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/rema_logo.png",
+    "productKey": "SKIVET KYLLINGFILET|200|1|Rema 1000"
   },
   {
     "title": "CRISPY WINGS/HOT WINGS",
@@ -415,7 +436,8 @@
     "offerId": "-zX22XOWQhj8ztGTGwQLk",
     "hotspotId": "-zX22XOWQhj8ztGTGwQLk",
     "store": "Rema 1000",
-    "storeLogo": "http://localhost:5000/store_logos/rema_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/rema_logo.png",
+    "productKey": "CRISPY WINGS/HOT WINGS|700|1|Rema 1000"
   },
   {
     "title": "RÅ VINGEKLUBBER.",
@@ -434,7 +456,8 @@
     "offerId": "YcuLr7wyUhifGu6U4onoS",
     "hotspotId": "YcuLr7wyUhifGu6U4onoS",
     "store": "Rema 1000",
-    "storeLogo": "http://localhost:5000/store_logos/rema_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/rema_logo.png",
+    "productKey": "RÅ VINGEKLUBBER.|1.3|1|Rema 1000"
   },
   {
     "title": "KYLLINGLÅR M/SMØR OG RUB",
@@ -453,7 +476,8 @@
     "offerId": "yscMCtQjOQJ4ofsa_gDiQ",
     "hotspotId": "yscMCtQjOQJ4ofsa_gDiQ",
     "store": "Rema 1000",
-    "storeLogo": "http://localhost:5000/store_logos/rema_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/rema_logo.png",
+    "productKey": "KYLLINGLÅR M/SMØR OG RUB|260|1|Rema 1000"
   },
   {
     "title": "CRISPY KYLLINGFILET",
@@ -472,7 +496,8 @@
     "offerId": "q27yiSP3ZTV3_YohBGmrP",
     "hotspotId": "q27yiSP3ZTV3_YohBGmrP",
     "store": "Rema 1000",
-    "storeLogo": "http://localhost:5000/store_logos/rema_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/rema_logo.png",
+    "productKey": "CRISPY KYLLINGFILET|350|1|Rema 1000"
   },
   {
     "title": "RÅ VINGEKLUBBER",
@@ -491,7 +516,8 @@
     "offerId": "ZZcn_wGVNK0ZSD3jYc48p",
     "hotspotId": "ZZcn_wGVNK0ZSD3jYc48p",
     "store": "Rema 1000",
-    "storeLogo": "http://localhost:5000/store_logos/rema_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/rema_logo.png",
+    "productKey": "RÅ VINGEKLUBBER|1.3|1|Rema 1000"
   },
   {
     "title": "MANGO MODNET",
@@ -510,7 +536,8 @@
     "offerId": "O4s-90tSe8HTf6P0CRyFy",
     "hotspotId": "O4s-90tSe8HTf6P0CRyFy",
     "store": "Rema 1000",
-    "storeLogo": "http://localhost:5000/store_logos/rema_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/rema_logo.png",
+    "productKey": "MANGO MODNET|1|1|Rema 1000"
   },
   {
     "title": "SMÅPOTET",
@@ -529,7 +556,8 @@
     "offerId": "LB2jNVMsMm08FG1Rp8u5P",
     "hotspotId": "LB2jNVMsMm08FG1Rp8u5P",
     "store": "Rema 1000",
-    "storeLogo": "http://localhost:5000/store_logos/rema_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/rema_logo.png",
+    "productKey": "SMÅPOTET|900|1|Rema 1000"
   },
   {
     "title": "BROKKOLI",
@@ -548,7 +576,8 @@
     "offerId": "q_iJXTmt6D18-5zFgN3Ul",
     "hotspotId": "q_iJXTmt6D18-5zFgN3Ul",
     "store": "Rema 1000",
-    "storeLogo": "http://localhost:5000/store_logos/rema_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/rema_logo.png",
+    "productKey": "BROKKOLI|1|1|Rema 1000"
   },
   {
     "title": "SMOOTHIE",
@@ -567,7 +596,8 @@
     "offerId": "xtbNVpFoPJSZyIrVDQDxY",
     "hotspotId": "xtbNVpFoPJSZyIrVDQDxY",
     "store": "Rema 1000",
-    "storeLogo": "http://localhost:5000/store_logos/rema_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/rema_logo.png",
+    "productKey": "SMOOTHIE|250|1|Rema 1000"
   },
   {
     "title": "ANSVARSROSER 10PK",
@@ -586,7 +616,8 @@
     "offerId": "B_ubuZpfTVeMTkG76nJMJ",
     "hotspotId": "B_ubuZpfTVeMTkG76nJMJ",
     "store": "Rema 1000",
-    "storeLogo": "http://localhost:5000/store_logos/rema_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/rema_logo.png",
+    "productKey": "ANSVARSROSER 10PK|1|1|Rema 1000"
   },
   {
     "title": "TORSKEFILET",
@@ -605,7 +636,8 @@
     "offerId": "9a45ORe_7hChhLaZ9EQ5f",
     "hotspotId": "9a45ORe_7hChhLaZ9EQ5f",
     "store": "Rema 1000",
-    "storeLogo": "http://localhost:5000/store_logos/rema_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/rema_logo.png",
+    "productKey": "TORSKEFILET|400|1|Rema 1000"
   },
   {
     "title": "SEIFILET",
@@ -624,7 +656,8 @@
     "offerId": "XoJxSL1bPer8aGKY3sMPy",
     "hotspotId": "XoJxSL1bPer8aGKY3sMPy",
     "store": "Rema 1000",
-    "storeLogo": "http://localhost:5000/store_logos/rema_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/rema_logo.png",
+    "productKey": "SEIFILET|380|1|Rema 1000"
   },
   {
     "title": "TOALETTPAPIR 24PK",
@@ -643,7 +676,8 @@
     "offerId": "ZRLzjItFkbl8Ec2PbGLvV",
     "hotspotId": "ZRLzjItFkbl8Ec2PbGLvV",
     "store": "Rema 1000",
-    "storeLogo": "http://localhost:5000/store_logos/rema_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/rema_logo.png",
+    "productKey": "TOALETTPAPIR 24PK|1|1|Rema 1000"
   },
   {
     "title": "SUPERHELT BRØDPRODUKTER",
@@ -662,7 +696,8 @@
     "offerId": "ceELwhNafk-w83uxxV5wo",
     "hotspotId": "ceELwhNafk-w83uxxV5wo",
     "store": "Rema 1000",
-    "storeLogo": "http://localhost:5000/store_logos/rema_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/rema_logo.png",
+    "productKey": "SUPERHELT BRØDPRODUKTER|360|1|Rema 1000"
   },
   {
     "title": "KYLLINGKORV",
@@ -681,7 +716,8 @@
     "offerId": "m-dA29qsTQEJZbzJHgjwg",
     "hotspotId": "m-dA29qsTQEJZbzJHgjwg",
     "store": "Rema 1000",
-    "storeLogo": "http://localhost:5000/store_logos/rema_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/rema_logo.png",
+    "productKey": "KYLLINGKORV|300|1|Rema 1000"
   },
   {
     "title": "SOFT FLORA",
@@ -700,7 +736,8 @@
     "offerId": "_W9tPl4B9NIJsOtB8b_uJ",
     "hotspotId": "_W9tPl4B9NIJsOtB8b_uJ",
     "store": "Rema 1000",
-    "storeLogo": "http://localhost:5000/store_logos/rema_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/rema_logo.png",
+    "productKey": "SOFT FLORA|540|1|Rema 1000"
   },
   {
     "title": "KAVIAR",
@@ -719,7 +756,8 @@
     "offerId": "OAlY4R_rwTZ9gLMCj4Vvk",
     "hotspotId": "OAlY4R_rwTZ9gLMCj4Vvk",
     "store": "Rema 1000",
-    "storeLogo": "http://localhost:5000/store_logos/rema_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/rema_logo.png",
+    "productKey": "KAVIAR|185|1|Rema 1000"
   },
   {
     "title": "BIOLA",
@@ -738,7 +776,8 @@
     "offerId": "Q_8WFuBKLgTizSPki7K2o",
     "hotspotId": "Q_8WFuBKLgTizSPki7K2o",
     "store": "Rema 1000",
-    "storeLogo": "http://localhost:5000/store_logos/rema_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/rema_logo.png",
+    "productKey": "BIOLA|1.5|1|Rema 1000"
   },
   {
     "title": "GRANDIOSA PORSJON ORIGINAL",
@@ -757,7 +796,8 @@
     "offerId": "qwYlhxPCHyHxgH20-yvz_",
     "hotspotId": "qwYlhxPCHyHxgH20-yvz_",
     "store": "Rema 1000",
-    "storeLogo": "http://localhost:5000/store_logos/rema_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/rema_logo.png",
+    "productKey": "GRANDIOSA PORSJON ORIGINAL|375|1|Rema 1000"
   },
   {
     "title": "COCA COLA U/ SUKKER 6PK",
@@ -776,7 +816,8 @@
     "offerId": "-AeksjogOc9HjUIxKYTDQ",
     "hotspotId": "-AeksjogOc9HjUIxKYTDQ",
     "store": "Rema 1000",
-    "storeLogo": "http://localhost:5000/store_logos/rema_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/rema_logo.png",
+    "productKey": "COCA COLA U/ SUKKER 6PK|1.5|6|Rema 1000"
   },
   {
     "title": "SUPERCHIPS PAPRIKA/SALT",
@@ -795,7 +836,8 @@
     "offerId": "iM6AtOpaIUXTlsLu3jgs7",
     "hotspotId": "iM6AtOpaIUXTlsLu3jgs7",
     "store": "Rema 1000",
-    "storeLogo": "http://localhost:5000/store_logos/rema_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/rema_logo.png",
+    "productKey": "SUPERCHIPS PAPRIKA/SALT|130|1|Rema 1000"
   },
   {
     "title": "DREAM IS",
@@ -814,7 +856,8 @@
     "offerId": "U8B-0ForhxMGmq-aJ9Ef0",
     "hotspotId": "U8B-0ForhxMGmq-aJ9Ef0",
     "store": "Rema 1000",
-    "storeLogo": "http://localhost:5000/store_logos/rema_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/rema_logo.png",
+    "productKey": "DREAM IS|450|1|Rema 1000"
   },
   {
     "title": "STRATOS HELT SPRØTT",
@@ -833,7 +876,8 @@
     "offerId": "KPhV1k2mdgeJveDZlMoaU",
     "hotspotId": "KPhV1k2mdgeJveDZlMoaU",
     "store": "Rema 1000",
-    "storeLogo": "http://localhost:5000/store_logos/rema_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/rema_logo.png",
+    "productKey": "STRATOS HELT SPRØTT|150|1|Rema 1000"
   },
   {
     "title": "STRATOS MELKEGLEDE",
@@ -852,7 +896,8 @@
     "offerId": "yehZhVcecenId_qB2kyV3",
     "hotspotId": "yehZhVcecenId_qB2kyV3",
     "store": "Rema 1000",
-    "storeLogo": "http://localhost:5000/store_logos/rema_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/rema_logo.png",
+    "productKey": "STRATOS MELKEGLEDE|175|1|Rema 1000"
   },
   {
     "title": "AVFALLSPOSE 25L",
@@ -871,7 +916,8 @@
     "offerId": "6UC0A4yvxv38UMQjphZjd",
     "hotspotId": "6UC0A4yvxv38UMQjphZjd",
     "store": "Rema 1000",
-    "storeLogo": "http://localhost:5000/store_logos/rema_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/rema_logo.png",
+    "productKey": "AVFALLSPOSE 25L|1|1|Rema 1000"
   },
   {
     "title": "AVFALLSPOSE",
@@ -890,7 +936,8 @@
     "offerId": "fGWxt1CJkTZ8uRSYCnLld",
     "hotspotId": "fGWxt1CJkTZ8uRSYCnLld",
     "store": "Rema 1000",
-    "storeLogo": "http://localhost:5000/store_logos/rema_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/rema_logo.png",
+    "productKey": "AVFALLSPOSE|1|1|Rema 1000"
   },
   {
     "title": "AVFALLSSEKK KLAR",
@@ -909,7 +956,8 @@
     "offerId": "JR6mOVyYmJyK_BAI53wPR",
     "hotspotId": "JR6mOVyYmJyK_BAI53wPR",
     "store": "Rema 1000",
-    "storeLogo": "http://localhost:5000/store_logos/rema_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/rema_logo.png",
+    "productKey": "AVFALLSSEKK KLAR|1|1|Rema 1000"
   },
   {
     "title": "AVFALLSSEKK KLAR",
@@ -928,7 +976,8 @@
     "offerId": "RKPK0ZK3UeTSpbURBtP_8",
     "hotspotId": "RKPK0ZK3UeTSpbURBtP_8",
     "store": "Rema 1000",
-    "storeLogo": "http://localhost:5000/store_logos/rema_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/rema_logo.png",
+    "productKey": "AVFALLSSEKK KLAR|1|1|Rema 1000"
   },
   {
     "title": "AVFALLSPOSE",
@@ -947,7 +996,8 @@
     "offerId": "z5oTrl10L1hMW6-Q7Xp9k",
     "hotspotId": "z5oTrl10L1hMW6-Q7Xp9k",
     "store": "Rema 1000",
-    "storeLogo": "http://localhost:5000/store_logos/rema_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/rema_logo.png",
+    "productKey": "AVFALLSPOSE|1|1|Rema 1000"
   },
   {
     "title": "RØDE LINSER",
@@ -966,7 +1016,8 @@
     "offerId": "I0nLZDfterlN9MZSSYSZp",
     "hotspotId": "I0nLZDfterlN9MZSSYSZp",
     "store": "Rema 1000",
-    "storeLogo": "http://localhost:5000/store_logos/rema_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/rema_logo.png",
+    "productKey": "RØDE LINSER|380|1|Rema 1000"
   },
   {
     "title": "KIDNEYBØNNER",
@@ -985,7 +1036,8 @@
     "offerId": "NGJlNNno-9Rlr696nSaEW",
     "hotspotId": "NGJlNNno-9Rlr696nSaEW",
     "store": "Rema 1000",
-    "storeLogo": "http://localhost:5000/store_logos/rema_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/rema_logo.png",
+    "productKey": "KIDNEYBØNNER|380|1|Rema 1000"
   },
   {
     "title": "KIKERTER",
@@ -1004,7 +1056,8 @@
     "offerId": "ZpcTwnZJlOmqLd3KutmBO",
     "hotspotId": "ZpcTwnZJlOmqLd3KutmBO",
     "store": "Rema 1000",
-    "storeLogo": "http://localhost:5000/store_logos/rema_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/rema_logo.png",
+    "productKey": "KIKERTER|380|1|Rema 1000"
   },
   {
     "title": "SORTE BØNNER",
@@ -1023,7 +1076,8 @@
     "offerId": "6SJLV8RIVlqDZ2gwCSMpf",
     "hotspotId": "6SJLV8RIVlqDZ2gwCSMpf",
     "store": "Rema 1000",
-    "storeLogo": "http://localhost:5000/store_logos/rema_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/rema_logo.png",
+    "productKey": "SORTE BØNNER|380|1|Rema 1000"
   },
   {
     "title": "BØNNEMIKS",
@@ -1042,7 +1096,8 @@
     "offerId": "brjVBXM737d3bdK_PnMc6",
     "hotspotId": "brjVBXM737d3bdK_PnMc6",
     "store": "Rema 1000",
-    "storeLogo": "http://localhost:5000/store_logos/rema_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/rema_logo.png",
+    "productKey": "BØNNEMIKS|380|1|Rema 1000"
   },
   {
     "title": "HVITE BØNNER",
@@ -1061,7 +1116,8 @@
     "offerId": "cnTPNxZnyKI6blhDaEGfV",
     "hotspotId": "cnTPNxZnyKI6blhDaEGfV",
     "store": "Rema 1000",
-    "storeLogo": "http://localhost:5000/store_logos/rema_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/rema_logo.png",
+    "productKey": "HVITE BØNNER|380|1|Rema 1000"
   },
   {
     "title": "FULLKORNTORTILLAS",
@@ -1080,7 +1136,8 @@
     "offerId": "xjx2VDOs3A2S95K_Vzn4s",
     "hotspotId": "xjx2VDOs3A2S95K_Vzn4s",
     "store": "Rema 1000",
-    "storeLogo": "http://localhost:5000/store_logos/rema_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/rema_logo.png",
+    "productKey": "FULLKORNTORTILLAS|370|1|Rema 1000"
   },
   {
     "title": "SPAGETTI FULLKORN",
@@ -1099,7 +1156,8 @@
     "offerId": "_l9C4MhnUSnbJmWQtOlh5",
     "hotspotId": "_l9C4MhnUSnbJmWQtOlh5",
     "store": "Rema 1000",
-    "storeLogo": "http://localhost:5000/store_logos/rema_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/rema_logo.png",
+    "productKey": "SPAGETTI FULLKORN|500|1|Rema 1000"
   },
   {
     "title": "PENNE FULLKORN",
@@ -1118,7 +1176,8 @@
     "offerId": "57Hs39YOcOX7GewGW-fym",
     "hotspotId": "57Hs39YOcOX7GewGW-fym",
     "store": "Rema 1000",
-    "storeLogo": "http://localhost:5000/store_logos/rema_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/rema_logo.png",
+    "productKey": "PENNE FULLKORN|500|1|Rema 1000"
   },
   {
     "title": "FUSILLI FULLKORN",
@@ -1137,7 +1196,8 @@
     "offerId": "7ee9qxf8ErSTrhKt_fLOK",
     "hotspotId": "7ee9qxf8ErSTrhKt_fLOK",
     "store": "Rema 1000",
-    "storeLogo": "http://localhost:5000/store_logos/rema_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/rema_logo.png",
+    "productKey": "FUSILLI FULLKORN|500|1|Rema 1000"
   },
   {
     "title": "FULLKORNSNUDLER",
@@ -1156,7 +1216,8 @@
     "offerId": "fpxTUZHYD2hKtGZTZTfGo",
     "hotspotId": "fpxTUZHYD2hKtGZTZTfGo",
     "store": "Rema 1000",
-    "storeLogo": "http://localhost:5000/store_logos/rema_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/rema_logo.png",
+    "productKey": "FULLKORNSNUDLER|250|1|Rema 1000"
   },
   {
     "title": "FULLKORNSRIS",
@@ -1175,7 +1236,8 @@
     "offerId": "WHfLfq9ZZbFufTunNfVAw",
     "hotspotId": "WHfLfq9ZZbFufTunNfVAw",
     "store": "Rema 1000",
-    "storeLogo": "http://localhost:5000/store_logos/rema_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/rema_logo.png",
+    "productKey": "FULLKORNSRIS|125|8|Rema 1000"
   },
   {
     "title": "HÅNDSÅPE HARMONI",
@@ -1194,7 +1256,8 @@
     "offerId": "d53yFo6q_8eHRozYbxjb_",
     "hotspotId": "d53yFo6q_8eHRozYbxjb_",
     "store": "Rema 1000",
-    "storeLogo": "http://localhost:5000/store_logos/rema_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/rema_logo.png",
+    "productKey": "HÅNDSÅPE HARMONI|500|1|Rema 1000"
   },
   {
     "title": "HÅNDSÅPE FRISK",
@@ -1213,7 +1276,8 @@
     "offerId": "WOWfQFSEEEaue3FaWUrMa",
     "hotspotId": "WOWfQFSEEEaue3FaWUrMa",
     "store": "Rema 1000",
-    "storeLogo": "http://localhost:5000/store_logos/rema_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/rema_logo.png",
+    "productKey": "HÅNDSÅPE FRISK|500|1|Rema 1000"
   },
   {
     "title": "HÅNDSÅPE REFILL",
@@ -1232,7 +1296,8 @@
     "offerId": "07fURYbqIDKhsSGYpUzCd",
     "hotspotId": "07fURYbqIDKhsSGYpUzCd",
     "store": "Rema 1000",
-    "storeLogo": "http://localhost:5000/store_logos/rema_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/rema_logo.png",
+    "productKey": "HÅNDSÅPE REFILL|1|1|Rema 1000"
   },
   {
     "title": "DUSJSÅPE HARMONI",
@@ -1251,7 +1316,8 @@
     "offerId": "M_knJkBn9At47YEZKhMAy",
     "hotspotId": "M_knJkBn9At47YEZKhMAy",
     "store": "Rema 1000",
-    "storeLogo": "http://localhost:5000/store_logos/rema_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/rema_logo.png",
+    "productKey": "DUSJSÅPE HARMONI|275|1|Rema 1000"
   },
   {
     "title": "DUSJSÅPE REFILL",
@@ -1270,7 +1336,8 @@
     "offerId": "DM2joyRnjm6Ez3P7NVceI",
     "hotspotId": "DM2joyRnjm6Ez3P7NVceI",
     "store": "Rema 1000",
-    "storeLogo": "http://localhost:5000/store_logos/rema_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/rema_logo.png",
+    "productKey": "DUSJSÅPE REFILL|500|1|Rema 1000"
   },
   {
     "title": "GRAVIDITETSTEST.",
@@ -1289,7 +1356,8 @@
     "offerId": "eKW7LoIO25I_m_DY3DNR5",
     "hotspotId": "eKW7LoIO25I_m_DY3DNR5",
     "store": "Rema 1000",
-    "storeLogo": "http://localhost:5000/store_logos/rema_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/rema_logo.png",
+    "productKey": "GRAVIDITETSTEST.|1|1|Rema 1000"
   },
   {
     "title": "GRAVIDITETSTEST.",
@@ -1308,7 +1376,8 @@
     "offerId": "gcAGsd9iet7U_Kf2f9IKN",
     "hotspotId": "gcAGsd9iet7U_Kf2f9IKN",
     "store": "Rema 1000",
-    "storeLogo": "http://localhost:5000/store_logos/rema_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/rema_logo.png",
+    "productKey": "GRAVIDITETSTEST.|1|1|Rema 1000"
   },
   {
     "title": "GRAVIDITETSTEST.",
@@ -1327,7 +1396,8 @@
     "offerId": "YdCCXw_13HeO87hOCvLNq",
     "hotspotId": "YdCCXw_13HeO87hOCvLNq",
     "store": "Rema 1000",
-    "storeLogo": "http://localhost:5000/store_logos/rema_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/rema_logo.png",
+    "productKey": "GRAVIDITETSTEST.|1|1|Rema 1000"
   },
   {
     "title": "GRANDIOSA PORSJON ORIGINAL",
@@ -1346,6 +1416,7 @@
     "offerId": "aM_9xsM-oYPT8S--Y-K24",
     "hotspotId": "aM_9xsM-oYPT8S--Y-K24",
     "store": "Rema 1000",
-    "storeLogo": "http://localhost:5000/store_logos/rema_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/rema_logo.png",
+    "productKey": "GRANDIOSA PORSJON ORIGINAL|375|1|Rema 1000"
   }
 ]

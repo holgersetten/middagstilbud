@@ -375,29 +375,19 @@ router.post('/offers/weekly-update', async (req: Request, res: Response) => {
         console.log('🖼️  Henter bilder...');
         await offerService.enrichAllOffersWithImages();
         
-        // STEG 3: Kjør AI kategorisering (3 iterasjoner)
-        console.log('🤖 AI kategorisering (3 iterasjoner)...');
+        // STEG 3: Kjør AI kategorisering (2 iterasjoner for bedre kvalitetskontroll)
+        console.log('🤖 AI kategorisering (2 iterasjoner)...');
         
-        // Iterasjon 1
-        console.log('\n🔄 Iterasjon 1/3...');
+        // Iterasjon 1: Første kategoriseringsforsøk
+        console.log('\n🔄 Iterasjon 1/2...');
         let allOffers = await offerService.getAllOffers();
         await categoryService.categorizeOffers(allOffers);
         let pendingCount = categoryService.getPendingCount();
         console.log(`   ➜ Resultat: ${pendingCount} pending produkter`);
         
         if (pendingCount > 0) {
-            // Iterasjon 2: Slett pending, hent fresh offers, og prøv igjen
-            console.log('\n🔄 Iterasjon 2/3...');
-            categoryService.removePendingFromCache();
-            allOffers = await offerService.getAllOffers(); // Fresh load
-            await categoryService.categorizeOffers(allOffers);
-            pendingCount = categoryService.getPendingCount();
-            console.log(`   ➜ Resultat: ${pendingCount} pending produkter`);
-        }
-        
-        if (pendingCount > 0) {
-            // Iterasjon 3: Slett pending, hent fresh offers, og siste forsøk
-            console.log('\n🔄 Iterasjon 3/3...');
+            // Iterasjon 2: Retry pending med fresh context
+            console.log('\n🔄 Iterasjon 2/2...');
             categoryService.removePendingFromCache();
             allOffers = await offerService.getAllOffers(); // Fresh load
             await categoryService.categorizeOffers(allOffers);
@@ -523,6 +513,79 @@ router.get('/price-changes', (req: Request, res: Response) => {
         console.error('❌ Feil ved henting av prisendringer:', (error as Error).message);
         res.status(500).json({
             error: 'Kunne ikke hente prisendringer',
+            message: (error as Error).message
+        });
+    }
+});
+
+// POST /api/offers/test-fetch - Test API-henting for én butikk uten AI/database
+router.post('/offers/test-fetch', async (req: Request, res: Response) => {
+    try {
+        const { dealerId, storeName } = req.body;
+        
+        if (!dealerId || !storeName) {
+            return res.status(400).json({
+                error: 'Mangler påkrevde felter',
+                required: { dealerId: '80742m', storeName: 'Coop Extra' }
+            });
+        }
+
+        console.log(`🧪 TEST-MODUS: Henter tilbud for ${storeName} (${dealerId})`);
+        console.log('=' .repeat(60));
+        
+        // Hent tilbud direkte fra API
+        const tjekApiService = require('../../../persistence/src/services/tjekApiService').default;
+        const offers = await tjekApiService.getStoreOffers(dealerId);
+        
+        // Lagre til test-fil (ikke overskriv production data)
+        const fs = require('fs');
+        const path = require('path');
+        const testFilePath = path.join(
+            __dirname,
+            '../../../persistence/src/resources/offers',
+            `TEST_${storeName.toLowerCase().replace(/\s+/g, '_')}_offers.json`
+        );
+        
+        fs.writeFileSync(testFilePath, JSON.stringify(offers, null, 2), 'utf-8');
+        
+        // Generer statistikk
+        const stats = {
+            storeName,
+            dealerId,
+            totalOffers: offers.length,
+            timestamp: new Date().toISOString(),
+            testFile: testFilePath,
+            sampleOffers: offers.slice(0, 5).map((o: any) => ({
+                title: o.title,
+                price: o.price,
+                currency: o.currency,
+                quantity: o.quantity,
+                catalogId: o.catalogId
+            })),
+            uniqueCatalogs: [...new Set(offers.map((o: any) => o.catalogId))].length,
+            priceRange: {
+                min: Math.min(...offers.map((o: any) => o.price || Infinity)),
+                max: Math.max(...offers.map((o: any) => o.price || 0))
+            }
+        };
+        
+        console.log('\n📊 RESULTAT:');
+        console.log(`   ✅ ${stats.totalOffers} tilbud hentet`);
+        console.log(`   📚 ${stats.uniqueCatalogs} unike kataloger`);
+        console.log(`   💰 Pris: ${stats.priceRange.min} - ${stats.priceRange.max} ${offers[0]?.currency || 'NOK'}`);
+        console.log(`   📁 Test-fil: ${testFilePath}`);
+        console.log('=' .repeat(60));
+        
+        return res.json({
+            success: true,
+            message: 'Test fullført - ingen data påvirket',
+            stats
+        });
+        
+    } catch (error) {
+        console.error('❌ Test feilet:', (error as Error).message);
+        return res.status(500).json({
+            error: 'Test feilet',
             message: (error as Error).message
         });
     }

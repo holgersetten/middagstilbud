@@ -16,7 +16,8 @@
     "offerId": "SzYYg-P-x1Tg8_ZsTudWF",
     "hotspotId": "SzYYg-P-x1Tg8_ZsTudWF",
     "store": "Coop Marked",
-    "storeLogo": "http://localhost:5000/store_logos/coop_marked_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_marked_logo.png",
+    "productKey": "COOP POPPET POPCORN|100|1|Coop Marked"
   },
   {
     "title": "BLÅBÆRKNUTE",
@@ -35,7 +36,8 @@
     "offerId": "CqFZCIMEfWoAQlYVantAw",
     "hotspotId": "CqFZCIMEfWoAQlYVantAw",
     "store": "Coop Marked",
-    "storeLogo": "http://localhost:5000/store_logos/coop_marked_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_marked_logo.png",
+    "productKey": "BLÅBÆRKNUTE|100|1|Coop Marked"
   },
   {
     "title": "COOP SPRUDLE",
@@ -54,7 +56,8 @@
     "offerId": "M1vOLtlNL4HEsTwDRkgjA",
     "hotspotId": "M1vOLtlNL4HEsTwDRkgjA",
     "store": "Coop Marked",
-    "storeLogo": "http://localhost:5000/store_logos/coop_marked_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_marked_logo.png",
+    "productKey": "COOP SPRUDLE|1.5|1|Coop Marked"
   },
   {
     "title": "COOP SMOOTHIE",
@@ -73,7 +76,8 @@
     "offerId": "Ec-6xgYEuoRmgz07dhMQJ",
     "hotspotId": "Ec-6xgYEuoRmgz07dhMQJ",
     "store": "Coop Marked",
-    "storeLogo": "http://localhost:5000/store_logos/coop_marked_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_marked_logo.png",
+    "productKey": "COOP SMOOTHIE|250|1|Coop Marked"
   },
   {
     "title": "COOP OSTELANDGANG",
@@ -92,7 +96,8 @@
     "offerId": "yOOL7AP0vuvJZhm7RoqwQ",
     "hotspotId": "yOOL7AP0vuvJZhm7RoqwQ",
     "store": "Coop Marked",
-    "storeLogo": "http://localhost:5000/store_logos/coop_marked_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_marked_logo.png",
+    "productKey": "COOP OSTELANDGANG|125|1|Coop Marked"
   },
   {
     "title": "GILDE KJØTTPØLSE",
@@ -111,7 +116,8 @@
     "offerId": "oCpU7QOaEN2EmmKSPAR9S",
     "hotspotId": "oCpU7QOaEN2EmmKSPAR9S",
     "store": "Coop Marked",
-    "storeLogo": "http://localhost:5000/store_logos/coop_marked_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_marked_logo.png",
+    "productKey": "GILDE KJØTTPØLSE|450|1|Coop Marked"
   },
   {
     "title": "NIDAR SMÅSJOKOLADER",
@@ -130,7 +136,8 @@
     "offerId": "cjO9EX_VPzq8fmGrC__Kp",
     "hotspotId": "cjO9EX_VPzq8fmGrC__Kp",
     "store": "Coop Marked",
-    "storeLogo": "http://localhost:5000/store_logos/coop_marked_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_marked_logo.png",
+    "productKey": "NIDAR SMÅSJOKOLADER|45|3|Coop Marked"
   },
   {
     "title": "DIPLOM-IS MULTIPK",
@@ -149,7 +156,8 @@
     "offerId": "IIndkHBnkrf8PXvryw9mS",
     "hotspotId": "IIndkHBnkrf8PXvryw9mS",
     "store": "Coop Marked",
-    "storeLogo": "http://localhost:5000/store_logos/coop_marked_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_marked_logo.png",
+    "productKey": "DIPLOM-IS MULTIPK|1|1|Coop Marked"
   },
   {
     "title": "MAT I FARTA",
@@ -168,7 +176,8 @@
     "offerId": "2pfFZO8ynQ2soaMuXVJxl",
     "hotspotId": "2pfFZO8ynQ2soaMuXVJxl",
     "store": "Coop Marked",
-    "storeLogo": "http://localhost:5000/store_logos/coop_marked_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_marked_logo.png",
+    "productKey": "MAT I FARTA|1|1|Coop Marked"
   },
   {
     "title": "DRUER STEINFRIE",
@@ -187,7 +196,8 @@
     "offerId": "ZL_c6gqSznHhW2rD-TqKA",
     "hotspotId": "ZL_c6gqSznHhW2rD-TqKA",
     "store": "Coop Marked",
-    "storeLogo": "http://localhost:5000/store_logos/coop_marked_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_marked_logo.png",
+    "productKey": "DRUER STEINFRIE|500|1|Coop Marked"
   },
   {
     "title": "FUN LIGHT",
@@ -206,7 +216,8 @@
     "offerId": "qHxlOIBLV10A0yzzHmZA0",
     "hotspotId": "qHxlOIBLV10A0yzzHmZA0",
     "store": "Coop Marked",
-    "storeLogo": "http://localhost:5000/store_logos/coop_marked_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_marked_logo.png",
+    "productKey": "FUN LIGHT|0.8|1|Coop Marked"
   },
   {
     "title": "COOP JUICE/ISTE/NEKTAR",
@@ -225,7 +236,8 @@
     "offerId": "kyvqXxmP_od6-fcEy6Zq2",
     "hotspotId": "kyvqXxmP_od6-fcEy6Zq2",
     "store": "Coop Marked",
-    "storeLogo": "http://localhost:5000/store_logos/coop_marked_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_marked_logo.png",
+    "productKey": "COOP JUICE/ISTE/NEKTAR|1.5|1|Coop Marked"
   },
   {
     "title": "HARIBO",
@@ -244,7 +256,8 @@
     "offerId": "oCdF5ByhDfFlOqXvAzdaW",
     "hotspotId": "oCdF5ByhDfFlOqXvAzdaW",
     "store": "Coop Marked",
-    "storeLogo": "http://localhost:5000/store_logos/coop_marked_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_marked_logo.png",
+    "productKey": "HARIBO|110|1|Coop Marked"
   },
   {
     "title": "VESTLANDSLEFSA LEFSEGODT 4 PK",
@@ -263,7 +276,8 @@
     "offerId": "75t4nMTfp5_Hi9psUuhpA",
     "hotspotId": "75t4nMTfp5_Hi9psUuhpA",
     "store": "Coop Marked",
-    "storeLogo": "http://localhost:5000/store_logos/coop_marked_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_marked_logo.png",
+    "productKey": "VESTLANDSLEFSA LEFSEGODT 4 PK|4|1|Coop Marked"
   },
   {
     "title": "POWERADE",
@@ -282,7 +296,8 @@
     "offerId": "6fpjPNgYw8nZJXrdvnMuQ",
     "hotspotId": "6fpjPNgYw8nZJXrdvnMuQ",
     "store": "Coop Marked",
-    "storeLogo": "http://localhost:5000/store_logos/coop_marked_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_marked_logo.png",
+    "productKey": "POWERADE|0.5|1|Coop Marked"
   },
   {
     "title": "COOP KJØTTDEIG",
@@ -301,7 +316,8 @@
     "offerId": "4f2zhboD-ZCmrVDCv85SX",
     "hotspotId": "4f2zhboD-ZCmrVDCv85SX",
     "store": "Coop Marked",
-    "storeLogo": "http://localhost:5000/store_logos/coop_marked_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_marked_logo.png",
+    "productKey": "COOP KJØTTDEIG|400|2|Coop Marked"
   },
   {
     "title": "TINE COTTAGE CHEESE",
@@ -320,7 +336,8 @@
     "offerId": "GIbbUmtmA5eACu-aVT3VQ",
     "hotspotId": "GIbbUmtmA5eACu-aVT3VQ",
     "store": "Coop Marked",
-    "storeLogo": "http://localhost:5000/store_logos/coop_marked_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_marked_logo.png",
+    "productKey": "TINE COTTAGE CHEESE|1|2|Coop Marked"
   },
   {
     "title": "TRONDHJEMS MIDDAGSHERMETIKK",
@@ -339,7 +356,8 @@
     "offerId": "rsprKohcuN_9BIrdDJ9OA",
     "hotspotId": "rsprKohcuN_9BIrdDJ9OA",
     "store": "Coop Marked",
-    "storeLogo": "http://localhost:5000/store_logos/coop_marked_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_marked_logo.png",
+    "productKey": "TRONDHJEMS MIDDAGSHERMETIKK|840|1|Coop Marked"
   },
   {
     "title": "FREIA KVIKK LUNSJ 3PK",
@@ -358,7 +376,8 @@
     "offerId": "n_ejdHk1YffUzhxISrefl",
     "hotspotId": "n_ejdHk1YffUzhxISrefl",
     "store": "Coop Marked",
-    "storeLogo": "http://localhost:5000/store_logos/coop_marked_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_marked_logo.png",
+    "productKey": "FREIA KVIKK LUNSJ 3PK|141|2|Coop Marked"
   },
   {
     "title": "LITAGO",
@@ -377,7 +396,8 @@
     "offerId": "JsfmEjOUBCCbwhVCDbasR",
     "hotspotId": "JsfmEjOUBCCbwhVCDbasR",
     "store": "Coop Marked",
-    "storeLogo": "http://localhost:5000/store_logos/coop_marked_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_marked_logo.png",
+    "productKey": "LITAGO|0.5|2|Coop Marked"
   },
   {
     "title": "Pakkepris på 1 l melk & 1 grovbrød",
@@ -396,7 +416,8 @@
     "offerId": "KtWYmjCFvinQOJXe1Ttze",
     "hotspotId": "KtWYmjCFvinQOJXe1Ttze",
     "store": "Coop Marked",
-    "storeLogo": "http://localhost:5000/store_logos/coop_marked_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_marked_logo.png",
+    "productKey": "Pakkepris på 1 l melk & 1 grovbrød|1|1|Coop Marked"
   },
   {
     "title": "DRUER STEINFRIE",
@@ -415,7 +436,8 @@
     "offerId": "mWX0ZZjaC7NM4rVV92-Ja",
     "hotspotId": "mWX0ZZjaC7NM4rVV92-Ja",
     "store": "Coop Marked",
-    "storeLogo": "http://localhost:5000/store_logos/coop_marked_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_marked_logo.png",
+    "productKey": "DRUER STEINFRIE|500|1|Coop Marked"
   },
   {
     "title": "NORSKE POTETER",
@@ -434,7 +456,8 @@
     "offerId": "GDtQxcZiDVO7ue9W8Wywv",
     "hotspotId": "GDtQxcZiDVO7ue9W8Wywv",
     "store": "Coop Marked",
-    "storeLogo": "http://localhost:5000/store_logos/coop_marked_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_marked_logo.png",
+    "productKey": "NORSKE POTETER|1|1|Coop Marked"
   },
   {
     "title": "PERLETOMATER",
@@ -453,7 +476,8 @@
     "offerId": "yP_VVee_9FnYBeMv3Q-rn",
     "hotspotId": "yP_VVee_9FnYBeMv3Q-rn",
     "store": "Coop Marked",
-    "storeLogo": "http://localhost:5000/store_logos/coop_marked_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_marked_logo.png",
+    "productKey": "PERLETOMATER|175|1|Coop Marked"
   },
   {
     "title": "TRONDHJEMS MIDDAGSHERMETIKK",
@@ -472,7 +496,8 @@
     "offerId": "0HtWDcvB-U87vwRJwY0Y9",
     "hotspotId": "0HtWDcvB-U87vwRJwY0Y9",
     "store": "Coop Marked",
-    "storeLogo": "http://localhost:5000/store_logos/coop_marked_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_marked_logo.png",
+    "productKey": "TRONDHJEMS MIDDAGSHERMETIKK|840|1|Coop Marked"
   },
   {
     "title": "COOP KJØTTDEIG",
@@ -491,7 +516,8 @@
     "offerId": "lDBXbcKf_7jX03Zznt9jM",
     "hotspotId": "lDBXbcKf_7jX03Zznt9jM",
     "store": "Coop Marked",
-    "storeLogo": "http://localhost:5000/store_logos/coop_marked_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_marked_logo.png",
+    "productKey": "COOP KJØTTDEIG|400|2|Coop Marked"
   },
   {
     "title": "GILDE KJØTTPØLSE",
@@ -510,7 +536,8 @@
     "offerId": "m6gdf5um6IyYfhw-YrQ53",
     "hotspotId": "m6gdf5um6IyYfhw-YrQ53",
     "store": "Coop Marked",
-    "storeLogo": "http://localhost:5000/store_logos/coop_marked_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_marked_logo.png",
+    "productKey": "GILDE KJØTTPØLSE|450|1|Coop Marked"
   },
   {
     "title": "Nidar smågodt i løsvekt",
@@ -529,7 +556,8 @@
     "offerId": "lOgkW5ddlh7Gk-uGpE46f",
     "hotspotId": "lOgkW5ddlh7Gk-uGpE46f",
     "store": "Coop Marked",
-    "storeLogo": "http://localhost:5000/store_logos/coop_marked_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_marked_logo.png",
+    "productKey": "Nidar smågodt i løsvekt|100|1|Coop Marked"
   },
   {
     "title": "KAVLI TUBEOSTER",
@@ -548,7 +576,8 @@
     "offerId": "ZoipT_JmrkBcEXl8h35lY",
     "hotspotId": "ZoipT_JmrkBcEXl8h35lY",
     "store": "Coop Marked",
-    "storeLogo": "http://localhost:5000/store_logos/coop_marked_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_marked_logo.png",
+    "productKey": "KAVLI TUBEOSTER|175|1|Coop Marked"
   },
   {
     "title": "MELANGE",
@@ -567,7 +596,8 @@
     "offerId": "NoU31ZGZgrKSUa6PeFIgC",
     "hotspotId": "NoU31ZGZgrKSUa6PeFIgC",
     "store": "Coop Marked",
-    "storeLogo": "http://localhost:5000/store_logos/coop_marked_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_marked_logo.png",
+    "productKey": "MELANGE|500|1|Coop Marked"
   },
   {
     "title": "TINE REVET OST",
@@ -586,7 +616,8 @@
     "offerId": "DoqMFcJNmVLJnGilNszU1",
     "hotspotId": "DoqMFcJNmVLJnGilNszU1",
     "store": "Coop Marked",
-    "storeLogo": "http://localhost:5000/store_logos/coop_marked_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_marked_logo.png",
+    "productKey": "TINE REVET OST|250|1|Coop Marked"
   },
   {
     "title": "WHISKAS KATTEMAT",
@@ -605,7 +636,8 @@
     "offerId": "A4XeYtokGTXF5sqSoOzjh",
     "hotspotId": "A4XeYtokGTXF5sqSoOzjh",
     "store": "Coop Marked",
-    "storeLogo": "http://localhost:5000/store_logos/coop_marked_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_marked_logo.png",
+    "productKey": "WHISKAS KATTEMAT|1020|1|Coop Marked"
   },
   {
     "title": "COOP FROKOSTEGG 12 PK",
@@ -624,6 +656,27 @@
     "offerId": "usbnS6mq0ZFGk-Mqf7EF3",
     "hotspotId": "usbnS6mq0ZFGk-Mqf7EF3",
     "store": "Coop Marked",
-    "storeLogo": "http://localhost:5000/store_logos/coop_marked_logo.png"
+    "storeLogo": "http://localhost:5000/store_logos/coop_marked_logo.png",
+    "productKey": "COOP FROKOSTEGG 12 PK|12|1|Coop Marked"
+  },
+  {
+    "title": "Norvegia",
+    "description": "",
+    "price": 109,
+    "originalPrice": null,
+    "discount": null,
+    "currency": "NOK",
+    "quantity": "1kg",
+    "unit": "kg",
+    "pieces": 1,
+    "size": 1,
+    "validFrom": "2026-01-04T23:00:00+0000",
+    "validTo": "2026-01-25T22:59:59+0000",
+    "imageUrl": "https://image-transformer-api.tjek.com/?u=s3%3A%2F%2Fsgn-prd-assets%2Fuploads%2FUehVifXd%2Fp-11.webp&w=600&x1r=0&x2r=1&y1r=0&y2r=0.9967&s=a3356a051de8b16ac312617b54c40a20",
+    "offerId": "S90P3h10q2PfxtCucY67d",
+    "hotspotId": "S90P3h10q2PfxtCucY67d",
+    "store": "Coop Marked",
+    "storeLogo": "http://localhost:5000/store_logos/coop_marked_logo.png",
+    "productKey": "Norvegia|1|1|Coop Marked"
   }
 ]
