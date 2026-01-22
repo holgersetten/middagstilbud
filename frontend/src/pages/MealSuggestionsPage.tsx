@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Breadcrumb, BreadcrumbList, BreadcrumbItem, BreadcrumbLink, BreadcrumbPage, BreadcrumbSeparator } from '@/components/ui/breadcrumb';
-import { Home, ChevronRight, Calendar, ShoppingCart, Loader2, ChefHat } from 'lucide-react';
+import { Home, ChevronRight, Calendar, ShoppingCart, Loader2, ChefHat, Utensils, Store, Package } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -10,6 +10,8 @@ import { offersApi } from '@/services/api';
 interface Offer {
   title: string;
   price: number;
+  originalPrice?: number;
+  imageUrl?: string;
   store: string;
   quantity?: string;
 }
@@ -94,6 +96,15 @@ export default function MealSuggestionsPage() {
     return items.reduce((sum, item) => sum + item.price, 0);
   };
 
+  const getMealPrice = (meal: Meal) => {
+    let total = meal.protein.price;
+    if (typeof meal.carb !== 'string') {
+      total += meal.carb.price;
+    }
+    total += meal.vegetables.reduce((sum, veg) => sum + veg.price, 0);
+    return total;
+  };
+
   return (
     <div className="container mx-auto px-4 py-6 max-w-7xl">
       <Breadcrumb className="mb-6">
@@ -113,22 +124,39 @@ export default function MealSuggestionsPage() {
         </BreadcrumbList>
       </Breadcrumb>
 
-      <div className="mb-8">
-        <h1 className="text-3xl font-bold mb-2">Lag ukemeny</h1>
-        <p className="text-muted-foreground">Generer ukemeny basert på ukens beste tilbud</p>
+      {/* Hero Section */}
+      <div className="mb-8 text-center">
+        <div className="inline-block p-3 bg-gradient-to-br from-orange-50 to-yellow-50 rounded-full mb-4">
+          <ChefHat className="h-10 w-10 text-orange-600" />
+        </div>
+        <h1 className="text-4xl font-bold mb-3 bg-gradient-to-r from-orange-600 to-yellow-600 bg-clip-text text-transparent">
+          Lag ukemeny
+        </h1>
+        <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          Spar tid og penger! Generer en komplett ukemeny basert på ukens beste tilbud
+        </p>
       </div>
 
       {/* Configuration */}
-      <Card className="mb-6">
+      <Card className="mb-6 border-orange-200 bg-gradient-to-br from-white to-orange-50/30">
         <CardHeader>
-          <CardTitle>Innstillinger</CardTitle>
-          <CardDescription>Velg butikker og antall måltider</CardDescription>
+          <div className="flex items-center gap-2">
+            <Utensils className="h-5 w-5 text-orange-600" />
+            <CardTitle>Innstillinger</CardTitle>
+          </div>
+          <CardDescription>Tilpass menyen etter dine preferanser</CardDescription>
         </CardHeader>
         <CardContent className="space-y-6">
           {/* Store selection */}
           <div>
-            <label className="text-sm font-medium mb-3 block">
-              Velg butikker (0-2) {selectedStores.length > 0 && `- ${selectedStores.length} valgt`}
+            <label className="text-sm font-medium mb-3 flex items-center gap-2">
+              <Store className="h-4 w-4 text-orange-600" />
+              <span>Velg butikker (valgfritt)</span>
+              {selectedStores.length > 0 && (
+                <Badge variant="secondary" className="ml-2 bg-orange-100 text-orange-700">
+                  {selectedStores.length} valgt
+                </Badge>
+              )}
             </label>
             <div className="flex flex-wrap gap-2">
               {STORES.map(store => (
@@ -138,20 +166,25 @@ export default function MealSuggestionsPage() {
                   size="sm"
                   onClick={() => handleStoreToggle(store)}
                   disabled={!selectedStores.includes(store) && selectedStores.length >= 2}
+                  className={selectedStores.includes(store) ? 'bg-orange-600 hover:bg-orange-700' : ''}
                 >
                   {store}
                 </Button>
               ))}
             </div>
             {selectedStores.length === 0 && (
-              <p className="text-xs text-muted-foreground mt-2">La feltet stå tomt for å bruke alle butikker</p>
+              <p className="text-xs text-muted-foreground mt-2 flex items-center gap-1">
+                <span className="inline-block w-1 h-1 rounded-full bg-orange-400"></span>
+                La feltet stå tomt for å bruke alle butikker
+              </p>
             )}
           </div>
 
           {/* Number of meals */}
           <div>
-            <label className="text-sm font-medium mb-3 block">
-              Antall måltider: {numMeals}
+            <label className="text-sm font-medium mb-3 flex items-center gap-2">
+              <Calendar className="h-4 w-4 text-orange-600" />
+              <span>Antall måltider: <span className="text-orange-600 font-bold">{numMeals}</span></span>
             </label>
             <input
               type="range"
@@ -159,9 +192,9 @@ export default function MealSuggestionsPage() {
               max="10"
               value={numMeals}
               onChange={(e) => setNumMeals(parseInt(e.target.value))}
-              className="w-full"
+              className="w-full h-2 bg-orange-200 rounded-lg appearance-none cursor-pointer accent-orange-600"
             />
-            <div className="flex justify-between text-xs text-muted-foreground mt-1">
+            <div className="flex justify-between text-xs text-muted-foreground mt-2">
               <span>3 dager</span>
               <span>10 dager</span>
             </div>
@@ -171,25 +204,26 @@ export default function MealSuggestionsPage() {
           <Button 
             onClick={handleGenerate} 
             disabled={loading}
-            className="w-full"
+            className="w-full bg-gradient-to-r from-orange-600 to-yellow-600 hover:from-orange-700 hover:to-yellow-700 text-white"
             size="lg"
           >
             {loading ? (
               <>
-                <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                Genererer...
+                <Loader2 className="mr-2 h-5 w-5 animate-spin" />
+                Genererer ukemeny...
               </>
             ) : (
               <>
-                <ChefHat className="mr-2 h-4 w-4" />
+                <ChefHat className="mr-2 h-5 w-5" />
                 Generer ukemeny
               </>
             )}
           </Button>
 
           {error && (
-            <div className="bg-destructive/10 text-destructive text-sm p-3 rounded-md">
-              {error}
+            <div className="bg-red-50 border border-red-200 text-red-700 text-sm p-4 rounded-lg flex items-start gap-2">
+              <span className="text-red-500 font-bold">⚠</span>
+              <span>{error}</span>
             </div>
           )}
         </CardContent>
@@ -199,86 +233,160 @@ export default function MealSuggestionsPage() {
       {weeklyPlan && (
         <div className="space-y-6">
           {/* Summary */}
-          <Card>
+          <Card className="border-green-200 bg-gradient-to-br from-green-50 to-emerald-50">
             <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <Calendar className="h-5 w-5" />
-                Oversikt
-              </CardTitle>
+              <div className="flex items-center gap-2">
+                <div className="p-2 bg-green-100 rounded-lg">
+                  <Calendar className="h-5 w-5 text-green-700" />
+                </div>
+                <CardTitle className="text-green-900">Din ukemeny er klar! 🎉</CardTitle>
+              </div>
             </CardHeader>
             <CardContent>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <div>
-                  <p className="text-sm text-muted-foreground">Måltider</p>
-                  <p className="text-2xl font-bold">{weeklyPlan.meals.length}</p>
+              <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+                <div className="bg-white rounded-lg p-4 shadow-sm">
+                  <div className="flex items-center gap-2 mb-2">
+                    <Utensils className="h-4 w-4 text-green-600" />
+                    <p className="text-sm font-medium text-muted-foreground">Måltider</p>
+                  </div>
+                  <p className="text-3xl font-bold text-green-700">{weeklyPlan.meals.length}</p>
                 </div>
-                <div>
-                  <p className="text-sm text-muted-foreground">Butikker</p>
-                  <p className="text-2xl font-bold">{weeklyPlan.storesUsed.length}</p>
-                  <p className="text-xs text-muted-foreground mt-1">
-                    {weeklyPlan.storesUsed.join(', ')}
-                  </p>
+                <div className="bg-white rounded-lg p-4 shadow-sm">
+                  <div className="flex items-center gap-2 mb-2">
+                    <Store className="h-4 w-4 text-blue-600" />
+                    <p className="text-sm font-medium text-muted-foreground">Butikker</p>
+                  </div>
+                  <p className="text-3xl font-bold text-blue-700 mb-1">{weeklyPlan.storesUsed.length}</p>
+                  <div className="flex flex-wrap gap-1">
+                    {weeklyPlan.storesUsed.map((store, i) => (
+                      <Badge key={i} variant="secondary" className="text-xs bg-blue-50 text-blue-700">
+                        {store}
+                      </Badge>
+                    ))}
+                  </div>
                 </div>
-                <div>
-                  <p className="text-sm text-muted-foreground">Total pris</p>
-                  <p className="text-2xl font-bold">
+                <div className="bg-white rounded-lg p-4 shadow-sm">
+                  <div className="flex items-center gap-2 mb-2">
+                    <ShoppingCart className="h-4 w-4 text-orange-600" />
+                    <p className="text-sm font-medium text-muted-foreground">Total pris</p>
+                  </div>
+                  <p className="text-3xl font-bold text-orange-700">
                     {formatPrice(
                       getTotalPrice(weeklyPlan.shoppingList.primary) + 
                       getTotalPrice(weeklyPlan.shoppingList.secondary)
                     )}
                   </p>
                 </div>
+                <div className="bg-white rounded-lg p-4 shadow-sm">
+                  <div className="flex items-center gap-2 mb-2">
+                    <ChefHat className="h-4 w-4 text-purple-600" />
+                    <p className="text-sm font-medium text-muted-foreground">Snittpris</p>
+                  </div>
+                  <p className="text-3xl font-bold text-purple-700">
+                    {formatPrice(
+                      (getTotalPrice(weeklyPlan.shoppingList.primary) + 
+                      getTotalPrice(weeklyPlan.shoppingList.secondary)) / weeklyPlan.meals.length
+                    )}
+                  </p>
+                  <p className="text-xs text-muted-foreground mt-1">per middag</p>
+                </div>
               </div>
             </CardContent>
           </Card>
 
           {/* Meals */}
-          <Card>
+          <Card className="border-purple-200 bg-gradient-to-br from-purple-50/50 to-pink-50/50">
             <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <ChefHat className="h-5 w-5" />
-                Ukemeny
-              </CardTitle>
-              <CardDescription>{weeklyPlan.meals.length} måltider</CardDescription>
+              <div className="flex items-center gap-2">
+                <div className="p-2 bg-purple-100 rounded-lg">
+                  <ChefHat className="h-5 w-5 text-purple-700" />
+                </div>
+                <div>
+                  <CardTitle className="text-purple-900">Ukemeny</CardTitle>
+                  <CardDescription>{weeklyPlan.meals.length} deilige måltider</CardDescription>
+                </div>
+              </div>
             </CardHeader>
             <CardContent>
-              <div className="space-y-4">
+              <div className="grid gap-4 md:grid-cols-2">
                 {weeklyPlan.meals.map((meal, index) => (
-                  <div key={index} className="border rounded-lg p-4">
-                    <div className="flex items-start justify-between mb-3">
-                      <div>
-                        <h3 className="font-semibold text-lg">{meal.name}</h3>
-                        <Badge variant="outline" className="mt-1">Dag {index + 1}</Badge>
+                  <div key={index} className="bg-white border border-purple-100 rounded-lg p-5 hover:shadow-md transition-shadow">
+                    <div className="flex items-start justify-between mb-4">
+                      <div className="flex-1">
+                        <div className="flex items-center gap-2 mb-2">
+                          <Badge className="bg-purple-600 hover:bg-purple-700">
+                            Dag {index + 1}
+                          </Badge>
+                        </div>
+                        <h3 className="font-bold text-lg text-purple-900">{meal.name}</h3>
                       </div>
                     </div>
                     
-                    <div className="space-y-2 text-sm">
+                    <div className="space-y-3 text-sm">
                       {/* Protein */}
-                      <div className="flex justify-between items-center">
-                        <span className="text-muted-foreground">Protein:</span>
-                        <div className="text-right">
-                          <p className="font-medium">{meal.protein.title}</p>
-                          <p className="text-xs text-muted-foreground">
-                            {formatPrice(meal.protein.price)} @ {meal.protein.store}
-                          </p>
+                      <div className="flex items-start gap-3 p-3 bg-red-50 rounded-lg border border-red-100">
+                        {meal.protein.imageUrl ? (
+                          <img 
+                            src={meal.protein.imageUrl} 
+                            alt={meal.protein.title}
+                            className="w-16 h-16 object-cover rounded border border-red-200"
+                          />
+                        ) : (
+                          <div className="p-1.5 bg-red-100 rounded w-16 h-16 flex items-center justify-center">
+                            <Utensils className="h-6 w-6 text-red-600" />
+                          </div>
+                        )}
+                        <div className="flex-1 min-w-0">
+                          <p className="text-xs text-red-700 font-medium mb-1">Protein</p>
+                          <p className="font-semibold text-red-900 truncate">{meal.protein.title}</p>
+                          <div className="flex items-center justify-between mt-1">
+                            <p className="text-xs text-red-600">{meal.protein.store}</p>
+                            <div className="text-right">
+                              {meal.protein.originalPrice && meal.protein.originalPrice > meal.protein.price && (
+                                <p className="text-xs text-red-400 line-through">{formatPrice(meal.protein.originalPrice)}</p>
+                              )}
+                              <p className="text-sm font-bold text-red-700">{formatPrice(meal.protein.price)}</p>
+                            </div>
+                          </div>
                         </div>
                       </div>
 
                       {/* Carb */}
-                      <div className="flex justify-between items-center">
-                        <span className="text-muted-foreground">Tilbehør:</span>
-                        <div className="text-right">
+                      <div className="flex items-start gap-3 p-3 bg-amber-50 rounded-lg border border-amber-100">
+                        {typeof meal.carb === 'string' ? (
+                          <div className="p-1.5 bg-amber-100 rounded w-16 h-16 flex items-center justify-center">
+                            <Package className="h-6 w-6 text-amber-600" />
+                          </div>
+                        ) : meal.carb.imageUrl ? (
+                          <img 
+                            src={meal.carb.imageUrl} 
+                            alt={meal.carb.title}
+                            className="w-16 h-16 object-cover rounded border border-amber-200"
+                          />
+                        ) : (
+                          <div className="p-1.5 bg-amber-100 rounded w-16 h-16 flex items-center justify-center">
+                            <Package className="h-6 w-6 text-amber-600" />
+                          </div>
+                        )}
+                        <div className="flex-1 min-w-0">
+                          <p className="text-xs text-amber-700 font-medium mb-1">Tilbehør</p>
                           {typeof meal.carb === 'string' ? (
                             <>
-                              <p className="font-medium capitalize">{meal.carb}</p>
-                              <p className="text-xs text-muted-foreground">Fra lager</p>
+                              <p className="font-semibold text-amber-900 capitalize truncate">{meal.carb}</p>
+                              <p className="text-xs text-amber-600 mt-1">Fra lager</p>
                             </>
                           ) : (
                             <>
-                              <p className="font-medium">{meal.carb.title}</p>
-                              <p className="text-xs text-muted-foreground">
-                                {formatPrice(meal.carb.price)} @ {meal.carb.store}
-                              </p>
+                              <p className="font-semibold text-amber-900 truncate">{meal.carb.title}</p>
+                              <div className="flex items-center justify-between mt-1">
+                                <p className="text-xs text-amber-600">{meal.carb.store}</p>
+                                <div className="text-right">
+                                  {meal.carb.originalPrice && meal.carb.originalPrice > meal.carb.price && (
+                                    <p className="text-xs text-amber-400 line-through">{formatPrice(meal.carb.originalPrice)}</p>
+                                  )}
+                                  <p className="text-sm font-bold text-amber-700">{formatPrice(meal.carb.price)}</p>
+                                </div>
+                              </div>
                             </>
                           )}
                         </div>
@@ -286,15 +394,35 @@ export default function MealSuggestionsPage() {
 
                       {/* Vegetables */}
                       {meal.vegetables.length > 0 && (
-                        <div className="flex justify-between items-start">
-                          <span className="text-muted-foreground">Grønnsaker:</span>
-                          <div className="text-right space-y-1">
+                        <div className="bg-green-50 rounded-lg border border-green-100 p-3">
+                          <p className="text-xs text-green-700 font-medium mb-2 flex items-center gap-1">
+                            <span className="text-green-600">🥬</span>
+                            Grønnsaker
+                          </p>
+                          <div className="space-y-2">
                             {meal.vegetables.map((veg, vIndex) => (
-                              <div key={vIndex}>
-                                <p className="font-medium">{veg.title}</p>
-                                <p className="text-xs text-muted-foreground">
-                                  {formatPrice(veg.price)} @ {veg.store}
-                                </p>
+                              <div key={vIndex} className="flex items-center gap-2">
+                                {veg.imageUrl ? (
+                                  <img 
+                                    src={veg.imageUrl} 
+                                    alt={veg.title}
+                                    className="w-12 h-12 object-cover rounded border border-green-200"
+                                  />
+                                ) : (
+                                  <div className="w-12 h-12 bg-green-100 rounded flex items-center justify-center">
+                                    <span className="text-green-600 text-lg">🥬</span>
+                                  </div>
+                                )}
+                                <div className="flex-1 min-w-0">
+                                  <p className="font-semibold text-green-900 text-xs truncate">{veg.title}</p>
+                                  <p className="text-xs text-green-600">{veg.store}</p>
+                                </div>
+                                <div className="text-right">
+                                  {veg.originalPrice && veg.originalPrice > veg.price && (
+                                    <p className="text-xs text-green-400 line-through">{formatPrice(veg.originalPrice)}</p>
+                                  )}
+                                  <p className="text-sm font-bold text-green-700">{formatPrice(veg.price)}</p>
+                                </div>
                               </div>
                             ))}
                           </div>
@@ -308,40 +436,48 @@ export default function MealSuggestionsPage() {
           </Card>
 
           {/* Shopping List */}
-          <Card>
+          <Card className="border-blue-200 bg-gradient-to-br from-blue-50/50 to-cyan-50/50">
             <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <ShoppingCart className="h-5 w-5" />
-                Handleliste
-              </CardTitle>
+              <div className="flex items-center gap-2">
+                <div className="p-2 bg-blue-100 rounded-lg">
+                  <ShoppingCart className="h-5 w-5 text-blue-700" />
+                </div>
+                <div>
+                  <CardTitle className="text-blue-900">Handleliste</CardTitle>
+                  <CardDescription>Alt du trenger å kjøpe</CardDescription>
+                </div>
+              </div>
             </CardHeader>
             <CardContent>
               {/* Primary store */}
               {weeklyPlan.shoppingList.primary.length > 0 && (
                 <div className="mb-6">
-                  <h3 className="font-semibold mb-3 flex items-center justify-between">
-                    <span>Hovedbutikk</span>
-                    <span className="text-sm font-normal text-muted-foreground">
+                  <div className="flex items-center justify-between mb-4 pb-2 border-b-2 border-blue-200">
+                    <h3 className="font-bold text-lg text-blue-900 flex items-center gap-2">
+                      <Store className="h-5 w-5" />
+                      Hovedbutikk
+                    </h3>
+                    <span className="text-lg font-bold text-blue-700">
                       {formatPrice(getTotalPrice(weeklyPlan.shoppingList.primary))}
                     </span>
-                  </h3>
+                  </div>
                   <div className="space-y-2">
                     {weeklyPlan.shoppingList.primary.map((item, index) => (
-                      <div key={index} className="flex justify-between items-center text-sm border-b pb-2">
-                        <div>
-                          <p className="font-medium">
+                      <div key={index} className="flex justify-between items-center p-3 bg-white rounded-lg border border-blue-100 hover:border-blue-200 transition-colors">
+                        <div className="flex-1">
+                          <p className="font-semibold text-blue-900">
                             {item.title}
                             {item.usageCount && item.usageCount > 1 && (
-                              <span className="ml-2 text-xs text-muted-foreground">
-                                (brukes i {item.usageCount} middager)
-                              </span>
+                              <Badge variant="secondary" className="ml-2 text-xs bg-blue-100 text-blue-700">
+                                {item.usageCount} middager
+                              </Badge>
                             )}
                           </p>
-                          <p className="text-xs text-muted-foreground">{item.quantity}</p>
+                          <p className="text-xs text-blue-600 mt-1">{item.quantity}</p>
                         </div>
-                        <div className="text-right">
-                          <p className="font-medium">{formatPrice(item.price)}</p>
-                          <p className="text-xs text-muted-foreground">{item.store}</p>
+                        <div className="text-right ml-4">
+                          <p className="font-bold text-blue-700">{formatPrice(item.price)}</p>
+                          <p className="text-xs text-blue-600">{item.store}</p>
                         </div>
                       </div>
                     ))}
@@ -352,29 +488,32 @@ export default function MealSuggestionsPage() {
               {/* Secondary stores */}
               {weeklyPlan.shoppingList.secondary.length > 0 && (
                 <div className="mb-6">
-                  <h3 className="font-semibold mb-3 flex items-center justify-between">
-                    <span>Andre butikker</span>
-                    <span className="text-sm font-normal text-muted-foreground">
+                  <div className="flex items-center justify-between mb-4 pb-2 border-b-2 border-cyan-200">
+                    <h3 className="font-bold text-lg text-cyan-900 flex items-center gap-2">
+                      <Store className="h-5 w-5" />
+                      Andre butikker
+                    </h3>
+                    <span className="text-lg font-bold text-cyan-700">
                       {formatPrice(getTotalPrice(weeklyPlan.shoppingList.secondary))}
                     </span>
-                  </h3>
+                  </div>
                   <div className="space-y-2">
                     {weeklyPlan.shoppingList.secondary.map((item, index) => (
-                      <div key={index} className="flex justify-between items-center text-sm border-b pb-2">
-                        <div>
-                          <p className="font-medium">
+                      <div key={index} className="flex justify-between items-center p-3 bg-white rounded-lg border border-cyan-100 hover:border-cyan-200 transition-colors">
+                        <div className="flex-1">
+                          <p className="font-semibold text-cyan-900">
                             {item.title}
                             {item.usageCount && item.usageCount > 1 && (
-                              <span className="ml-2 text-xs text-muted-foreground">
-                                (brukes i {item.usageCount} middager)
-                              </span>
+                              <Badge variant="secondary" className="ml-2 text-xs bg-cyan-100 text-cyan-700">
+                                {item.usageCount} middager
+                              </Badge>
                             )}
                           </p>
-                          <p className="text-xs text-muted-foreground">{item.quantity}</p>
+                          <p className="text-xs text-cyan-600 mt-1">{item.quantity}</p>
                         </div>
-                        <div className="text-right">
-                          <p className="font-medium">{formatPrice(item.price)}</p>
-                          <p className="text-xs text-muted-foreground">{item.store}</p>
+                        <div className="text-right ml-4">
+                          <p className="font-bold text-cyan-700">{formatPrice(item.price)}</p>
+                          <p className="text-xs text-cyan-600">{item.store}</p>
                         </div>
                       </div>
                     ))}
@@ -384,15 +523,18 @@ export default function MealSuggestionsPage() {
 
               {/* Pantry items */}
               {weeklyPlan.shoppingList.pantry.length > 0 && (
-                <div>
-                  <h3 className="font-semibold mb-3">Fra lager (må ha hjemme)</h3>
+                <div className="bg-amber-50 border border-amber-200 rounded-lg p-4">
+                  <h3 className="font-bold text-amber-900 mb-3 flex items-center gap-2">
+                    <Package className="h-5 w-5" />
+                    Fra lager (må ha hjemme)
+                  </h3>
                   <div className="flex flex-wrap gap-2">
                     {weeklyPlan.shoppingList.pantry.map((pantryItem, index) => (
-                      <Badge key={index} variant="secondary" className="capitalize">
+                      <Badge key={index} className="capitalize bg-amber-100 text-amber-900 hover:bg-amber-200 border-amber-300">
                         {pantryItem.item}
                         {pantryItem.usageCount > 1 && (
-                          <span className="ml-1 text-xs">
-                            ({pantryItem.usageCount}x)
+                          <span className="ml-1 font-bold">
+                            ×{pantryItem.usageCount}
                           </span>
                         )}
                       </Badge>

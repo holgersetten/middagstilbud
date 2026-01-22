@@ -1,10 +1,12 @@
 import offerService from './offerService';
 import { getIngredientRole, isReusable, getMaxUsesPerWeek } from '../data/ingredientMeta';
-import { MEAL_TEMPLATES, MealTemplate } from '../data/mealTemplates';
+import { resolveAllTemplates, type ResolvedMealTemplate } from '../data/mealTemplates';
 
 interface Offer {
     title: string;
     price: number | null;
+    originalPrice?: number | null;
+    imageUrl?: string | null;
     store?: string;
     ingredientKey?: string;
     mainCategory?: string;
@@ -72,13 +74,16 @@ class WeeklyPlanService {
         // 4. Bygg index: group by ingredientKey (ikke role)
         const offersByIngredient = this.indexOffersByIngredient(validOffers);
 
-        // 5. NYTT: Score templates basert på tilgjengelige tilbud
-        const scoredTemplates = this.scoreTemplates(MEAL_TEMPLATES, offersByIngredient);
+        // 5. NYTT: Resolve templates (slå sammen archetype + template)
+        const resolvedTemplates = resolveAllTemplates();
 
-        // 6. NYTT: Velg beste templates med variasjon
+        // 6. NYTT: Score resolved templates basert på tilgjengelige tilbud
+        const scoredTemplates = this.scoreTemplates(resolvedTemplates, offersByIngredient);
+
+        // 7. NYTT: Velg beste templates med variasjon
         const selectedTemplates = this.selectTemplates(scoredTemplates, numMeals);
 
-        // 7. NYTT: Fyll templates med konkrete offers
+        // 8. NYTT: Fyll templates med konkrete offers
         const generatedMeals = this.fillTemplates(selectedTemplates, offersByIngredient);
 
         // 8. Bygg handleliste
@@ -119,9 +124,9 @@ class WeeklyPlanService {
      * Score alle templates basert på tilgjengelige tilbud
      */
     private scoreTemplates(
-        templates: MealTemplate[], 
+        templates: ResolvedMealTemplate[], 
         offersByIngredient: Map<string, Offer[]>
-    ): Array<{ template: MealTemplate; score: number }> {
+    ): Array<{ template: ResolvedMealTemplate; score: number }> {
         return templates.map(template => {
             let score = 0;
 
@@ -147,13 +152,13 @@ class WeeklyPlanService {
      * Velg beste templates med variasjon i protein
      */
     private selectTemplates(
-        scoredTemplates: Array<{ template: MealTemplate; score: number }>,
+        scoredTemplates: Array<{ template: ResolvedMealTemplate; score: number }>,
         numMeals: number
-    ): MealTemplate[] {
+    ): ResolvedMealTemplate[] {
         // Sortér etter score (høyest først)
         const sorted = [...scoredTemplates].sort((a, b) => b.score - a.score);
 
-        const selected: MealTemplate[] = [];
+        const selected: ResolvedMealTemplate[] = [];
         const usedProteinTypes = new Set<string>();
 
         // Velg templates med variasjon (ikke samme protein-type to ganger på rad)
@@ -194,7 +199,7 @@ class WeeklyPlanService {
      * Fyll templates med konkrete offers
      */
     private fillTemplates(
-        templates: MealTemplate[],
+        templates: ResolvedMealTemplate[],
         offersByIngredient: Map<string, Offer[]>
     ): Meal[] {
         const meals: Meal[] = [];
@@ -234,19 +239,16 @@ class WeeklyPlanService {
 
             // If no offer found, use template-specific carbFallback (NOT generic pantry)
             if (!carbFound) {
-                if (template.carbFallback && template.carbFallback.length > 0) {
+                if (template.carbFallback.length > 0) {
                     // Use carbFallback, but respect forbids
                     const allowedFallback = template.carbFallback.find(fb => {
-                        const fbLower = fb.toLowerCase();
-                        return !template.forbids?.some(f => f.toLowerCase() === fbLower);
+                        return !template.forbids.has(fb);
                     });
                     carb = allowedFallback || template.carbFallback[0]; // Fallback to first if all forbidden (shouldn't happen)
                 } else {
                     // Generic pantry fallback (only if template has no specific preference)
                     const pantryMatch = template.carbs.find(c => {
-                        const cLower = c.toLowerCase();
-                        return defaultPantryCarbs.includes(cLower) && 
-                               !template.forbids?.some(f => f.toLowerCase() === cLower);
+                        return defaultPantryCarbs.includes(c) && !template.forbids.has(c);
                     });
                     carb = pantryMatch || defaultPantryCarbs[0];
                 }
@@ -424,7 +426,7 @@ class WeeklyPlanService {
      * Sortér handleliste etter kategori (protein → veg → carb → other)
      */
     private sortByCategory(items: ShoppingListItem[]): ShoppingListItem[] {
-        const order = { protein: 1, veg: 2, carb: 3, other: 4 };
+        const order: Record<string, number> = { protein: 1, veg: 2, carb: 3, other: 4 };
         return items.sort((a, b) => {
             const roleA = getIngredientRole(a.title);
             const roleB = getIngredientRole(b.title);

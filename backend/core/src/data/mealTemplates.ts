@@ -1,137 +1,287 @@
-/**
- * mealTemplates.ts
- * 
- * Definerer plausible middagsretter som templates.
- * Et template er IKKE "velg hva som helst" - det er begrensninger.
- * 
- * Formål: Forhindre rare kombinasjoner (fiskekaker + pasta, laks + makaroni)
- */
-
-export type Archetype = 'pasta' | 'wok' | 'oven' | 'husmann' | 'enkel' | 'form';
+import { type ArchetypeId, getArchetype } from './archetypes';
 
 export interface MealTemplate {
-    id: string;
-    name: string;
-    archetype: Archetype;
-    
-    // Hva som er LOV
-    protein: string[];        // ingredientKeys som er lovlige (kan være flere varianter)
-    carbs: string[];          // lovlige carbs
-    vegetables: string[];     // lovlige grønnsaker
-    
-    // Hva som er FORBUDT (kritisk for plausibilitet)
-    forbids?: string[];       // ingredientKeys som ALDRI skal brukes
-    
-    // Carb fallback (spesifikk for template, ikke generisk pantry)
-    carbFallback?: string[];  // Spesifikke pantry-carbs for dette måltidet (hvis carbs[] ikke finnes)
-    
-    // Metadata
-    difficulty?: 'easy' | 'medium' | 'hard';
-    cookingMethod?: string;
+  id: string;
+  name: string;
+  archetype: ArchetypeId;
+
+  protein: string[];
+
+  carbs?: string[];
+  vegetables?: string[];
+  forbids?: string[];
+  carbFallback?: string[];
+
+  difficulty?: 'easy' | 'medium' | 'hard';
+  cookingMethod?: string;
 }
 
-/**
- * PROOF OF CONCEPT: 5 templates som dekker 5 archetypes
- * 
- * Disse avslører raskt om:
- * - ingredientMeta er bra nok
- * - butikkutvalg fungerer
- * - pantry-fallback fungerer
- * - "forbids" faktisk hindrer tull
- */
+export interface ResolvedMealTemplate {
+  id: string;
+  name: string;
+  archetype: ArchetypeId;
+
+  protein: string[];
+  carbs: string[];
+  vegetables: string[];
+  forbids: Set<string>;
+  carbFallback: string[];
+
+  difficulty: 'easy' | 'medium' | 'hard';
+  cookingMethod: string;
+}
+
 export const MEAL_TEMPLATES: MealTemplate[] = [
-    // ========== 1. PASTARETT ==========
-    {
-        id: 'kjottdeig_pasta',
-        name: 'Kjøttdeig med pasta',
-        archetype: 'pasta',
-        protein: ['kjøttdeig', 'karbonadedeig', 'storfe'],
-        carbs: ['pasta', 'spaghetti', 'makaroni', 'penne'],
-        vegetables: ['tomat', 'tomater', 'løk', 'rødløk', 'paprika', 'hvitløk'],
-        forbids: ['potet', 'poteter', 'ris', 'fiskekaker', 'laks', 'torsk'],
-        difficulty: 'easy',
-        cookingMethod: 'pan'
-    },
+  // ===== PASTA (6) =====
+  {
+    id: 'kjottdeig_pasta',
+    name: 'Pasta med kjøttdeig',
+    archetype: 'pasta',
+    protein: ['kjøttdeig', 'karbonadedeig'],
+    vegetables: ['tomat', 'løk', 'paprika', 'hvitløk']
+  },
+  {
+    id: 'kylling_pasta',
+    name: 'Kyllingpasta',
+    archetype: 'pasta',
+    protein: ['kylling'],
+    vegetables: ['paprika', 'løk', 'brokkoli']
+  },
+  {
+    id: 'laks_pasta',
+    name: 'Laksepasta',
+    archetype: 'pasta',
+    protein: ['laks'],
+    vegetables: ['spinat', 'brokkoli']
+  },
+  {
+    id: 'pasta_bacon',
+    name: 'Pasta med bacon',
+    archetype: 'pasta',
+    protein: ['bacon'],
+    vegetables: ['løk', 'sopp']
+  },
+  {
+    id: 'pasta_sopp',
+    name: 'Pasta med sopp',
+    archetype: 'pasta',
+    protein: ['egg'],
+    vegetables: ['sopp', 'løk']
+  },
+  {
+    id: 'pasta_pesto',
+    name: 'Pasta pesto',
+    archetype: 'pasta',
+    protein: ['kylling', 'laks'],
+    vegetables: ['tomat']
+  },
 
-    // ========== 2. WOK ==========
-    {
-        id: 'kylling_wok',
-        name: 'Kylling i wok',
-        archetype: 'wok',
-        protein: ['kyllingfilet', 'kyllingbryst', 'kylling', 'scampi', 'reker'],
-        carbs: ['ris', 'nudler'],
-        vegetables: ['paprika', 'løk', 'rødløk', 'brokkoli', 'gulrot', 'gulrøtter', 'mais', 'erter'],
-        forbids: ['pasta', 'potet', 'poteter', 'fiskekaker', 'pølser'],
-        difficulty: 'medium',
-        cookingMethod: 'wok'
-    },
+  // ===== WOK (6) =====
+  {
+    id: 'kylling_wok',
+    name: 'Kylling i wok',
+    archetype: 'wok',
+    protein: ['kylling'],
+    vegetables: ['paprika', 'brokkoli', 'gulrot', 'løk']
+  },
+  {
+    id: 'scampi_wok',
+    name: 'Scampi i wok',
+    archetype: 'wok',
+    protein: ['scampi', 'reker'],
+    vegetables: ['paprika', 'brokkoli']
+  },
+  {
+    id: 'svin_wok',
+    name: 'Svinewok',
+    archetype: 'wok',
+    protein: ['svinefilet'],
+    vegetables: ['paprika', 'løk', 'gulrot']
+  },
+  {
+    id: 'egg_wok',
+    name: 'Egg i wok',
+    archetype: 'wok',
+    protein: ['egg'],
+    vegetables: ['brokkoli', 'gulrot']
+  },
+  {
+    id: 'laks_wok',
+    name: 'Laks i wok',
+    archetype: 'wok',
+    protein: ['laks'],
+    vegetables: ['brokkoli', 'paprika']
+  },
+  {
+    id: 'kylling_risbowl',
+    name: 'Kylling risbolle',
+    archetype: 'wok',
+    protein: ['kylling'],
+    vegetables: ['agurk', 'gulrot', 'mais']
+  },
 
-    // ========== 3. OVNSRETT ==========
-    {
-        id: 'laks_ovn',
-        name: 'Ovnsbakt laks',
-        archetype: 'oven',
-        protein: ['laks', 'laksefilet'],
-        carbs: ['potet', 'poteter', 'ris'],
-        vegetables: ['gulrot', 'gulrøtter', 'brokkoli', 'asparges', 'salat', 'isbergsalat'],
-        forbids: ['pasta', 'makaroni', 'nudler', 'fiskekaker', 'pølser'],
-        difficulty: 'easy',
-        cookingMethod: 'oven'
-    },
+  // ===== HUSMANN (6) =====
+  {
+    id: 'fiskekaker_husmann',
+    name: 'Fiskekaker med potet',
+    archetype: 'husmann',
+    protein: ['fiskekaker'],
+    vegetables: ['gulrot', 'agurk', 'salat']
+  },
+  {
+    id: 'fiskepinner',
+    name: 'Fiskepinner med potet',
+    archetype: 'husmann',
+    protein: ['fiskepinner'],
+    vegetables: ['gulrot', 'erter']
+  },
+  {
+    id: 'koteletter',
+    name: 'Svinekoteletter med potet',
+    archetype: 'husmann',
+    protein: ['svinekotelett'],
+    vegetables: ['kål', 'gulrot']
+  },
+  {
+    id: 'laks_husmann',
+    name: 'Laks med potet',
+    archetype: 'husmann',
+    protein: ['laks'],
+    vegetables: ['gulrot', 'brokkoli']
+  },
+  {
+    id: 'kjottkaker',
+    name: 'Kjøttkaker med potet',
+    archetype: 'husmann',
+    protein: ['storfe'],
+    vegetables: ['kål', 'gulrot']
+  },
+  {
+    id: 'pølser_potet',
+    name: 'Pølser med potet',
+    archetype: 'husmann',
+    protein: ['pølser'],
+    vegetables: ['løk', 'erter']
+  },
 
-    // ========== 4. HUSMANN (klassisk) ==========
-    {
-        id: 'fiskekaker_husmann',
-        name: 'Fiskekaker med potet',
-        archetype: 'husmann',
-        protein: ['fiskekaker', 'fiskepinner'],
-        carbs: ['potet', 'poteter'],
-        vegetables: ['gulrot', 'gulrøtter', 'agurk', 'tomat', 'tomater', 'salat', 'mais', 'erter'],
-        forbids: ['pasta', 'makaroni', 'ris', 'nudler', 'laks', 'torsk'],
-        carbFallback: ['potet'], // IKKE generisk pantry - kun potet passer
-        difficulty: 'easy',
-        cookingMethod: 'pan'
-    },
+  // ===== OVEN (6) =====
+  {
+    id: 'laks_ovn',
+    name: 'Ovnsbakt laks',
+    archetype: 'oven',
+    protein: ['laks'],
+    vegetables: ['gulrot', 'brokkoli']
+  },
+  {
+    id: 'kylling_ovn',
+    name: 'Kylling i ovn',
+    archetype: 'oven',
+    protein: ['kylling'],
+    vegetables: ['gulrot', 'potet']
+  },
+  {
+    id: 'torsk_ovn',
+    name: 'Ovnsbakt torsk',
+    archetype: 'oven',
+    protein: ['torsk'],
+    vegetables: ['gulrot', 'løk']
+  },
+  {
+    id: 'svin_ovn',
+    name: 'Svin i ovn',
+    archetype: 'oven',
+    protein: ['svinefilet'],
+    vegetables: ['paprika', 'løk']
+  },
+  {
+    id: 'kylling_form',
+    name: 'Kyllingform',
+    archetype: 'oven',
+    protein: ['kylling'],
+    vegetables: ['brokkoli', 'gulrot']
+  },
+  {
+    id: 'laks_grateng',
+    name: 'Laksegrateng',
+    archetype: 'oven',
+    protein: ['laks'],
+    vegetables: ['gulrot']
+  },
 
-    // ========== 5. ENKEL (familie) ==========
-    {
-        id: 'omelett_enkel',
-        name: 'Omelett',
-        archetype: 'enkel',
-        protein: ['egg'],
-        carbs: ['brød', 'pitabrød'], // Kan også være ingen (omelett standalone)
-        vegetables: ['tomat', 'tomater', 'paprika', 'løk', 'rødløk', 'champignon', 'sopp', 'salat'],
-        forbids: ['pasta', 'ris', 'potet', 'fiskekaker', 'laks', 'pølser'],
-        difficulty: 'easy',
-        cookingMethod: 'pan'
-    }
+  // ===== ENKEL (6) =====
+  {
+    id: 'omelett',
+    name: 'Omelett',
+    archetype: 'enkel',
+    protein: ['egg'],
+    vegetables: ['paprika', 'løk', 'sopp']
+  },
+  {
+    id: 'pølser_brod',
+    name: 'Pølser og brød',
+    archetype: 'enkel',
+    protein: ['pølser'],
+    carbs: ['brød'],
+    vegetables: ['løk']
+  },
+  {
+    id: 'wrap_kylling',
+    name: 'Kyllingwrap',
+    archetype: 'enkel',
+    protein: ['kylling'],
+    carbs: ['tortilla'],
+    vegetables: ['salat', 'tomat']
+  },
+  {
+    id: 'egg_brod',
+    name: 'Egg og brød',
+    archetype: 'enkel',
+    protein: ['egg'],
+    carbs: ['brød'],
+    vegetables: ['tomat']
+  },
+  {
+    id: 'reker_brod',
+    name: 'Reker og brød',
+    archetype: 'enkel',
+    protein: ['reker'],
+    carbs: ['brød'],
+    vegetables: ['salat']
+  },
+  {
+    id: 'pannekaker',
+    name: 'Pannekaker',
+    archetype: 'enkel',
+    protein: ['egg'],
+    carbs: ['brød']
+  }
 ];
+ 
 
-/**
- * Sjekk om en ingredientKey er forbudt i et template
- */
-export function isForbidden(template: MealTemplate, ingredientKey: string): boolean {
-    if (!template.forbids) return false;
-    return template.forbids.includes(ingredientKey.toLowerCase());
+export function resolveMealTemplate(t: MealTemplate): ResolvedMealTemplate {
+  const a = getArchetype(t.archetype);
+
+  return {
+    id: t.id,
+    name: t.name,
+    archetype: t.archetype,
+
+    protein: t.protein.map(p => p.toLowerCase()),
+    carbs: (t.carbs ?? a.allowedCarbs).map(c => c.toLowerCase()),
+    vegetables: (t.vegetables ?? []).map(v => v.toLowerCase()),
+
+    forbids: new Set([
+      ...a.forbiddenIngredients,
+      ...(t.forbids ?? [])
+    ].map(f => f.toLowerCase())),
+
+    carbFallback: (t.carbFallback ?? a.carbFallback ?? []).map(c => c.toLowerCase()),
+
+    difficulty: t.difficulty ?? a.difficulty,
+    cookingMethod: t.cookingMethod ?? a.cookingMethod
+  };
 }
 
-/**
- * Sjekk om en ingredientKey er lovlig som protein i template
- */
-export function isValidProtein(template: MealTemplate, ingredientKey: string): boolean {
-    return template.protein.includes(ingredientKey.toLowerCase());
-}
-
-/**
- * Sjekk om en ingredientKey er lovlig som carb i template
- */
-export function isValidCarb(template: MealTemplate, ingredientKey: string): boolean {
-    return template.carbs.includes(ingredientKey.toLowerCase());
-}
-
-/**
- * Sjekk om en ingredientKey er lovlig som veg i template
- */
-export function isValidVegetable(template: MealTemplate, ingredientKey: string): boolean {
-    return template.vegetables.includes(ingredientKey.toLowerCase());
+export function resolveAllTemplates(): ResolvedMealTemplate[] {
+  return MEAL_TEMPLATES.map(resolveMealTemplate);
 }
