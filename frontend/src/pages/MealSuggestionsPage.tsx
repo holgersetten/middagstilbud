@@ -26,6 +26,12 @@ interface ShoppingListItem {
   quantity: string;
   store: string;
   price: number;
+  usageCount?: number; // Hvor mange middager denne brukes i
+}
+
+interface PantryItem {
+  item: string;
+  usageCount: number;
 }
 
 interface WeeklyPlanResponse {
@@ -35,7 +41,7 @@ interface WeeklyPlanResponse {
   shoppingList: {
     primary: ShoppingListItem[];
     secondary: ShoppingListItem[];
-    pantry: string[];
+    pantry: PantryItem[];
   };
 }
 
@@ -323,7 +329,14 @@ export default function MealSuggestionsPage() {
                     {weeklyPlan.shoppingList.primary.map((item, index) => (
                       <div key={index} className="flex justify-between items-center text-sm border-b pb-2">
                         <div>
-                          <p className="font-medium">{item.title}</p>
+                          <p className="font-medium">
+                            {item.title}
+                            {item.usageCount && item.usageCount > 1 && (
+                              <span className="ml-2 text-xs text-muted-foreground">
+                                (brukes i {item.usageCount} middager)
+                              </span>
+                            )}
+                          </p>
                           <p className="text-xs text-muted-foreground">{item.quantity}</p>
                         </div>
                         <div className="text-right">
@@ -349,7 +362,14 @@ export default function MealSuggestionsPage() {
                     {weeklyPlan.shoppingList.secondary.map((item, index) => (
                       <div key={index} className="flex justify-between items-center text-sm border-b pb-2">
                         <div>
-                          <p className="font-medium">{item.title}</p>
+                          <p className="font-medium">
+                            {item.title}
+                            {item.usageCount && item.usageCount > 1 && (
+                              <span className="ml-2 text-xs text-muted-foreground">
+                                (brukes i {item.usageCount} middager)
+                              </span>
+                            )}
+                          </p>
                           <p className="text-xs text-muted-foreground">{item.quantity}</p>
                         </div>
                         <div className="text-right">
@@ -367,9 +387,14 @@ export default function MealSuggestionsPage() {
                 <div>
                   <h3 className="font-semibold mb-3">Fra lager (må ha hjemme)</h3>
                   <div className="flex flex-wrap gap-2">
-                    {weeklyPlan.shoppingList.pantry.map((item, index) => (
+                    {weeklyPlan.shoppingList.pantry.map((pantryItem, index) => (
                       <Badge key={index} variant="secondary" className="capitalize">
-                        {item}
+                        {pantryItem.item}
+                        {pantryItem.usageCount > 1 && (
+                          <span className="ml-1 text-xs">
+                            ({pantryItem.usageCount}x)
+                          </span>
+                        )}
                       </Badge>
                     ))}
                   </div>

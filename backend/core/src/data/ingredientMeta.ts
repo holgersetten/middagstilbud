@@ -12,6 +12,8 @@ export type IngredientRole = 'protein' | 'carb' | 'veg' | 'other';
 export interface IngredientMeta {
     role: IngredientRole;
     pantry?: boolean; // Om dette er vanlig å ha på lager (for carbs som ris/pasta)
+    reusable?: boolean; // Kan deles på tvers av flere middager (tomat, løk, paprika)
+    maxUsesPerWeek?: number; // Maks ganger denne ingrediensen kan brukes i én uke
 }
 
 /**
@@ -69,19 +71,19 @@ export const INGREDIENT_META: Record<string, IngredientMeta> = {
     'tacoskjell': { role: 'carb' },
     
     // ========== VEG ==========
-    'løk': { role: 'veg' },
-    'rødløk': { role: 'veg' },
-    'hvitløk': { role: 'veg' },
-    'paprika': { role: 'veg' },
+    'løk': { role: 'veg', reusable: true, maxUsesPerWeek: 3 },
+    'rødløk': { role: 'veg', reusable: true, maxUsesPerWeek: 3 },
+    'hvitløk': { role: 'veg', reusable: true, maxUsesPerWeek: 3 },
+    'paprika': { role: 'veg', reusable: true, maxUsesPerWeek: 2 },
     'brokkoli': { role: 'veg' },
     'blomkål': { role: 'veg' },
-    'salat': { role: 'veg' },
-    'isbergsalat': { role: 'veg' },
+    'salat': { role: 'veg', reusable: true, maxUsesPerWeek: 2 },
+    'isbergsalat': { role: 'veg', reusable: true, maxUsesPerWeek: 2 },
     'gulrot': { role: 'veg' },
     'gulrøtter': { role: 'veg' },
-    'tomat': { role: 'veg' },
-    'tomater': { role: 'veg' },
-    'cherrytomater': { role: 'veg' },
+    'tomat': { role: 'veg', reusable: true, maxUsesPerWeek: 2 },
+    'tomater': { role: 'veg', reusable: true, maxUsesPerWeek: 2 },
+    'cherrytomater': { role: 'veg', reusable: true, maxUsesPerWeek: 2 },
     'agurk': { role: 'veg' },
     'squash': { role: 'veg' },
     'aubergine': { role: 'veg' },
@@ -119,4 +121,22 @@ export function isPantryItem(ingredientKey: string | undefined): boolean {
     if (!ingredientKey) return false;
     const meta = INGREDIENT_META[ingredientKey.toLowerCase()];
     return meta?.pantry || false;
+}
+
+/**
+ * Sjekk om en ingrediens er gjenbrukbar på tvers av flere middager
+ */
+export function isReusable(ingredientKey: string | undefined): boolean {
+    if (!ingredientKey) return false;
+    const meta = INGREDIENT_META[ingredientKey.toLowerCase()];
+    return meta?.reusable || false;
+}
+
+/**
+ * Hent maks antall ganger denne ingrediensen kan brukes i én uke
+ */
+export function getMaxUsesPerWeek(ingredientKey: string | undefined): number | undefined {
+    if (!ingredientKey) return undefined;
+    const meta = INGREDIENT_META[ingredientKey.toLowerCase()];
+    return meta?.maxUsesPerWeek;
 }
