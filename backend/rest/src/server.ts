@@ -6,6 +6,7 @@ dotenv.config();
 
 import config from './config';
 import offersRouter from './routes/offers';
+import weeklyPlanRouter from './routes/weeklyPlan';
 import { initDb } from '../../core/src/db/db';
 
 // Initialiser database ved oppstart
@@ -54,6 +55,7 @@ app.get('/health', (_req: Request, res: Response) => {
 
 // API Routes
 app.use('/api', offersRouter);
+app.use('/api/weekly-plan', weeklyPlanRouter);
 
 // 404 handler
 app.use((_req: Request, res: Response) => {

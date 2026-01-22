@@ -51,6 +51,14 @@ export const offersApi = {
     return response.data;
   },
 
+  generateWeeklyPlan: async (stores?: string[], meals?: number): Promise<any> => {
+    const response = await axios.post(`${API_BASE_URL}/weekly-plan/generate`, {
+      stores,
+      meals
+    });
+    return response.data;
+  },
+
   // Category management
   addSubCategory: async (mainCategory: string, subCategory: string): Promise<{ success: boolean; message: string; note: string }> => {
     const response = await axios.post(`${API_BASE_URL}/categories/subcategory/add`, {

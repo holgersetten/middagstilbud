@@ -72,12 +72,12 @@ export default function HomePage() {
                   <CardTitle className="text-2xl text-orange-900">Middagsforslag</CardTitle>
                 </div>
                 <CardDescription className="text-base text-orange-800">
-                  Få inspirasjon til middagsplanlegging basert på tilbudene
+                  Lag ukemeny basert på ukens beste tilbud
                 </CardDescription>
               </CardHeader>
               <CardContent>
                 <Button variant="outline" className="w-full bg-orange-600 text-white hover:bg-orange-500 border-orange-600 transition-colors cursor-pointer">
-                  Utforsk oppskrifter
+                  Lag ukemeny
                 </Button>
               </CardContent>
             </Card>
