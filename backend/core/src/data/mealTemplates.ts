@@ -214,6 +214,8 @@ export const MEAL_TEMPLATES: MealTemplate[] = [
     name: 'Omelett',
     archetype: 'enkel',
     protein: ['egg'],
+    carbs: ['brød', 'pitabrød'],
+    forbids: ['ris', 'pasta', 'makaroni', 'spaghetti', 'nudler'],
     vegetables: ['paprika', 'løk', 'sopp']
   },
   {
@@ -254,6 +256,38 @@ export const MEAL_TEMPLATES: MealTemplate[] = [
     archetype: 'enkel',
     protein: ['egg'],
     carbs: ['brød']
+  },
+
+  // ===== FERDIGRETTER (fallback) =====
+  {
+    id: 'pizza_ferdig',
+    name: 'Ferdigpizza',
+    archetype: 'readyMeal',
+    protein: ['pizza'],
+    carbs: [],
+    carbFallback: [],
+    forbids: ['ris', 'pasta', 'potet'],
+    vegetables: ['salat', 'tomat', 'agurk']
+  },
+  {
+    id: 'lasagne_ferdig',
+    name: 'Lasagne (ferdig)',
+    archetype: 'readyMeal',
+    protein: ['lasagne'],
+    carbs: [],
+    carbFallback: [],
+    forbids: [],
+    vegetables: ['salat']
+  },
+  {
+    id: 'taco_kit',
+    name: 'Taco (ferdigkit)',
+    archetype: 'readyMeal',
+    protein: ['kjøttdeig'],
+    carbs: ['tacoskjell', 'tortilla'],
+    carbFallback: ['tortilla'],
+    forbids: [],
+    vegetables: ['salat', 'tomat', 'mais']
   }
 ];
  

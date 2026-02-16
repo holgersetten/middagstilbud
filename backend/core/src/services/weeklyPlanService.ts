@@ -1,6 +1,7 @@
 import offerService from './offerService';
 import { getIngredientRole, isReusable, getMaxUsesPerWeek } from '../data/ingredientMeta';
 import { resolveAllTemplates, type ResolvedMealTemplate } from '../data/mealTemplates';
+import { WEEKLY_PLAN_CONFIG, getMaxArchetypePerWeek, getMaxCarbPerWeek, getMaxProteinTypePerWeek } from '../config/weeklyPlanConfig';
 
 interface Offer {
     title: string;
@@ -52,7 +53,7 @@ class WeeklyPlanService {
      * Genererer ukemeny basert på tilgjengelige tilbud
      */
     async generateWeeklyPlan(options: GenerateOptions = {}): Promise<WeeklyPlan> {
-        const { stores = [], meals: numMeals = 6 } = options;
+        const { stores = [], meals: numMeals = WEEKLY_PLAN_CONFIG.mealsDefault } = options;
 
         // 1. Hent alle tilbud
         let allOffers = await offerService.getAllOffers();
@@ -149,7 +150,7 @@ class WeeklyPlanService {
     }
 
     /**
-     * Velg beste templates med variasjon i protein
+     * Velg beste templates med hard caps + fallback-strategi
      */
     private selectTemplates(
         scoredTemplates: Array<{ template: ResolvedMealTemplate; score: number }>,
@@ -159,40 +160,119 @@ class WeeklyPlanService {
         const sorted = [...scoredTemplates].sort((a, b) => b.score - a.score);
 
         const selected: ResolvedMealTemplate[] = [];
-        const usedProteinTypes = new Set<string>();
+        const archetypeCount = new Map<string, number>();
 
-        // Velg templates med variasjon (ikke samme protein-type to ganger på rad)
+        // STEG 1: Velg med hard caps (strict mode)
         for (const { template, score } of sorted) {
             if (selected.length >= numMeals) break;
-            if (score <= 0) continue; // Skip templates uten tilbud
+            if (score <= 0) continue;
 
-            // Enkel variasjon: ikke samme protein-type direkte etter hverandre
-            const proteinType = template.protein[0]; // Bruk første protein som "type"
+            if (this.isTemplateLegal(template, selected, archetypeCount, 'strict')) {
+                selected.push(template);
+                archetypeCount.set(template.archetype, (archetypeCount.get(template.archetype) || 0) + 1);
+            }
+        }
+
+        // STEG 2: Hvis ikke nok - slakk på caps gradvis
+        if (selected.length < numMeals) {
+            console.log(`⚠️ Kun ${selected.length}/${numMeals} middager med strict caps. Slakker på regler...`);
+            
+            // 2a: Slakk protein-variasjon (tillat samme protein på rad)
+            for (const { template, score } of sorted) {
+                if (selected.length >= numMeals) break;
+                if (score <= 0) continue;
+                if (selected.includes(template)) continue;
+                
+                if (this.isTemplateLegal(template, selected, archetypeCount, 'relaxed-protein')) {
+                    selected.push(template);
+                    archetypeCount.set(template.archetype, (archetypeCount.get(template.archetype) || 0) + 1);
+                }
+            }
+        }
+
+        if (selected.length < numMeals) {
+            // 2b: Slakk archetype-caps (+50%)
+            console.log(`⚠️ Kun ${selected.length}/${numMeals} middager. Slakker archetype-caps...`);
+            for (const { template } of sorted) {
+                if (selected.length >= numMeals) break;
+                if (selected.includes(template)) continue;
+                
+                if (this.isTemplateLegal(template, selected, archetypeCount, 'relaxed-archetype')) {
+                    selected.push(template);
+                    archetypeCount.set(template.archetype, (archetypeCount.get(template.archetype) || 0) + 1);
+                }
+            }
+        }
+
+        if (selected.length < numMeals) {
+            // 2c: Siste utvei - bruk ferdigretter (readyMeal)
+            console.log(`⚠️ Kun ${selected.length}/${numMeals} middager. Bruker ferdigretter som fallback...`);
+            for (const { template } of sorted) {
+                if (selected.length >= numMeals) break;
+                if (selected.includes(template)) continue;
+                
+                // Tillat readyMeal selv med score 0
+                if (template.archetype === 'readyMeal') {
+                    const currentCount = archetypeCount.get('readyMeal') || 0;
+                    const maxAllowed = getMaxArchetypePerWeek('readyMeal');
+                    if (currentCount < maxAllowed) {
+                        selected.push(template);
+                        archetypeCount.set('readyMeal', currentCount + 1);
+                    }
+                }
+            }
+        }
+
+        if (selected.length < numMeals) {
+            // 2d: Absolutt siste utvei - ignorer alle caps
+            console.log(`⚠️ Kun ${selected.length}/${numMeals} middager. Fyller opp uten caps...`);
+            for (const { template } of sorted) {
+                if (selected.length >= numMeals) break;
+                if (selected.includes(template)) continue;
+                
+                selected.push(template);
+                archetypeCount.set(template.archetype, (archetypeCount.get(template.archetype) || 0) + 1);
+            }
+        }
+
+        return selected;
+    }
+
+    /**
+     * Sjekk om template er lovlig under gitt mode
+     */
+    private isTemplateLegal(
+        template: ResolvedMealTemplate,
+        selected: ResolvedMealTemplate[],
+        archetypeCount: Map<string, number>,
+        mode: 'strict' | 'relaxed-protein' | 'relaxed-archetype'
+    ): boolean {
+        // Archetype-grense
+        const archetypeId = template.archetype;
+        const currentCount = archetypeCount.get(archetypeId) || 0;
+        let maxAllowed = getMaxArchetypePerWeek(archetypeId);
+        
+        if (mode === 'relaxed-archetype') {
+            maxAllowed = Math.ceil(maxAllowed * 1.5); // +50% i relaxed mode
+        }
+        
+        if (currentCount >= maxAllowed) {
+            return false;
+        }
+
+        // Protein-variasjon (ikke samme på rad)
+        if (mode === 'strict') {
+            const proteinType = template.protein[0];
             const lastProteinType = selected.length > 0 
                 ? selected[selected.length - 1].protein[0] 
                 : null;
 
             if (lastProteinType === proteinType) {
-                // Skip hvis samme type, men la den være tilgjengelig senere
-                continue;
-            }
-
-            selected.push(template);
-            usedProteinTypes.add(proteinType);
-        }
-
-        // Hvis vi ikke fikk nok, fyll opp med beste (tillat gjenbruk)
-        if (selected.length < numMeals) {
-            for (const { template, score } of sorted) {
-                if (selected.length >= numMeals) break;
-                if (score <= 0) continue;
-                if (!selected.includes(template)) {
-                    selected.push(template);
-                }
+                return false;
             }
         }
 
-        return selected;
+        return true;
     }
 
     /**
@@ -207,15 +287,43 @@ class WeeklyPlanService {
         
         // Track reusable ingredient usage
         const reusableUsage = new Map<string, number>();
+        
+        // Track carb usage (for maxCarbPerWeek)
+        const carbUsage = new Map<string, number>();
+        
+        // Track protein-type usage (for maxProteinTypePerWeek)
+        const proteinTypeUsage = new Map<string, number>();
+        
+        // Track offer usage (for maxSameOfferUsesDefault)
+        const offerUsage = new Map<string, number>();
 
         for (const template of templates) {
-            // 1. PROTEIN: Finn billigste lovlige protein
+            // 1. PROTEIN: Finn billigste lovlige protein (hard cap på type + offer)
             let protein: Offer | null = null;
             for (const proteinKey of template.protein) {
-                const offers = offersByIngredient.get(proteinKey.toLowerCase());
+                const proteinKeyLower = proteinKey.toLowerCase();
+                
+                // Sjekk protein-type cap
+                const currentTypeUses = proteinTypeUsage.get(proteinKeyLower) || 0;
+                const maxTypeUses = getMaxProteinTypePerWeek(proteinKeyLower);
+                if (currentTypeUses >= maxTypeUses) {
+                    continue; // Skip - protein-type allerede brukt for mye
+                }
+                
+                const offers = offersByIngredient.get(proteinKeyLower);
                 if (offers && offers.length > 0) {
-                    protein = offers[0]; // Billigste (allerede sortert)
-                    break;
+                    // Finn første offer som ikke er brukt for mye (prøv top 10)
+                    for (const offer of offers.slice(0, 10)) {
+                        const offerKey = offer.productKey || `${offer.store}|${offer.title}`;
+                        const currentUses = offerUsage.get(offerKey) || 0;
+                        if (currentUses < WEEKLY_PLAN_CONFIG.maxSameOfferUsesDefault) {
+                            protein = offer;
+                            offerUsage.set(offerKey, currentUses + 1);
+                            proteinTypeUsage.set(proteinKeyLower, currentTypeUses + 1);
+                            break;
+                        }
+                    }
+                    if (protein) break;
                 }
             }
 
@@ -224,16 +332,36 @@ class WeeklyPlanService {
                 continue;
             }
 
-            // 2. CARB: Finn billigste lovlige carb (eller bruk template-spesifikk fallback)
+            // 2. CARB: Finn billigste lovlige carb (hard cap, fallback til neste beste)
             let carb: Offer | string = defaultPantryCarbs[0]; // Default
             let carbFound = false;
             
+            // Prøv alle carb-alternativer i template (sortert etter preferanse)
             for (const carbKey of template.carbs) {
-                const offers = offersByIngredient.get(carbKey.toLowerCase());
+                const carbKeyLower = carbKey.toLowerCase();
+                
+                // Sjekk carb-grense (hard cap)
+                const currentCarbUses = carbUsage.get(carbKeyLower) || 0;
+                const maxCarbUses = getMaxCarbPerWeek(carbKeyLower);
+                if (currentCarbUses >= maxCarbUses) {
+                    continue; // Skip - hard cap nådd, prøv neste
+                }
+                
+                const offers = offersByIngredient.get(carbKeyLower);
                 if (offers && offers.length > 0) {
-                    carb = offers[0];
-                    carbFound = true;
-                    break;
+                    // Finn første offer under maxSameOfferUses
+                    for (const offer of offers.slice(0, 10)) { // Top 10 kandidater
+                        const offerKey = offer.productKey || `${offer.store}|${offer.title}`;
+                        const currentUses = offerUsage.get(offerKey) || 0;
+                        if (currentUses < WEEKLY_PLAN_CONFIG.maxSameOfferUsesDefault) {
+                            carb = offer;
+                            carbFound = true;
+                            carbUsage.set(carbKeyLower, currentCarbUses + 1);
+                            offerUsage.set(offerKey, currentUses + 1);
+                            break;
+                        }
+                    }
+                    if (carbFound) break;
                 }
             }
 
@@ -400,10 +528,10 @@ class WeeklyPlanService {
                 const isPrimaryStore = offer.store === primaryStore;
                 const isExistingPrimary = existing.store === primaryStore;
                 
-                // Switch to primary if price is "close enough" (≤ 5kr more expensive)
+                // Switch to primary if price is "close enough" (bruker threshold fra config)
                 if (isPrimaryStore && !isExistingPrimary) {
                     const priceDiff = (offer.price || 0) - (existing.price || 0);
-                    if (priceDiff <= 5) {
+                    if (priceDiff <= WEEKLY_PLAN_CONFIG.reusablePrimaryPreferThresholdNok) {
                         existing.store = offer.store;
                         existing.price = offer.price || 0;
                         existing.title = offer.title;

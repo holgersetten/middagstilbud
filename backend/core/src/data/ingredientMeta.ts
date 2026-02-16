@@ -37,6 +37,11 @@ export const INGREDIENT_META: Record<string, IngredientMeta> = {
 
   'egg': { role: 'protein' },
 
+  // Ferdigretter (fallback)
+  'pizza': { role: 'protein' },
+  'lasagne': { role: 'protein' },
+  'tacoskjell': { role: 'carb' },
+
   // ===== CARBS =====
   'ris': { role: 'carb', pantry: true },
   'pasta': { role: 'carb', pantry: true },
@@ -64,7 +69,7 @@ export const INGREDIENT_META: Record<string, IngredientMeta> = {
   'salat': { role: 'veg', reusable: true, maxUsesPerWeek: 2 },
   'isbergsalat': { role: 'veg', reusable: true, maxUsesPerWeek: 2 },
 
-  'brokkoli': { role: 'veg' },
+  'brokkoli': { role: 'veg' }, // Ikke reusable - ny pose per bruk
   'gulrot': { role: 'veg' },
   'agurk': { role: 'veg' },
   'mais': { role: 'veg' },

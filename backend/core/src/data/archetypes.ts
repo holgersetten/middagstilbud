@@ -14,7 +14,8 @@ export type ArchetypeId =
   | 'husmann'
   | 'oven'
   | 'form'
-  | 'enkel';
+  | 'enkel'
+  | 'readyMeal';
 
 export interface Archetype {
   id: ArchetypeId;
@@ -183,6 +184,20 @@ export const ARCHETYPES: Record<ArchetypeId, Archetype> = {
     ],
     difficulty: 'easy',
     cookingMethod: 'pan'
+  },
+
+  /**
+   * FERDIGRETTER
+   * Fallback når vanlige middager ikke er tilgjengelige
+   * Minimal tilberedning
+   */
+  readyMeal: {
+    id: 'readyMeal',
+    name: 'Ferdigretter',
+    allowedCarbs: [],
+    forbiddenIngredients: [],
+    difficulty: 'easy',
+    cookingMethod: 'oven'
   }
 };
 
